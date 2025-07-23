@@ -17,7 +17,7 @@ public class ChatWebSocket
 
     @OnOpen
     public String onOpen() {
-        return "Welcome to Miles of Smiles! How can I help you today?";
+        return "Welcome to Niby! How can I help you today?";
     }
 
     @OnTextMessage

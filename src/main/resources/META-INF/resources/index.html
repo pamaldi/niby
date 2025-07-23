@@ -21,7 +21,7 @@
     <style>
         :root {
             --main-bg-color: rgb(246, 242, 242);
-            --main-highlight-text-color: rgba(237, 98, 128);
+            --main-highlight-text-color: rgba(135, 206, 235);
         }
 
         body {
@@ -38,22 +38,23 @@
         }
 
         chat-bot {
-            --chatbot-avatar-bg-color: rgba(237, 98, 128);
+            --chatbot-avatar-bg-color: rgba(135, 206, 235);
             --chatbot-avatar-margin: 10%;
-            --chatbot-header-bg-color: rgba(237, 98, 128);
+            --chatbot-header-bg-color: rgba(135, 206, 235);
             --chatbot-header-title-color: #FFFFFF;
             --chatbot-body-bg-color: var(--main-bg-color);
-            --chatbot-send-button-color: rgba(237, 98, 128);
+            --chatbot-send-button-color: rgba(135, 206, 235);
+            --chatbot-avatar-img: url('niby.png');
         }
 
-         chat-bot::part(chat-bubble) {
-             --chat-bubble-avatar-color: rgba(237, 98, 128);
-             --chat-bubble-color: rgba(203, 232, 237, 0.71);
-             --chat-bubble-right-color: rgb(157, 238, 244);
-             --chat-bubble-font-color: #333;
-             --chat-bubble-font-right-color: #333;
-             --chat-bubble-delay: 0.2s;
-         }
+        chat-bot::part(chat-bubble) {
+            --chat-bubble-avatar-color: rgba(135, 206, 235);
+            --chat-bubble-color: rgba(203, 232, 237, 0.71);
+            --chat-bubble-right-color: rgb(173, 216, 230);
+            --chat-bubble-font-color: #333;
+            --chat-bubble-font-right-color: #333;
+            --chat-bubble-delay: 0.2s;
+        }
 
         .middle {
             margin-top: 2em;
@@ -64,6 +65,20 @@
             display: flex;
         }
 
+    </style>
+
+    <style>
+        chat-bot .chatbot-container {
+            width: 500px !important;
+            height: 650px !important;
+            max-width: 95vw !important; /* Responsive: max 95% della larghezza viewport */
+            max-height: 90vh !important; /* Responsive: max 90% dell'altezza viewport */
+        }
+
+        /* Personalizza anche l'altezza del corpo dei messaggi */
+        chat-bot .chatbot-body {
+            height: 450px !important; /* Regola l'area dei messaggi */
+        }
     </style>
 </head>
 

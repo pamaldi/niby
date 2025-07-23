@@ -20,6 +20,13 @@ export class DemoChat extends LitElement {
 
     connectedCallback() {
         const chatBot = document.getElementsByTagName("chat-bot")[0];
+        
+        // Personalizza l'avatar per i messaggi del bot
+        chatBot.partner = {
+            name: "Bot",
+            id: "00000123-0000-0000-0000-000000000002",
+            avatar: "niby.png"  // Aggiungi questa proprietà
+        };
 
         const protocol = (window.location.protocol === 'https:') ? 'wss' : 'ws';
         const socket = new WebSocket(protocol + '://' + window.location.host + '/customer-support-agent');
@@ -49,7 +56,8 @@ export class DemoChat extends LitElement {
                 chatBot.sendMessage(event.data, {
                     right: false,
                     sender: {
-                        name: "Bot"
+                        name: "Bot",
+                        avatar: "niby.png"  // Specifica l'avatar anche qui
                     }
                 });
             }
@@ -62,7 +70,11 @@ export class DemoChat extends LitElement {
                 socket.send(msg);
                 chatBot.sendMessage("", {
                     right: false,
-                    loading: true
+                    loading: true,
+                    sender: {
+                        name: "Bot",
+                        avatar: "niby.png"  // E anche qui per il messaggio di loading
+                    }
                 });
             }
         });
