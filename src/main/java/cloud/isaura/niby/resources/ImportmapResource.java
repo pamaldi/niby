@@ -1,4 +1,4 @@
-package cloud.isaura.niby.hello;
+package cloud.isaura.niby.resources;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.enterprise.context.ApplicationScoped;

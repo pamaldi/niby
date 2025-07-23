@@ -1,4 +1,4 @@
-package cloud.isaura.niby.hello;
+package cloud.isaura.niby.agents;
 
 import io.quarkus.websockets.next.OnOpen;
 import io.quarkus.websockets.next.OnTextMessage;
@@ -6,13 +6,13 @@ import io.quarkus.websockets.next.WebSocket;
 import io.smallrye.mutiny.Multi;
 
 @WebSocket(path = "/customer-support-agent")
-public class ChatWebSocket
+public class NibyWebSocket
 {
 
-    private final Chat chat;
+    private final NibyOrchestratorAgent nibyOrchestratorAgent;
 
-    public ChatWebSocket(Chat chat) {
-        this.chat = chat;
+    public NibyWebSocket(NibyOrchestratorAgent nibyOrchestratorAgent) {
+        this.nibyOrchestratorAgent = nibyOrchestratorAgent;
     }
 
     @OnOpen
@@ -22,6 +22,6 @@ public class ChatWebSocket
 
     @OnTextMessage
     public Multi<String> onTextMessage(String message) {
-        return chat.chat(message);
+        return nibyOrchestratorAgent.chat(message);
     }
 }

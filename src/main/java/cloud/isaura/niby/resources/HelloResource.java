@@ -1,4 +1,4 @@
-package cloud.isaura.niby.hello;
+package cloud.isaura.niby.resources;
 
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
