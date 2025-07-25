@@ -21,7 +21,7 @@ public class NibyWebSocket
     }
 
     @OnTextMessage
-    public Multi<String> onTextMessage(String message) {
+    public String onTextMessage(String message) {
         return nibyOrchestratorAgent.chat(message);
     }
 }
