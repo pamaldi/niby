@@ -1,5 +1,6 @@
 import {css, html, LitElement} from 'lit';
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
+import { marked } from 'https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js';
 import '@vaadin/icon';
 import '@vaadin/button';
 import '@vaadin/text-field';
@@ -153,7 +154,7 @@ export class DemoChat extends LitElement {
                 ${this.messages.map(msg => html`
                     <div class="message-bubble ${msg.sender}">
                         ${msg.sender === 'bot' ? html`<img src="niby.png" alt="bot">` : ''}
-                        <span>${unsafeHTML(msg.text)}</span>
+                        <span>${unsafeHTML(marked(msg.text))}</span>
                     </div>
                 `)}
             </div>
