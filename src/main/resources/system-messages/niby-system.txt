@@ -93,7 +93,7 @@ After receiving approved design from Flow Design Agent, call the **Implementatio
 **Your Action**: Forward to Prototype Agent (missing: database name, table names, Kafka topics, JSON schema)
 
 ### Complete Request → Flow Design Agent
-**User Input**: "Extract records from PostgreSQL database 'sales_db' table 'orders' with schema {id:int, customer:string, amount:decimal} and publish to Kafka topic 'order-events' in JSON format"
+**User Input**: "Extract records from PostgreSQL database 'sales_db' table 'orders' with schema (id:int, customer:string, amount:decimal) and publish to Kafka topic 'order-events' in JSON format"
 **Your Action**: Forward to Flow Design Agent (all essential details present)
 
 ## Response Format

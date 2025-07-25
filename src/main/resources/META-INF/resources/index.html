@@ -9,9 +9,7 @@
 
     <script type="module">
         import 'icons/font-awesome.js';
-        import 'components/demo-title.js';
         import 'components/demo-chat.js';
-        import 'wc-chatbot';
     </script>
 
     <link rel="stylesheet" href="fonts/red-hat-font.min.css">
@@ -20,8 +18,9 @@
 
     <style>
         :root {
-            --main-bg-color: rgb(246, 242, 242);
-            --main-highlight-text-color: rgba(135, 206, 235);
+            --main-bg-color: #f8f9fa;
+            --sidebar-bg: #ffffff;
+            --border-color: #e9ecef;
         }
 
         body {
@@ -29,69 +28,86 @@
             width: 100%;
             height: 100vh;
             font-family: 'Red Hat Text', sans-serif;
+            display: flex;
+            color: #333;
+            background: var(--main-bg-color);
             overflow: hidden;
+        }
+
+        .sidebar {
+            width: 250px;
+            background: var(--sidebar-bg);
+            border-right: 1px solid var(--border-color);
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            color: var(--lumo-body-text-color);
-            background: var(--main-bg-color);
+            padding: 1rem;
         }
 
-        chat-bot {
-            --chatbot-avatar-bg-color: rgba(135, 206, 235);
-            --chatbot-avatar-margin: 10%;
-            --chatbot-header-bg-color: rgba(135, 206, 235);
-            --chatbot-header-title-color: #FFFFFF;
-            --chatbot-body-bg-color: var(--main-bg-color);
-            --chatbot-send-button-color: rgba(135, 206, 235);
-            --chatbot-avatar-img: url('niby.png');
-        }
-
-        chat-bot::part(chat-bubble) {
-            --chat-bubble-avatar-color: rgba(135, 206, 235);
-            --chat-bubble-color: rgba(203, 232, 237, 0.71);
-            --chat-bubble-right-color: rgb(173, 216, 230);
-            --chat-bubble-font-color: #333;
-            --chat-bubble-font-right-color: #333;
-            --chat-bubble-delay: 0.2s;
-        }
-
-        .middle {
-            margin-top: 2em;
-            overflow: hidden;
-            width: 50%;
-            margin-left: auto;
-            margin-right: auto;
+        .main-content {
+            flex: 1;
             display: flex;
+            flex-direction: column;
+            height: 100vh;
         }
 
-    </style>
-
-    <style>
-        chat-bot .chatbot-container {
-            width: 500px !important;
-            height: 650px !important;
-            max-width: 95vw !important; /* Responsive: max 95% della larghezza viewport */
-            max-height: 90vh !important; /* Responsive: max 90% dell'altezza viewport */
+        .header {
+            background: var(--sidebar-bg);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
         }
 
-        /* Personalizza anche l'altezza del corpo dei messaggi */
-        chat-bot .chatbot-body {
-            height: 450px !important; /* Regola l'area dei messaggi */
+        .chat-container {
+            flex: 1;
+            display: flex;
+            padding: 1rem;
+            overflow: hidden;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #007bff;
+            margin-bottom: 2rem;
+        }
+
+        .nav-item {
+            padding: 0.75rem 1rem;
+            margin: 0.25rem 0;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .nav-item:hover {
+            background-color: #f8f9fa;
+        }
+
+        .nav-item.active {
+            background-color: #007bff;
+            color: white;
         }
     </style>
 </head>
 
 <body>
-
-<demo-title></demo-title>
-
-<div class="middle">
-    <demo-chat>
-        <chat-bot></chat-bot>
-    </demo-chat>
-</div>
-
+    <div class="sidebar">
+        <div class="logo">Niby</div>
+        <div class="nav-item active">Chat</div>
+        <div class="nav-item">History</div>
+        <div class="nav-item">Settings</div>
+    </div>
+    
+    <div class="main-content">
+        <div class="header">
+            <h1>Niby: AI Assistant for Apache NiFi</h1>
+        </div>
+        
+        <div class="chat-container">
+            <demo-chat></demo-chat>
+        </div>
+    </div>
 </body>
 
 </html>
