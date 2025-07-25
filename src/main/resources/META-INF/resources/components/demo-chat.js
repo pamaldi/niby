@@ -96,7 +96,10 @@ export class DemoChat extends LitElement {
     }
 
     _stripThink(text) {
-        return text.replace(/<think>[\s\S]*?<\/think>/g, '').trim();
+        const thinkMatch = text.match(/<think>([\s\S]*?)<\/think>/);
+        const thinkingText = thinkMatch ? thinkMatch[1].trim() : '';
+        const cleanText = text.replace(/<think>[\s\S]*?<\/think>/g, '').trim();
+        return { cleanText, thinkingText };
     }
 
     connectedCallback() {
@@ -109,18 +112,27 @@ export class DemoChat extends LitElement {
         this.socket = new WebSocket(protocol + '://' + window.location.host + '/customer-support-agent');
 
         this.socket.onmessage = (event) => {
-            const incomingMessage = this._stripThink(event.data);
-            if (!incomingMessage) return;
+            const { cleanText, thinkingText } = this._stripThink(event.data);
+
+            if (thinkingText) {
+                this.dispatchEvent(new CustomEvent('thinking-updated', {
+                    detail: { thinkingText },
+                    bubbles: true,
+                    composed: true
+                }));
+            }
+
+            if (!cleanText) return;
 
             let lastMessage = this.messages[this.messages.length - 1];
 
-            if (lastMessage && lastMessage.sender === 'bot' && !lastMessage.isFinal) {
+            if (this.isBotThinking && lastMessage && lastMessage.sender === 'bot') {
                 // Append to the last message
-                lastMessage.text += incomingMessage;
+                lastMessage.text += cleanText;
             } else {
                 // Add a new message
-                if (lastMessage) lastMessage.isFinal = true;
-                this.messages.push({ text: incomingMessage, sender: 'bot', isFinal: false });
+                this.isBotThinking = true; // Bot starts thinking
+                this.messages.push({ text: cleanText, sender: 'bot' });
             }
             this.requestUpdate();
         };
@@ -167,6 +179,13 @@ export class DemoChat extends LitElement {
         const input = this.shadowRoot.querySelector('vaadin-text-field');
         const message = input.value.trim();
         if (message) {
+            // Clear previous thoughts
+            this.dispatchEvent(new CustomEvent('thinking-updated', {
+                detail: { thinkingText: '' },
+                bubbles: true,
+                composed: true
+            }));
+
             this.messages.push({ text: message, sender: 'user' });
             this.socket.send(message);
             input.value = '';

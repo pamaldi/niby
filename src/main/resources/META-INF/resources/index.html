@@ -35,12 +35,40 @@
         }
 
         .sidebar {
-            width: 250px;
+            width: 350px; /* Widen sidebar for the new panel */
             background: var(--sidebar-bg);
             border-right: 1px solid var(--border-color);
             display: flex;
             flex-direction: column;
             padding: 1rem;
+            gap: 2rem; /* Add space between elements */
+        }
+
+        .nav-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #think-panel {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #think-panel h3 {
+            margin-top: 0;
+            color: #6c757d;
+        }
+
+        #think-textarea {
+            flex: 1;
+            width: 100%;
+            resize: none;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 0.5rem;
+            font-family: monospace;
+            background-color: #f8f9fa;
         }
 
         .main-content {
@@ -93,10 +121,16 @@
 
 <body>
     <div class="sidebar">
-        <div class="logo">Niby</div>
-        <div class="nav-item active">Chat</div>
-        <div class="nav-item">History</div>
-        <div class="nav-item">Settings</div>
+        <div class="nav-container">
+            <div class="logo">Niby</div>
+            <div class="nav-item active">Chat</div>
+            <div class="nav-item">History</div>
+            <div class="nav-item">Settings</div>
+        </div>
+        <div id="think-panel">
+            <h3>Thoughts</h3>
+            <textarea id="think-textarea" readonly></textarea>
+        </div>
     </div>
     
     <div class="main-content">
@@ -108,6 +142,15 @@
             <demo-chat></demo-chat>
         </div>
     </div>
+
+    <script>
+        const demoChat = document.querySelector('demo-chat');
+        const thinkTextarea = document.getElementById('think-textarea');
+
+        demoChat.addEventListener('thinking-updated', (e) => {
+            thinkTextarea.value = e.detail.thinkingText;
+        });
+    </script>
 </body>
 
 </html>
