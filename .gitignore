@@ -43,3 +43,4 @@ nb-configuration.xml
 /.quarkus/cli/plugins/
 # TLS Certificates
 .certs/
+/nifi-doc/components-1753475787835/
