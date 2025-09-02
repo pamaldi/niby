@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" type="image/png" href="favicon.ico">
+    <!-- Script che carica la importmap dinamica -->
+    <script type="module-shim" src="http://localhost:8080/_importmap/dynamic-importmap.js"></script>
+
+    <!-- Il tuo script principale -->
+    <script type="module-shim">
+        import '@vaadin/icon';
+
+    </script>
+    <script type="module">
+        import '/icons/font-awesome.js';
+        import '/components/demo-chat.js';
+    </script>
+
+    <link rel="stylesheet" href="fonts/red-hat-font.min.css">
+
+    <title>Niby</title>
+
+    <style>
+        :root {
+            --main-bg-color: #f8f9fa;
+            --sidebar-bg: #ffffff;
+            --border-color: #e9ecef;
+        }
+
+        body {
+            margin: 0;
+            width: 100%;
+            height: 100vh;
+            font-family: 'Red Hat Text', sans-serif;
+            display: flex;
+            color: #333;
+            background: var(--main-bg-color);
+            overflow: hidden;
+        }
+
+        .sidebar {
+            width: 350px; /* Widen sidebar for the new panel */
+            background: var(--sidebar-bg);
+            border-right: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            padding: 1rem;
+            gap: 2rem; /* Add space between elements */
+        }
+
+        .nav-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #think-panel {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #think-panel h3 {
+            margin-top: 0;
+            color: #6c757d;
+        }
+
+        #think-textarea {
+            flex: 1;
+            width: 100%;
+            resize: none;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 0.5rem;
+            font-family: monospace;
+            background-color: #f8f9fa;
+        }
+
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .header {
+            background: var(--sidebar-bg);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .chat-container {
+            flex: 1;
+            display: flex;
+            padding: 1rem;
+            overflow: hidden;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #007bff;
+            margin-bottom: 2rem;
+        }
+
+        .nav-item {
+            padding: 0.75rem 1rem;
+            margin: 0.25rem 0;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .nav-item:hover {
+            background-color: #f8f9fa;
+        }
+
+        .nav-item.active {
+            background-color: #007bff;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="nav-container">
+            <div class="logo">Niby</div>
+            <div class="nav-item active">Chat</div>
+            <div class="nav-item">History</div>
+            <div class="nav-item">Settings</div>
+        </div>
+        <div id="think-panel">
+            <h3>Thoughts</h3>
+            <textarea id="think-textarea" readonly></textarea>
+        </div>
+    </div>
+    
+    <div class="main-content">
+        <div class="header">
+            <h1>Niby: AI Assistant for Apache NiFi</h1>
+        </div>
+        
+        <div class="chat-container">
+            <demo-chat></demo-chat>
+        </div>
+    </div>
+
+    <script>
+        const demoChat = document.querySelector('demo-chat');
+        const thinkTextarea = document.getElementById('think-textarea');
+
+        demoChat.addEventListener('thinking-updated', (e) => {
+            thinkTextarea.value = e.detail.thinkingText;
+        });
+    </script>
+</body>
+
+</html>

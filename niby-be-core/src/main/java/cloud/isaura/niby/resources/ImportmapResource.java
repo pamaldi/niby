@@ -21,19 +21,22 @@ public class ImportmapResource
     @GET
     @Path("/dynamic.importmap")
     @Produces("application/importmap+json")
-    public String importMap() {
+    public String importMap()
+    {
         return this.importmap;
     }
 
     @GET
     @Path("/dynamic-importmap.js")
     @Produces("application/javascript")
-    public String importMapJson() {
+    public String importMapJson()
+    {
         return JAVASCRIPT_CODE.formatted(this.importmap);
     }
 
     @PostConstruct
-    void init() {
+    void init()
+    {
         Aggregator aggregator = new Aggregator();
         // Add our own mappings
         aggregator.addMapping("icons/", "/icons/");
@@ -43,9 +46,10 @@ public class ImportmapResource
     }
 
     private static final String JAVASCRIPT_CODE = """
-            const im = document.createElement('script');
-            im.type = 'importmap';
-            im.textContent = JSON.stringify(%s);
-            document.currentScript.after(im);
-            """;
+    const im = document.createElement('script');
+    im.type = 'importmap';
+    im.textContent = JSON.stringify(%s);
+    document.head.appendChild(im);
+""";
+
 }

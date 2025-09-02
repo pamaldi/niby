@@ -11,17 +11,20 @@ public class NibyWebSocket
 
     private final NibyOrchestratorAgent nibyOrchestratorAgent;
 
-    public NibyWebSocket(NibyOrchestratorAgent nibyOrchestratorAgent) {
+    public NibyWebSocket(NibyOrchestratorAgent nibyOrchestratorAgent)
+    {
         this.nibyOrchestratorAgent = nibyOrchestratorAgent;
     }
 
     @OnOpen
-    public String onOpen() {
+    public String onOpen()
+    {
         return "Welcome to Niby! How can I help you today?";
     }
 
     @OnTextMessage
-    public String onTextMessage(String message) {
+    public String onTextMessage(String message)
+    {
         return nibyOrchestratorAgent.chat(message);
     }
 }
