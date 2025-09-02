@@ -46,9 +46,10 @@ public class ImportmapResource
     }
 
     private static final String JAVASCRIPT_CODE = """
-            const im = document.createElement('script');
-            im.type = 'importmap';
-            im.textContent = JSON.stringify(%s);
-            document.currentScript.after(im);
-            """;
+    const im = document.createElement('script');
+    im.type = 'importmap';
+    im.textContent = JSON.stringify(%s);
+    document.head.appendChild(im);
+""";
+
 }
