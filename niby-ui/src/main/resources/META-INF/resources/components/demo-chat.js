@@ -1,16 +1,6 @@
-import {css, html, LitElement} from 'lit';
-import { unsafeHTML } from 'lit/directives/unsafe-html.js';
+import {css, html, LitElement} from 'https://unpkg.com/lit@3?module';
+import { unsafeHTML } from 'https://unpkg.com/lit@3/directives/unsafe-html.js?module';
 import { marked } from 'https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js';
-import '@vaadin/icon';
-import '@vaadin/button';
-import '@vaadin/text-field';
-import '@vaadin/text-area';
-import '@vaadin/form-layout';
-import '@vaadin/progress-bar';
-import '@vaadin/checkbox';
-import '@vaadin/horizontal-layout';
-import '@vaadin/grid';
-import '@vaadin/grid/vaadin-grid-sort-column.js';
 
 export class DemoChat extends LitElement {
 
@@ -76,13 +66,25 @@ export class DemoChat extends LitElement {
             background: #fff;
             border-top: 1px solid #ddd;
         }
-        vaadin-text-field {
+        .chat-input input {
             flex: 1;
             margin-right: 1rem;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
         }
-        vaadin-button img {
-            width: 24px;
-            height: 24px;
+        .chat-input button {
+            padding: 0.75rem 1.5rem;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        .chat-input button:hover {
+            background: #0056b3;
         }
     `;
 
@@ -159,13 +161,13 @@ export class DemoChat extends LitElement {
                 `)}
             </div>
             <div class="chat-input">
-                <vaadin-text-field 
+                <input 
+                    type="text"
                     placeholder="Type your message here..."
                     @keydown="${this._handleKeydown}">
-                </vaadin-text-field>
-                <vaadin-button theme="primary" @click="${this._sendMessage}">
-                    <img src="niby.png" alt="Send">
-                </vaadin-button>
+                <button @click="${this._sendMessage}">
+                    Send
+                </button>
             </div>
         `;
     }
@@ -177,7 +179,7 @@ export class DemoChat extends LitElement {
     }
 
     _sendMessage() {
-        const input = this.shadowRoot.querySelector('vaadin-text-field');
+        const input = this.shadowRoot.querySelector('input');
         const message = input.value.trim();
         if (message) {
             // Clear previous thoughts
