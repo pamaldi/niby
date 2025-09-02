@@ -1,5 +1,3 @@
-import '@vaadin/icon';
-
 const template = document.createElement('template');
 
 template.innerHTML = `<vaadin-iconset name="font-awesome-solid" size="512">
