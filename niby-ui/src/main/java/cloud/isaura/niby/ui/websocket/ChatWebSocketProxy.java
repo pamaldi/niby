@@ -39,8 +39,16 @@ public class ChatWebSocketProxy {
     public void onMessage(String message, WebSocketConnection connection) {
         LOG.infof("Received message from client %s: %s", connection.id(), message);
         
-        // Forward message to backend
-        backendClient.sendToBackend(connection.id(), message);
+        try {
+            // Forward message to backend
+            backendClient.sendToBackend(connection.id(), message);
+        } catch (Exception e) {
+            LOG.errorf(e, "Failed to forward message to backend for client %s", connection.id());
+            // Send error message back to client
+            if (connection.isOpen()) {
+                connection.sendTextAndAwait("Sorry, I'm experiencing technical difficulties. Please try again later.");
+            }
+        }
     }
 
     @OnClose

@@ -4,9 +4,9 @@ import dev.langchain4j.service.SystemMessage;
 import io.quarkiverse.langchain4j.RegisterAiService;
 import io.quarkiverse.langchain4j.ToolBox;
 import io.smallrye.mutiny.Multi;
-import jakarta.enterprise.context.SessionScoped;
+import jakarta.enterprise.context.ApplicationScoped;
 
-@SessionScoped
+@ApplicationScoped
 @RegisterAiService
 public interface NibyOrchestratorAgent
 {

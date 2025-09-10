@@ -61,23 +61,36 @@ public class BackendWebSocketClient {
         CompletableFuture.supplyAsync(() -> {
             try {
                 String backendUrl = String.format("http://%s:%d/api/chat", backendHost, backendPort);
+                LOG.infof("Attempting to connect to backend URL: %s", backendUrl);
+                
+                ChatRequest chatRequest = new ChatRequest(message);
                 
                 Response response = httpClient
                     .target(backendUrl)
                     .request(MediaType.APPLICATION_JSON)
-                    .post(Entity.json(new ChatRequest(message)));
+                    .accept(MediaType.TEXT_PLAIN)
+                    .post(Entity.entity(chatRequest, MediaType.APPLICATION_JSON));
+                
+                LOG.infof("Backend response status: %d for client %s", response.getStatus(), clientConnectionId);
                 
                 if (response.getStatus() == 200) {
                     String responseText = response.readEntity(String.class);
                     LOG.infof("Received response from backend for client %s: %s", clientConnectionId, responseText);
                     return responseText;
                 } else {
-                    LOG.errorf("Backend returned error status %d for client %s", response.getStatus(), clientConnectionId);
-                    return "Sorry, I'm having trouble connecting to the backend service.";
+                    String errorBody = "";
+                    try {
+                        errorBody = response.readEntity(String.class);
+                    } catch (Exception e) {
+                        LOG.warnf("Could not read error response body: %s", e.getMessage());
+                    }
+                    LOG.errorf("Backend returned error status %d for client %s. Response body: %s", 
+                              response.getStatus(), clientConnectionId, errorBody);
+                    return String.format("Sorry, the backend service returned an error (status %d). Please try again.", response.getStatus());
                 }
             } catch (Exception e) {
                 LOG.errorf(e, "Failed to send message to backend for client %s", clientConnectionId);
-                return "Sorry, I encountered an error while processing your request.";
+                return "Sorry, I encountered an error while processing your request: " + e.getMessage();
             }
         }).thenAccept(response -> {
             // Send response back to client
