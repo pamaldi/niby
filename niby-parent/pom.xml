@@ -17,7 +17,7 @@
         <compiler-plugin.version>3.14.0</compiler-plugin.version>
         <surefire-plugin.version>3.5.3</surefire-plugin.version>
 
-        <quarkus.platform.version>3.26.1</quarkus.platform.version>
+        <quarkus.platform.version>3.26.2</quarkus.platform.version>
         <quarkus-langchain4j.version>1.2.0.CR1</quarkus-langchain4j.version>
 
         <skipITs>true</skipITs>
@@ -52,6 +52,11 @@
         <dependency>
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-rest</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-rest-jackson</artifactId>
         </dependency>
 
         <!-- WebSockets -->

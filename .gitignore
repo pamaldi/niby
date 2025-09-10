@@ -44,3 +44,4 @@ nb-configuration.xml
 # TLS Certificates
 .certs/
 /nifi-doc/components-1753475787835/
+/private.MD
