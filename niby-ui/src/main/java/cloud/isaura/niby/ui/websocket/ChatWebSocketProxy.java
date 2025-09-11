@@ -14,7 +14,7 @@ import org.jboss.logging.Logger;
  * WebSocket proxy endpoint that handles client connections and forwards messages
  * to the backend niby-be-core service.
  */
-@WebSocket(path = "/customer-support-agent")
+@WebSocket(path = "/niby-ws")
 @ApplicationScoped
 public class ChatWebSocketProxy {
 
