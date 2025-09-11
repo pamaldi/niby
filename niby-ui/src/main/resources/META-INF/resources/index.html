@@ -146,7 +146,9 @@
         const thinkTextarea = document.getElementById('think-textarea');
 
         demoChat.addEventListener('thinking-updated', (e) => {
+            console.log('Received thinking-updated event:', e.detail.thinkingText);
             thinkTextarea.value = e.detail.thinkingText;
+            console.log('Updated textarea value to:', thinkTextarea.value);
         });
     </script>
 </body>

@@ -1,6 +1,7 @@
 import { css, html, LitElement } from 'https://unpkg.com/lit@3?module';
 import { unsafeHTML } from 'https://unpkg.com/lit@3/directives/unsafe-html.js?module';
 import { marked } from 'https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js';
+import DOMPurify from 'https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.es.mjs';
 
 export class DemoChat extends LitElement {
     // ---------- Styles ----------
@@ -11,6 +12,7 @@ export class DemoChat extends LitElement {
       height: 100%;
       width: 100%;
       overflow: hidden;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
     }
     .chat-header {
       background: #ffc107;
@@ -26,6 +28,24 @@ export class DemoChat extends LitElement {
       width: 30px;
       height: 30px;
     }
+    .status {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      font-size: .85rem;
+      color: #495057;
+      padding: .5rem 1rem;
+      background: #fff8e1;
+      border-bottom: 1px solid #ffe082;
+    }
+    .dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--dot, #28a745);
+    }
+    .status[data-state="open"] { --dot: #28a745; }
+    .status[data-state="connecting"] { --dot: #ffc107; }
+    .status[data-state="closed"] { --dot: #dc3545; }
+
     .chat-messages {
       flex: 1;
       overflow-y: auto;
@@ -43,25 +63,20 @@ export class DemoChat extends LitElement {
       align-items: center;
       gap: 10px;
       word-break: break-word;
-    }
-    .message-bubble.user {
       background-color: #fff;
       color: #333;
-      align-self: flex-end;
       border: 1px solid #ddd;
     }
-    .message-bubble.bot {
-      background-color: #fff;
-      color: #333;
-      align-self: flex-start;
-      border: 1px solid #ddd;
-    }
+    .message-bubble.user { align-self: flex-end; }
+    .message-bubble.bot { align-self: flex-start; }
+
     .message-bubble img {
       width: 30px;
       height: 30px;
       border-radius: 50%;
       flex: 0 0 auto;
     }
+
     .chat-input {
       display: flex;
       flex-direction: column;
@@ -98,18 +113,13 @@ export class DemoChat extends LitElement {
       height: 16px;
       cursor: pointer;
     }
-    .mode-selector label:hover {
-      background: #e9ecef;
-      color: #007bff;
-    }
-    .mode-selector label:has(input:checked) {
-      background: #007bff;
-      color: white;
-    }
-    .input-row {
-      display: flex;
-      gap: 1rem;
-    }
+    .mode-selector label:hover { background: #e9ecef; color: #007bff; }
+    /* Preferred selector */
+    .mode-selector label:has(input:checked) { background: #007bff; color: white; }
+    /* Fallback for environments without :has support */
+    .mode-selector label[data-checked="true"] { background: #007bff; color: #fff; }
+
+    .input-row { display: flex; gap: 1rem; }
     .input-row input {
       flex: 1;
       padding: 0.75rem;
@@ -126,15 +136,15 @@ export class DemoChat extends LitElement {
       cursor: pointer;
       font-size: 1rem;
     }
-    .input-row button:hover {
-      background: #0056b3;
-    }
+    .input-row button[disabled] { opacity: .5; cursor: not-allowed; }
+    .input-row button:hover:not([disabled]) { background: #0056b3; }
   `;
 
     // ---------- Reactive properties ----------
     static properties = {
         messages: { type: Array },
-        selectedMode: { type: String }
+        selectedMode: { type: String },
+        _connectionState: { state: true }, // 'connecting' | 'open' | 'closed'
     };
 
     // ---------- Lifecycle ----------
@@ -152,6 +162,30 @@ export class DemoChat extends LitElement {
 
         // Reconnect control
         this._reconnectAttempts = 0;
+        this._reconnectTimer = null;
+
+        this._connectionState = 'connecting';
+
+        // bind handlers so we can add/remove listeners cleanly
+        this._onOpen = () => {
+            this._reconnectAttempts = 0;
+            this._connectionState = 'open';
+            this.requestUpdate();
+        };
+
+        this._onMessage = (event) => this._handleServerMessage(event.data);
+
+        this._onClose = () => {
+            this._connectionState = 'closed';
+            this.requestUpdate();
+            const backoff = Math.min(3000 * Math.pow(1.5, this._reconnectAttempts++), 15000);
+            const jitter = Math.random() * 300; // to avoid reconnection stampedes
+            this._reconnectTimer = setTimeout(() => this._connect(), backoff + jitter);
+        };
+
+        this._onError = () => {
+            try { this.socket?.close(); } catch {}
+        };
     }
 
     connectedCallback() {
@@ -159,35 +193,37 @@ export class DemoChat extends LitElement {
         this._connect();
     }
 
+    disconnectedCallback() {
+        super.disconnectedCallback();
+        try { this.socket?.close(); } catch {}
+        this.socket = null;
+        clearTimeout(this._streamResetTimer);
+        clearTimeout(this._reconnectTimer);
+    }
+
     // ---------- WebSocket ----------
     _connect() {
+        this._connectionState = 'connecting';
         const protocol = window.location.protocol === 'https:' ? 'wss' : 'ws';
-        const url = `${protocol}://${window.location.host}/customer-support-agent`;
+        // Connect to the backend WebSocket server (niby-be-core) instead of the UI server
+        const url = `${protocol}://localhost:8080/niby-ws`;
         this.socket = new WebSocket(url);
 
-        this.socket.onopen = () => {
-            this._reconnectAttempts = 0;
-            // Optionally announce active mode
-            // this.socket.send(JSON.stringify({ type: 'mode', mode: this.selectedMode }));
-        };
-
-        this.socket.onmessage = (event) => this._handleServerMessage(event.data);
-
-        this.socket.onclose = () => {
-            const backoff = Math.min(3000 * Math.pow(1.5, this._reconnectAttempts++), 15000);
-            setTimeout(() => this._connect(), backoff);
-        };
-
-        this.socket.onerror = () => {
-            try { this.socket.close(); } catch (_) {}
-        };
+        this.socket.addEventListener('open', this._onOpen);
+        this.socket.addEventListener('message', this._onMessage);
+        this.socket.addEventListener('close', this._onClose);
+        this.socket.addEventListener('error', this._onError);
     }
 
     _handleServerMessage(raw) {
+        console.log('Raw server message:', raw);
         const { cleanText, thinkingText } = this._stripThink(raw);
+        console.log('Extracted thinking text:', thinkingText);
+        console.log('Clean text:', cleanText);
 
         // Bubble out the <think> content (hidden chain-of-thought UI)
         if (thinkingText) {
+            console.log('Dispatching thinking-updated event with:', thinkingText);
             this.dispatchEvent(new CustomEvent('thinking-updated', {
                 detail: { thinkingText },
                 bubbles: true,
@@ -210,12 +246,7 @@ export class DemoChat extends LitElement {
         clearTimeout(this._streamResetTimer);
         this._streamResetTimer = setTimeout(() => {
             this._isBotStreaming = false;
-            // Clear "thinking" panel at the end of a response
-            this.dispatchEvent(new CustomEvent('thinking-updated', {
-                detail: { thinkingText: '' },
-                bubbles: true,
-                composed: true
-            }));
+            // Don't clear "thinking" panel automatically - let it persist until next message
         }, 400);
 
         this.requestUpdate();
@@ -230,66 +261,55 @@ export class DemoChat extends LitElement {
 
     // ---------- Render ----------
     render() {
+        const state = this._connectionState;
+        const canSend = this.socket?.readyState === WebSocket.OPEN;
+
         return html`
       <div class="chat-header">
         <img src="niby.png" alt="Niby Icon">
         <span>Niby</span>
       </div>
 
+      <div class="status" data-state="${state}" aria-live="polite">
+        <span class="dot" aria-hidden="true"></span>
+        <span>
+          ${state === 'open' ? 'Connesso' : state === 'connecting' ? 'Connessione in corso…' : 'Disconnesso – riconnessione automatica'}
+        </span>
+      </div>
+
       <div class="chat-messages" part="messages">
-        ${this.messages.map(
-            (msg) => html`
-            <div class="message-bubble ${msg.sender}">
-              ${msg.sender === 'bot'
-                ? html`<img src="niby.png" alt="bot">`
-                : html``}
-              <span>${unsafeHTML(marked(msg.text))}</span>
-            </div>
-          `
-        )}
+        ${this.messages.map((msg) => html`
+          <div class="message-bubble ${msg.sender}">
+            ${msg.sender === 'bot' ? html`<img src="niby.png" alt="bot">` : html``}
+            <span>${unsafeHTML(DOMPurify.sanitize(marked.parse(msg.text)))}</span>
+          </div>
+        `)}
       </div>
 
       <div class="chat-input">
         <div class="mode-selector" role="radiogroup" aria-label="Assistant modes">
-          <label>
-            <input
-              type="radio"
-              name="mode"
-              value="basic"
-              .checked=${this.selectedMode === 'basic'}
-              @change=${() => this._setMode('basic')}
-            />
-            Basic
-          </label>
-          <label>
-            <input
-              type="radio"
-              name="mode"
-              value="plan"
-              .checked=${this.selectedMode === 'plan'}
-              @change=${() => this._setMode('plan')}
-            />
-            Plan
-          </label>
-          <label>
-            <input
-              type="radio"
-              name="mode"
-              value="act"
-              .checked=${this.selectedMode === 'act'}
-              @change=${() => this._setMode('act')}
-            />
-            Act
-          </label>
+          ${['basic','plan','act'].map(mode => html`
+            <label data-checked="${this.selectedMode === mode}">
+              <input
+                type="radio"
+                name="mode"
+                .value=${mode}
+                .checked=${this.selectedMode === mode}
+                @change=${() => this._setMode(mode)}
+              />
+              ${mode.charAt(0).toUpperCase() + mode.slice(1)}
+            </label>
+          `)}
         </div>
 
         <div class="input-row">
           <input
             type="text"
             placeholder="Type your message here..."
+            aria-label="Message to Niby"
             @keydown=${this._handleKeydown}
           />
-          <button @click=${this._sendMessage}>Send</button>
+          <button ?disabled=${!canSend} @click=${this._sendMessage}>${canSend ? 'Send' : 'Wait…'}</button>
         </div>
       </div>
     `;
@@ -298,15 +318,17 @@ export class DemoChat extends LitElement {
     // ---------- UI handlers ----------
     _setMode(mode) {
         this.selectedMode = mode;
-
-        // Optionally notify server of mode change:
-        // if (this.socket?.readyState === WebSocket.OPEN) {
-        //   this.socket.send(JSON.stringify({ type: 'mode', mode: this.selectedMode }));
-        // }
+        // Fallback visual state for label highlight when :has is unsupported
+        this.updateComplete.then(() => {
+            this.shadowRoot.querySelectorAll('.mode-selector label').forEach(l => {
+                const input = l.querySelector('input[type="radio"]');
+                l.toggleAttribute('data-checked', !!input?.checked);
+            });
+        });
     }
 
     _handleKeydown = (e) => {
-        if (e.key === 'Enter') this._sendMessage();
+        if (e.key === 'Enter') { e.preventDefault(); this._sendMessage(); }
     };
 
     _sendMessage = () => {
@@ -315,22 +337,20 @@ export class DemoChat extends LitElement {
         if (!message) return;
 
         // Clear previous thoughts panel
-        this.dispatchEvent(
-            new CustomEvent('thinking-updated', {
-                detail: { thinkingText: '' },
-                bubbles: true,
-                composed: true
-            })
-        );
+        this.dispatchEvent(new CustomEvent('thinking-updated', {
+            detail: { thinkingText: '' },
+            bubbles: true,
+            composed: true
+        }));
 
         // Show user bubble immediately
         this.messages.push({ text: message, sender: 'user' });
 
-        // Send as plain text to avoid breaking existing backends.
-        // If your server supports JSON, you can send:
-        // this.socket.send(JSON.stringify({ message, mode: this.selectedMode }));
+        // Send as JSON with message and mode
         if (this.socket?.readyState === WebSocket.OPEN) {
-            this.socket.send(message);
+            this.socket.send(JSON.stringify({ message, mode: this.selectedMode }));
+        } else {
+            this.messages.push({ text: '_Riconnessione in corso… riprova fra poco._', sender: 'bot' });
         }
 
         input.value = '';
@@ -345,4 +365,6 @@ export class DemoChat extends LitElement {
     }
 }
 
-customElements.define('demo-chat', DemoChat);
+if (!customElements.get('demo-chat')) {
+    customElements.define('demo-chat', DemoChat);
+}
