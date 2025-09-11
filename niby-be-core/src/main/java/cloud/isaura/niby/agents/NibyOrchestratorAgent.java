@@ -1,6 +1,7 @@
 package cloud.isaura.niby.agents;
 
 import dev.langchain4j.service.SystemMessage;
+import dev.langchain4j.service.guardrail.InputGuardrails;
 import io.quarkiverse.langchain4j.RegisterAiService;
 import io.quarkiverse.langchain4j.ToolBox;
 import io.smallrye.mutiny.Multi;
