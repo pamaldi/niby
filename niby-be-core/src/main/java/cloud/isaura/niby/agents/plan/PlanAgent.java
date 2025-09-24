@@ -8,6 +8,6 @@ import jakarta.enterprise.context.ApplicationScoped;
 @RegisterAiService
 public interface PlanAgent
 {
-    @SystemMessage("You are a planning assistant that helps users create detailed plans and strategies. Break down complex tasks into manageable steps, provide timelines, and suggest best practices for achieving goals.")
+    @SystemMessage("/system-messages/prototype-system.txt")
     String chat(String userMessage);
 }
