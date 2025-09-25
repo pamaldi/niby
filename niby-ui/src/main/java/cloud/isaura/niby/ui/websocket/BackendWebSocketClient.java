@@ -2,21 +2,16 @@ package cloud.isaura.niby.ui.websocket;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
-import jakarta.ws.rs.client.Client;
-import jakarta.ws.rs.client.ClientBuilder;
-import jakarta.ws.rs.client.Entity;
-import jakarta.ws.rs.core.MediaType;
-import jakarta.ws.rs.core.Response;
 import org.eclipse.microprofile.config.inject.ConfigProperty;
 import org.jboss.logging.Logger;
 
-import java.util.concurrent.CompletableFuture;
+import jakarta.websocket.*;
+import java.net.URI;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
 /**
- * Backend client that communicates with the niby-be-core service.
- * For now, this uses a simple approach - we'll enhance it to use WebSocket later.
+ * Backend client that communicates with the niby-be-core service via WebSocket.
  */
 @ApplicationScoped
 public class BackendWebSocketClient {
@@ -32,106 +27,143 @@ public class BackendWebSocketClient {
     @Inject
     ChatWebSocketProxy proxy;
 
-    private final Client httpClient = ClientBuilder.newClient();
-    private final ConcurrentMap<String, Boolean> activeConnections = new ConcurrentHashMap<>();
+    private final ConcurrentMap<String, Session> backendSessions = new ConcurrentHashMap<>();
 
     /**
-     * Establish a backend connection for a specific client
+     * Establish a backend WebSocket connection for a specific client
      */
     public void connectForClient(String clientConnectionId) {
-        LOG.infof("Registering backend connection for client %s", clientConnectionId);
-        activeConnections.put(clientConnectionId, true);
+        LOG.infof("Establishing backend WebSocket connection for client %s", clientConnectionId);
         
-        // Send welcome message to client
-        proxy.sendToClient(clientConnectionId, "Welcome to Niby! How can I help you today?");
+        try {
+            WebSocketContainer container = ContainerProvider.getWebSocketContainer();
+            String backendWsUrl = String.format("ws://%s:%d/niby-ws", backendHost, backendPort);
+            URI serverEndpointUri = new URI(backendWsUrl);
+            
+            // Create endpoint using the class directly
+            Session session = container.connectToServer(BackendClientEndpoint.class, serverEndpointUri);
+            
+            // Store the client connection ID in the session for later use
+            session.getUserProperties().put("clientConnectionId", clientConnectionId);
+            session.getUserProperties().put("parent", this);
+            
+            backendSessions.put(clientConnectionId, session);
+            
+            LOG.infof("Successfully connected to backend WebSocket for client %s", clientConnectionId);
+            
+        } catch (Exception e) {
+            LOG.errorf(e, "Failed to connect to backend WebSocket for client %s", clientConnectionId);
+            proxy.sendToClient(clientConnectionId, "Sorry, I'm experiencing technical difficulties connecting to the backend service.");
+        }
     }
 
     /**
-     * Send a message to the backend for a specific client
+     * Send a message to the backend WebSocket for a specific client
      */
     public void sendToBackend(String clientConnectionId, String message) {
-        if (!activeConnections.containsKey(clientConnectionId)) {
-            LOG.warnf("No active connection for client %s", clientConnectionId);
-            return;
+        Session session = backendSessions.get(clientConnectionId);
+        if (session == null || !session.isOpen()) {
+            LOG.warnf("No active backend session for client %s", clientConnectionId);
+            // Try to reconnect
+            connectForClient(clientConnectionId);
+            session = backendSessions.get(clientConnectionId);
         }
-
-        LOG.infof("Sending message to backend for client %s: %s", clientConnectionId, message);
         
-        // Send message to backend asynchronously
-        CompletableFuture.supplyAsync(() -> {
+        if (session != null && session.isOpen()) {
             try {
-                String backendUrl = String.format("http://%s:%d/api/chat", backendHost, backendPort);
-                LOG.infof("Attempting to connect to backend URL: %s", backendUrl);
-                
-                ChatRequest chatRequest = new ChatRequest(message);
-                
-                Response response = httpClient
-                    .target(backendUrl)
-                    .request(MediaType.APPLICATION_JSON)
-                    .accept(MediaType.TEXT_PLAIN)
-                    .post(Entity.entity(chatRequest, MediaType.APPLICATION_JSON));
-                
-                LOG.infof("Backend response status: %d for client %s", response.getStatus(), clientConnectionId);
-                
-                if (response.getStatus() == 200) {
-                    String responseText = response.readEntity(String.class);
-                    LOG.infof("Received response from backend for client %s: %s", clientConnectionId, responseText);
-                    return responseText;
-                } else {
-                    String errorBody = "";
-                    try {
-                        errorBody = response.readEntity(String.class);
-                    } catch (Exception e) {
-                        LOG.warnf("Could not read error response body: %s", e.getMessage());
-                    }
-                    LOG.errorf("Backend returned error status %d for client %s. Response body: %s", 
-                              response.getStatus(), clientConnectionId, errorBody);
-                    return String.format("Sorry, the backend service returned an error (status %d). Please try again.", response.getStatus());
-                }
+                LOG.infof("Sending message to backend for client %s: %s", clientConnectionId, message);
+                session.getBasicRemote().sendText(message);
             } catch (Exception e) {
                 LOG.errorf(e, "Failed to send message to backend for client %s", clientConnectionId);
-                return "Sorry, I encountered an error while processing your request: " + e.getMessage();
+                proxy.sendToClient(clientConnectionId, "Sorry, I encountered an error while processing your request.");
             }
-        }).thenAccept(response -> {
-            // Send response back to client
-            proxy.sendToClient(clientConnectionId, response);
-        });
+        }
     }
 
     /**
-     * Disconnect backend connection for a specific client
+     * Disconnect backend WebSocket connection for a specific client
      */
     public void disconnectForClient(String clientConnectionId) {
-        activeConnections.remove(clientConnectionId);
-        LOG.infof("Disconnected backend connection for client %s", clientConnectionId);
+        Session session = backendSessions.remove(clientConnectionId);
+        if (session != null) {
+            try {
+                session.close();
+                LOG.infof("Disconnected backend WebSocket for client %s", clientConnectionId);
+            } catch (Exception e) {
+                LOG.warnf(e, "Error closing backend session for client %s", clientConnectionId);
+            }
+        }
     }
 
     /**
      * Get the number of active backend connections
      */
     public int getActiveBackendConnectionCount() {
-        return activeConnections.size();
+        return backendSessions.size();
     }
 
     /**
      * Close all backend connections (for shutdown)
      */
     public void closeAllBackendConnections() {
-        LOG.info("Closing all backend connections");
-        activeConnections.clear();
-        httpClient.close();
+        LOG.info("Closing all backend WebSocket connections");
+        backendSessions.values().forEach(session -> {
+            try {
+                session.close();
+            } catch (Exception e) {
+                LOG.warnf(e, "Error closing backend session");
+            }
+        });
+        backendSessions.clear();
     }
 
     /**
-     * Simple DTO for chat requests
+     * WebSocket client endpoint for connecting to backend
      */
-    public static class ChatRequest {
-        public String message;
+    @ClientEndpoint
+    public static class BackendClientEndpoint {
         
-        public ChatRequest() {}
+        private static final Logger LOG = Logger.getLogger(BackendClientEndpoint.class);
         
-        public ChatRequest(String message) {
-            this.message = message;
+        @OnOpen
+        public void onOpen(Session session) {
+            String clientConnectionId = (String) session.getUserProperties().get("clientConnectionId");
+            LOG.infof("Backend WebSocket opened for client %s", clientConnectionId);
+        }
+        
+        @OnMessage
+        public void onMessage(String message, Session session) {
+            String clientConnectionId = (String) session.getUserProperties().get("clientConnectionId");
+            BackendWebSocketClient parent = (BackendWebSocketClient) session.getUserProperties().get("parent");
+            
+            LOG.infof("Received streaming message from backend for client %s: %s", clientConnectionId, message);
+            // Forward the streaming message to the client
+            if (parent != null && clientConnectionId != null) {
+                parent.proxy.sendToClient(clientConnectionId, message);
+            }
+        }
+        
+        @OnClose
+        public void onClose(Session session, CloseReason closeReason) {
+            String clientConnectionId = (String) session.getUserProperties().get("clientConnectionId");
+            BackendWebSocketClient parent = (BackendWebSocketClient) session.getUserProperties().get("parent");
+            
+            LOG.infof("Backend WebSocket closed for client %s: %s", clientConnectionId, closeReason);
+            if (parent != null && clientConnectionId != null) {
+                parent.backendSessions.remove(clientConnectionId);
+            }
+        }
+        
+        @OnError
+        public void onError(Session session, Throwable throwable) {
+            String clientConnectionId = (String) session.getUserProperties().get("clientConnectionId");
+            BackendWebSocketClient parent = (BackendWebSocketClient) session.getUserProperties().get("parent");
+            
+            LOG.errorf(throwable, "Backend WebSocket error for client %s", clientConnectionId);
+            if (parent != null && clientConnectionId != null) {
+                parent.backendSessions.remove(clientConnectionId);
+                parent.proxy.sendToClient(clientConnectionId, "Sorry, I encountered an error while processing your request.");
+            }
         }
     }
 }
