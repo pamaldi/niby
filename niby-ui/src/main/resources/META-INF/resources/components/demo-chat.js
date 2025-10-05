@@ -159,6 +159,7 @@ export class DemoChat extends LitElement {
         // Streaming glue
         this._isBotStreaming = false;
         this._streamResetTimer = null;
+        this._streamBuffer = ''; // Accumulate chunks to properly parse <think> tags
 
         // Reconnect control
         this._reconnectAttempts = 0;
@@ -217,7 +218,16 @@ export class DemoChat extends LitElement {
 
     _handleServerMessage(raw) {
         console.log('Raw server message:', raw);
-        const { cleanText, thinkingText } = this._stripThink(raw);
+
+        // Accumulate chunks in the buffer
+        this._streamBuffer += raw;
+
+        // Try to extract complete <think> tags from the buffer
+        const { cleanText, thinkingText, remainingBuffer } = this._stripThink(this._streamBuffer);
+
+        // Update the buffer with any remaining incomplete content
+        this._streamBuffer = remainingBuffer;
+
         console.log('Extracted thinking text:', thinkingText);
         console.log('Clean text:', cleanText);
 
@@ -238,8 +248,8 @@ export class DemoChat extends LitElement {
         if (this._isBotStreaming && last && last.sender === 'bot') {
             // Add space before the new chunk if the last character isn't already a space or newline
             // and the new chunk doesn't start with punctuation or whitespace
-            const needsSpace = last.text.length > 0 && 
-                              !last.text.match(/[\s\n]$/) && 
+            const needsSpace = last.text.length > 0 &&
+                              !last.text.match(/[\s\n]$/) &&
                               !cleanText.match(/^[\s\n.,!?;:]/) &&
                               cleanText.trim().length > 0;
             last.text += (needsSpace ? ' ' : '') + cleanText;
@@ -252,6 +262,7 @@ export class DemoChat extends LitElement {
         clearTimeout(this._streamResetTimer);
         this._streamResetTimer = setTimeout(() => {
             this._isBotStreaming = false;
+            this._streamBuffer = ''; // Clear buffer when streaming is done
             // Don't clear "thinking" panel automatically - let it persist until next message
         }, 400);
 
@@ -259,10 +270,24 @@ export class DemoChat extends LitElement {
     }
 
     _stripThink(text) {
+        // Check if we have a complete <think> tag
         const thinkMatch = text.match(/<think>([\s\S]*?)<\/think>/);
         const thinkingText = thinkMatch ? thinkMatch[1].trim() : '';
-        const cleanText = text.replace(/<think>[\s\S]*?<\/think>/g, '').trim();
-        return { cleanText, thinkingText };
+
+        // Remove complete <think> tags and extract clean text
+        let processed = text.replace(/<think>[\s\S]*?<\/think>/g, '');
+
+        // Check if there's an incomplete <think> tag at the end
+        let remainingBuffer = '';
+        const incompleteThinkStart = processed.lastIndexOf('<think>');
+        if (incompleteThinkStart !== -1 && !processed.slice(incompleteThinkStart).includes('</think>')) {
+            // Keep incomplete <think> tag in buffer for next chunk
+            remainingBuffer = processed.slice(incompleteThinkStart);
+            processed = processed.slice(0, incompleteThinkStart);
+        }
+
+        const cleanText = processed.trim();
+        return { cleanText, thinkingText, remainingBuffer };
     }
 
     // ---------- Render ----------
