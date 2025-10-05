@@ -1,6 +1,7 @@
 package cloud.isaura.niby.resources;
 
-import cloud.isaura.niby.agents.NibyOrchestratorAgent;
+import cloud.isaura.niby.agents.base.BasicAgent;
+import io.smallrye.mutiny.Multi;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.POST;
@@ -12,13 +13,13 @@ import jakarta.ws.rs.core.MediaType;
 public class ChatResource {
 
     @Inject
-    NibyOrchestratorAgent nibyOrchestratorAgent;
+    BasicAgent basicAgent;
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.TEXT_PLAIN)
-    public String chat(ChatRequest request) {
-        return nibyOrchestratorAgent.chat(request.message);
+    public Multi<String> chat(ChatRequest request) {
+        return basicAgent.chat(request.message);
     }
 
     public static class ChatRequest {

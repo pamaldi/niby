@@ -236,7 +236,13 @@ export class DemoChat extends LitElement {
         // Stream chunks into the latest bot message
         const last = this.messages[this.messages.length - 1];
         if (this._isBotStreaming && last && last.sender === 'bot') {
-            last.text += cleanText;
+            // Add space before the new chunk if the last character isn't already a space or newline
+            // and the new chunk doesn't start with punctuation or whitespace
+            const needsSpace = last.text.length > 0 && 
+                              !last.text.match(/[\s\n]$/) && 
+                              !cleanText.match(/^[\s\n.,!?;:]/) &&
+                              cleanText.trim().length > 0;
+            last.text += (needsSpace ? ' ' : '') + cleanText;
         } else {
             this._isBotStreaming = true;
             this.messages.push({ text: cleanText, sender: 'bot' });

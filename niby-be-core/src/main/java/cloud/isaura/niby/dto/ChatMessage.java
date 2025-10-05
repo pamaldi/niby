@@ -1,4 +1,4 @@
-package cloud.isaura.niby.agents;
+package cloud.isaura.niby.dto;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
