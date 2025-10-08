@@ -1,4 +1,4 @@
-package cloud.isaura.niby.rag.controller;
+package cloud.isaura.niby.rag.ingestion.controller;
 
 import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;
@@ -16,9 +16,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Path("/niby/rag")
-public class NibyRagController {
+public class ConnectionController
+{
 
-    private static final Logger log = LoggerFactory.getLogger(NibyRagController.class);
+    private static final Logger log = LoggerFactory.getLogger(ConnectionController.class);
 
     @Inject
     DataSource dataSource;
