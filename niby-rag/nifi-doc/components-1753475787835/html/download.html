@@ -1,0 +1,808 @@
+<html lang="en">
+  
+<head>
+  <title>Download - Apache NiFi</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Apache NiFi is an easy to use, powerful, and reliable system to process and distribute data">
+  <meta name="keywords" content="apache,nifi,data,distribution">
+  <title>Download - Apache NiFi</title>
+  <meta property="og:title" content="Download">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://nifi.apache.org/download/">
+  <meta property="og:description" content="Apache NiFi is an easy to use, powerful, and reliable system to process and distribute data">
+  <meta property="og:site_name" content="Apache NiFi">
+  <meta property="og:image" content="https://nifi.apache.org/images/project-brand.jpg?version=1">
+  <meta name="twitter:title" content="Download">
+  <meta name="twitter:description" content="Apache NiFi is an easy to use, powerful, and reliable system to process and distribute data">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="apachenifi">
+  <meta name="twitter:image" content="https://nifi.apache.org/images/project-brand.jpg?version=1">
+  <link rel="icon" href="/images/apache-nifi-drop-logo.svg">
+  <link rel="stylesheet" href="../styles/uikit.min.css">
+  <link rel="stylesheet" href="../styles/main.css">
+  <script>
+  var _paq = window._paq = window._paq || [];
+  _paq.push(['disableCookies']);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var baseUri = "//analytics.apache.org/";
+    _paq.push(['setTrackerUrl', baseUri + 'matomo.php']);
+    _paq.push(['setSiteId', '28']);
+    var trackerElement = document.createElement('script');
+    var firstScriptElement = document.getElementsByTagName('script')[0];
+    trackerElement.async = true;
+    trackerElement.src = baseUri + 'matomo.js';
+    var firstScriptElement = document.getElementsByTagName('script')[0];
+    if (window.location.host === 'nifi.apache.org') {
+      firstScriptElement.parentNode.insertBefore(trackerElement, firstScriptElement);
+    }
+  })();
+</script>
+</head>
+<body class="section-background">
+    <div class="nav-container" uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
+  <nav class="uk-container uk-navbar-container uk-navbar-transparent" uk-navbar="">
+    <div class="uk-navbar-left">
+      <ul class="uk-navbar-nav">
+        <li>
+          <a class="uk-navbar-item" href="/">
+            <img src="../images/apache-nifi-drop-logo.svg" alt="Apache NiFi Logo" class="navbar-logo" width="36" height="48">
+          </a>
+        </li>
+        <li class="uk-hidden@s">
+          <a href="#" class="uk-navbar-toggle" uk-navbar-toggle-icon="" uk-toggle="target: #mobile-menu"></a>
+        </li>
+
+          
+          
+          <li class="uk-visible@s">
+            <a href="../html/documentation.html">Documentation</a>
+            
+            <ul class="uk-dropdown" uk-dropdown="mode: click; animation: uk-animation-slide-top-small; duration: 300;">
+              
+              <li>
+                <a href="../html/components.html">
+                  NiFi Version 2 Documentation
+                  
+                </a>
+
+              
+
+              </li>
+              
+              <li>
+                <a href="../html/v1.html">
+                  NiFi Version 1 Documentation
+                  
+                </a>
+
+              
+
+              </li>
+              
+              <li>
+                <a href="../html/guides.html">
+                  Guides
+                  
+                </a>
+
+              
+
+              </li>
+              
+              <li>
+                <a href="../html/security.html">
+                  Security Reporting
+                  
+                </a>
+
+              
+
+              </li>
+              
+              <li>
+                <a href="../html/NIFI.html" target="_blank" rel="noopener noreferrer">
+                  Wiki
+                  <span uk-icon="link"></span>
+                </a>
+
+              
+
+              </li>
+              
+            </ul>
+            
+          </li>
+          
+          <li class="uk-visible@s">
+            <a href="../html/development.html">Development</a>
+            
+            <ul class="uk-dropdown" uk-dropdown="mode: click; animation: uk-animation-slide-top-small; duration: 300;">
+              
+              <li>
+                <a href="../html/Contributor+Guide.html" target="_blank" rel="noopener noreferrer">
+                  Contributing
+                  <span uk-icon="link"></span>
+                </a>
+
+              
+
+              </li>
+              
+              <li>
+                <a href="../html/NIFI.html" target="_blank" rel="noopener noreferrer">
+                  Issues
+                  <span uk-icon="link"></span>
+                </a>
+
+              
+
+              </li>
+              
+              <li>
+                <a href="../html/nifi.html" target="_blank" rel="noopener noreferrer">
+                  Source
+                  <span uk-icon="link"></span>
+                </a>
+
+              
+
+              </li>
+              
+            </ul>
+            
+          </li>
+          
+          <li class="uk-visible@s">
+            <a href="../html/community.html">Community</a>
+            
+            <ul class="uk-dropdown" uk-dropdown="mode: click; animation: uk-animation-slide-top-small; duration: 300;">
+              
+              <li>
+                <a href="../html/contact.html">
+                  Contact
+                  
+                </a>
+
+              
+
+              </li>
+              
+              <li>
+                <a href="../html/powered-by.html">
+                  Powered By
+                  
+                </a>
+
+              
+
+              </li>
+              
+              <li>
+                <a href="../html/community.html">
+                  Team
+                  
+                </a>
+
+              
+
+              </li>
+              
+            </ul>
+            
+          </li>
+          
+          <li class="uk-visible@s">
+            <a href="../html/projects.html">Projects</a>
+            
+            <ul class="uk-dropdown" uk-dropdown="mode: click; animation: uk-animation-slide-top-small; duration: 300;">
+              
+              <li>
+                <a href="../html/minifi.html">
+                  MiNiFi
+                  
+                </a>
+
+              
+
+              </li>
+              
+              <li>
+                <a href="../html/registry.html">
+                  Registry
+                  
+                </a>
+
+              
+
+              </li>
+              
+              <li>
+                <a href="../html/fds.html">
+                  Flow Design System
+                  
+                </a>
+
+              
+
+              </li>
+              
+            </ul>
+            
+          </li>
+          
+          <li class="uk-visible@s">
+            <a href="../html/www.apache.org.html">Apache</a>
+            
+            <ul class="uk-dropdown" uk-dropdown="mode: click; animation: uk-animation-slide-top-small; duration: 300;">
+              
+              <li>
+                <a href="../html/current-event.html" target="_blank" rel="noopener noreferrer">
+                  Events
+                  <span uk-icon="link"></span>
+                </a>
+
+              
+
+              </li>
+              
+              <li>
+                <a href="../html/licenses.html" target="_blank" rel="noopener noreferrer">
+                  License
+                  <span uk-icon="link"></span>
+                </a>
+
+              
+
+              </li>
+              
+              <li>
+                <a href="../html/privacy-policy-public.html" target="_blank" rel="noopener noreferrer">
+                  Privacy
+                  <span uk-icon="link"></span>
+                </a>
+
+              
+
+              </li>
+              
+              <li>
+                <a href="../html/sponsorship.html" target="_blank" rel="noopener noreferrer">
+                  Sponsorship
+                  <span uk-icon="link"></span>
+                </a>
+
+              
+
+              </li>
+              
+              <li>
+                <a href="../html/thanks.html" target="_blank" rel="noopener noreferrer">
+                  Thanks
+                  <span uk-icon="link"></span>
+                </a>
+
+              
+
+              </li>
+              
+            </ul>
+            
+          </li>
+          
+
+      </ul>
+
+    </div>
+    <div class="uk-navbar-right">
+      <ul class="uk-navbar-nav">
+        <li>
+          <div class="uk-navbar-item">
+            <a class="uk-icon-link navbar-icon" uk-icon="icon: github; ratio: 2" href="../html/nifi.html"></a>
+          </div>
+        </li>
+        <li>
+          <div class="uk-navbar-item">
+            <a class="uk-button uk-button-primary uk-icon" href="../html/download.html">
+              Download
+            </a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<div id="mobile-menu" uk-offcanvas="" class="uk-offcanvas">
+  <div class="uk-offcanvas-bar">
+    <ul class="uk-navbar-nav" uk-accordion="">
+      
+      
+        
+        <li>
+          <a class="uk-accordion-title">Documentation</a>
+          
+          <ul class="uk-accordion-content">
+            
+            <li>
+              <a href="../html/components.html">
+                NiFi Version 2 Documentation
+                
+              </a>
+
+            
+
+            </li>
+            
+            <li>
+              <a href="../html/v1.html">
+                NiFi Version 1 Documentation
+                
+              </a>
+
+            
+
+            </li>
+            
+            <li>
+              <a href="../html/guides.html">
+                Guides
+                
+              </a>
+
+            
+
+            </li>
+            
+            <li>
+              <a href="../html/security.html">
+                Security Reporting
+                
+              </a>
+
+            
+
+            </li>
+            
+            <li>
+              <a href="../html/NIFI.html" target="_blank" rel="noopener noreferrer">
+                Wiki
+                <span uk-icon="link"></span>
+              </a>
+
+            
+
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="uk-accordion-title">Development</a>
+          
+          <ul class="uk-accordion-content">
+            
+            <li>
+              <a href="../html/Contributor+Guide.html" target="_blank" rel="noopener noreferrer">
+                Contributing
+                <span uk-icon="link"></span>
+              </a>
+
+            
+
+            </li>
+            
+            <li>
+              <a href="../html/NIFI.html" target="_blank" rel="noopener noreferrer">
+                Issues
+                <span uk-icon="link"></span>
+              </a>
+
+            
+
+            </li>
+            
+            <li>
+              <a href="../html/nifi.html" target="_blank" rel="noopener noreferrer">
+                Source
+                <span uk-icon="link"></span>
+              </a>
+
+            
+
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="uk-accordion-title">Community</a>
+          
+          <ul class="uk-accordion-content">
+            
+            <li>
+              <a href="../html/contact.html">
+                Contact
+                
+              </a>
+
+            
+
+            </li>
+            
+            <li>
+              <a href="../html/powered-by.html">
+                Powered By
+                
+              </a>
+
+            
+
+            </li>
+            
+            <li>
+              <a href="../html/community.html">
+                Team
+                
+              </a>
+
+            
+
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="uk-accordion-title">Projects</a>
+          
+          <ul class="uk-accordion-content">
+            
+            <li>
+              <a href="../html/minifi.html">
+                MiNiFi
+                
+              </a>
+
+            
+
+            </li>
+            
+            <li>
+              <a href="../html/registry.html">
+                Registry
+                
+              </a>
+
+            
+
+            </li>
+            
+            <li>
+              <a href="../html/fds.html">
+                Flow Design System
+                
+              </a>
+
+            
+
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="uk-accordion-title">Apache</a>
+          
+          <ul class="uk-accordion-content">
+            
+            <li>
+              <a href="../html/current-event.html" target="_blank" rel="noopener noreferrer">
+                Events
+                <span uk-icon="link"></span>
+              </a>
+
+            
+
+            </li>
+            
+            <li>
+              <a href="../html/licenses.html" target="_blank" rel="noopener noreferrer">
+                License
+                <span uk-icon="link"></span>
+              </a>
+
+            
+
+            </li>
+            
+            <li>
+              <a href="../html/privacy-policy-public.html" target="_blank" rel="noopener noreferrer">
+                Privacy
+                <span uk-icon="link"></span>
+              </a>
+
+            
+
+            </li>
+            
+            <li>
+              <a href="../html/sponsorship.html" target="_blank" rel="noopener noreferrer">
+                Sponsorship
+                <span uk-icon="link"></span>
+              </a>
+
+            
+
+            </li>
+            
+            <li>
+              <a href="../html/thanks.html" target="_blank" rel="noopener noreferrer">
+                Thanks
+                <span uk-icon="link"></span>
+              </a>
+
+            
+
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+
+    </ul>
+  </div>
+</div>
+    <main>
+<div class="uk-container downloads">
+  <h1 id="download">Download</h1>
+<p>Previous releases are available in <a href="../html/nifi.html">release archives</a>. Archive downloads are
+subject to rate limiting.</p>
+<p>OpenPGP <a href="../html/KEYS.html">Project Keys</a> can be used for
+<a href="../html/verification.html">download verification</a>.</p>
+<ul uk-tab="">
+  <li id="download-nifi"><a href="">NiFi</a></li>
+  <li id="download-minifi"><a href="">MiNiFi</a></li>
+  <li id="download-registry"><a href="">Registry</a></li>
+  <li id="download-fds"><a href="">FDS</a></li>
+</ul>
+<script type="text/javascript">
+window.addEventListener('uikit:init', () => {
+    var hash = window.location.hash
+    if (hash) {
+        var hashDownloadId = hash.replace(/^#/, 'download-');
+        var downloadElement = document.getElementById(hashDownloadId);
+        if (downloadElement) {
+            downloadElement.classList.add('uk-active');
+        }
+    }
+});
+</script>
+<ul class="uk-switcher uk-width-1-2@l uk-width-2-3@m">
+<li>
+<h2 id="apache-nifi">Apache NiFi</h2>
+<h3 id="nifi-hahahugoshortcode594s0hbhb-a-hrefhttpscwikiapacheorgconfluencedisplaynifireleasenotesreleasenotes-versionhahahugoshortcode594s1hbhbrelease-notesa">NiFi 2.5.0 <a href="../html/Release+Notes.html">Release Notes</a></h3>
+<ul>
+<li>Released: 2025-07-22</li>
+<li><a href="../html/Migration+Guidance.html">Migration Guidance</a></li>
+</ul>
+<h4 id="sources">Sources</h4>
+<div class="uk-margin-top download-links">
+  <a class="uk-button uk-button-primary uk-button-small" href="../html/closer.lua.html">Source 2.5.0</a>
+  <a class="uk-button uk-button-default uk-button-small" href="../html/nifi-2.5.0-source-release.zip.asc.html">OpenPGP</a>
+  <a class="uk-button uk-button-default uk-button-small" href="../html/nifi-2.5.0-source-release.zip.sha512.html">SHA-512</a>
+</div>
+<h4 id="binaries">Binaries</h4>
+<p></p><div class="uk-margin-top download-links">
+  <a class="uk-button uk-button-primary uk-button-small" href="../html/closer.lua.html">NiFi Standard 2.5.0</a>
+  <a class="uk-button uk-button-default uk-button-small" href="../html/nifi-2.5.0-bin.zip.asc.html">OpenPGP</a>
+  <a class="uk-button uk-button-default uk-button-small" href="../html/nifi-2.5.0-bin.zip.sha512.html">SHA-512</a>
+</div>
+<div class="uk-margin-top download-links">
+  <a class="uk-button uk-button-primary uk-button-small" href="../html/closer.lua.html">NiFi Stateless 2.5.0</a>
+  <a class="uk-button uk-button-default uk-button-small" href="../html/nifi-stateless-2.5.0-bin.zip.asc.html">OpenPGP</a>
+  <a class="uk-button uk-button-default uk-button-small" href="../html/nifi-stateless-2.5.0-bin.zip.sha512.html">SHA-512</a>
+</div>
+<div class="uk-margin-top download-links">
+  <a class="uk-button uk-button-primary uk-button-small" href="../html/closer.lua.html">NiFi Toolkit 2.5.0</a>
+  <a class="uk-button uk-button-default uk-button-small" href="../html/nifi-toolkit-2.5.0-bin.zip.asc.html">OpenPGP</a>
+  <a class="uk-button uk-button-default uk-button-small" href="../html/nifi-toolkit-2.5.0-bin.zip.sha512.html">SHA-512</a>
+</div><p></p>
+<h3 id="nifi-hahahugoshortcode594s7hbhb-a-hrefhttpscwikiapacheorgconfluencedisplaynifireleasenotesreleasenotes-versionhahahugoshortcode594s8hbhbrelease-notesa">NiFi 1.28.1 <a href="../html/Release+Notes.html">Release Notes</a></h3>
+<div class="uk-card uk-card-default uk-card-body uk-margin-bottom">
+<p>Apache NiFi 1.28 is the last minor release of the version 1 series. The project management committee may consider
+critical bug fixes for essential framework features on an exceptional basis. Critical bug fixes do not include upgrading
+project dependencies. Multiple fundamental dependencies in NiFi 1 cannot be upgraded. These dependencies
+include <a href="../html/7958.html">Jetty 9.4</a>,
+<a href="../html/spring-framework-6-1-12-6-0-23-and-5-3-39-available-now.html">Spring Framework 5.3</a>,
+and <a href="../html/version-support-status.html">AngularJS 1.8</a>.
+The Apache NiFi Team strongly encourages users to upgrade to NiFi 2.</p>
+</div>
+<ul>
+<li>End of Support: 2024-12-08</li>
+</ul>
+<div class="uk-margin-top download-links">
+  <a class="uk-button uk-button-primary uk-button-small" href="../html/closer.lua.html">Source 1.28.1</a>
+  <a class="uk-button uk-button-default uk-button-small" href="../html/nifi-1.28.1-source-release.zip.asc.html">OpenPGP</a>
+  <a class="uk-button uk-button-default uk-button-small" href="../html/nifi-1.28.1-source-release.zip.sha512.html">SHA-512</a>
+</div>
+<div class="uk-margin-top download-links">
+  <a class="uk-button uk-button-primary uk-button-small" href="../html/closer.lua.html">NiFi Standard 1.28.1</a>
+  <a class="uk-button uk-button-default uk-button-small" href="../html/nifi-1.28.1-bin.zip.asc.html">OpenPGP</a>
+  <a class="uk-button uk-button-default uk-button-small" href="../html/nifi-1.28.1-bin.zip.sha512.html">SHA-512</a>
+</div>
+</li>
+<li>
+<h2 id="apache-nifi-minifi">Apache NiFi MiNiFi</h2>
+<h3 id="minifi-java-hahahugoshortcode594s11hbhb-release-noteshttpscwikiapacheorgconfluencedisplaynifireleasenotesreleasenotes-versionhahahugoshortcode594s12hbhb">MiNiFi Java 2.5.0 <a href="../html/Release+Notes.html">Release Notes</a></h3>
+<ul>
+<li>Released: 2025-07-22</li>
+</ul>
+<h4 id="sources-1">Sources</h4>
+<div class="uk-margin-top download-links">
+   <a class="uk-button uk-button-primary uk-button-small" href="../html/closer.lua.html">Source 2.5.0</a>
+   <a class="uk-button uk-button-default uk-button-small" href="../html/nifi-2.5.0-source-release.zip.asc.html">OpenPGP</a>
+   <a class="uk-button uk-button-default uk-button-small" href="../html/nifi-2.5.0-source-release.zip.sha512.html">SHA-512</a>
+ </div>
+<h4 id="binaries-1">Binaries</h4>
+<p></p><div class="uk-margin-top download-links">
+   <a class="uk-button uk-button-primary uk-button-small" href="../html/closer.lua.html">MiNiFi 2.5.0</a>
+   <a class="uk-button uk-button-default uk-button-small" href="../html/minifi-2.5.0-bin.zip.asc.html">OpenPGP</a>
+   <a class="uk-button uk-button-default uk-button-small" href="../html/minifi-2.5.0-bin.zip.sha512.html">SHA-512</a>
+ </div>
+<div class="uk-margin-top download-links">
+   <a class="uk-button uk-button-primary uk-button-small" href="../html/closer.lua.html">MiNiFi Toolkit 2.5.0</a>
+   <a class="uk-button uk-button-default uk-button-small" href="../html/minifi-toolkit-2.5.0-bin.zip.asc.html">OpenPGP</a>
+   <a class="uk-button uk-button-default uk-button-small" href="../html/minifi-toolkit-2.5.0-bin.zip.sha512.html">SHA-512</a>
+ </div><p></p>
+<h3 id="minifi-c-hahahugoshortcode594s17hbhb-release-noteshttpscwikiapacheorgconfluencepagesviewpageactionpageid65145325releasenotesminific-versioncpp-hahahugoshortcode594s18hbhb">MiNiFi C++ 0.99.1 <a href="../html/viewpage.action.html">Release Notes</a></h3>
+<ul>
+<li>Released: 2025-02-05</li>
+</ul>
+<h4 id="sources-2">Sources</h4>
+<div class="uk-margin-top download-links">
+  <a class="uk-button uk-button-primary uk-button-small" href="../html/closer.lua.html">C++ Source 0.99.1</a>
+  <a class="uk-button uk-button-default uk-button-small" href="../html/nifi-minifi-cpp-0.99.1-source.tar.gz.asc.html">OpenPGP</a>
+  <a class="uk-button uk-button-default uk-button-small" href="../html/nifi-minifi-cpp-0.99.1-source.tar.gz.sha512.html">SHA-512</a>
+</div>
+<h4 id="binaries-2">Binaries</h4>
+<p></p><div class="uk-margin-top download-links">
+  <a class="uk-button uk-button-primary uk-button-small" href="../html/closer.lua.html">MiNiFi C++ Linux x86_64 0.99.1</a>
+  <a class="uk-button uk-button-default uk-button-small" href="../html/nifi-minifi-cpp-0.99.1-bin-linux-x86_64.tar.gz.asc.html">OpenPGP</a>
+  <a class="uk-button uk-button-default uk-button-small" href="../html/nifi-minifi-cpp-0.99.1-bin-linux-x86_64.tar.gz.sha512.html">SHA-512</a>
+</div>
+<div class="uk-margin-top download-links">
+  <a class="uk-button uk-button-primary uk-button-small" href="../html/closer.lua.html">MiNiFi C++ Linux arm64 0.99.1</a>
+  <a class="uk-button uk-button-default uk-button-small" href="../html/nifi-minifi-cpp-0.99.1-bin-linux-arm64.tar.gz.asc.html">OpenPGP</a>
+  <a class="uk-button uk-button-default uk-button-small" href="../html/nifi-minifi-cpp-0.99.1-bin-linux-arm64.tar.gz.sha512.html">SHA-512</a>
+</div>
+<div class="uk-margin-top download-links">
+  <a class="uk-button uk-button-primary uk-button-small" href="../html/closer.lua.html">MiNiFi C++ Windows x86_64 0.99.1</a>
+  <a class="uk-button uk-button-default uk-button-small" href="../html/nifi-minifi-cpp-0.99.1-windows.msi.asc.html">OpenPGP</a>
+  <a class="uk-button uk-button-default uk-button-small" href="../html/nifi-minifi-cpp-0.99.1-windows.msi.sha512.html">SHA-512</a>
+</div><p></p>
+<h3 id="minifi-c-hahahugoshortcode594s24hbhb-release-noteshttpscwikiapacheorgconfluencepagesviewpageactionpageid65145325releasenotesminific-versioncpp-hahahugoshortcode594s25hbhb">MiNiFi C++ 0.99.0 <a href="../html/viewpage.action.html">Release Notes</a></h3>
+<ul>
+<li>Released: 2024-05-17</li>
+</ul>
+<h4 id="sources-3">Sources</h4>
+<div class="uk-margin-top download-links">
+  <a class="uk-button uk-button-primary uk-button-small" href="../html/closer.lua.html">Source 0.99.0</a>
+  <a class="uk-button uk-button-default uk-button-small" href="../html/nifi-minifi-cpp-0.99.0-source.tar.gz.asc.html">OpenPGP</a>
+  <a class="uk-button uk-button-default uk-button-small" href="../html/nifi-minifi-cpp-0.99.0-source.tar.gz.sha512.html">SHA-512</a>
+</div>
+<h4 id="binaries-3">Binaries</h4>
+<p></p><div class="uk-margin-top download-links">
+  <a class="uk-button uk-button-primary uk-button-small" href="../html/closer.lua.html">MiNiFi C++ Linux binaries 0.99.0</a>
+  <a class="uk-button uk-button-default uk-button-small" href="../html/nifi-minifi-cpp-0.99.0-bin-linux.tar.gz.asc.html">OpenPGP</a>
+  <a class="uk-button uk-button-default uk-button-small" href="../html/nifi-minifi-cpp-0.99.0-bin-linux.tar.gz.sha512.html">SHA-512</a>
+</div>
+<div class="uk-margin-top download-links">
+  <a class="uk-button uk-button-primary uk-button-small" href="../html/closer.lua.html">MiNiFi C++ Windows installer 0.99.0</a>
+  <a class="uk-button uk-button-default uk-button-small" href="../html/nifi-minifi-cpp-0.99.0-windows.msi.asc.html">OpenPGP</a>
+  <a class="uk-button uk-button-default uk-button-small" href="../html/nifi-minifi-cpp-0.99.0-windows.msi.sha512.html">SHA-512</a>
+</div><p></p>
+</li>
+<li>
+<h2 id="apache-nifi-registry">Apache NiFi Registry</h2>
+<h3 id="registry-hahahugoshortcode594s30hbhb-release-noteshttpscwikiapacheorgconfluencedisplaynifireleasenotesreleasenotes-versionhahahugoshortcode594s31hbhb">Registry 2.5.0 <a href="../html/Release+Notes.html">Release Notes</a></h3>
+<ul>
+<li>Released: 2025-07-22</li>
+</ul>
+<h4 id="sources-4">Sources</h4>
+<div class="uk-margin-top download-links">
+  <a class="uk-button uk-button-primary uk-button-small" href="../html/closer.lua.html">Source 2.5.0</a>
+  <a class="uk-button uk-button-default uk-button-small" href="../html/nifi-2.5.0-source-release.zip.asc.html">OpenPGP</a>
+  <a class="uk-button uk-button-default uk-button-small" href="../html/nifi-2.5.0-source-release.zip.sha512.html">SHA-512</a>
+</div>
+<h4 id="binaries-4">Binaries</h4>
+<div class="uk-margin-top download-links">
+  <a class="uk-button uk-button-primary uk-button-small" href="../html/closer.lua.html">NiFi Registry 2.5.0</a>
+  <a class="uk-button uk-button-default uk-button-small" href="../html/nifi-registry-2.5.0-bin.zip.asc.html">OpenPGP</a>
+  <a class="uk-button uk-button-default uk-button-small" href="../html/nifi-registry-2.5.0-bin.zip.sha512.html">SHA-512</a>
+</div>
+<h3 id="registry-hahahugoshortcode594s35hbhb-release-noteshttpscwikiapacheorgconfluencedisplaynifireleasenotesreleasenotes-versionhahahugoshortcode594s36hbhb">Registry 1.28.1 <a href="../html/Release+Notes.html">Release Notes</a></h3>
+<ul>
+<li>End of Support: 2024-12-08</li>
+</ul>
+<div class="uk-margin-top download-links">
+  <a class="uk-button uk-button-primary uk-button-small" href="../html/closer.lua.html">NiFi Registry 1.28.1</a>
+  <a class="uk-button uk-button-default uk-button-small" href="../html/nifi-registry-1.28.1-bin.zip.asc.html">OpenPGP</a>
+  <a class="uk-button uk-button-default uk-button-small" href="../html/nifi-registry-1.28.1-bin.zip.sha512.html">SHA-512</a>
+</div>
+</li>
+<li>
+<h2 id="apache-nifi-flow-design-system">Apache NiFi Flow Design System</h2>
+<h3 id="fds-030-release-noteshttpscwikiapacheorgconfluencedisplaynifireleasenotesreleasenotes-nififlowdesignsystem030">FDS 0.3.0 <a href="../html/Release+Notes.html">Release Notes</a></h3>
+<div class="uk-margin-top download-links">
+  <a class="uk-button uk-button-primary uk-button-small" href="../html/closer.lua.html">Source 0.3.0</a>
+  <a class="uk-button uk-button-default uk-button-small" href="../html/nifi-fds-0.3.0-source-release.zip.asc.html">OpenPGP</a>
+  <a class="uk-button uk-button-default uk-button-small" href="../html/nifi-fds-0.3.0-source-release.zip.sha512.html">SHA-512</a>
+</div>
+
+<h3 id="fds-020-release-noteshttpscwikiapacheorgconfluencedisplaynifireleasenotesreleasenotes-nififlowdesignsystem020">FDS 0.2.0 <a href="../html/Release+Notes.html">Release Notes</a></h3>
+<div class="uk-margin-top download-links">
+  <a class="uk-button uk-button-primary uk-button-small" href="../html/nifi-fds-0.2.0-source-release.zip.html">Source 0.2.0</a>
+  <a class="uk-button uk-button-default uk-button-small" href="../html/nifi-fds-0.2.0-source-release.zip.asc.html">OpenPGP</a>
+  <a class="uk-button uk-button-default uk-button-small" href="../html/nifi-fds-0.2.0-source-release.zip.sha512.html">SHA-512</a>
+</div>
+
+</li>
+</ul>
+
+</div>
+</main>
+    <footer>
+  <div class="uk-container">
+    <div class="uk-flex uk-grid uk-grid-large">
+      <div class="uk-width-1-2@m">
+        <p>
+          <a class="uk-link-reset" href="/">
+            <img src="../images/apache-nifi-logo.svg" class="footer-logo" alt="Apache NiFi Logo">
+          </a>
+          <a class="uk-link-reset" href="../html/apache.org.html">
+            <img src="../images/apache-logo.svg" class="footer-logo uk-margin-left" alt="Apache Software Foundation Logo">
+          </a>
+        </p>
+        <p>
+          Copyright © 2025 The Apache Software Foundation under the terms of the
+          <a href="../html/LICENSE-2.0.html">Apache License, Version 2.0</a>
+        </p>
+        <p>
+          Apache NiFi, NiFi, and the NiFi logo are trademarks of
+          <a href="../html/apache.org.html">The Apache Software Foundation</a>
+        </p>
+      </div>
+      <div class="uk-width-1-4@m">
+        <h3><a href="/">Project</a></h3>
+        <ul>
+          <li><a href="../html/NIFI.html">Issues</a></li>
+          <li><a href="../html/nifi.html">Source</a></li>
+          <li><a href="../html/apache-nifi.html">LinkedIn</a></li>
+          <li><a href="../html/zt-11njbtkdx-ZRU8FKYSWoEHRJetidy0zA.html">Slack</a></li>
+          <li><a href="../html/security.html">Security</a></li>
+        </ul>
+      </div>
+      <div class="uk-width-1-4@m">
+        <h3><a href="../html/www.apache.org.html">Apache</a></h3>
+        <ul>
+          <li><a href="../html/licenses.html">License</a></li>
+          <li><a href="../html/privacy-policy-public.html">Privacy</a></li>
+          <li><a href="../html/sponsorship.html">Sponsorship</a></li>
+          <li><a href="../html/thanks.html">Thanks</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="../scripts/uikit.min.js"></script>
+    <script src="../scripts/uikit-icons.min.js"></script>
+  </body>
+</html>

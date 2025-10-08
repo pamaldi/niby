@@ -1,0 +1,983 @@
+<html lang="en">
+  
+<head>
+  <title>Community - Apache NiFi</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Apache NiFi is an easy to use, powerful, and reliable system to process and distribute data">
+  <meta name="keywords" content="apache,nifi,data,distribution">
+  <title>Community - Apache NiFi</title>
+  <meta property="og:title" content="Community">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://nifi.apache.org/community/">
+  <meta property="og:description" content="Apache NiFi is an easy to use, powerful, and reliable system to process and distribute data">
+  <meta property="og:site_name" content="Apache NiFi">
+  <meta property="og:image" content="https://nifi.apache.org/images/project-brand.jpg?version=1">
+  <meta name="twitter:title" content="Community">
+  <meta name="twitter:description" content="Apache NiFi is an easy to use, powerful, and reliable system to process and distribute data">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="apachenifi">
+  <meta name="twitter:image" content="https://nifi.apache.org/images/project-brand.jpg?version=1">
+  <link rel="icon" href="/images/apache-nifi-drop-logo.svg">
+  <link rel="stylesheet" href="../styles/uikit.min.css">
+  <link rel="stylesheet" href="../styles/main.css">
+  <script>
+  var _paq = window._paq = window._paq || [];
+  _paq.push(['disableCookies']);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var baseUri = "//analytics.apache.org/";
+    _paq.push(['setTrackerUrl', baseUri + 'matomo.php']);
+    _paq.push(['setSiteId', '28']);
+    var trackerElement = document.createElement('script');
+    var firstScriptElement = document.getElementsByTagName('script')[0];
+    trackerElement.async = true;
+    trackerElement.src = baseUri + 'matomo.js';
+    var firstScriptElement = document.getElementsByTagName('script')[0];
+    if (window.location.host === 'nifi.apache.org') {
+      firstScriptElement.parentNode.insertBefore(trackerElement, firstScriptElement);
+    }
+  })();
+</script>
+</head>
+<body class="section-background">
+    <div class="nav-container" uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
+  <nav class="uk-container uk-navbar-container uk-navbar-transparent" uk-navbar="">
+    <div class="uk-navbar-left">
+      <ul class="uk-navbar-nav">
+        <li>
+          <a class="uk-navbar-item" href="/">
+            <img src="../images/apache-nifi-drop-logo.svg" alt="Apache NiFi Logo" class="navbar-logo" width="36" height="48">
+          </a>
+        </li>
+        <li class="uk-hidden@s">
+          <a href="#" class="uk-navbar-toggle" uk-navbar-toggle-icon="" uk-toggle="target: #mobile-menu"></a>
+        </li>
+
+          
+          
+          <li class="uk-visible@s">
+            <a href="../html/documentation.html">Documentation</a>
+            
+            <ul class="uk-dropdown" uk-dropdown="mode: click; animation: uk-animation-slide-top-small; duration: 300;">
+              
+              <li>
+                <a href="../html/components.html">
+                  NiFi Version 2 Documentation
+                  
+                </a>
+
+              
+
+              </li>
+              
+              <li>
+                <a href="../html/v1.html">
+                  NiFi Version 1 Documentation
+                  
+                </a>
+
+              
+
+              </li>
+              
+              <li>
+                <a href="../html/guides.html">
+                  Guides
+                  
+                </a>
+
+              
+
+              </li>
+              
+              <li>
+                <a href="../html/security.html">
+                  Security Reporting
+                  
+                </a>
+
+              
+
+              </li>
+              
+              <li>
+                <a href="../html/NIFI.html" target="_blank" rel="noopener noreferrer">
+                  Wiki
+                  <span uk-icon="link"></span>
+                </a>
+
+              
+
+              </li>
+              
+            </ul>
+            
+          </li>
+          
+          <li class="uk-visible@s">
+            <a href="../html/development.html">Development</a>
+            
+            <ul class="uk-dropdown" uk-dropdown="mode: click; animation: uk-animation-slide-top-small; duration: 300;">
+              
+              <li>
+                <a href="../html/Contributor+Guide.html" target="_blank" rel="noopener noreferrer">
+                  Contributing
+                  <span uk-icon="link"></span>
+                </a>
+
+              
+
+              </li>
+              
+              <li>
+                <a href="../html/NIFI.html" target="_blank" rel="noopener noreferrer">
+                  Issues
+                  <span uk-icon="link"></span>
+                </a>
+
+              
+
+              </li>
+              
+              <li>
+                <a href="../html/nifi.html" target="_blank" rel="noopener noreferrer">
+                  Source
+                  <span uk-icon="link"></span>
+                </a>
+
+              
+
+              </li>
+              
+            </ul>
+            
+          </li>
+          
+          <li class="uk-visible@s uk-active">
+            <a href="../html/community.html">Community</a>
+            
+            <ul class="uk-dropdown" uk-dropdown="mode: click; animation: uk-animation-slide-top-small; duration: 300;">
+              
+              <li>
+                <a href="../html/contact.html">
+                  Contact
+                  
+                </a>
+
+              
+
+              </li>
+              
+              <li>
+                <a href="../html/powered-by.html">
+                  Powered By
+                  
+                </a>
+
+              
+
+              </li>
+              
+              <li>
+                <a href="../html/community.html">
+                  Team
+                  
+                </a>
+
+              
+
+              </li>
+              
+            </ul>
+            
+          </li>
+          
+          <li class="uk-visible@s">
+            <a href="../html/projects.html">Projects</a>
+            
+            <ul class="uk-dropdown" uk-dropdown="mode: click; animation: uk-animation-slide-top-small; duration: 300;">
+              
+              <li>
+                <a href="../html/minifi.html">
+                  MiNiFi
+                  
+                </a>
+
+              
+
+              </li>
+              
+              <li>
+                <a href="../html/registry.html">
+                  Registry
+                  
+                </a>
+
+              
+
+              </li>
+              
+              <li>
+                <a href="../html/fds.html">
+                  Flow Design System
+                  
+                </a>
+
+              
+
+              </li>
+              
+            </ul>
+            
+          </li>
+          
+          <li class="uk-visible@s">
+            <a href="../html/www.apache.org.html">Apache</a>
+            
+            <ul class="uk-dropdown" uk-dropdown="mode: click; animation: uk-animation-slide-top-small; duration: 300;">
+              
+              <li>
+                <a href="../html/current-event.html" target="_blank" rel="noopener noreferrer">
+                  Events
+                  <span uk-icon="link"></span>
+                </a>
+
+              
+
+              </li>
+              
+              <li>
+                <a href="../html/licenses.html" target="_blank" rel="noopener noreferrer">
+                  License
+                  <span uk-icon="link"></span>
+                </a>
+
+              
+
+              </li>
+              
+              <li>
+                <a href="../html/privacy-policy-public.html" target="_blank" rel="noopener noreferrer">
+                  Privacy
+                  <span uk-icon="link"></span>
+                </a>
+
+              
+
+              </li>
+              
+              <li>
+                <a href="../html/sponsorship.html" target="_blank" rel="noopener noreferrer">
+                  Sponsorship
+                  <span uk-icon="link"></span>
+                </a>
+
+              
+
+              </li>
+              
+              <li>
+                <a href="../html/thanks.html" target="_blank" rel="noopener noreferrer">
+                  Thanks
+                  <span uk-icon="link"></span>
+                </a>
+
+              
+
+              </li>
+              
+            </ul>
+            
+          </li>
+          
+
+      </ul>
+
+    </div>
+    <div class="uk-navbar-right">
+      <ul class="uk-navbar-nav">
+        <li>
+          <div class="uk-navbar-item">
+            <a class="uk-icon-link navbar-icon" uk-icon="icon: github; ratio: 2" href="../html/nifi.html"></a>
+          </div>
+        </li>
+        <li>
+          <div class="uk-navbar-item">
+            <a class="uk-button uk-button-primary uk-icon" href="../html/download.html">
+              Download
+            </a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<div id="mobile-menu" uk-offcanvas="" class="uk-offcanvas">
+  <div class="uk-offcanvas-bar">
+    <ul class="uk-navbar-nav" uk-accordion="">
+      
+      
+        
+        <li>
+          <a class="uk-accordion-title">Documentation</a>
+          
+          <ul class="uk-accordion-content">
+            
+            <li>
+              <a href="../html/components.html">
+                NiFi Version 2 Documentation
+                
+              </a>
+
+            
+
+            </li>
+            
+            <li>
+              <a href="../html/v1.html">
+                NiFi Version 1 Documentation
+                
+              </a>
+
+            
+
+            </li>
+            
+            <li>
+              <a href="../html/guides.html">
+                Guides
+                
+              </a>
+
+            
+
+            </li>
+            
+            <li>
+              <a href="../html/security.html">
+                Security Reporting
+                
+              </a>
+
+            
+
+            </li>
+            
+            <li>
+              <a href="../html/NIFI.html" target="_blank" rel="noopener noreferrer">
+                Wiki
+                <span uk-icon="link"></span>
+              </a>
+
+            
+
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="uk-accordion-title">Development</a>
+          
+          <ul class="uk-accordion-content">
+            
+            <li>
+              <a href="../html/Contributor+Guide.html" target="_blank" rel="noopener noreferrer">
+                Contributing
+                <span uk-icon="link"></span>
+              </a>
+
+            
+
+            </li>
+            
+            <li>
+              <a href="../html/NIFI.html" target="_blank" rel="noopener noreferrer">
+                Issues
+                <span uk-icon="link"></span>
+              </a>
+
+            
+
+            </li>
+            
+            <li>
+              <a href="../html/nifi.html" target="_blank" rel="noopener noreferrer">
+                Source
+                <span uk-icon="link"></span>
+              </a>
+
+            
+
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li class="uk-active">
+          <a class="uk-accordion-title">Community</a>
+          
+          <ul class="uk-accordion-content">
+            
+            <li>
+              <a href="../html/contact.html">
+                Contact
+                
+              </a>
+
+            
+
+            </li>
+            
+            <li>
+              <a href="../html/powered-by.html">
+                Powered By
+                
+              </a>
+
+            
+
+            </li>
+            
+            <li>
+              <a href="../html/community.html">
+                Team
+                
+              </a>
+
+            
+
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="uk-accordion-title">Projects</a>
+          
+          <ul class="uk-accordion-content">
+            
+            <li>
+              <a href="../html/minifi.html">
+                MiNiFi
+                
+              </a>
+
+            
+
+            </li>
+            
+            <li>
+              <a href="../html/registry.html">
+                Registry
+                
+              </a>
+
+            
+
+            </li>
+            
+            <li>
+              <a href="../html/fds.html">
+                Flow Design System
+                
+              </a>
+
+            
+
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="uk-accordion-title">Apache</a>
+          
+          <ul class="uk-accordion-content">
+            
+            <li>
+              <a href="../html/current-event.html" target="_blank" rel="noopener noreferrer">
+                Events
+                <span uk-icon="link"></span>
+              </a>
+
+            
+
+            </li>
+            
+            <li>
+              <a href="../html/licenses.html" target="_blank" rel="noopener noreferrer">
+                License
+                <span uk-icon="link"></span>
+              </a>
+
+            
+
+            </li>
+            
+            <li>
+              <a href="../html/privacy-policy-public.html" target="_blank" rel="noopener noreferrer">
+                Privacy
+                <span uk-icon="link"></span>
+              </a>
+
+            
+
+            </li>
+            
+            <li>
+              <a href="../html/sponsorship.html" target="_blank" rel="noopener noreferrer">
+                Sponsorship
+                <span uk-icon="link"></span>
+              </a>
+
+            
+
+            </li>
+            
+            <li>
+              <a href="../html/thanks.html" target="_blank" rel="noopener noreferrer">
+                Thanks
+                <span uk-icon="link"></span>
+              </a>
+
+            
+
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+
+    </ul>
+  </div>
+</div>
+    <main>
+  <div class="uk-container">
+    <h1 id="apache-hahahugoshortcode2s0hbhb-team">Apache <span class="ni">Ni</span><span class="fi">Fi</span>
+ Team</h1>
+<p>A successful project requires many people to play many roles. Some write code, others provide project mentorship, and
+still others author documentation. General contributors provide valuable feedback, submitting patches and suggestions.</p>
+<p>The team consists of Project Management Committee Members, Committers, and Contributors.</p>
+<h2 id="project-management-committee-members">Project Management Committee Members</h2>
+<p>Project Management Committee Members are volunteers who responsible for leading the project. PMC members cast binding
+votes on project direction and software releases.</p>
+
+
+
+<table class="project-members">
+  <thead>
+    <tr>
+      <th>Apache Username</th>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>aboda</td>
+      <td>Arpad Boda</td>
+    </tr>
+    <tr>
+      <td>afucs</td>
+      <td>Andre FdM</td>
+    </tr>
+    <tr>
+      <td>aldrin</td>
+      <td>Aldrin Piri</td>
+    </tr>
+    <tr>
+      <td>alopresto</td>
+      <td>Andy LoPresto</td>
+    </tr>
+    <tr>
+      <td>andrewmlim</td>
+      <td>Andrew M. Lim</td>
+    </tr>
+    <tr>
+      <td>bbende</td>
+      <td>Bryan Bende</td>
+    </tr>
+    <tr>
+      <td>bejancsaba</td>
+      <td>Csaba Bejan</td>
+    </tr>
+    <tr>
+      <td>briansolo1985</td>
+      <td>Ferenc Kis</td>
+    </tr>
+    <tr>
+      <td>busbey</td>
+      <td>Sean Busbey</td>
+    </tr>
+    <tr>
+      <td>chriss</td>
+      <td>Chris Sampson</td>
+    </tr>
+    <tr>
+      <td>danbress</td>
+      <td>Dan Bress</td>
+    </tr>
+    <tr>
+      <td>devriesb</td>
+      <td>Brandon Rhys DeVries</td>
+    </tr>
+    <tr>
+      <td>exceptionfactory</td>
+      <td>David Handermann</td>
+    </tr>
+    <tr>
+      <td>ijokarumawak</td>
+      <td>Koji Kawamura</td>
+    </tr>
+    <tr>
+      <td>jcarey</td>
+      <td>Jason Carey</td>
+    </tr>
+    <tr>
+      <td>jeremydyer</td>
+      <td>Jeremy Dyer</td>
+    </tr>
+    <tr>
+      <td>jfrazee</td>
+      <td>Joey Frazee</td>
+    </tr>
+    <tr>
+      <td>joewitt</td>
+      <td>Joe Witt</td>
+    </tr>
+    <tr>
+      <td>jskora</td>
+      <td>Joe Skora</td>
+    </tr>
+    <tr>
+      <td>jwing</td>
+      <td>James Wing</td>
+    </tr>
+    <tr>
+      <td>kdoran</td>
+      <td>Kevin Doran</td>
+    </tr>
+    <tr>
+      <td>lordgamez</td>
+      <td>Gábor Gyimesi</td>
+    </tr>
+    <tr>
+      <td>markap14</td>
+      <td>Mark Payne</td>
+    </tr>
+    <tr>
+      <td>mattyb149</td>
+      <td>Matt Burgess</td>
+    </tr>
+    <tr>
+      <td>mcgilman</td>
+      <td>Matt Gilman</td>
+    </tr>
+    <tr>
+      <td>mosermw</td>
+      <td>Michael W Moser</td>
+    </tr>
+    <tr>
+      <td>mthomsen</td>
+      <td>Mike Thomsen</td>
+    </tr>
+    <tr>
+      <td>nsabonyi</td>
+      <td>Nándor Soma Abonyi</td>
+    </tr>
+    <tr>
+      <td>ozhurakousky</td>
+      <td>Oleg Zhurakousky</td>
+    </tr>
+    <tr>
+      <td>phrocker</td>
+      <td>Marc Parisi</td>
+    </tr>
+    <tr>
+      <td>pvillard</td>
+      <td>Pierre Villard</td>
+    </tr>
+    <tr>
+      <td>scottyaslan</td>
+      <td>Scott Aslan</td>
+    </tr>
+    <tr>
+      <td>szaszm</td>
+      <td>Marton Szasz</td>
+    </tr>
+    <tr>
+      <td>taftster</td>
+      <td>Adam Taft</td>
+    </tr>
+    <tr>
+      <td>thenatog</td>
+      <td>Nathan Gough</td>
+    </tr>
+    <tr>
+      <td>tkurc</td>
+      <td>Tony Kurc</td>
+    </tr>
+    <tr>
+      <td>turcsanyi</td>
+      <td>Peter Turcsanyi</td>
+    </tr>
+    <tr>
+      <td>ymdavis</td>
+      <td>Yolanda Davis</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="committers">Committers</h2>
+<p>Committers are the group of volunteers who are responsible for the technical aspects of the Apache NiFi Project. This
+group has write access to the appropriate source repositories. All committer input is valued. When technical discussions
+occur, committer input is treated the same as PMC member input. Committers are encouraged to vote on releases and
+technical discussions, but committer votes are not binding on project decisions.</p>
+<p>Membership as a Committer is by invitation only and must be approved by consensus approval of the active Apache NiFi PMC
+members on a vote open for at least 72 hours. A Committer is considered inactive by their own declaration. Membership
+can be revoked by a unanimous vote of all the active PMC members, except the member in question if they are a PMC
+member.</p>
+
+
+
+
+  <table class="project-members">
+  <thead>
+    <tr>
+      <th>Apache Username</th>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>adebreceni</td>
+      <td>Adam Debreceni</td>
+    </tr>
+    <tr>
+      <td>aichrist</td>
+      <td>Andy I.C.</td>
+    </tr>
+    <tr>
+      <td>amarkovics</td>
+      <td>Ádám Markovics</td>
+    </tr>
+    <tr>
+      <td>bakaid</td>
+      <td>Dániel Bakai</td>
+    </tr>
+    <tr>
+      <td>bqiu</td>
+      <td>Ben Qiu</td>
+    </tr>
+    <tr>
+      <td>brosander</td>
+      <td>Bryan Rosander</td>
+    </tr>
+    <tr>
+      <td>bsimon</td>
+      <td>Simon Bence</td>
+    </tr>
+    <tr>
+      <td>denes</td>
+      <td>Denes Arvay</td>
+    </tr>
+    <tr>
+      <td>dstiggy</td>
+      <td>Daniel Stieglitz</td>
+    </tr>
+    <tr>
+      <td>edbe</td>
+      <td>Ed Berezitsky</td>
+    </tr>
+    <tr>
+      <td>ferdei</td>
+      <td>Ferenc Erdei</td>
+    </tr>
+    <tr>
+      <td>fgerlits</td>
+      <td>Ferenc Gerlits</td>
+    </tr>
+    <tr>
+      <td>greyp</td>
+      <td>Paul Grey</td>
+    </tr>
+    <tr>
+      <td>jgresock</td>
+      <td>Joe Gresock</td>
+    </tr>
+    <tr>
+      <td>kotarot</td>
+      <td>Kotaro Terada</td>
+    </tr>
+    <tr>
+      <td>lehelb</td>
+      <td>Lehel Boér</td>
+    </tr>
+    <tr>
+      <td>martinzink</td>
+      <td>Martin Zink</td>
+    </tr>
+    <tr>
+      <td>mbathori</td>
+      <td>Mark Bathori</td>
+    </tr>
+    <tr>
+      <td>mhogue</td>
+      <td>Mike Hogue</td>
+    </tr>
+    <tr>
+      <td>mtien</td>
+      <td>Margot Tien</td>
+    </tr>
+    <tr>
+      <td>ottersbach</td>
+      <td>Lucas Ottersbach</td>
+    </tr>
+    <tr>
+      <td>otto</td>
+      <td>Otto Fowler</td>
+    </tr>
+    <tr>
+      <td>pgyori</td>
+      <td>Peter Gyori</td>
+    </tr>
+    <tr>
+      <td>rfellows</td>
+      <td>Rob Fellows</td>
+    </tr>
+    <tr>
+      <td>rickysaltzer</td>
+      <td>Ricky Saltzer</td>
+    </tr>
+    <tr>
+      <td>rmoran</td>
+      <td>Rob Moran</td>
+    </tr>
+    <tr>
+      <td>timeabarna</td>
+      <td>Timea Barna</td>
+    </tr>
+    <tr>
+      <td>toivoadams</td>
+      <td>Toivo Adams</td>
+    </tr>
+    <tr>
+      <td>tpalfy</td>
+      <td>Tamas Palfy</td>
+    </tr>
+    <tr>
+      <td>zenfenan</td>
+      <td>Sivaprasanna Sethuraman</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="contributors">Contributors</h2>
+<p>Contributors improve the project through submission of patches and suggestions. The number of Contributors to the
+project is unbounded. Get involved today. All contributions to the project are greatly appreciated.</p>
+<h2 id="emeritus-members">Emeritus Members</h2>
+<p>Emeritus members are those that served as PMC members or committers and who have since moved into inactive status.
+Their contributions and efforts are greatly appreciated in helping the community develop.</p>
+<div class="project-members">
+<table>
+<thead>
+<tr>
+<th>Apache Username</th>
+<th>Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bimargulies</td>
+<td>Benson Margulies</td>
+</tr>
+<tr>
+<td>jbarnabee</td>
+<td>Jennifer Barnabee</td>
+</tr>
+<tr>
+<td>pwicks</td>
+<td>Peter Wicks</td>
+</tr>
+<tr>
+<td>jpercivall</td>
+<td>Joe Percivall</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="in-memoriam">In Memoriam</h2>
+<div class="project-members">
+<table>
+<thead>
+<tr>
+<th>Apache Username</th>
+<th>Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>jstorck</td>
+<td>Jeff Storck</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+  </div>
+</main>
+    <footer>
+  <div class="uk-container">
+    <div class="uk-flex uk-grid uk-grid-large">
+      <div class="uk-width-1-2@m">
+        <p>
+          <a class="uk-link-reset" href="/">
+            <img src="../images/apache-nifi-logo.svg" class="footer-logo" alt="Apache NiFi Logo">
+          </a>
+          <a class="uk-link-reset" href="../html/apache.org.html">
+            <img src="../images/apache-logo.svg" class="footer-logo uk-margin-left" alt="Apache Software Foundation Logo">
+          </a>
+        </p>
+        <p>
+          Copyright © 2025 The Apache Software Foundation under the terms of the
+          <a href="../html/LICENSE-2.0.html">Apache License, Version 2.0</a>
+        </p>
+        <p>
+          Apache NiFi, NiFi, and the NiFi logo are trademarks of
+          <a href="../html/apache.org.html">The Apache Software Foundation</a>
+        </p>
+      </div>
+      <div class="uk-width-1-4@m">
+        <h3><a href="/">Project</a></h3>
+        <ul>
+          <li><a href="../html/NIFI.html">Issues</a></li>
+          <li><a href="../html/nifi.html">Source</a></li>
+          <li><a href="../html/apache-nifi.html">LinkedIn</a></li>
+          <li><a href="../html/zt-11njbtkdx-ZRU8FKYSWoEHRJetidy0zA.html">Slack</a></li>
+          <li><a href="../html/security.html">Security</a></li>
+        </ul>
+      </div>
+      <div class="uk-width-1-4@m">
+        <h3><a href="../html/www.apache.org.html">Apache</a></h3>
+        <ul>
+          <li><a href="../html/licenses.html">License</a></li>
+          <li><a href="../html/privacy-policy-public.html">Privacy</a></li>
+          <li><a href="../html/sponsorship.html">Sponsorship</a></li>
+          <li><a href="../html/thanks.html">Thanks</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="../scripts/uikit.min.js"></script>
+    <script src="../scripts/uikit-icons.min.js"></script>
+  </body>
+</html>
