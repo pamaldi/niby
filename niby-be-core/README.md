@@ -30,7 +30,9 @@ To start the application in development mode with hot reload:
 
 ### Dev UI
 Quarkus provides a Dev UI available only in development mode:
-- **URL**: http://localhost:8080/q/dev/
+- **Dev UI**: http://localhost:8080/q/dev/
+- **Swagger UI**: http://localhost:8080/q/swagger-ui
+- **OpenAPI Spec**: http://localhost:8080/q/openapi
 - **Features**: Monitoring, configuration, API testing
 
 ## 📦 Build and Packaging

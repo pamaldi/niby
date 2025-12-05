@@ -12,6 +12,7 @@ import dev.langchain4j.store.embedding.EmbeddingStoreIngestor;
 import io.quarkiverse.langchain4j.pgvector.PgVectorEmbeddingStore;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
+import org.eclipse.microprofile.config.inject.ConfigProperty;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -37,12 +38,15 @@ public class DocumentIngestionService
     @Inject
     EmbeddingModel embeddingModel;
 
+    @ConfigProperty(name = "documents.directory")
+    String documentsDirectory;
+
     /**
      * Ingest with file type detection and custom parsers
      */
-    public void ingestWithCustomParsers(String directoryPath) throws IOException
+    public void ingestWithCustomParsers() throws IOException
     {
-        Path path = Path.of(directoryPath);
+        Path path = Path.of(documentsDirectory);
 
         try (Stream<Path> paths = Files.walk(path)) {
             List<Document> documents = new ArrayList<>();

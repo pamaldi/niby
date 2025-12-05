@@ -29,22 +29,16 @@ public class IngestionController
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response ingestDirectory(Map<String, String> request) {
-        String directoryPath = request.get("directoryPath");
 
-        if (directoryPath == null || directoryPath.isEmpty()) {
-            return Response.status(Response.Status.BAD_REQUEST)
-                    .entity(Map.of("error", "directoryPath is required"))
-                    .build();
-        }
 
         try {
-            documentIngestionService.ingestWithCustomParsers(directoryPath);
+            documentIngestionService.ingestWithCustomParsers();
 
             Map<String, Object> response = new HashMap<>();
             response.put("status", "success");
-            response.put("message", "Documents ingested successfully from " + directoryPath);
+            response.put("message", "Documents ingested successfully");
 
-            log.info("Successfully ingested documents from directory: {}", directoryPath);
+            log.info("Successfully ingested documents from directory");
             return Response.ok(response).build();
 
         } catch (IOException e) {
@@ -52,7 +46,7 @@ public class IngestionController
             response.put("status", "error");
             response.put("message", "Failed to ingest documents: " + e.getMessage());
 
-            log.error("Failed to ingest documents from directory: {}", directoryPath, e);
+            log.error("Failed to ingest documents from directory", e);
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(response).build();
         }
     }
