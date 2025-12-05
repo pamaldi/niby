@@ -1,0 +1,2845 @@
+<html lang="en">
+  
+<head>
+  <title>PutFile - Apache NiFi</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Apache NiFi is an easy to use, powerful, and reliable system to process and distribute data">
+  <meta name="keywords" content="archive,copy,files,filesystem,local,put">
+  <title>PutFile - Apache NiFi</title>
+  <meta property="og:title" content="PutFile">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://nifi.apache.org/components/org.apache.nifi.processors.standard.PutFile/">
+  <meta property="og:description" content="Apache NiFi is an easy to use, powerful, and reliable system to process and distribute data">
+  <meta property="og:site_name" content="Apache NiFi">
+  <meta property="og:image" content="https://nifi.apache.org/images/project-brand.jpg?version=1">
+  <meta name="twitter:title" content="PutFile">
+  <meta name="twitter:description" content="Apache NiFi is an easy to use, powerful, and reliable system to process and distribute data">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="apachenifi">
+  <meta name="twitter:image" content="https://nifi.apache.org/images/project-brand.jpg?version=1">
+  <link rel="icon" href="/images/apache-nifi-drop-logo.svg">
+  <link rel="stylesheet" href="../styles/uikit.min.css">
+  <link rel="stylesheet" href="../styles/main.css">
+  <script>
+  var _paq = window._paq = window._paq || [];
+  _paq.push(['disableCookies']);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var baseUri = "//analytics.apache.org/";
+    _paq.push(['setTrackerUrl', baseUri + 'matomo.php']);
+    _paq.push(['setSiteId', '28']);
+    var trackerElement = document.createElement('script');
+    var firstScriptElement = document.getElementsByTagName('script')[0];
+    trackerElement.async = true;
+    trackerElement.src = baseUri + 'matomo.js';
+    var firstScriptElement = document.getElementsByTagName('script')[0];
+    if (window.location.host === 'nifi.apache.org') {
+      firstScriptElement.parentNode.insertBefore(trackerElement, firstScriptElement);
+    }
+  })();
+</script>
+</head>
+<body class="section-background">
+    <div class="nav-container" uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
+  <nav class="uk-container uk-navbar-container uk-navbar-transparent" uk-navbar="">
+    <div class="uk-navbar-left">
+      <ul class="uk-navbar-nav">
+        <li>
+          <a class="uk-navbar-item" href="/">
+            <img src="../images/apache-nifi-drop-logo.svg" alt="Apache NiFi Logo" class="navbar-logo" width="36" height="48">
+          </a>
+        </li>
+        <li class="uk-hidden@s">
+          <a href="#" class="uk-navbar-toggle" uk-navbar-toggle-icon="" uk-toggle="target: #mobile-menu"></a>
+        </li>
+
+          
+          
+          <li class="uk-visible@s">
+            <a href="../html/documentation.html">Documentation</a>
+            
+            <ul class="uk-dropdown" uk-dropdown="mode: click; animation: uk-animation-slide-top-small; duration: 300;">
+              
+              <li>
+                <a href="../html/components.html">
+                  NiFi Version 2 Documentation
+                  
+                </a>
+
+              
+
+              </li>
+              
+              <li>
+                <a href="../html/v1.html">
+                  NiFi Version 1 Documentation
+                  
+                </a>
+
+              
+
+              </li>
+              
+              <li>
+                <a href="../html/guides.html">
+                  Guides
+                  
+                </a>
+
+              
+
+              </li>
+              
+              <li>
+                <a href="../html/security.html">
+                  Security Reporting
+                  
+                </a>
+
+              
+
+              </li>
+              
+              <li>
+                <a href="../html/NIFI.html" target="_blank" rel="noopener noreferrer">
+                  Wiki
+                  <span uk-icon="link"></span>
+                </a>
+
+              
+
+              </li>
+              
+            </ul>
+            
+          </li>
+          
+          <li class="uk-visible@s">
+            <a href="../html/development.html">Development</a>
+            
+            <ul class="uk-dropdown" uk-dropdown="mode: click; animation: uk-animation-slide-top-small; duration: 300;">
+              
+              <li>
+                <a href="../html/Contributor+Guide.html" target="_blank" rel="noopener noreferrer">
+                  Contributing
+                  <span uk-icon="link"></span>
+                </a>
+
+              
+
+              </li>
+              
+              <li>
+                <a href="../html/NIFI.html" target="_blank" rel="noopener noreferrer">
+                  Issues
+                  <span uk-icon="link"></span>
+                </a>
+
+              
+
+              </li>
+              
+              <li>
+                <a href="../html/nifi.html" target="_blank" rel="noopener noreferrer">
+                  Source
+                  <span uk-icon="link"></span>
+                </a>
+
+              
+
+              </li>
+              
+            </ul>
+            
+          </li>
+          
+          <li class="uk-visible@s">
+            <a href="../html/community.html">Community</a>
+            
+            <ul class="uk-dropdown" uk-dropdown="mode: click; animation: uk-animation-slide-top-small; duration: 300;">
+              
+              <li>
+                <a href="../html/contact.html">
+                  Contact
+                  
+                </a>
+
+              
+
+              </li>
+              
+              <li>
+                <a href="../html/powered-by.html">
+                  Powered By
+                  
+                </a>
+
+              
+
+              </li>
+              
+              <li>
+                <a href="../html/community.html">
+                  Team
+                  
+                </a>
+
+              
+
+              </li>
+              
+            </ul>
+            
+          </li>
+          
+          <li class="uk-visible@s">
+            <a href="../html/projects.html">Projects</a>
+            
+            <ul class="uk-dropdown" uk-dropdown="mode: click; animation: uk-animation-slide-top-small; duration: 300;">
+              
+              <li>
+                <a href="../html/minifi.html">
+                  MiNiFi
+                  
+                </a>
+
+              
+
+              </li>
+              
+              <li>
+                <a href="../html/registry.html">
+                  Registry
+                  
+                </a>
+
+              
+
+              </li>
+              
+              <li>
+                <a href="../html/fds.html">
+                  Flow Design System
+                  
+                </a>
+
+              
+
+              </li>
+              
+            </ul>
+            
+          </li>
+          
+          <li class="uk-visible@s">
+            <a href="../html/www.apache.org.html">Apache</a>
+            
+            <ul class="uk-dropdown" uk-dropdown="mode: click; animation: uk-animation-slide-top-small; duration: 300;">
+              
+              <li>
+                <a href="../html/current-event.html" target="_blank" rel="noopener noreferrer">
+                  Events
+                  <span uk-icon="link"></span>
+                </a>
+
+              
+
+              </li>
+              
+              <li>
+                <a href="../html/licenses.html" target="_blank" rel="noopener noreferrer">
+                  License
+                  <span uk-icon="link"></span>
+                </a>
+
+              
+
+              </li>
+              
+              <li>
+                <a href="../html/privacy-policy-public.html" target="_blank" rel="noopener noreferrer">
+                  Privacy
+                  <span uk-icon="link"></span>
+                </a>
+
+              
+
+              </li>
+              
+              <li>
+                <a href="../html/sponsorship.html" target="_blank" rel="noopener noreferrer">
+                  Sponsorship
+                  <span uk-icon="link"></span>
+                </a>
+
+              
+
+              </li>
+              
+              <li>
+                <a href="../html/thanks.html" target="_blank" rel="noopener noreferrer">
+                  Thanks
+                  <span uk-icon="link"></span>
+                </a>
+
+              
+
+              </li>
+              
+            </ul>
+            
+          </li>
+          
+
+      </ul>
+
+    </div>
+    <div class="uk-navbar-right">
+      <ul class="uk-navbar-nav">
+        <li>
+          <div class="uk-navbar-item">
+            <a class="uk-icon-link navbar-icon" uk-icon="icon: github; ratio: 2" href="../html/nifi.html"></a>
+          </div>
+        </li>
+        <li>
+          <div class="uk-navbar-item">
+            <a class="uk-button uk-button-primary uk-icon" href="../html/download.html">
+              Download
+            </a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<div id="mobile-menu" uk-offcanvas="" class="uk-offcanvas">
+  <div class="uk-offcanvas-bar">
+    <ul class="uk-navbar-nav" uk-accordion="">
+      
+      
+        
+        <li>
+          <a class="uk-accordion-title">Documentation</a>
+          
+          <ul class="uk-accordion-content">
+            
+            <li>
+              <a href="../html/components.html">
+                NiFi Version 2 Documentation
+                
+              </a>
+
+            
+
+            </li>
+            
+            <li>
+              <a href="../html/v1.html">
+                NiFi Version 1 Documentation
+                
+              </a>
+
+            
+
+            </li>
+            
+            <li>
+              <a href="../html/guides.html">
+                Guides
+                
+              </a>
+
+            
+
+            </li>
+            
+            <li>
+              <a href="../html/security.html">
+                Security Reporting
+                
+              </a>
+
+            
+
+            </li>
+            
+            <li>
+              <a href="../html/NIFI.html" target="_blank" rel="noopener noreferrer">
+                Wiki
+                <span uk-icon="link"></span>
+              </a>
+
+            
+
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="uk-accordion-title">Development</a>
+          
+          <ul class="uk-accordion-content">
+            
+            <li>
+              <a href="../html/Contributor+Guide.html" target="_blank" rel="noopener noreferrer">
+                Contributing
+                <span uk-icon="link"></span>
+              </a>
+
+            
+
+            </li>
+            
+            <li>
+              <a href="../html/NIFI.html" target="_blank" rel="noopener noreferrer">
+                Issues
+                <span uk-icon="link"></span>
+              </a>
+
+            
+
+            </li>
+            
+            <li>
+              <a href="../html/nifi.html" target="_blank" rel="noopener noreferrer">
+                Source
+                <span uk-icon="link"></span>
+              </a>
+
+            
+
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="uk-accordion-title">Community</a>
+          
+          <ul class="uk-accordion-content">
+            
+            <li>
+              <a href="../html/contact.html">
+                Contact
+                
+              </a>
+
+            
+
+            </li>
+            
+            <li>
+              <a href="../html/powered-by.html">
+                Powered By
+                
+              </a>
+
+            
+
+            </li>
+            
+            <li>
+              <a href="../html/community.html">
+                Team
+                
+              </a>
+
+            
+
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="uk-accordion-title">Projects</a>
+          
+          <ul class="uk-accordion-content">
+            
+            <li>
+              <a href="../html/minifi.html">
+                MiNiFi
+                
+              </a>
+
+            
+
+            </li>
+            
+            <li>
+              <a href="../html/registry.html">
+                Registry
+                
+              </a>
+
+            
+
+            </li>
+            
+            <li>
+              <a href="../html/fds.html">
+                Flow Design System
+                
+              </a>
+
+            
+
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="uk-accordion-title">Apache</a>
+          
+          <ul class="uk-accordion-content">
+            
+            <li>
+              <a href="../html/current-event.html" target="_blank" rel="noopener noreferrer">
+                Events
+                <span uk-icon="link"></span>
+              </a>
+
+            
+
+            </li>
+            
+            <li>
+              <a href="../html/licenses.html" target="_blank" rel="noopener noreferrer">
+                License
+                <span uk-icon="link"></span>
+              </a>
+
+            
+
+            </li>
+            
+            <li>
+              <a href="../html/privacy-policy-public.html" target="_blank" rel="noopener noreferrer">
+                Privacy
+                <span uk-icon="link"></span>
+              </a>
+
+            
+
+            </li>
+            
+            <li>
+              <a href="../html/sponsorship.html" target="_blank" rel="noopener noreferrer">
+                Sponsorship
+                <span uk-icon="link"></span>
+              </a>
+
+            
+
+            </li>
+            
+            <li>
+              <a href="../html/thanks.html" target="_blank" rel="noopener noreferrer">
+                Thanks
+                <span uk-icon="link"></span>
+              </a>
+
+            
+
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+
+    </ul>
+  </div>
+</div>
+    <main>
+  
+  <div uk-grid="">
+
+    <div class="uk-width-1-4@m">
+      <div class="uk-padding-small uk-panel-scrollable" uk-height-viewport="offset-bottom: 150px">
+        <ul uk-accordion="collapsible: false">
+          <li>
+            <a class="uk-accordion-title" href="">General</a>
+            <div class="uk-accordion-content">
+              <ul class="uk-list uk-list-collapse uk-text-light uk-text-truncate component-items">
+                <li><a href="../html/overview.html" target="_blank">Overview</a></li>
+                <li><a href="../html/getting-started.html" target="_blank">Getting Started</a></li>
+                <li><a href="../html/user-guide.html" target="_blank">User Guide</a></li>
+                <li><a href="../html/expression-language-guide.html" target="_blank">Expression Language Guide</a></li>
+                <li><a href="../html/record-path-guide.html" target="_blank">RecordPath Guide</a></li>
+                <li><a href="../html/administration-guide.html" target="_blank">Admin Guide</a></li>
+                <li><a href="../html/toolkit-guide.html" target="_blank">Toolkit Guide</a></li>
+                <li><a href="../html/walkthroughs.html" target="_blank">Walkthroughs</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+
+        <ul uk-accordion="collapsible: false">
+          <li>
+            <a class="uk-accordion-title" href="">Developer</a>
+            <div class="uk-accordion-content">
+              <ul class="uk-list uk-list-collapse uk-text-light uk-text-truncate component-items">
+                <li><a href="../html/developer-guide.html">Developer Guide</a></li>
+                <li><a href="../html/python-developer-guide.html">Python Developer Guide</a></li>
+                <li><a href="../html/nifi-in-depth.html">Apache NiFi In Depth</a></li>
+                <li><a href="../html/rest-api.html">REST API</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+
+        <ul uk-accordion="collapsible: false">
+          <li>
+            <a class="uk-accordion-title" href="">Processors</a>
+            <div class="uk-accordion-content">
+              
+              <ul class="uk-list uk-list-collapse uk-text-light uk-text-truncate component-items">
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.stateful.analysis.AttributeRollingWindow.html">AttributeRollingWindow</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.AttributesToCSV.html">AttributesToCSV</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.AttributesToJSON.html">AttributesToJSON</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.CalculateRecordStats.html">CalculateRecordStats</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.cdc.mysql.processors.CaptureChangeMySQL.html">CaptureChangeMySQL</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.CompressContent.html">CompressContent</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.websocket.ConnectWebSocket.html">ConnectWebSocket</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.amqp.processors.ConsumeAMQP.html">ConsumeAMQP</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.azure.eventhub.ConsumeAzureEventHub.html">ConsumeAzureEventHub</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.box.ConsumeBoxEnterpriseEvents.html">ConsumeBoxEnterpriseEvents</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.box.ConsumeBoxEvents.html">ConsumeBoxEvents</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.elasticsearch.ConsumeElasticsearch.html">ConsumeElasticsearch</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.gcp.pubsub.ConsumeGCPubSub.html">ConsumeGCPubSub</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.email.ConsumeIMAP.html">ConsumeIMAP</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.jms.processors.ConsumeJMS.html">ConsumeJMS</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.kafka.processors.ConsumeKafka.html">ConsumeKafka</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.aws.kinesis.stream.ConsumeKinesisStream.html">ConsumeKinesisStream</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.mqtt.ConsumeMQTT.html">ConsumeMQTT</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.email.ConsumePOP3.html">ConsumePOP3</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.slack.ConsumeSlack.html">ConsumeSlack</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.twitter.ConsumeTwitter.html">ConsumeTwitter</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.windows.event.log.ConsumeWindowsEventLog.html">ConsumeWindowsEventLog</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.ControlRate.html">ControlRate</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.ConvertCharacterSet.html">ConvertCharacterSet</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.ConvertRecord.html">ConvertRecord</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.azure.storage.CopyAzureBlobStorage_v12.html">CopyAzureBlobStorage_v12</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.aws.s3.CopyS3Object.html">CopyS3Object</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.CountText.html">CountText</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.box.CreateBoxFileMetadataInstance.html">CreateBoxFileMetadataInstance</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.box.CreateBoxMetadataTemplate.html">CreateBoxMetadataTemplate</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.CryptographicHashContent.html">CryptographicHashContent</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.DebugFlow.html">DebugFlow</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.cipher.DecryptContentAge.html">DecryptContentAge</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.pgp.DecryptContentPGP.html">DecryptContentPGP</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.DeduplicateRecord.html">DeduplicateRecord</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.azure.storage.DeleteAzureBlobStorage_v12.html">DeleteAzureBlobStorage_v12</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.azure.storage.DeleteAzureDataLakeStorage.html">DeleteAzureDataLakeStorage</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.box.DeleteBoxFileMetadataInstance.html">DeleteBoxFileMetadataInstance</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.elasticsearch.DeleteByQueryElasticsearch.html">DeleteByQueryElasticsearch</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.aws.dynamodb.DeleteDynamoDB.html">DeleteDynamoDB</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.DeleteFile.html">DeleteFile</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.gcp.storage.DeleteGCSObject.html">DeleteGCSObject</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.mongodb.gridfs.DeleteGridFS.html">DeleteGridFS</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.mongodb.DeleteMongo.html">DeleteMongo</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.aws.s3.DeleteS3Object.html">DeleteS3Object</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.DeleteSFTP.html">DeleteSFTP</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.aws.sqs.DeleteSQS.html">DeleteSQS</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.DetectDuplicate.html">DetectDuplicate</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.DistributeLoad.html">DistributeLoad</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.DuplicateFlowFile.html">DuplicateFlowFile</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.EncodeContent.html">EncodeContent</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.cipher.EncryptContentAge.html">EncryptContentAge</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.pgp.EncryptContentPGP.html">EncryptContentPGP</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.EnforceOrder.html">EnforceOrder</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.EvaluateJsonPath.html">EvaluateJsonPath</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.EvaluateXPath.html">EvaluateXPath</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.EvaluateXQuery.html">EvaluateXQuery</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.groovyx.ExecuteGroovyScript.html">ExecuteGroovyScript</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.ExecuteProcess.html">ExecuteProcess</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.script.ExecuteScript.html">ExecuteScript</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.ExecuteSQL.html">ExecuteSQL</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.ExecuteSQLRecord.html">ExecuteSQLRecord</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.ExecuteStreamCommand.html">ExecuteStreamCommand</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.avro.ExtractAvroMetadata.html">ExtractAvroMetadata</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.email.ExtractEmailAttachments.html">ExtractEmailAttachments</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.email.ExtractEmailHeaders.html">ExtractEmailHeaders</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.ExtractGrok.html">ExtractGrok</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.hl7.ExtractHL7Attributes.html">ExtractHL7Attributes</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.ExtractRecordSchema.html">ExtractRecordSchema</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.box.ExtractStructuredBoxFileMetadata.html">ExtractStructuredBoxFileMetadata</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.ExtractText.html">ExtractText</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.azure.storage.FetchAzureBlobStorage_v12.html">FetchAzureBlobStorage_v12</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.azure.storage.FetchAzureDataLakeStorage.html">FetchAzureDataLakeStorage</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.box.FetchBoxFile.html">FetchBoxFile</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.box.FetchBoxFileInfo.html">FetchBoxFileInfo</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.box.FetchBoxFileMetadataInstance.html">FetchBoxFileMetadataInstance</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.box.FetchBoxFileRepresentation.html">FetchBoxFileRepresentation</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.FetchDistributedMapCache.html">FetchDistributedMapCache</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.dropbox.FetchDropbox.html">FetchDropbox</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.FetchFile.html">FetchFile</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.FetchFTP.html">FetchFTP</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.gcp.storage.FetchGCSObject.html">FetchGCSObject</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.gcp.drive.FetchGoogleDrive.html">FetchGoogleDrive</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.mongodb.gridfs.FetchGridFS.html">FetchGridFS</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.aws.s3.FetchS3Object.html">FetchS3Object</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.FetchSFTP.html">FetchSFTP</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.smb.FetchSmb.html">FetchSmb</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.FilterAttribute.html">FilterAttribute</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.FlattenJson.html">FlattenJson</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.ForkEnrichment.html">ForkEnrichment</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.ForkRecord.html">ForkRecord</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.GenerateFlowFile.html">GenerateFlowFile</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.GenerateRecord.html">GenerateRecord</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.GenerateTableFetch.html">GenerateTableFetch</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.GeoEnrichIP.html">GeoEnrichIP</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.GeoEnrichIPRecord.html">GeoEnrichIPRecord</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.geohash.GeohashRecord.html">GeohashRecord</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.asana.GetAsanaObject.html">GetAsanaObject</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.aws.ml.polly.GetAwsPollyJobStatus.html">GetAwsPollyJobStatus</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.aws.ml.textract.GetAwsTextractJobStatus.html">GetAwsTextractJobStatus</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.aws.ml.transcribe.GetAwsTranscribeJobStatus.html">GetAwsTranscribeJobStatus</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.aws.ml.translate.GetAwsTranslateJobStatus.html">GetAwsTranslateJobStatus</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.azure.eventhub.GetAzureEventHub.html">GetAzureEventHub</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.azure.storage.queue.GetAzureQueueStorage_v12.html">GetAzureQueueStorage_v12</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.box.GetBoxFileCollaborators.html">GetBoxFileCollaborators</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.box.GetBoxGroupMembers.html">GetBoxGroupMembers</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.aws.dynamodb.GetDynamoDB.html">GetDynamoDB</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.elasticsearch.GetElasticsearch.html">GetElasticsearch</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.GetFile.html">GetFile</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.GetFileResource.html">GetFileResource</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.GetFTP.html">GetFTP</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.gcp.vision.GetGcpVisionAnnotateFilesOperationStatus.html">GetGcpVisionAnnotateFilesOperationStatus</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.gcp.vision.GetGcpVisionAnnotateImagesOperationStatus.html">GetGcpVisionAnnotateImagesOperationStatus</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.hubspot.GetHubSpot.html">GetHubSpot</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.mongodb.GetMongo.html">GetMongo</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.mongodb.GetMongoRecord.html">GetMongoRecord</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.aws.s3.GetS3ObjectMetadata.html">GetS3ObjectMetadata</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.aws.s3.GetS3ObjectTags.html">GetS3ObjectTags</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.GetSFTP.html">GetSFTP</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.shopify.GetShopify.html">GetShopify</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.smb.GetSmbFile.html">GetSmbFile</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.snmp.processors.GetSNMP.html">GetSNMP</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.splunk.GetSplunk.html">GetSplunk</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.aws.sqs.GetSQS.html">GetSQS</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.workday.GetWorkdayReport.html">GetWorkdayReport</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.zendesk.GetZendesk.html">GetZendesk</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.HandleHttpRequest.html">HandleHttpRequest</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.HandleHttpResponse.html">HandleHttpResponse</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.IdentifyMimeType.html">IdentifyMimeType</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.InvokeHTTP.html">InvokeHTTP</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.script.InvokeScriptedProcessor.html">InvokeScriptedProcessor</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.ISPEnrichIP.html">ISPEnrichIP</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.JoinEnrichment.html">JoinEnrichment</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.jolt.JoltTransformJSON.html">JoltTransformJSON</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.jolt.JoltTransformRecord.html">JoltTransformRecord</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.jslt.JSLTTransformJSON.html">JSLTTransformJSON</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.elasticsearch.JsonQueryElasticsearch.html">JsonQueryElasticsearch</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.azure.storage.ListAzureBlobStorage_v12.html">ListAzureBlobStorage_v12</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.azure.storage.ListAzureDataLakeStorage.html">ListAzureDataLakeStorage</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.box.ListBoxFile.html">ListBoxFile</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.box.ListBoxFileInfo.html">ListBoxFileInfo</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.box.ListBoxFileMetadataInstances.html">ListBoxFileMetadataInstances</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.box.ListBoxFileMetadataTemplates.html">ListBoxFileMetadataTemplates</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.ListDatabaseTables.html">ListDatabaseTables</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.dropbox.ListDropbox.html">ListDropbox</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.ListenFTP.html">ListenFTP</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.ListenHTTP.html">ListenHTTP</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.opentelemetry.ListenOTLP.html">ListenOTLP</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.slack.ListenSlack.html">ListenSlack</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.ListenSyslog.html">ListenSyslog</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.ListenTCP.html">ListenTCP</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.snmp.processors.ListenTrapSNMP.html">ListenTrapSNMP</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.ListenUDP.html">ListenUDP</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.ListenUDPRecord.html">ListenUDPRecord</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.websocket.ListenWebSocket.html">ListenWebSocket</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.ListFile.html">ListFile</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.ListFTP.html">ListFTP</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.gcp.storage.ListGCSBucket.html">ListGCSBucket</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.gcp.drive.ListGoogleDrive.html">ListGoogleDrive</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.aws.s3.ListS3.html">ListS3</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.ListSFTP.html">ListSFTP</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.smb.ListSmb.html">ListSmb</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.LogAttribute.html">LogAttribute</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.LogMessage.html">LogMessage</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.LookupAttribute.html">LookupAttribute</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.LookupRecord.html">LookupRecord</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.MergeContent.html">MergeContent</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.MergeRecord.html">MergeRecord</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.ModifyBytes.html">ModifyBytes</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.compress.ModifyCompression.html">ModifyCompression</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.MonitorActivity.html">MonitorActivity</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.azure.storage.MoveAzureDataLakeStorage.html">MoveAzureDataLakeStorage</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.Notify.html">Notify</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.PackageFlowFile.html">PackageFlowFile</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.elasticsearch.PaginatedJsonQueryElasticsearch.html">PaginatedJsonQueryElasticsearch</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.evtx.ParseEvtx.html">ParseEvtx</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.network.ParseNetflowv5.html">ParseNetflowv5</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.ParseSyslog.html">ParseSyslog</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.ParseSyslog5424.html">ParseSyslog5424</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.PartitionRecord.html">PartitionRecord</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.amqp.processors.PublishAMQP.html">PublishAMQP</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.gcp.pubsub.PublishGCPubSub.html">PublishGCPubSub</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.jms.processors.PublishJMS.html">PublishJMS</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.kafka.processors.PublishKafka.html">PublishKafka</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.mqtt.PublishMQTT.html">PublishMQTT</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.slack.PublishSlack.html">PublishSlack</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.azure.storage.PutAzureBlobStorage_v12.html">PutAzureBlobStorage_v12</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.azure.cosmos.document.PutAzureCosmosDBRecord.html">PutAzureCosmosDBRecord</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.azure.data.explorer.PutAzureDataExplorer.html">PutAzureDataExplorer</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.azure.storage.PutAzureDataLakeStorage.html">PutAzureDataLakeStorage</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.azure.eventhub.PutAzureEventHub.html">PutAzureEventHub</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.azure.storage.queue.PutAzureQueueStorage_v12.html">PutAzureQueueStorage_v12</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.gcp.bigquery.PutBigQuery.html">PutBigQuery</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.box.PutBoxFile.html">PutBoxFile</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.aws.cloudwatch.PutCloudWatchMetric.html">PutCloudWatchMetric</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.PutDatabaseRecord.html">PutDatabaseRecord</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.PutDistributedMapCache.html">PutDistributedMapCache</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.dropbox.PutDropbox.html">PutDropbox</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.aws.dynamodb.PutDynamoDB.html">PutDynamoDB</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.aws.dynamodb.PutDynamoDBRecord.html">PutDynamoDBRecord</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.elasticsearch.PutElasticsearchJson.html">PutElasticsearchJson</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.elasticsearch.PutElasticsearchRecord.html">PutElasticsearchRecord</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.PutEmail.html">PutEmail</a>
+                </li>
+                
+                <li class="uk-text-bold" id="component-selected">
+                  <a href="../html/org.apache.nifi.processors.standard.PutFile.html">PutFile</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.PutFTP.html">PutFTP</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.gcp.storage.PutGCSObject.html">PutGCSObject</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.gcp.drive.PutGoogleDrive.html">PutGoogleDrive</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.mongodb.gridfs.PutGridFS.html">PutGridFS</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.aws.kinesis.firehose.PutKinesisFirehose.html">PutKinesisFirehose</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.aws.kinesis.stream.PutKinesisStream.html">PutKinesisStream</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.aws.lambda.PutLambda.html">PutLambda</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.mongodb.PutMongo.html">PutMongo</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.mongodb.PutMongoBulkOperations.html">PutMongoBulkOperations</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.mongodb.PutMongoRecord.html">PutMongoRecord</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.PutRecord.html">PutRecord</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.redis.processor.PutRedisHashRecord.html">PutRedisHashRecord</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.aws.s3.PutS3Object.html">PutS3Object</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.salesforce.PutSalesforceObject.html">PutSalesforceObject</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.PutSFTP.html">PutSFTP</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.smb.PutSmbFile.html">PutSmbFile</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.aws.sns.PutSNS.html">PutSNS</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.splunk.PutSplunk.html">PutSplunk</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.splunk.PutSplunkHTTP.html">PutSplunkHTTP</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.PutSQL.html">PutSQL</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.aws.sqs.PutSQS.html">PutSQS</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.PutSyslog.html">PutSyslog</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.PutTCP.html">PutTCP</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.PutUDP.html">PutUDP</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.websocket.PutWebSocket.html">PutWebSocket</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.zendesk.PutZendeskTicket.html">PutZendeskTicket</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.airtable.QueryAirtableTable.html">QueryAirtableTable</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.azure.data.explorer.QueryAzureDataExplorer.html">QueryAzureDataExplorer</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.QueryDatabaseTable.html">QueryDatabaseTable</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.QueryDatabaseTableRecord.html">QueryDatabaseTableRecord</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.QueryRecord.html">QueryRecord</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.salesforce.QuerySalesforceObject.html">QuerySalesforceObject</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.splunk.QuerySplunkIndexingStatus.html">QuerySplunkIndexingStatus</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.RemoveRecordField.html">RemoveRecordField</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.RenameRecordField.html">RenameRecordField</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.ReplaceText.html">ReplaceText</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.ReplaceTextWithMapping.html">ReplaceTextWithMapping</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.RetryFlowFile.html">RetryFlowFile</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.hl7.RouteHL7.html">RouteHL7</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.RouteOnAttribute.html">RouteOnAttribute</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.RouteOnContent.html">RouteOnContent</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.RouteText.html">RouteText</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.mongodb.RunMongoAggregation.html">RunMongoAggregation</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.SampleRecord.html">SampleRecord</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.ScanAttribute.html">ScanAttribute</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.ScanContent.html">ScanContent</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.script.ScriptedFilterRecord.html">ScriptedFilterRecord</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.script.ScriptedPartitionRecord.html">ScriptedPartitionRecord</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.script.ScriptedTransformRecord.html">ScriptedTransformRecord</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.script.ScriptedValidateRecord.html">ScriptedValidateRecord</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.elasticsearch.SearchElasticsearch.html">SearchElasticsearch</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.SegmentContent.html">SegmentContent</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.snmp.processors.SendTrapSNMP.html">SendTrapSNMP</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.snmp.processors.SetSNMP.html">SetSNMP</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.pgp.SignContentPGP.html">SignContentPGP</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.avro.SplitAvro.html">SplitAvro</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.SplitContent.html">SplitContent</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.excel.SplitExcel.html">SplitExcel</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.SplitJson.html">SplitJson</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.network.pcap.SplitPCAP.html">SplitPCAP</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.SplitRecord.html">SplitRecord</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.SplitText.html">SplitText</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.SplitXml.html">SplitXml</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.aws.ml.polly.StartAwsPollyJob.html">StartAwsPollyJob</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.aws.ml.textract.StartAwsTextractJob.html">StartAwsTextractJob</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.aws.ml.transcribe.StartAwsTranscribeJob.html">StartAwsTranscribeJob</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.aws.ml.translate.StartAwsTranslateJob.html">StartAwsTranslateJob</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.gcp.vision.StartGcpVisionAnnotateFilesOperation.html">StartGcpVisionAnnotateFilesOperation</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.gcp.vision.StartGcpVisionAnnotateImagesOperation.html">StartGcpVisionAnnotateImagesOperation</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.aws.s3.TagS3Object.html">TagS3Object</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.TailFile.html">TailFile</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.TransformXml.html">TransformXml</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.UnpackContent.html">UnpackContent</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.attributes.UpdateAttribute.html">UpdateAttribute</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.box.UpdateBoxFileMetadataInstance.html">UpdateBoxFileMetadataInstance</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.elasticsearch.UpdateByQueryElasticsearch.html">UpdateByQueryElasticsearch</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.UpdateCounter.html">UpdateCounter</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.UpdateDatabaseTable.html">UpdateDatabaseTable</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.UpdateRecord.html">UpdateRecord</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.ValidateCsv.html">ValidateCsv</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.ValidateJson.html">ValidateJson</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.ValidateRecord.html">ValidateRecord</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.ValidateXml.html">ValidateXml</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.cipher.VerifyContentMAC.html">VerifyContentMAC</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.pgp.VerifyContentPGP.html">VerifyContentPGP</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.Wait.html">Wait</a>
+                </li>
+                
+              </ul>
+            </div>
+          </li>
+        </ul>
+
+        <ul uk-accordion="collapsible: false">
+          <li>
+            <a class="uk-accordion-title" href="">Controller Services</a>
+            <div class="uk-accordion-content">
+              
+              <ul class="uk-list uk-list-collapse uk-text-light uk-text-truncate component-items">
+                
+                <li>
+                  <a href="../html/org.apache.nifi.services.azure.storage.ADLSCredentialsControllerService.html">ADLSCredentialsControllerService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.services.azure.storage.ADLSCredentialsControllerServiceLookup.html">ADLSCredentialsControllerServiceLookup</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.aws.schemaregistry.AmazonGlueEncodedSchemaReferenceReader.html">AmazonGlueEncodedSchemaReferenceReader</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.aws.schemaregistry.AmazonGlueSchemaRegistry.html">AmazonGlueSchemaRegistry</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.kafka.service.aws.AmazonMSKConnectionService.html">AmazonMSKConnectionService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.apicurio.schemaregistry.ApicurioSchemaRegistry.html">ApicurioSchemaRegistry</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.avro.AvroReader.html">AvroReader</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.avro.AvroRecordSetWriter.html">AvroRecordSetWriter</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.schemaregistry.services.AvroSchemaRegistry.html">AvroSchemaRegistry</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.aws.credentials.provider.service.AWSCredentialsProviderControllerService.html">AWSCredentialsProviderControllerService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.services.azure.storage.AzureBlobStorageFileResourceService.html">AzureBlobStorageFileResourceService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.services.azure.cosmos.document.AzureCosmosDBClientService.html">AzureCosmosDBClientService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.services.azure.storage.AzureDataLakeStorageFileResourceService.html">AzureDataLakeStorageFileResourceService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.services.azure.eventhub.AzureEventHubRecordSink.html">AzureEventHubRecordSink</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.services.azure.storage.AzureStorageCredentialsControllerService_v12.html">AzureStorageCredentialsControllerService_v12</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.services.azure.storage.AzureStorageCredentialsControllerServiceLookup_v12.html">AzureStorageCredentialsControllerServiceLookup_v12</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.cef.CEFReader.html">CEFReader</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.confluent.schemaregistry.ConfluentEncodedSchemaReferenceReader.html">ConfluentEncodedSchemaReferenceReader</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.confluent.schemaregistry.ConfluentEncodedSchemaReferenceWriter.html">ConfluentEncodedSchemaReferenceWriter</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.confluent.schemaregistry.ConfluentSchemaRegistry.html">ConfluentSchemaRegistry</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.csv.CSVReader.html">CSVReader</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.lookup.CSVRecordLookupService.html">CSVRecordLookupService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.csv.CSVRecordSetWriter.html">CSVRecordSetWriter</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.lookup.db.DatabaseRecordLookupService.html">DatabaseRecordLookupService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.record.sink.db.DatabaseRecordSink.html">DatabaseRecordSink</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.db.schemaregistry.DatabaseTableSchemaRegistry.html">DatabaseTableSchemaRegistry</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.dbcp.DBCPConnectionPool.html">DBCPConnectionPool</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.dbcp.DBCPConnectionPoolLookup.html">DBCPConnectionPoolLookup</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.box.controllerservices.DeveloperBoxClientService.html">DeveloperBoxClientService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.lookup.DistributedMapCacheLookupService.html">DistributedMapCacheLookupService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.elasticsearch.ElasticSearchClientServiceImpl.html">ElasticSearchClientServiceImpl</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.elasticsearch.ElasticSearchLookupService.html">ElasticSearchLookupService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.elasticsearch.ElasticSearchStringLookupService.html">ElasticSearchStringLookupService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.record.sink.EmailRecordSink.html">EmailRecordSink</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.hazelcast.services.cachemanager.EmbeddedHazelcastCacheManager.html">EmbeddedHazelcastCacheManager</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.excel.ExcelReader.html">ExcelReader</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.hazelcast.services.cachemanager.ExternalHazelcastCacheManager.html">ExternalHazelcastCacheManager</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.text.FreeFormTextRecordSetWriter.html">FreeFormTextRecordSetWriter</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.gcp.credentials.service.GCPCredentialsControllerService.html">GCPCredentialsControllerService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.gcp.storage.GCSFileResourceService.html">GCSFileResourceService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.grok.GrokReader.html">GrokReader</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.hazelcast.services.cacheclient.HazelcastMapCacheClient.html">HazelcastMapCacheClient</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.dbcp.HikariCPConnectionPool.html">HikariCPConnectionPool</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.record.sink.HttpRecordSink.html">HttpRecordSink</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.lookup.maxmind.IPLookupService.html">IPLookupService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.websocket.jetty.JettyWebSocketClient.html">JettyWebSocketClient</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.websocket.jetty.JettyWebSocketServer.html">JettyWebSocketServer</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.jms.cf.JMSConnectionFactoryProvider.html">JMSConnectionFactoryProvider</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.jms.cf.JndiJmsConnectionFactoryProvider.html">JndiJmsConnectionFactoryProvider</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.box.controllerservices.JsonConfigBasedBoxClientService.html">JsonConfigBasedBoxClientService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.json.JsonPathReader.html">JsonPathReader</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.json.JsonRecordSetWriter.html">JsonRecordSetWriter</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.json.JsonTreeReader.html">JsonTreeReader</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.oauth2.JWTBearerOAuth2AccessTokenProvider.html">JWTBearerOAuth2AccessTokenProvider</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.kafka.service.Kafka3ConnectionService.html">Kafka3ConnectionService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.kerberos.KerberosKeytabUserService.html">KerberosKeytabUserService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.kerberos.KerberosPasswordUserService.html">KerberosPasswordUserService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.kerberos.KerberosTicketCacheUserService.html">KerberosTicketCacheUserService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.record.sink.LoggingRecordSink.html">LoggingRecordSink</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.distributed.cache.client.MapCacheClientService.html">MapCacheClientService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.distributed.cache.server.map.MapCacheServer.html">MapCacheServer</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.mongodb.MongoDBControllerService.html">MongoDBControllerService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.mongodb.MongoDBLookupService.html">MongoDBLookupService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.ssl.PEMEncodedSSLContextProvider.html">PEMEncodedSSLContextProvider</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.lookup.PropertiesFileLookupService.html">PropertiesFileLookupService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.services.protobuf.ProtobufReader.html">ProtobufReader</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.lookup.ReaderLookup.html">ReaderLookup</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.lookup.RecordSetWriterLookup.html">RecordSetWriterLookup</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.record.sink.lookup.RecordSinkServiceLookup.html">RecordSinkServiceLookup</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.redis.service.RedisConnectionPoolService.html">RedisConnectionPoolService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.redis.service.RedisDistributedMapCacheClientService.html">RedisDistributedMapCacheClientService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.lookup.RestLookupService.html">RestLookupService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.aws.s3.service.S3FileResourceService.html">S3FileResourceService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.lookup.script.ScriptedLookupService.html">ScriptedLookupService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.record.script.ScriptedReader.html">ScriptedReader</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.record.script.ScriptedRecordSetWriter.html">ScriptedRecordSetWriter</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.record.sink.script.ScriptedRecordSink.html">ScriptedRecordSink</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.distributed.cache.client.SetCacheClientService.html">SetCacheClientService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.distributed.cache.server.SetCacheServer.html">SetCacheServer</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.lookup.SimpleCsvFileLookupService.html">SimpleCsvFileLookupService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.lookup.db.SimpleDatabaseLookupService.html">SimpleDatabaseLookupService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.lookup.SimpleKeyValueLookupService.html">SimpleKeyValueLookupService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.redis.service.SimpleRedisDistributedMapCacheClientService.html">SimpleRedisDistributedMapCacheClientService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.lookup.script.SimpleScriptedLookupService.html">SimpleScriptedLookupService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.reporting.sink.SiteToSiteReportingRecordSink.html">SiteToSiteReportingRecordSink</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.services.slack.SlackRecordSink.html">SlackRecordSink</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.services.smb.SmbjClientProviderService.html">SmbjClientProviderService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.controller.asana.StandardAsanaClientProviderService.html">StandardAsanaClientProviderService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.services.azure.StandardAzureCredentialsControllerService.html">StandardAzureCredentialsControllerService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.database.dialect.service.StandardDatabaseDialectService.html">StandardDatabaseDialectService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.services.dropbox.StandardDropboxCredentialService.html">StandardDropboxCredentialService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.fileresource.service.StandardFileResourceService.html">StandardFileResourceService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.vault.hashicorp.StandardHashiCorpVaultClientService.html">StandardHashiCorpVaultClientService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.http.StandardHttpContextMap.html">StandardHttpContextMap</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.schemaregistry.services.StandardJsonSchemaRegistry.html">StandardJsonSchemaRegistry</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.services.azure.data.explorer.StandardKustoIngestService.html">StandardKustoIngestService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.services.azure.data.explorer.StandardKustoQueryService.html">StandardKustoQueryService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.oauth2.StandardOauth2AccessTokenProvider.html">StandardOauth2AccessTokenProvider</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.pgp.service.standard.StandardPGPPrivateKeyService.html">StandardPGPPrivateKeyService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.pgp.service.standard.StandardPGPPublicKeyService.html">StandardPGPPublicKeyService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.key.service.StandardPrivateKeyService.html">StandardPrivateKeyService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.proxy.StandardProxyConfigurationService.html">StandardProxyConfigurationService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.ssl.StandardRestrictedSSLContextService.html">StandardRestrictedSSLContextService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.aws.s3.encryption.StandardS3EncryptionService.html">StandardS3EncryptionService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.ssl.StandardSSLContextService.html">StandardSSLContextService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.web.client.provider.service.StandardWebClientServiceProvider.html">StandardWebClientServiceProvider</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.syslog.Syslog5424Reader.html">Syslog5424Reader</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.syslog.SyslogReader.html">SyslogReader</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.record.sink.event.UDPEventRecordSink.html">UDPEventRecordSink</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.schema.inference.VolatileSchemaCache.html">VolatileSchemaCache</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.windowsevent.WindowsEventLogReader.html">WindowsEventLogReader</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.lookup.XMLFileLookupService.html">XMLFileLookupService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.xml.XMLReader.html">XMLReader</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.xml.XMLRecordSetWriter.html">XMLRecordSetWriter</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.yaml.YamlTreeReader.html">YamlTreeReader</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.services.zendesk.ZendeskRecordSink.html">ZendeskRecordSink</a>
+                </li>
+                
+              </ul>
+            </div>
+          </li>
+        </ul>
+
+        <ul uk-accordion="collapsible: false">
+          <li>
+            <a class="uk-accordion-title" href="">Reporting Tasks</a>
+            <div class="uk-accordion-content">
+              
+              <ul class="uk-list uk-list-collapse uk-text-light uk-text-truncate component-items">
+                
+                <li>
+                  <a href="../html/org.apache.nifi.reporting.azure.loganalytics.AzureLogAnalyticsProvenanceReportingTask.html">AzureLogAnalyticsProvenanceReportingTask</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.reporting.azure.loganalytics.AzureLogAnalyticsReportingTask.html">AzureLogAnalyticsReportingTask</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.controller.ControllerStatusReportingTask.html">ControllerStatusReportingTask</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.controller.MonitorDiskUsage.html">MonitorDiskUsage</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.controller.MonitorMemory.html">MonitorMemory</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.reporting.script.ScriptedReportingTask.html">ScriptedReportingTask</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.reporting.SiteToSiteBulletinReportingTask.html">SiteToSiteBulletinReportingTask</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.reporting.SiteToSiteMetricsReportingTask.html">SiteToSiteMetricsReportingTask</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.reporting.SiteToSiteProvenanceReportingTask.html">SiteToSiteProvenanceReportingTask</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.reporting.SiteToSiteStatusReportingTask.html">SiteToSiteStatusReportingTask</a>
+                </li>
+                
+              </ul>
+            </div>
+          </li>
+        </ul>
+
+        <ul uk-accordion="collapsible: false">
+          <li>
+            <a class="uk-accordion-title" href="">Parameter Providers</a>
+            <div class="uk-accordion-content">
+              
+              <ul class="uk-list uk-list-collapse uk-text-light uk-text-truncate component-items">
+                
+                <li>
+                  <a href="../html/org.apache.nifi.parameter.aws.AwsSecretsManagerParameterProvider.html">AwsSecretsManagerParameterProvider</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.parameter.azure.AzureKeyVaultSecretsParameterProvider.html">AzureKeyVaultSecretsParameterProvider</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.parameter.DatabaseParameterProvider.html">DatabaseParameterProvider</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.parameter.EnvironmentVariableParameterProvider.html">EnvironmentVariableParameterProvider</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.parameter.gcp.GcpSecretManagerParameterProvider.html">GcpSecretManagerParameterProvider</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.vault.hashicorp.HashiCorpVaultParameterProvider.html">HashiCorpVaultParameterProvider</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.parameter.KubernetesSecretParameterProvider.html">KubernetesSecretParameterProvider</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.parameter.OnePasswordParameterProvider.html">OnePasswordParameterProvider</a>
+                </li>
+                
+              </ul>
+            </div>
+          </li>
+        </ul>
+
+        <ul uk-accordion="collapsible: false">
+          <li>
+            <a class="uk-accordion-title" href="">Flow Analysis Rules</a>
+            <div class="uk-accordion-content">
+              
+              <ul class="uk-list uk-list-collapse uk-text-light uk-text-truncate component-items">
+                
+                <li>
+                  <a href="../html/org.apache.nifi.flowanalysis.rules.DisallowComponentType.html">DisallowComponentType</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.flowanalysis.rules.RequireServerSSLContextService.html">RequireServerSSLContextService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.flowanalysis.rules.RestrictBackpressureSettings.html">RestrictBackpressureSettings</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.flowanalysis.rules.RestrictFlowFileExpiration.html">RestrictFlowFileExpiration</a>
+                </li>
+                
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <script type="text/javascript">
+        var componentSelected = document.getElementById('component-selected');
+        if (componentSelected) {
+            componentSelected.scrollIntoView();
+        }
+      </script>
+    </div>
+
+    <div id="component-panel" class="uk-width-3-4@m">
+      <div class="uk-padding-small uk-panel-scrollable" uk-height-viewport="offset-bottom: 150px">
+        
+          
+
+
+<h3>PutFile 2.5.0</h3>
+
+<dl class="uk-description-list">
+    <dt>Bundle</dt>
+    <dd>org.apache.nifi | nifi-standard-nar</dd>
+    <dt>Description</dt>
+    <dd>Writes the contents of a FlowFile to the local file system</dd>
+    <dt>Tags</dt>
+    <dd>archive, copy, files, filesystem, local, put</dd>
+    <dt>Input Requirement</dt>
+    <dd>
+        REQUIRED
+    </dd>
+    <dt>Supports Sensitive Dynamic Properties</dt>
+    <dd>false</dd>
+</dl>
+
+
+
+<div class="uk-margin uk-flex">
+    <div class="component-section-header uk-width-3-4">Properties</div>
+    <div class="uk-width-1-4 uk-text-right">
+        <button uk-icon="icon: expand" uk-tooltip="Expand Properties" id="expand-property-descriptors" class="uk-button uk-button-link uk-button-small"></button>
+        <button uk-icon="icon: shrink" uk-tooltip="Collapse Properties" id="shrink-property-descriptors" class="uk-button uk-button-link uk-button-small"></button>
+    </div>
+    <script type="text/javascript">
+        document.addEventListener('uikit:init', () => {
+            var expand = document.getElementById('expand-property-descriptors');
+            expand.addEventListener('click', () => {
+                var descriptors = document.getElementsByClassName('property-descriptor-content');
+                for (var i = 0; i < descriptors.length; i++) {
+                    var descriptor = descriptors[i];
+                    descriptor.hidden = false;
+                }
+            });
+
+            var shrink = document.getElementById('shrink-property-descriptors');
+            shrink.addEventListener('click', () => {
+                var descriptors = document.getElementsByClassName('property-descriptor-content');
+                for (var i = 0; i < descriptors.length; i++) {
+                    var descriptor = descriptors[i];
+                    descriptor.hidden = true;
+                }
+            });
+        });
+    </script>
+</div>
+<div>
+    <ul uk-accordion="multiple: true" id="property-descriptors">
+        
+        <li class="property-descriptor">
+            <a class="uk-accordion-title" href="">
+                <span class="property-required">Conflict Resolution Strategy</span>
+                <div class="uk-width-2-3 uk-align-right uk-margin-remove uk-text-truncate uk-text-lighter">Indicates what should happen when a file with the same name already exists in the output directory</div>
+            </a>
+            <div class="uk-accordion-content uk-padding-small property-descriptor-content">
+                <dl class="uk-description-list">
+                    <dt>Display Name</dt>
+                    <dd>Conflict Resolution Strategy</dd>
+                    <dt>Description</dt>
+                    <dd>Indicates what should happen when a file with the same name already exists in the output directory</dd>
+                    <dt>API Name</dt>
+                    <dd>Conflict Resolution Strategy</dd>
+                    
+                    <dt>Default Value</dt>
+                    <dd>fail</dd>
+                    
+                    
+                    <dt>Allowable Values</dt>
+                    <dd>
+                        <ul>
+                            
+                            <li>
+                                replace
+                                </li>
+                            
+                            <li>
+                                ignore
+                                </li>
+                            
+                            <li>
+                                fail
+                                </li>
+                            
+                        </ul>
+                    </dd>
+                    
+                    
+                    <dt>Expression Language Scope</dt>
+                    <dd>Not Supported</dd>
+                    <dt>Sensitive</dt>
+                    <dd>false</dd>
+                    <dt>Required</dt>
+                    <dd>true</dd>
+                    
+                </dl>
+            </div>
+        </li>
+        
+        <li class="property-descriptor">
+            <a class="uk-accordion-title" href="">
+                <span class="property-required">Create Missing Directories</span>
+                <div class="uk-width-2-3 uk-align-right uk-margin-remove uk-text-truncate uk-text-lighter">If true, then missing destination directories will be created. If false, flowfiles are penalized and sent to failure.</div>
+            </a>
+            <div class="uk-accordion-content uk-padding-small property-descriptor-content">
+                <dl class="uk-description-list">
+                    <dt>Display Name</dt>
+                    <dd>Create Missing Directories</dd>
+                    <dt>Description</dt>
+                    <dd>If true, then missing destination directories will be created. If false, flowfiles are penalized and sent to failure.</dd>
+                    <dt>API Name</dt>
+                    <dd>Create Missing Directories</dd>
+                    
+                    <dt>Default Value</dt>
+                    <dd>true</dd>
+                    
+                    
+                    <dt>Allowable Values</dt>
+                    <dd>
+                        <ul>
+                            
+                            <li>
+                                true
+                                </li>
+                            
+                            <li>
+                                false
+                                </li>
+                            
+                        </ul>
+                    </dd>
+                    
+                    
+                    <dt>Expression Language Scope</dt>
+                    <dd>Not Supported</dd>
+                    <dt>Sensitive</dt>
+                    <dd>false</dd>
+                    <dt>Required</dt>
+                    <dd>true</dd>
+                    
+                </dl>
+            </div>
+        </li>
+        
+        <li class="property-descriptor">
+            <a class="uk-accordion-title" href="">
+                <span class="property-required">Directory</span>
+                <div class="uk-width-2-3 uk-align-right uk-margin-remove uk-text-truncate uk-text-lighter">The directory to which files should be written. You may use expression language such as /aa/bb/${path}</div>
+            </a>
+            <div class="uk-accordion-content uk-padding-small property-descriptor-content">
+                <dl class="uk-description-list">
+                    <dt>Display Name</dt>
+                    <dd>Directory</dd>
+                    <dt>Description</dt>
+                    <dd>The directory to which files should be written. You may use expression language such as /aa/bb/${path}</dd>
+                    <dt>API Name</dt>
+                    <dd>Directory</dd>
+                    
+                    
+                    
+                    <dt>Expression Language Scope</dt>
+                    <dd>Environment variables and FlowFile Attributes</dd>
+                    <dt>Sensitive</dt>
+                    <dd>false</dd>
+                    <dt>Required</dt>
+                    <dd>true</dd>
+                    
+                </dl>
+            </div>
+        </li>
+        
+        <li class="property-descriptor">
+            <a class="uk-accordion-title" href="">
+                <span>Group</span>
+                <div class="uk-width-2-3 uk-align-right uk-margin-remove uk-text-truncate uk-text-lighter">Sets the group on the output file to the value of this attribute.  You may also use expression language such as ${file.group}.</div>
+            </a>
+            <div class="uk-accordion-content uk-padding-small property-descriptor-content">
+                <dl class="uk-description-list">
+                    <dt>Display Name</dt>
+                    <dd>Group</dd>
+                    <dt>Description</dt>
+                    <dd>Sets the group on the output file to the value of this attribute.  You may also use expression language such as ${file.group}.</dd>
+                    <dt>API Name</dt>
+                    <dd>Group</dd>
+                    
+                    
+                    
+                    <dt>Expression Language Scope</dt>
+                    <dd>Environment variables and FlowFile Attributes</dd>
+                    <dt>Sensitive</dt>
+                    <dd>false</dd>
+                    <dt>Required</dt>
+                    <dd>false</dd>
+                    
+                </dl>
+            </div>
+        </li>
+        
+        <li class="property-descriptor">
+            <a class="uk-accordion-title" href="">
+                <span>Last Modified Time</span>
+                <div class="uk-width-2-3 uk-align-right uk-margin-remove uk-text-truncate uk-text-lighter">Sets the lastModifiedTime on the output file to the value of this attribute.  Format must be yyyy-MM-dd'T'HH:mm:ssZ.  You may also use expression language such as ${file.lastModifiedTime}.</div>
+            </a>
+            <div class="uk-accordion-content uk-padding-small property-descriptor-content">
+                <dl class="uk-description-list">
+                    <dt>Display Name</dt>
+                    <dd>Last Modified Time</dd>
+                    <dt>Description</dt>
+                    <dd>Sets the lastModifiedTime on the output file to the value of this attribute.  Format must be yyyy-MM-dd'T'HH:mm:ssZ.  You may also use expression language such as ${file.lastModifiedTime}.</dd>
+                    <dt>API Name</dt>
+                    <dd>Last Modified Time</dd>
+                    
+                    
+                    
+                    <dt>Expression Language Scope</dt>
+                    <dd>Environment variables and FlowFile Attributes</dd>
+                    <dt>Sensitive</dt>
+                    <dd>false</dd>
+                    <dt>Required</dt>
+                    <dd>false</dd>
+                    
+                </dl>
+            </div>
+        </li>
+        
+        <li class="property-descriptor">
+            <a class="uk-accordion-title" href="">
+                <span>Maximum File Count</span>
+                <div class="uk-width-2-3 uk-align-right uk-margin-remove uk-text-truncate uk-text-lighter">Specifies the maximum number of files that can exist in the output directory</div>
+            </a>
+            <div class="uk-accordion-content uk-padding-small property-descriptor-content">
+                <dl class="uk-description-list">
+                    <dt>Display Name</dt>
+                    <dd>Maximum File Count</dd>
+                    <dt>Description</dt>
+                    <dd>Specifies the maximum number of files that can exist in the output directory</dd>
+                    <dt>API Name</dt>
+                    <dd>Maximum File Count</dd>
+                    
+                    
+                    
+                    <dt>Expression Language Scope</dt>
+                    <dd>Not Supported</dd>
+                    <dt>Sensitive</dt>
+                    <dd>false</dd>
+                    <dt>Required</dt>
+                    <dd>false</dd>
+                    
+                </dl>
+            </div>
+        </li>
+        
+        <li class="property-descriptor">
+            <a class="uk-accordion-title" href="">
+                <span>Owner</span>
+                <div class="uk-width-2-3 uk-align-right uk-margin-remove uk-text-truncate uk-text-lighter">Sets the owner on the output file to the value of this attribute.  You may also use expression language such as ${file.owner}. Note on many operating systems Nifi must be running as a super-user to have the permissions to set the file owner.</div>
+            </a>
+            <div class="uk-accordion-content uk-padding-small property-descriptor-content">
+                <dl class="uk-description-list">
+                    <dt>Display Name</dt>
+                    <dd>Owner</dd>
+                    <dt>Description</dt>
+                    <dd>Sets the owner on the output file to the value of this attribute.  You may also use expression language such as ${file.owner}. Note on many operating systems Nifi must be running as a super-user to have the permissions to set the file owner.</dd>
+                    <dt>API Name</dt>
+                    <dd>Owner</dd>
+                    
+                    
+                    
+                    <dt>Expression Language Scope</dt>
+                    <dd>Environment variables and FlowFile Attributes</dd>
+                    <dt>Sensitive</dt>
+                    <dd>false</dd>
+                    <dt>Required</dt>
+                    <dd>false</dd>
+                    
+                </dl>
+            </div>
+        </li>
+        
+        <li class="property-descriptor">
+            <a class="uk-accordion-title" href="">
+                <span>Permissions</span>
+                <div class="uk-width-2-3 uk-align-right uk-margin-remove uk-text-truncate uk-text-lighter">Sets the permissions on the output file to the value of this attribute.  Format must be either UNIX rwxrwxrwx with a - in place of denied permissions (e.g. rw-r--r--) or an octal number (e.g. 644).  You may also use expression language such as ${file.permissions}.</div>
+            </a>
+            <div class="uk-accordion-content uk-padding-small property-descriptor-content">
+                <dl class="uk-description-list">
+                    <dt>Display Name</dt>
+                    <dd>Permissions</dd>
+                    <dt>Description</dt>
+                    <dd>Sets the permissions on the output file to the value of this attribute.  Format must be either UNIX rwxrwxrwx with a - in place of denied permissions (e.g. rw-r--r--) or an octal number (e.g. 644).  You may also use expression language such as ${file.permissions}.</dd>
+                    <dt>API Name</dt>
+                    <dd>Permissions</dd>
+                    
+                    
+                    
+                    <dt>Expression Language Scope</dt>
+                    <dd>Environment variables and FlowFile Attributes</dd>
+                    <dt>Sensitive</dt>
+                    <dd>false</dd>
+                    <dt>Required</dt>
+                    <dd>false</dd>
+                    
+                </dl>
+            </div>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+
+
+
+
+
+<div class="component-section-header uk-margin">Restrictions</div>
+<div>
+    <table class="uk-table uk-table-small uk-table-divider uk-box-shadow-small">
+        <thead>
+        <tr>
+            <th class="uk-width-1-4">Required Permission</th>
+            <th class="uk-width-3-4">Explanation</th>
+        </tr>
+        </thead>
+        <tbody>
+        
+        <tr>
+            <td>write filesystem</td>
+            <td class="uk-text-lighter">Provides operator the ability to write to any file that NiFi has access to.</td>
+        </tr>
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+<div class="component-section-header uk-margin">Relationships</div>
+<div>
+    <table class="uk-table uk-table-small uk-table-divider uk-box-shadow-small">
+        <thead>
+        <tr>
+            <th class="uk-width-1-4">Name</th>
+            <th class="uk-width-3-4">Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        
+        <tr>
+            <td>failure</td>
+            <td class="uk-text-lighter">Files that could not be written to the output directory for some reason are transferred to this relationship</td>
+        </tr>
+        
+        <tr>
+            <td>success</td>
+            <td class="uk-text-lighter">Files that have been successfully written to the output directory are transferred to this relationship</td>
+        </tr>
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+<div class="component-section-header uk-margin">Reads Attributes</div>
+<div>
+    <table class="uk-table uk-table-small uk-table-divider uk-box-shadow-small">
+        <thead>
+        <tr>
+            <th class="uk-width-1-4">Name</th>
+            <th class="uk-width-3-4">Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        
+        <tr>
+            <td>filename</td>
+            <td class="uk-text-lighter">The filename to use when writing the FlowFile to disk.</td>
+        </tr>
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="component-section-header uk-margin">See Also</div>
+<ul>
+    
+    <li>
+        <a href="../html/org.apache.nifi.processors.standard.FetchFile.html">org.apache.nifi.processors.standard.FetchFile</a>
+    </li>
+    
+    <li>
+        <a href="../html/org.apache.nifi.processors.standard.GetFile.html">org.apache.nifi.processors.standard.GetFile</a>
+    </li>
+    
+</ul>
+
+        
+      </div>
+    </div>
+  </div>
+</main>
+    <footer>
+  <div class="uk-container">
+    <div class="uk-flex uk-grid uk-grid-large">
+      <div class="uk-width-1-2@m">
+        <p>
+          <a class="uk-link-reset" href="/">
+            <img src="../images/apache-nifi-logo.svg" class="footer-logo" alt="Apache NiFi Logo">
+          </a>
+          <a class="uk-link-reset" href="../html/apache.org.html">
+            <img src="../images/apache-logo.svg" class="footer-logo uk-margin-left" alt="Apache Software Foundation Logo">
+          </a>
+        </p>
+        <p>
+          Copyright © 2025 The Apache Software Foundation under the terms of the
+          <a href="../html/LICENSE-2.0.html">Apache License, Version 2.0</a>
+        </p>
+        <p>
+          Apache NiFi, NiFi, and the NiFi logo are trademarks of
+          <a href="../html/apache.org.html">The Apache Software Foundation</a>
+        </p>
+      </div>
+      <div class="uk-width-1-4@m">
+        <h3><a href="/">Project</a></h3>
+        <ul>
+          <li><a href="../html/NIFI.html">Issues</a></li>
+          <li><a href="../html/nifi.html">Source</a></li>
+          <li><a href="../html/apache-nifi.html">LinkedIn</a></li>
+          <li><a href="../html/zt-11njbtkdx-ZRU8FKYSWoEHRJetidy0zA.html">Slack</a></li>
+          <li><a href="../html/security.html">Security</a></li>
+        </ul>
+      </div>
+      <div class="uk-width-1-4@m">
+        <h3><a href="../html/www.apache.org.html">Apache</a></h3>
+        <ul>
+          <li><a href="../html/licenses.html">License</a></li>
+          <li><a href="../html/privacy-policy-public.html">Privacy</a></li>
+          <li><a href="../html/sponsorship.html">Sponsorship</a></li>
+          <li><a href="../html/thanks.html">Thanks</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="../scripts/uikit.min.js"></script>
+    <script src="../scripts/uikit-icons.min.js"></script>
+  </body>
+</html>

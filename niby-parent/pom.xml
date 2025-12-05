@@ -65,6 +65,12 @@
             <artifactId>quarkus-websockets-next</artifactId>
         </dependency>
 
+        <!-- OpenAPI/Swagger -->
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-smallrye-openapi</artifactId>
+        </dependency>
+
         <!-- LangChain4j - version managed by BOM -->
         <dependency>
             <groupId>io.quarkiverse.langchain4j</groupId>

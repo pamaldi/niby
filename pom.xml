@@ -14,6 +14,7 @@
         <module>niby-be-core</module>
         <module>niby-ui</module>
         <module>niby-parent</module>
+        <module>niby-rag</module>
     </modules>
 
     <build>

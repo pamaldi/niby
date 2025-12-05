@@ -58,13 +58,16 @@ public class NibyWebSocket {
 
     private Multi<String> routeToAgent(String message, String mode) {
         String normalizedMode = (mode == null ? "basic" : mode.toLowerCase(Locale.ROOT));
+        Multi<String> response;
         switch (normalizedMode) {
             case "plan":
                 log.info("Routing to PlanAgent");
-                return planAgent.chat(message);
+                response = planAgent.chat(message);
+                break;
             case "act":
                 log.info("Routing to ActAgent");
-                return actAgent.chat(message);
+                response = actAgent.chat(message);
+                break;
             case "basic":
             default:
                 if (!"basic".equals(normalizedMode)) {
@@ -72,8 +75,15 @@ public class NibyWebSocket {
                 } else {
                     log.info("Routing to BasicAgent");
                 }
-                return basicAgent.chat(message);
+                response = basicAgent.chat(message);
+                break;
         }
+
+        // Add logging to debug streaming
+        return response
+                .onItem().invoke(item -> log.info("Streaming chunk: {}", item))
+                .onFailure().invoke(error -> log.error("Stream error: {}", error.getMessage(), error))
+                .onCompletion().invoke(() -> log.info("Stream completed"));
     }
 
     @OnError

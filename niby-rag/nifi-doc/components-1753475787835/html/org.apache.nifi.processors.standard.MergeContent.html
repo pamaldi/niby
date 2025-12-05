@@ -1,0 +1,4004 @@
+<html lang="en">
+  
+<head>
+  <title>MergeContent - Apache NiFi</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Apache NiFi is an easy to use, powerful, and reliable system to process and distribute data">
+  <meta name="keywords" content="archive,concatenation,content,correlation,flowfile-stream,flowfile-stream-v3,merge,stream,tar,zip">
+  <title>MergeContent - Apache NiFi</title>
+  <meta property="og:title" content="MergeContent">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://nifi.apache.org/components/org.apache.nifi.processors.standard.MergeContent/">
+  <meta property="og:description" content="Apache NiFi is an easy to use, powerful, and reliable system to process and distribute data">
+  <meta property="og:site_name" content="Apache NiFi">
+  <meta property="og:image" content="https://nifi.apache.org/images/project-brand.jpg?version=1">
+  <meta name="twitter:title" content="MergeContent">
+  <meta name="twitter:description" content="Apache NiFi is an easy to use, powerful, and reliable system to process and distribute data">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="apachenifi">
+  <meta name="twitter:image" content="https://nifi.apache.org/images/project-brand.jpg?version=1">
+  <link rel="icon" href="/images/apache-nifi-drop-logo.svg">
+  <link rel="stylesheet" href="../styles/uikit.min.css">
+  <link rel="stylesheet" href="../styles/main.css">
+  <script>
+  var _paq = window._paq = window._paq || [];
+  _paq.push(['disableCookies']);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var baseUri = "//analytics.apache.org/";
+    _paq.push(['setTrackerUrl', baseUri + 'matomo.php']);
+    _paq.push(['setSiteId', '28']);
+    var trackerElement = document.createElement('script');
+    var firstScriptElement = document.getElementsByTagName('script')[0];
+    trackerElement.async = true;
+    trackerElement.src = baseUri + 'matomo.js';
+    var firstScriptElement = document.getElementsByTagName('script')[0];
+    if (window.location.host === 'nifi.apache.org') {
+      firstScriptElement.parentNode.insertBefore(trackerElement, firstScriptElement);
+    }
+  })();
+</script>
+</head>
+<body class="section-background">
+    <div class="nav-container" uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
+  <nav class="uk-container uk-navbar-container uk-navbar-transparent" uk-navbar="">
+    <div class="uk-navbar-left">
+      <ul class="uk-navbar-nav">
+        <li>
+          <a class="uk-navbar-item" href="/">
+            <img src="../images/apache-nifi-drop-logo.svg" alt="Apache NiFi Logo" class="navbar-logo" width="36" height="48">
+          </a>
+        </li>
+        <li class="uk-hidden@s">
+          <a href="#" class="uk-navbar-toggle" uk-navbar-toggle-icon="" uk-toggle="target: #mobile-menu"></a>
+        </li>
+
+          
+          
+          <li class="uk-visible@s">
+            <a href="../html/documentation.html">Documentation</a>
+            
+            <ul class="uk-dropdown" uk-dropdown="mode: click; animation: uk-animation-slide-top-small; duration: 300;">
+              
+              <li>
+                <a href="../html/components.html">
+                  NiFi Version 2 Documentation
+                  
+                </a>
+
+              
+
+              </li>
+              
+              <li>
+                <a href="../html/v1.html">
+                  NiFi Version 1 Documentation
+                  
+                </a>
+
+              
+
+              </li>
+              
+              <li>
+                <a href="../html/guides.html">
+                  Guides
+                  
+                </a>
+
+              
+
+              </li>
+              
+              <li>
+                <a href="../html/security.html">
+                  Security Reporting
+                  
+                </a>
+
+              
+
+              </li>
+              
+              <li>
+                <a href="../html/NIFI.html" target="_blank" rel="noopener noreferrer">
+                  Wiki
+                  <span uk-icon="link"></span>
+                </a>
+
+              
+
+              </li>
+              
+            </ul>
+            
+          </li>
+          
+          <li class="uk-visible@s">
+            <a href="../html/development.html">Development</a>
+            
+            <ul class="uk-dropdown" uk-dropdown="mode: click; animation: uk-animation-slide-top-small; duration: 300;">
+              
+              <li>
+                <a href="../html/Contributor+Guide.html" target="_blank" rel="noopener noreferrer">
+                  Contributing
+                  <span uk-icon="link"></span>
+                </a>
+
+              
+
+              </li>
+              
+              <li>
+                <a href="../html/NIFI.html" target="_blank" rel="noopener noreferrer">
+                  Issues
+                  <span uk-icon="link"></span>
+                </a>
+
+              
+
+              </li>
+              
+              <li>
+                <a href="../html/nifi.html" target="_blank" rel="noopener noreferrer">
+                  Source
+                  <span uk-icon="link"></span>
+                </a>
+
+              
+
+              </li>
+              
+            </ul>
+            
+          </li>
+          
+          <li class="uk-visible@s">
+            <a href="../html/community.html">Community</a>
+            
+            <ul class="uk-dropdown" uk-dropdown="mode: click; animation: uk-animation-slide-top-small; duration: 300;">
+              
+              <li>
+                <a href="../html/contact.html">
+                  Contact
+                  
+                </a>
+
+              
+
+              </li>
+              
+              <li>
+                <a href="../html/powered-by.html">
+                  Powered By
+                  
+                </a>
+
+              
+
+              </li>
+              
+              <li>
+                <a href="../html/community.html">
+                  Team
+                  
+                </a>
+
+              
+
+              </li>
+              
+            </ul>
+            
+          </li>
+          
+          <li class="uk-visible@s">
+            <a href="../html/projects.html">Projects</a>
+            
+            <ul class="uk-dropdown" uk-dropdown="mode: click; animation: uk-animation-slide-top-small; duration: 300;">
+              
+              <li>
+                <a href="../html/minifi.html">
+                  MiNiFi
+                  
+                </a>
+
+              
+
+              </li>
+              
+              <li>
+                <a href="../html/registry.html">
+                  Registry
+                  
+                </a>
+
+              
+
+              </li>
+              
+              <li>
+                <a href="../html/fds.html">
+                  Flow Design System
+                  
+                </a>
+
+              
+
+              </li>
+              
+            </ul>
+            
+          </li>
+          
+          <li class="uk-visible@s">
+            <a href="../html/www.apache.org.html">Apache</a>
+            
+            <ul class="uk-dropdown" uk-dropdown="mode: click; animation: uk-animation-slide-top-small; duration: 300;">
+              
+              <li>
+                <a href="../html/current-event.html" target="_blank" rel="noopener noreferrer">
+                  Events
+                  <span uk-icon="link"></span>
+                </a>
+
+              
+
+              </li>
+              
+              <li>
+                <a href="../html/licenses.html" target="_blank" rel="noopener noreferrer">
+                  License
+                  <span uk-icon="link"></span>
+                </a>
+
+              
+
+              </li>
+              
+              <li>
+                <a href="../html/privacy-policy-public.html" target="_blank" rel="noopener noreferrer">
+                  Privacy
+                  <span uk-icon="link"></span>
+                </a>
+
+              
+
+              </li>
+              
+              <li>
+                <a href="../html/sponsorship.html" target="_blank" rel="noopener noreferrer">
+                  Sponsorship
+                  <span uk-icon="link"></span>
+                </a>
+
+              
+
+              </li>
+              
+              <li>
+                <a href="../html/thanks.html" target="_blank" rel="noopener noreferrer">
+                  Thanks
+                  <span uk-icon="link"></span>
+                </a>
+
+              
+
+              </li>
+              
+            </ul>
+            
+          </li>
+          
+
+      </ul>
+
+    </div>
+    <div class="uk-navbar-right">
+      <ul class="uk-navbar-nav">
+        <li>
+          <div class="uk-navbar-item">
+            <a class="uk-icon-link navbar-icon" uk-icon="icon: github; ratio: 2" href="../html/nifi.html"></a>
+          </div>
+        </li>
+        <li>
+          <div class="uk-navbar-item">
+            <a class="uk-button uk-button-primary uk-icon" href="../html/download.html">
+              Download
+            </a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<div id="mobile-menu" uk-offcanvas="" class="uk-offcanvas">
+  <div class="uk-offcanvas-bar">
+    <ul class="uk-navbar-nav" uk-accordion="">
+      
+      
+        
+        <li>
+          <a class="uk-accordion-title">Documentation</a>
+          
+          <ul class="uk-accordion-content">
+            
+            <li>
+              <a href="../html/components.html">
+                NiFi Version 2 Documentation
+                
+              </a>
+
+            
+
+            </li>
+            
+            <li>
+              <a href="../html/v1.html">
+                NiFi Version 1 Documentation
+                
+              </a>
+
+            
+
+            </li>
+            
+            <li>
+              <a href="../html/guides.html">
+                Guides
+                
+              </a>
+
+            
+
+            </li>
+            
+            <li>
+              <a href="../html/security.html">
+                Security Reporting
+                
+              </a>
+
+            
+
+            </li>
+            
+            <li>
+              <a href="../html/NIFI.html" target="_blank" rel="noopener noreferrer">
+                Wiki
+                <span uk-icon="link"></span>
+              </a>
+
+            
+
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="uk-accordion-title">Development</a>
+          
+          <ul class="uk-accordion-content">
+            
+            <li>
+              <a href="../html/Contributor+Guide.html" target="_blank" rel="noopener noreferrer">
+                Contributing
+                <span uk-icon="link"></span>
+              </a>
+
+            
+
+            </li>
+            
+            <li>
+              <a href="../html/NIFI.html" target="_blank" rel="noopener noreferrer">
+                Issues
+                <span uk-icon="link"></span>
+              </a>
+
+            
+
+            </li>
+            
+            <li>
+              <a href="../html/nifi.html" target="_blank" rel="noopener noreferrer">
+                Source
+                <span uk-icon="link"></span>
+              </a>
+
+            
+
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="uk-accordion-title">Community</a>
+          
+          <ul class="uk-accordion-content">
+            
+            <li>
+              <a href="../html/contact.html">
+                Contact
+                
+              </a>
+
+            
+
+            </li>
+            
+            <li>
+              <a href="../html/powered-by.html">
+                Powered By
+                
+              </a>
+
+            
+
+            </li>
+            
+            <li>
+              <a href="../html/community.html">
+                Team
+                
+              </a>
+
+            
+
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="uk-accordion-title">Projects</a>
+          
+          <ul class="uk-accordion-content">
+            
+            <li>
+              <a href="../html/minifi.html">
+                MiNiFi
+                
+              </a>
+
+            
+
+            </li>
+            
+            <li>
+              <a href="../html/registry.html">
+                Registry
+                
+              </a>
+
+            
+
+            </li>
+            
+            <li>
+              <a href="../html/fds.html">
+                Flow Design System
+                
+              </a>
+
+            
+
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="uk-accordion-title">Apache</a>
+          
+          <ul class="uk-accordion-content">
+            
+            <li>
+              <a href="../html/current-event.html" target="_blank" rel="noopener noreferrer">
+                Events
+                <span uk-icon="link"></span>
+              </a>
+
+            
+
+            </li>
+            
+            <li>
+              <a href="../html/licenses.html" target="_blank" rel="noopener noreferrer">
+                License
+                <span uk-icon="link"></span>
+              </a>
+
+            
+
+            </li>
+            
+            <li>
+              <a href="../html/privacy-policy-public.html" target="_blank" rel="noopener noreferrer">
+                Privacy
+                <span uk-icon="link"></span>
+              </a>
+
+            
+
+            </li>
+            
+            <li>
+              <a href="../html/sponsorship.html" target="_blank" rel="noopener noreferrer">
+                Sponsorship
+                <span uk-icon="link"></span>
+              </a>
+
+            
+
+            </li>
+            
+            <li>
+              <a href="../html/thanks.html" target="_blank" rel="noopener noreferrer">
+                Thanks
+                <span uk-icon="link"></span>
+              </a>
+
+            
+
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+
+    </ul>
+  </div>
+</div>
+    <main>
+  
+  <div uk-grid="">
+
+    <div class="uk-width-1-4@m">
+      <div class="uk-padding-small uk-panel-scrollable" uk-height-viewport="offset-bottom: 150px">
+        <ul uk-accordion="collapsible: false">
+          <li>
+            <a class="uk-accordion-title" href="">General</a>
+            <div class="uk-accordion-content">
+              <ul class="uk-list uk-list-collapse uk-text-light uk-text-truncate component-items">
+                <li><a href="../html/overview.html" target="_blank">Overview</a></li>
+                <li><a href="../html/getting-started.html" target="_blank">Getting Started</a></li>
+                <li><a href="../html/user-guide.html" target="_blank">User Guide</a></li>
+                <li><a href="../html/expression-language-guide.html" target="_blank">Expression Language Guide</a></li>
+                <li><a href="../html/record-path-guide.html" target="_blank">RecordPath Guide</a></li>
+                <li><a href="../html/administration-guide.html" target="_blank">Admin Guide</a></li>
+                <li><a href="../html/toolkit-guide.html" target="_blank">Toolkit Guide</a></li>
+                <li><a href="../html/walkthroughs.html" target="_blank">Walkthroughs</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+
+        <ul uk-accordion="collapsible: false">
+          <li>
+            <a class="uk-accordion-title" href="">Developer</a>
+            <div class="uk-accordion-content">
+              <ul class="uk-list uk-list-collapse uk-text-light uk-text-truncate component-items">
+                <li><a href="../html/developer-guide.html">Developer Guide</a></li>
+                <li><a href="../html/python-developer-guide.html">Python Developer Guide</a></li>
+                <li><a href="../html/nifi-in-depth.html">Apache NiFi In Depth</a></li>
+                <li><a href="../html/rest-api.html">REST API</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+
+        <ul uk-accordion="collapsible: false">
+          <li>
+            <a class="uk-accordion-title" href="">Processors</a>
+            <div class="uk-accordion-content">
+              
+              <ul class="uk-list uk-list-collapse uk-text-light uk-text-truncate component-items">
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.stateful.analysis.AttributeRollingWindow.html">AttributeRollingWindow</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.AttributesToCSV.html">AttributesToCSV</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.AttributesToJSON.html">AttributesToJSON</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.CalculateRecordStats.html">CalculateRecordStats</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.cdc.mysql.processors.CaptureChangeMySQL.html">CaptureChangeMySQL</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.CompressContent.html">CompressContent</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.websocket.ConnectWebSocket.html">ConnectWebSocket</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.amqp.processors.ConsumeAMQP.html">ConsumeAMQP</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.azure.eventhub.ConsumeAzureEventHub.html">ConsumeAzureEventHub</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.box.ConsumeBoxEnterpriseEvents.html">ConsumeBoxEnterpriseEvents</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.box.ConsumeBoxEvents.html">ConsumeBoxEvents</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.elasticsearch.ConsumeElasticsearch.html">ConsumeElasticsearch</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.gcp.pubsub.ConsumeGCPubSub.html">ConsumeGCPubSub</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.email.ConsumeIMAP.html">ConsumeIMAP</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.jms.processors.ConsumeJMS.html">ConsumeJMS</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.kafka.processors.ConsumeKafka.html">ConsumeKafka</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.aws.kinesis.stream.ConsumeKinesisStream.html">ConsumeKinesisStream</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.mqtt.ConsumeMQTT.html">ConsumeMQTT</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.email.ConsumePOP3.html">ConsumePOP3</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.slack.ConsumeSlack.html">ConsumeSlack</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.twitter.ConsumeTwitter.html">ConsumeTwitter</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.windows.event.log.ConsumeWindowsEventLog.html">ConsumeWindowsEventLog</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.ControlRate.html">ControlRate</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.ConvertCharacterSet.html">ConvertCharacterSet</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.ConvertRecord.html">ConvertRecord</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.azure.storage.CopyAzureBlobStorage_v12.html">CopyAzureBlobStorage_v12</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.aws.s3.CopyS3Object.html">CopyS3Object</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.CountText.html">CountText</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.box.CreateBoxFileMetadataInstance.html">CreateBoxFileMetadataInstance</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.box.CreateBoxMetadataTemplate.html">CreateBoxMetadataTemplate</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.CryptographicHashContent.html">CryptographicHashContent</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.DebugFlow.html">DebugFlow</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.cipher.DecryptContentAge.html">DecryptContentAge</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.pgp.DecryptContentPGP.html">DecryptContentPGP</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.DeduplicateRecord.html">DeduplicateRecord</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.azure.storage.DeleteAzureBlobStorage_v12.html">DeleteAzureBlobStorage_v12</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.azure.storage.DeleteAzureDataLakeStorage.html">DeleteAzureDataLakeStorage</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.box.DeleteBoxFileMetadataInstance.html">DeleteBoxFileMetadataInstance</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.elasticsearch.DeleteByQueryElasticsearch.html">DeleteByQueryElasticsearch</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.aws.dynamodb.DeleteDynamoDB.html">DeleteDynamoDB</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.DeleteFile.html">DeleteFile</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.gcp.storage.DeleteGCSObject.html">DeleteGCSObject</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.mongodb.gridfs.DeleteGridFS.html">DeleteGridFS</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.mongodb.DeleteMongo.html">DeleteMongo</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.aws.s3.DeleteS3Object.html">DeleteS3Object</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.DeleteSFTP.html">DeleteSFTP</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.aws.sqs.DeleteSQS.html">DeleteSQS</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.DetectDuplicate.html">DetectDuplicate</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.DistributeLoad.html">DistributeLoad</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.DuplicateFlowFile.html">DuplicateFlowFile</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.EncodeContent.html">EncodeContent</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.cipher.EncryptContentAge.html">EncryptContentAge</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.pgp.EncryptContentPGP.html">EncryptContentPGP</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.EnforceOrder.html">EnforceOrder</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.EvaluateJsonPath.html">EvaluateJsonPath</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.EvaluateXPath.html">EvaluateXPath</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.EvaluateXQuery.html">EvaluateXQuery</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.groovyx.ExecuteGroovyScript.html">ExecuteGroovyScript</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.ExecuteProcess.html">ExecuteProcess</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.script.ExecuteScript.html">ExecuteScript</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.ExecuteSQL.html">ExecuteSQL</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.ExecuteSQLRecord.html">ExecuteSQLRecord</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.ExecuteStreamCommand.html">ExecuteStreamCommand</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.avro.ExtractAvroMetadata.html">ExtractAvroMetadata</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.email.ExtractEmailAttachments.html">ExtractEmailAttachments</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.email.ExtractEmailHeaders.html">ExtractEmailHeaders</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.ExtractGrok.html">ExtractGrok</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.hl7.ExtractHL7Attributes.html">ExtractHL7Attributes</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.ExtractRecordSchema.html">ExtractRecordSchema</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.box.ExtractStructuredBoxFileMetadata.html">ExtractStructuredBoxFileMetadata</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.ExtractText.html">ExtractText</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.azure.storage.FetchAzureBlobStorage_v12.html">FetchAzureBlobStorage_v12</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.azure.storage.FetchAzureDataLakeStorage.html">FetchAzureDataLakeStorage</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.box.FetchBoxFile.html">FetchBoxFile</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.box.FetchBoxFileInfo.html">FetchBoxFileInfo</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.box.FetchBoxFileMetadataInstance.html">FetchBoxFileMetadataInstance</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.box.FetchBoxFileRepresentation.html">FetchBoxFileRepresentation</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.FetchDistributedMapCache.html">FetchDistributedMapCache</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.dropbox.FetchDropbox.html">FetchDropbox</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.FetchFile.html">FetchFile</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.FetchFTP.html">FetchFTP</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.gcp.storage.FetchGCSObject.html">FetchGCSObject</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.gcp.drive.FetchGoogleDrive.html">FetchGoogleDrive</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.mongodb.gridfs.FetchGridFS.html">FetchGridFS</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.aws.s3.FetchS3Object.html">FetchS3Object</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.FetchSFTP.html">FetchSFTP</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.smb.FetchSmb.html">FetchSmb</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.FilterAttribute.html">FilterAttribute</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.FlattenJson.html">FlattenJson</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.ForkEnrichment.html">ForkEnrichment</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.ForkRecord.html">ForkRecord</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.GenerateFlowFile.html">GenerateFlowFile</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.GenerateRecord.html">GenerateRecord</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.GenerateTableFetch.html">GenerateTableFetch</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.GeoEnrichIP.html">GeoEnrichIP</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.GeoEnrichIPRecord.html">GeoEnrichIPRecord</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.geohash.GeohashRecord.html">GeohashRecord</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.asana.GetAsanaObject.html">GetAsanaObject</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.aws.ml.polly.GetAwsPollyJobStatus.html">GetAwsPollyJobStatus</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.aws.ml.textract.GetAwsTextractJobStatus.html">GetAwsTextractJobStatus</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.aws.ml.transcribe.GetAwsTranscribeJobStatus.html">GetAwsTranscribeJobStatus</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.aws.ml.translate.GetAwsTranslateJobStatus.html">GetAwsTranslateJobStatus</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.azure.eventhub.GetAzureEventHub.html">GetAzureEventHub</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.azure.storage.queue.GetAzureQueueStorage_v12.html">GetAzureQueueStorage_v12</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.box.GetBoxFileCollaborators.html">GetBoxFileCollaborators</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.box.GetBoxGroupMembers.html">GetBoxGroupMembers</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.aws.dynamodb.GetDynamoDB.html">GetDynamoDB</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.elasticsearch.GetElasticsearch.html">GetElasticsearch</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.GetFile.html">GetFile</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.GetFileResource.html">GetFileResource</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.GetFTP.html">GetFTP</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.gcp.vision.GetGcpVisionAnnotateFilesOperationStatus.html">GetGcpVisionAnnotateFilesOperationStatus</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.gcp.vision.GetGcpVisionAnnotateImagesOperationStatus.html">GetGcpVisionAnnotateImagesOperationStatus</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.hubspot.GetHubSpot.html">GetHubSpot</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.mongodb.GetMongo.html">GetMongo</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.mongodb.GetMongoRecord.html">GetMongoRecord</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.aws.s3.GetS3ObjectMetadata.html">GetS3ObjectMetadata</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.aws.s3.GetS3ObjectTags.html">GetS3ObjectTags</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.GetSFTP.html">GetSFTP</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.shopify.GetShopify.html">GetShopify</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.smb.GetSmbFile.html">GetSmbFile</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.snmp.processors.GetSNMP.html">GetSNMP</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.splunk.GetSplunk.html">GetSplunk</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.aws.sqs.GetSQS.html">GetSQS</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.workday.GetWorkdayReport.html">GetWorkdayReport</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.zendesk.GetZendesk.html">GetZendesk</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.HandleHttpRequest.html">HandleHttpRequest</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.HandleHttpResponse.html">HandleHttpResponse</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.IdentifyMimeType.html">IdentifyMimeType</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.InvokeHTTP.html">InvokeHTTP</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.script.InvokeScriptedProcessor.html">InvokeScriptedProcessor</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.ISPEnrichIP.html">ISPEnrichIP</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.JoinEnrichment.html">JoinEnrichment</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.jolt.JoltTransformJSON.html">JoltTransformJSON</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.jolt.JoltTransformRecord.html">JoltTransformRecord</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.jslt.JSLTTransformJSON.html">JSLTTransformJSON</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.elasticsearch.JsonQueryElasticsearch.html">JsonQueryElasticsearch</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.azure.storage.ListAzureBlobStorage_v12.html">ListAzureBlobStorage_v12</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.azure.storage.ListAzureDataLakeStorage.html">ListAzureDataLakeStorage</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.box.ListBoxFile.html">ListBoxFile</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.box.ListBoxFileInfo.html">ListBoxFileInfo</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.box.ListBoxFileMetadataInstances.html">ListBoxFileMetadataInstances</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.box.ListBoxFileMetadataTemplates.html">ListBoxFileMetadataTemplates</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.ListDatabaseTables.html">ListDatabaseTables</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.dropbox.ListDropbox.html">ListDropbox</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.ListenFTP.html">ListenFTP</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.ListenHTTP.html">ListenHTTP</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.opentelemetry.ListenOTLP.html">ListenOTLP</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.slack.ListenSlack.html">ListenSlack</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.ListenSyslog.html">ListenSyslog</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.ListenTCP.html">ListenTCP</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.snmp.processors.ListenTrapSNMP.html">ListenTrapSNMP</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.ListenUDP.html">ListenUDP</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.ListenUDPRecord.html">ListenUDPRecord</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.websocket.ListenWebSocket.html">ListenWebSocket</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.ListFile.html">ListFile</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.ListFTP.html">ListFTP</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.gcp.storage.ListGCSBucket.html">ListGCSBucket</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.gcp.drive.ListGoogleDrive.html">ListGoogleDrive</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.aws.s3.ListS3.html">ListS3</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.ListSFTP.html">ListSFTP</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.smb.ListSmb.html">ListSmb</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.LogAttribute.html">LogAttribute</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.LogMessage.html">LogMessage</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.LookupAttribute.html">LookupAttribute</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.LookupRecord.html">LookupRecord</a>
+                </li>
+                
+                <li class="uk-text-bold" id="component-selected">
+                  <a href="../html/org.apache.nifi.processors.standard.MergeContent.html">MergeContent</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.MergeRecord.html">MergeRecord</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.ModifyBytes.html">ModifyBytes</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.compress.ModifyCompression.html">ModifyCompression</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.MonitorActivity.html">MonitorActivity</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.azure.storage.MoveAzureDataLakeStorage.html">MoveAzureDataLakeStorage</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.Notify.html">Notify</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.PackageFlowFile.html">PackageFlowFile</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.elasticsearch.PaginatedJsonQueryElasticsearch.html">PaginatedJsonQueryElasticsearch</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.evtx.ParseEvtx.html">ParseEvtx</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.network.ParseNetflowv5.html">ParseNetflowv5</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.ParseSyslog.html">ParseSyslog</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.ParseSyslog5424.html">ParseSyslog5424</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.PartitionRecord.html">PartitionRecord</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.amqp.processors.PublishAMQP.html">PublishAMQP</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.gcp.pubsub.PublishGCPubSub.html">PublishGCPubSub</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.jms.processors.PublishJMS.html">PublishJMS</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.kafka.processors.PublishKafka.html">PublishKafka</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.mqtt.PublishMQTT.html">PublishMQTT</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.slack.PublishSlack.html">PublishSlack</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.azure.storage.PutAzureBlobStorage_v12.html">PutAzureBlobStorage_v12</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.azure.cosmos.document.PutAzureCosmosDBRecord.html">PutAzureCosmosDBRecord</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.azure.data.explorer.PutAzureDataExplorer.html">PutAzureDataExplorer</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.azure.storage.PutAzureDataLakeStorage.html">PutAzureDataLakeStorage</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.azure.eventhub.PutAzureEventHub.html">PutAzureEventHub</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.azure.storage.queue.PutAzureQueueStorage_v12.html">PutAzureQueueStorage_v12</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.gcp.bigquery.PutBigQuery.html">PutBigQuery</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.box.PutBoxFile.html">PutBoxFile</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.aws.cloudwatch.PutCloudWatchMetric.html">PutCloudWatchMetric</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.PutDatabaseRecord.html">PutDatabaseRecord</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.PutDistributedMapCache.html">PutDistributedMapCache</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.dropbox.PutDropbox.html">PutDropbox</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.aws.dynamodb.PutDynamoDB.html">PutDynamoDB</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.aws.dynamodb.PutDynamoDBRecord.html">PutDynamoDBRecord</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.elasticsearch.PutElasticsearchJson.html">PutElasticsearchJson</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.elasticsearch.PutElasticsearchRecord.html">PutElasticsearchRecord</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.PutEmail.html">PutEmail</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.PutFile.html">PutFile</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.PutFTP.html">PutFTP</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.gcp.storage.PutGCSObject.html">PutGCSObject</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.gcp.drive.PutGoogleDrive.html">PutGoogleDrive</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.mongodb.gridfs.PutGridFS.html">PutGridFS</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.aws.kinesis.firehose.PutKinesisFirehose.html">PutKinesisFirehose</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.aws.kinesis.stream.PutKinesisStream.html">PutKinesisStream</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.aws.lambda.PutLambda.html">PutLambda</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.mongodb.PutMongo.html">PutMongo</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.mongodb.PutMongoBulkOperations.html">PutMongoBulkOperations</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.mongodb.PutMongoRecord.html">PutMongoRecord</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.PutRecord.html">PutRecord</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.redis.processor.PutRedisHashRecord.html">PutRedisHashRecord</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.aws.s3.PutS3Object.html">PutS3Object</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.salesforce.PutSalesforceObject.html">PutSalesforceObject</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.PutSFTP.html">PutSFTP</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.smb.PutSmbFile.html">PutSmbFile</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.aws.sns.PutSNS.html">PutSNS</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.splunk.PutSplunk.html">PutSplunk</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.splunk.PutSplunkHTTP.html">PutSplunkHTTP</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.PutSQL.html">PutSQL</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.aws.sqs.PutSQS.html">PutSQS</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.PutSyslog.html">PutSyslog</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.PutTCP.html">PutTCP</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.PutUDP.html">PutUDP</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.websocket.PutWebSocket.html">PutWebSocket</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.zendesk.PutZendeskTicket.html">PutZendeskTicket</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.airtable.QueryAirtableTable.html">QueryAirtableTable</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.azure.data.explorer.QueryAzureDataExplorer.html">QueryAzureDataExplorer</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.QueryDatabaseTable.html">QueryDatabaseTable</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.QueryDatabaseTableRecord.html">QueryDatabaseTableRecord</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.QueryRecord.html">QueryRecord</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.salesforce.QuerySalesforceObject.html">QuerySalesforceObject</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.splunk.QuerySplunkIndexingStatus.html">QuerySplunkIndexingStatus</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.RemoveRecordField.html">RemoveRecordField</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.RenameRecordField.html">RenameRecordField</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.ReplaceText.html">ReplaceText</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.ReplaceTextWithMapping.html">ReplaceTextWithMapping</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.RetryFlowFile.html">RetryFlowFile</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.hl7.RouteHL7.html">RouteHL7</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.RouteOnAttribute.html">RouteOnAttribute</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.RouteOnContent.html">RouteOnContent</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.RouteText.html">RouteText</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.mongodb.RunMongoAggregation.html">RunMongoAggregation</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.SampleRecord.html">SampleRecord</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.ScanAttribute.html">ScanAttribute</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.ScanContent.html">ScanContent</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.script.ScriptedFilterRecord.html">ScriptedFilterRecord</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.script.ScriptedPartitionRecord.html">ScriptedPartitionRecord</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.script.ScriptedTransformRecord.html">ScriptedTransformRecord</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.script.ScriptedValidateRecord.html">ScriptedValidateRecord</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.elasticsearch.SearchElasticsearch.html">SearchElasticsearch</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.SegmentContent.html">SegmentContent</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.snmp.processors.SendTrapSNMP.html">SendTrapSNMP</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.snmp.processors.SetSNMP.html">SetSNMP</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.pgp.SignContentPGP.html">SignContentPGP</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.avro.SplitAvro.html">SplitAvro</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.SplitContent.html">SplitContent</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.excel.SplitExcel.html">SplitExcel</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.SplitJson.html">SplitJson</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.network.pcap.SplitPCAP.html">SplitPCAP</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.SplitRecord.html">SplitRecord</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.SplitText.html">SplitText</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.SplitXml.html">SplitXml</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.aws.ml.polly.StartAwsPollyJob.html">StartAwsPollyJob</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.aws.ml.textract.StartAwsTextractJob.html">StartAwsTextractJob</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.aws.ml.transcribe.StartAwsTranscribeJob.html">StartAwsTranscribeJob</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.aws.ml.translate.StartAwsTranslateJob.html">StartAwsTranslateJob</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.gcp.vision.StartGcpVisionAnnotateFilesOperation.html">StartGcpVisionAnnotateFilesOperation</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.gcp.vision.StartGcpVisionAnnotateImagesOperation.html">StartGcpVisionAnnotateImagesOperation</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.aws.s3.TagS3Object.html">TagS3Object</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.TailFile.html">TailFile</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.TransformXml.html">TransformXml</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.UnpackContent.html">UnpackContent</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.attributes.UpdateAttribute.html">UpdateAttribute</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.box.UpdateBoxFileMetadataInstance.html">UpdateBoxFileMetadataInstance</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.elasticsearch.UpdateByQueryElasticsearch.html">UpdateByQueryElasticsearch</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.UpdateCounter.html">UpdateCounter</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.UpdateDatabaseTable.html">UpdateDatabaseTable</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.UpdateRecord.html">UpdateRecord</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.ValidateCsv.html">ValidateCsv</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.ValidateJson.html">ValidateJson</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.ValidateRecord.html">ValidateRecord</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.ValidateXml.html">ValidateXml</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.cipher.VerifyContentMAC.html">VerifyContentMAC</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.pgp.VerifyContentPGP.html">VerifyContentPGP</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.standard.Wait.html">Wait</a>
+                </li>
+                
+              </ul>
+            </div>
+          </li>
+        </ul>
+
+        <ul uk-accordion="collapsible: false">
+          <li>
+            <a class="uk-accordion-title" href="">Controller Services</a>
+            <div class="uk-accordion-content">
+              
+              <ul class="uk-list uk-list-collapse uk-text-light uk-text-truncate component-items">
+                
+                <li>
+                  <a href="../html/org.apache.nifi.services.azure.storage.ADLSCredentialsControllerService.html">ADLSCredentialsControllerService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.services.azure.storage.ADLSCredentialsControllerServiceLookup.html">ADLSCredentialsControllerServiceLookup</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.aws.schemaregistry.AmazonGlueEncodedSchemaReferenceReader.html">AmazonGlueEncodedSchemaReferenceReader</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.aws.schemaregistry.AmazonGlueSchemaRegistry.html">AmazonGlueSchemaRegistry</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.kafka.service.aws.AmazonMSKConnectionService.html">AmazonMSKConnectionService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.apicurio.schemaregistry.ApicurioSchemaRegistry.html">ApicurioSchemaRegistry</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.avro.AvroReader.html">AvroReader</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.avro.AvroRecordSetWriter.html">AvroRecordSetWriter</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.schemaregistry.services.AvroSchemaRegistry.html">AvroSchemaRegistry</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.aws.credentials.provider.service.AWSCredentialsProviderControllerService.html">AWSCredentialsProviderControllerService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.services.azure.storage.AzureBlobStorageFileResourceService.html">AzureBlobStorageFileResourceService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.services.azure.cosmos.document.AzureCosmosDBClientService.html">AzureCosmosDBClientService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.services.azure.storage.AzureDataLakeStorageFileResourceService.html">AzureDataLakeStorageFileResourceService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.services.azure.eventhub.AzureEventHubRecordSink.html">AzureEventHubRecordSink</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.services.azure.storage.AzureStorageCredentialsControllerService_v12.html">AzureStorageCredentialsControllerService_v12</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.services.azure.storage.AzureStorageCredentialsControllerServiceLookup_v12.html">AzureStorageCredentialsControllerServiceLookup_v12</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.cef.CEFReader.html">CEFReader</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.confluent.schemaregistry.ConfluentEncodedSchemaReferenceReader.html">ConfluentEncodedSchemaReferenceReader</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.confluent.schemaregistry.ConfluentEncodedSchemaReferenceWriter.html">ConfluentEncodedSchemaReferenceWriter</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.confluent.schemaregistry.ConfluentSchemaRegistry.html">ConfluentSchemaRegistry</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.csv.CSVReader.html">CSVReader</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.lookup.CSVRecordLookupService.html">CSVRecordLookupService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.csv.CSVRecordSetWriter.html">CSVRecordSetWriter</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.lookup.db.DatabaseRecordLookupService.html">DatabaseRecordLookupService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.record.sink.db.DatabaseRecordSink.html">DatabaseRecordSink</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.db.schemaregistry.DatabaseTableSchemaRegistry.html">DatabaseTableSchemaRegistry</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.dbcp.DBCPConnectionPool.html">DBCPConnectionPool</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.dbcp.DBCPConnectionPoolLookup.html">DBCPConnectionPoolLookup</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.box.controllerservices.DeveloperBoxClientService.html">DeveloperBoxClientService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.lookup.DistributedMapCacheLookupService.html">DistributedMapCacheLookupService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.elasticsearch.ElasticSearchClientServiceImpl.html">ElasticSearchClientServiceImpl</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.elasticsearch.ElasticSearchLookupService.html">ElasticSearchLookupService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.elasticsearch.ElasticSearchStringLookupService.html">ElasticSearchStringLookupService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.record.sink.EmailRecordSink.html">EmailRecordSink</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.hazelcast.services.cachemanager.EmbeddedHazelcastCacheManager.html">EmbeddedHazelcastCacheManager</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.excel.ExcelReader.html">ExcelReader</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.hazelcast.services.cachemanager.ExternalHazelcastCacheManager.html">ExternalHazelcastCacheManager</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.text.FreeFormTextRecordSetWriter.html">FreeFormTextRecordSetWriter</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.gcp.credentials.service.GCPCredentialsControllerService.html">GCPCredentialsControllerService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.gcp.storage.GCSFileResourceService.html">GCSFileResourceService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.grok.GrokReader.html">GrokReader</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.hazelcast.services.cacheclient.HazelcastMapCacheClient.html">HazelcastMapCacheClient</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.dbcp.HikariCPConnectionPool.html">HikariCPConnectionPool</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.record.sink.HttpRecordSink.html">HttpRecordSink</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.lookup.maxmind.IPLookupService.html">IPLookupService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.websocket.jetty.JettyWebSocketClient.html">JettyWebSocketClient</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.websocket.jetty.JettyWebSocketServer.html">JettyWebSocketServer</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.jms.cf.JMSConnectionFactoryProvider.html">JMSConnectionFactoryProvider</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.jms.cf.JndiJmsConnectionFactoryProvider.html">JndiJmsConnectionFactoryProvider</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.box.controllerservices.JsonConfigBasedBoxClientService.html">JsonConfigBasedBoxClientService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.json.JsonPathReader.html">JsonPathReader</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.json.JsonRecordSetWriter.html">JsonRecordSetWriter</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.json.JsonTreeReader.html">JsonTreeReader</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.oauth2.JWTBearerOAuth2AccessTokenProvider.html">JWTBearerOAuth2AccessTokenProvider</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.kafka.service.Kafka3ConnectionService.html">Kafka3ConnectionService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.kerberos.KerberosKeytabUserService.html">KerberosKeytabUserService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.kerberos.KerberosPasswordUserService.html">KerberosPasswordUserService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.kerberos.KerberosTicketCacheUserService.html">KerberosTicketCacheUserService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.record.sink.LoggingRecordSink.html">LoggingRecordSink</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.distributed.cache.client.MapCacheClientService.html">MapCacheClientService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.distributed.cache.server.map.MapCacheServer.html">MapCacheServer</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.mongodb.MongoDBControllerService.html">MongoDBControllerService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.mongodb.MongoDBLookupService.html">MongoDBLookupService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.ssl.PEMEncodedSSLContextProvider.html">PEMEncodedSSLContextProvider</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.lookup.PropertiesFileLookupService.html">PropertiesFileLookupService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.services.protobuf.ProtobufReader.html">ProtobufReader</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.lookup.ReaderLookup.html">ReaderLookup</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.lookup.RecordSetWriterLookup.html">RecordSetWriterLookup</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.record.sink.lookup.RecordSinkServiceLookup.html">RecordSinkServiceLookup</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.redis.service.RedisConnectionPoolService.html">RedisConnectionPoolService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.redis.service.RedisDistributedMapCacheClientService.html">RedisDistributedMapCacheClientService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.lookup.RestLookupService.html">RestLookupService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.aws.s3.service.S3FileResourceService.html">S3FileResourceService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.lookup.script.ScriptedLookupService.html">ScriptedLookupService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.record.script.ScriptedReader.html">ScriptedReader</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.record.script.ScriptedRecordSetWriter.html">ScriptedRecordSetWriter</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.record.sink.script.ScriptedRecordSink.html">ScriptedRecordSink</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.distributed.cache.client.SetCacheClientService.html">SetCacheClientService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.distributed.cache.server.SetCacheServer.html">SetCacheServer</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.lookup.SimpleCsvFileLookupService.html">SimpleCsvFileLookupService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.lookup.db.SimpleDatabaseLookupService.html">SimpleDatabaseLookupService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.lookup.SimpleKeyValueLookupService.html">SimpleKeyValueLookupService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.redis.service.SimpleRedisDistributedMapCacheClientService.html">SimpleRedisDistributedMapCacheClientService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.lookup.script.SimpleScriptedLookupService.html">SimpleScriptedLookupService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.reporting.sink.SiteToSiteReportingRecordSink.html">SiteToSiteReportingRecordSink</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.services.slack.SlackRecordSink.html">SlackRecordSink</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.services.smb.SmbjClientProviderService.html">SmbjClientProviderService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.controller.asana.StandardAsanaClientProviderService.html">StandardAsanaClientProviderService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.services.azure.StandardAzureCredentialsControllerService.html">StandardAzureCredentialsControllerService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.database.dialect.service.StandardDatabaseDialectService.html">StandardDatabaseDialectService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.services.dropbox.StandardDropboxCredentialService.html">StandardDropboxCredentialService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.fileresource.service.StandardFileResourceService.html">StandardFileResourceService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.vault.hashicorp.StandardHashiCorpVaultClientService.html">StandardHashiCorpVaultClientService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.http.StandardHttpContextMap.html">StandardHttpContextMap</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.schemaregistry.services.StandardJsonSchemaRegistry.html">StandardJsonSchemaRegistry</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.services.azure.data.explorer.StandardKustoIngestService.html">StandardKustoIngestService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.services.azure.data.explorer.StandardKustoQueryService.html">StandardKustoQueryService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.oauth2.StandardOauth2AccessTokenProvider.html">StandardOauth2AccessTokenProvider</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.pgp.service.standard.StandardPGPPrivateKeyService.html">StandardPGPPrivateKeyService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.pgp.service.standard.StandardPGPPublicKeyService.html">StandardPGPPublicKeyService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.key.service.StandardPrivateKeyService.html">StandardPrivateKeyService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.proxy.StandardProxyConfigurationService.html">StandardProxyConfigurationService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.ssl.StandardRestrictedSSLContextService.html">StandardRestrictedSSLContextService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.processors.aws.s3.encryption.StandardS3EncryptionService.html">StandardS3EncryptionService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.ssl.StandardSSLContextService.html">StandardSSLContextService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.web.client.provider.service.StandardWebClientServiceProvider.html">StandardWebClientServiceProvider</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.syslog.Syslog5424Reader.html">Syslog5424Reader</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.syslog.SyslogReader.html">SyslogReader</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.record.sink.event.UDPEventRecordSink.html">UDPEventRecordSink</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.schema.inference.VolatileSchemaCache.html">VolatileSchemaCache</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.windowsevent.WindowsEventLogReader.html">WindowsEventLogReader</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.lookup.XMLFileLookupService.html">XMLFileLookupService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.xml.XMLReader.html">XMLReader</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.xml.XMLRecordSetWriter.html">XMLRecordSetWriter</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.yaml.YamlTreeReader.html">YamlTreeReader</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.services.zendesk.ZendeskRecordSink.html">ZendeskRecordSink</a>
+                </li>
+                
+              </ul>
+            </div>
+          </li>
+        </ul>
+
+        <ul uk-accordion="collapsible: false">
+          <li>
+            <a class="uk-accordion-title" href="">Reporting Tasks</a>
+            <div class="uk-accordion-content">
+              
+              <ul class="uk-list uk-list-collapse uk-text-light uk-text-truncate component-items">
+                
+                <li>
+                  <a href="../html/org.apache.nifi.reporting.azure.loganalytics.AzureLogAnalyticsProvenanceReportingTask.html">AzureLogAnalyticsProvenanceReportingTask</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.reporting.azure.loganalytics.AzureLogAnalyticsReportingTask.html">AzureLogAnalyticsReportingTask</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.controller.ControllerStatusReportingTask.html">ControllerStatusReportingTask</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.controller.MonitorDiskUsage.html">MonitorDiskUsage</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.controller.MonitorMemory.html">MonitorMemory</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.reporting.script.ScriptedReportingTask.html">ScriptedReportingTask</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.reporting.SiteToSiteBulletinReportingTask.html">SiteToSiteBulletinReportingTask</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.reporting.SiteToSiteMetricsReportingTask.html">SiteToSiteMetricsReportingTask</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.reporting.SiteToSiteProvenanceReportingTask.html">SiteToSiteProvenanceReportingTask</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.reporting.SiteToSiteStatusReportingTask.html">SiteToSiteStatusReportingTask</a>
+                </li>
+                
+              </ul>
+            </div>
+          </li>
+        </ul>
+
+        <ul uk-accordion="collapsible: false">
+          <li>
+            <a class="uk-accordion-title" href="">Parameter Providers</a>
+            <div class="uk-accordion-content">
+              
+              <ul class="uk-list uk-list-collapse uk-text-light uk-text-truncate component-items">
+                
+                <li>
+                  <a href="../html/org.apache.nifi.parameter.aws.AwsSecretsManagerParameterProvider.html">AwsSecretsManagerParameterProvider</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.parameter.azure.AzureKeyVaultSecretsParameterProvider.html">AzureKeyVaultSecretsParameterProvider</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.parameter.DatabaseParameterProvider.html">DatabaseParameterProvider</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.parameter.EnvironmentVariableParameterProvider.html">EnvironmentVariableParameterProvider</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.parameter.gcp.GcpSecretManagerParameterProvider.html">GcpSecretManagerParameterProvider</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.vault.hashicorp.HashiCorpVaultParameterProvider.html">HashiCorpVaultParameterProvider</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.parameter.KubernetesSecretParameterProvider.html">KubernetesSecretParameterProvider</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.parameter.OnePasswordParameterProvider.html">OnePasswordParameterProvider</a>
+                </li>
+                
+              </ul>
+            </div>
+          </li>
+        </ul>
+
+        <ul uk-accordion="collapsible: false">
+          <li>
+            <a class="uk-accordion-title" href="">Flow Analysis Rules</a>
+            <div class="uk-accordion-content">
+              
+              <ul class="uk-list uk-list-collapse uk-text-light uk-text-truncate component-items">
+                
+                <li>
+                  <a href="../html/org.apache.nifi.flowanalysis.rules.DisallowComponentType.html">DisallowComponentType</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.flowanalysis.rules.RequireServerSSLContextService.html">RequireServerSSLContextService</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.flowanalysis.rules.RestrictBackpressureSettings.html">RestrictBackpressureSettings</a>
+                </li>
+                
+                <li>
+                  <a href="../html/org.apache.nifi.flowanalysis.rules.RestrictFlowFileExpiration.html">RestrictFlowFileExpiration</a>
+                </li>
+                
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <script type="text/javascript">
+        var componentSelected = document.getElementById('component-selected');
+        if (componentSelected) {
+            componentSelected.scrollIntoView();
+        }
+      </script>
+    </div>
+
+    <div id="component-panel" class="uk-width-3-4@m">
+      <div class="uk-padding-small uk-panel-scrollable" uk-height-viewport="offset-bottom: 150px">
+        
+          
+
+
+<h3>MergeContent 2.5.0</h3>
+
+<dl class="uk-description-list">
+    <dt>Bundle</dt>
+    <dd>org.apache.nifi | nifi-standard-nar</dd>
+    <dt>Description</dt>
+    <dd>Merges a Group of FlowFiles together based on a user-defined strategy and packages them into a single FlowFile. It is recommended that the Processor be configured with only a single incoming connection, as Group of FlowFiles will not be created from FlowFiles in different connections. This processor updates the mime.type attribute as appropriate. NOTE: this processor should NOT be configured with Cron Driven for the Scheduling Strategy.</dd>
+    <dt>Tags</dt>
+    <dd>archive, concatenation, content, correlation, flowfile-stream, flowfile-stream-v3, merge, stream, tar, zip</dd>
+    <dt>Input Requirement</dt>
+    <dd>
+        REQUIRED
+    </dd>
+    <dt>Supports Sensitive Dynamic Properties</dt>
+    <dd>false</dd>
+</dl>
+
+
+
+
+<ul uk-accordion="">
+    <li class="additional-details">
+        <a class="uk-accordion-title" href="">Additional Details for MergeContent 2.5.0</a>
+        <div class="uk-accordion-content">
+            <!--
+  Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+      http://www.apache.org/licenses/LICENSE-2.0
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<h1 id="mergecontent">MergeContent</h1>
+<h3 id="introduction">Introduction</h3>
+<p>The MergeContent Processor provides the ability to combine many FlowFiles into a single FlowFile. There are many reasons
+that a dataflow designer may want to do this. For example, it may be helpful to create batches of data before sending to
+a downstream system, because the downstream system is better optimized for large files than for many tiny files. NiFi
+itself can also benefit from this, as NiFi operates best on “micro-batches,” where each FlowFile is several kilobytes to
+several megabytes in size.</p>
+<p>The Processor creates several ‘bins’ to put the FlowFiles in. The maximum number of bins to use is set to 5 by default,
+but this can be changed by updating the value of the <maximum number="" of="" Bins=""> property. The number of bins is bound in
+order to avoid running out of Java heap space. Note: while the contents of a FlowFile are stored in the Content
+Repository and not in the Java heap space, the Processor must hold the FlowFile objects themselves in memory. As a
+result, these FlowFiles with their attributes can potentially take up a great deal of heap space and cause
+OutOfMemoryError’s to be thrown. In order to avoid this, if you expect to merge many small FlowFiles together, it is
+advisable to instead use a MergeContent that merges no more than say 1,000 FlowFiles into a bundle and then use a second
+MergeContent to merges these small bundles into larger bundles. For example, to merge 1,000,000 FlowFiles together, use
+MergeContent that uses a <maximum Number="" of="" Entries=""> of 1,000 and route the “merged” Relationship to a second
+MergeContent that also sets the <maximum Number="" of="" Entries=""> to 1,000. The second MergeContent will then merge 1,000
+bundles of 1,000, which in effect produces bundles of 1,000,000.</maximum></maximum></maximum></p>
+<h3 id="how-flowfiles-are-binned">How FlowFiles are Binned</h3>
+<p>How the Processor determines which bin to place a FlowFile in depends on a few different configuration options. Firstly,
+the Merge Strategy is considered. The Merge Strategy can be set to one of two options: “Bin Packing Algorithm,” or "
+Defragment". When the goal is to simply combine smaller FlowFiles into one larger FlowFile, the Bin Packing Algorithm
+should be used. This algorithm picks a bin based on whether the FlowFile can fit in the bin according to its size and
+the <maximum Bin="" Size=""> property and whether the FlowFile is ’like’ the other FlowFiles in the bin. What it means for two
+FlowFiles to be ’like FlowFiles’ is discussed at the end of this section.</maximum></p>
+<p>The “Defragment” Merge Strategy can be used when FlowFiles need to be explicitly assigned to the same bin. For example,
+if data is split apart using the UnpackContent Processor, each unpacked FlowFile can be processed independently and
+later merged back together using this Processor with the Merge Strategy set to Defragment. In order for FlowFiles to be
+added to the same bin when using this configuration, the FlowFiles must have the same value for the "
+fragment.identifier" attribute. Each FlowFile with the same identifier must also have a unique value for the "
+fragment.index" attribute so that the FlowFiles can be ordered correctly. For a given “fragment.identifier”, at least
+one FlowFile must have the “fragment.count” attribute (which indicates how many FlowFiles belong in the bin). Other
+FlowFiles with the same identifier must have the same value for the “fragment.count” attribute, or they can omit this
+attribute. <strong>NOTE:</strong> while there are valid use cases for breaking apart FlowFiles and later re-merging them, it is an
+antipattern to take a larger FlowFile, break it into a million tiny FlowFiles, and then re-merge them. Doing so can
+result in using huge amounts of Java heap and can result in Out Of Memory Errors. Additionally, it adds large amounts of
+load to the NiFi framework. This can result in increased CPU and disk utilization and often times can be an order of
+magnitude lower throughput and an order of magnitude higher latency. As an alternative, whenever possible, dataflows
+should be built to make use of Record-oriented processors, such as QueryRecord, PartitionRecord, UpdateRecord,
+LookupRecord, PublishKafkaRecord_2_6, etc.</p>
+<p>In order to be added to the same bin, two FlowFiles must be ’like FlowFiles.’ In order for two FlowFiles to be like
+FlowFiles, they must have the same schema, and if the <correlation Attribute="" Name=""> property is set, they must have the
+same value for the specified attribute. For example, if the <correlation Attribute="" Name=""> is set to “filename”, then two
+FlowFiles must have the same value for the “filename” attribute in order to be binned together. If more than one
+attribute is needed in order to correlate two FlowFiles, it is recommended to use an UpdateAttribute processor before
+the MergeContent processor and combine the attributes. For example, if the goal is to bin together two FlowFiles only if
+they have the same value for the “abc” attribute and the “xyz” attribute, then we could accomplish this by using
+UpdateAttribute and adding a property with name “correlation.attribute” and a value of “abc=${abc},xyz=${xyz}” and then
+setting MergeContent’s <correlation Attribute="" Name=""> property to “correlation.attribute”.</correlation></correlation></correlation></p>
+<h3 id="when-a-bin-is-merged">When a Bin is Merged</h3>
+<p>Above, we discussed how a bin is chosen for a given FlowFile. Once a bin has been created and FlowFiles added to it, we
+must have some way to determine when a bin is “full” so that we can bin those FlowFiles together into a “merged”
+FlowFile.</p>
+<p>If the <merge Strategy=""> property is set to “Bin Packing Algorithm”, then the following rules will be evaluated.</merge></p>
+<p>MergeContent exposes several different thresholds that can be used to create bins that are of an ideal size. For
+example, the user can specify the minimum number of FlowFiles that must be packaged together before merging will be
+performed. The minimum number of bytes can also be configured. Additionally, a maximum number of FlowFiles and bytes may
+be specified.</p>
+<p>There are two other conditions that will result in the contents of a Bin being merged together. The Max Bin Age
+property specifies the maximum amount of time that FlowFiles can be binned together before the bin is merged. This
+property should almost always be set, as it provides a means to set a timeout on a bin, so that even if data stops
+flowing to the Processor for a while (due to a problem with an upstream system, a source processor being stopped, etc.)
+the FlowFiles won’t remain stuck in the MergeContent processor indefinitely. Additionally, the processor exposes a
+property for the maximum number of Bins that should be used. For some use cases, this won’t matter much. However, if the
+Correlation Attribute property is set, this can be important. When an incoming FlowFile is to be placed in a Bin, the
+processor must find an appropriate Bin to place the FlowFile into, or else create a new one. If a Bin must be created,
+and the number of Bins that exist is greater than or equal to the value of the <maximum Number="" of="" Bins=""> property, then
+the oldest Bin will be merged together to make room for the new one.</maximum></p>
+<p>If the <merge Strategy=""> property is set to “Defragment”, then a bin is full only when the number of FlowFiles in the bin
+is equal to the number specified by the “fragment.count” attribute of one of the FlowFiles in the bin. All FlowFiles
+that have this attribute must have the same value for this attribute, or else they will be routed to the “failure”
+relationship. It is not necessary that all FlowFiles have this value, but at least one FlowFile in the bin must have
+this value or the bin will never be complete. If all the necessary FlowFiles are not binned together by the point at
+which the bin times amount (as specified by the <max Bin="" Age=""> property), then the FlowFiles will all be routed to the '
+failure’ relationship instead of being merged together.</max></merge></p>
+<p>Finally, a bin can be merged if the <bin Termination="" Check=""> property is configured and a FlowFile is received that
+satisfies the specified condition. The condition is specified as an Expression Language expression. If any FlowFile
+result in the expression returning a value of true, then the bin will be merged, regardless of how much data is in
+the bin or how old the bin is. This incoming FlowFile that triggers the bin to be merged can either be added as the
+last entry in the bin, as the first entry in a new bin, or output as its own bin, depending on the value of the
+<flowfile Insertion="" Strategy=""> property.</flowfile></bin></p>
+<p>A bin of FlowFiles, then, is merged when any one of the following conditions is met:</p>
+<ul>
+<li>The bin has reached the maximum number of bytes, as configured by the <max Group="" Size=""> property.</max></li>
+<li>The bin has reached the maximum number of FlowFiles, as configured by the <maximum Number="" of="" Entries=""> property.</maximum></li>
+<li>The bin has reached both the minimum number of bytes, as configured by the <min Group="" Size=""> property,
+AND the minimum number of FlowFiles, as configured by the <minimum Number="" of="" Entries=""> property.</minimum></min></li>
+<li>The bin has reached the maximum age, as configured by the <max Bin="" Age=""> property.</max></li>
+<li>The maximum number of bins has been reached, as configured by the <maximum number="" of="" Bins=""> property, and a new bin must be created.</maximum></li>
+<li>The <bin Termination="" Check=""> property is configured and a FlowFile is received that satisfies the specified condition.</bin></li>
+</ul>
+<h3 id="reason-for-merge">Reason for Merge</h3>
+<p>Whenever the contents of a Bin are merged, an attribute with the name “merge.reason” will be added to the merged
+FlowFile. The below table provides a listing of all possible values for this attribute with an explanation of each.</p>
+<table>
+<thead>
+<tr>
+<th>Attribute Value</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MAX_BYTES_THRESHOLD_REACHED</td>
+<td>The bin has reached the maximum number of bytes, as configured by the <max Group="" Size=""> property. When this threshold is reached, the contents of the Bin will be merged together, even if the Minimum Number of Entries has not yet been reached.</max></td>
+</tr>
+<tr>
+<td>MAX_ENTRIES_THRESHOLD_REACHED</td>
+<td>The bin has reached the maximum number of FlowFiles, as configured by the <maximum Number="" of="" Entries=""> property. When this threshold is reached, the contents of the Bin will be merged together, even if the minimum number of bytes (Min Group Size) has not yet been reached.</maximum></td>
+</tr>
+<tr>
+<td>MIN_THRESHOLDS_REACHED</td>
+<td>The bin has reached both the minimum number of bytes, as configured by the <min Group="" Size=""> property, AND the minimum number of FlowFiles, as configured by the <minimum Number="" of="" Entries=""> property. The bin has not reached the maximum number of bytes (Max Group Size) OR the maximum number of FlowFiles (Maximum Number of Entries).</minimum></min></td>
+</tr>
+<tr>
+<td>TIMEOUT</td>
+<td>The Bin has reached the maximum age, as configured by the <max Bin="" Age=""> property. If this threshold is reached, the contents of the Bin will be merged together, even if the Bin has not yet reached either of the minimum thresholds. Note that the age here is determined by when the Bin was created, NOT the age of the FlowFiles that reside within those Bins. As a result, if the Processor is stopped until it has 1 million FlowFiles queued, each one being 10 days old, but the Max Bin Age is set to “1 day,” the Max Bin Age will not be met for at least one full day, even though the FlowFiles themselves are much older than this threshold. If the Processor is stopped and restarted, all Bins are destroyed and recreated, and the timer is reset.</max></td>
+</tr>
+<tr>
+<td>BIN_MANAGER_FULL</td>
+<td>If an incoming FlowFile does not fit into any of the existing Bins (either due to the Maximum thresholds set, or due to the Correlation Attribute being used, etc.), then a new Bin must be created for the incoming FlowFiles. If the number of active Bins is already equal to the <maximum number="" of="" Bins=""> property, the oldest Bin will be merged in order to make room for the new Bin. In that case, the Bin Manager is said to be full, and this value will be used.</maximum></td>
+</tr>
+<tr>
+<td>BIN_TERMINATION_SIGNAL</td>
+<td>A FlowFile signaled that the Bin should be terminated by satisfying the configured <bin Termination="" Check=""> property.</bin></td>
+</tr>
+</tbody>
+</table>
+<p>Note that the attribute value is minimally named, while the textual description is far more verbose. This is done for a
+few reasons. Firstly, storing a large value for the attribute can be more costly, utilizing more heap space and
+requiring more resources to process. Secondly, it’s more succinct, which makes it easier to talk about. Most
+importantly, though, it means that a processor such as RouteOnAttribute can be used, if necessary, to route based on the
+value of the attribute. In this way, the explanation can be further expanded or updated, without changing the value of
+the attribute and without disturbing existing flows.</p>
+
+        </div>
+    </li>
+</ul>
+
+
+
+<div class="uk-margin uk-flex">
+    <div class="component-section-header uk-width-3-4">Properties</div>
+    <div class="uk-width-1-4 uk-text-right">
+        <button uk-icon="icon: expand" uk-tooltip="Expand Properties" id="expand-property-descriptors" class="uk-button uk-button-link uk-button-small"></button>
+        <button uk-icon="icon: shrink" uk-tooltip="Collapse Properties" id="shrink-property-descriptors" class="uk-button uk-button-link uk-button-small"></button>
+    </div>
+    <script type="text/javascript">
+        document.addEventListener('uikit:init', () => {
+            var expand = document.getElementById('expand-property-descriptors');
+            expand.addEventListener('click', () => {
+                var descriptors = document.getElementsByClassName('property-descriptor-content');
+                for (var i = 0; i < descriptors.length; i++) {
+                    var descriptor = descriptors[i];
+                    descriptor.hidden = false;
+                }
+            });
+
+            var shrink = document.getElementById('shrink-property-descriptors');
+            shrink.addEventListener('click', () => {
+                var descriptors = document.getElementsByClassName('property-descriptor-content');
+                for (var i = 0; i < descriptors.length; i++) {
+                    var descriptor = descriptors[i];
+                    descriptor.hidden = true;
+                }
+            });
+        });
+    </script>
+</div>
+<div>
+    <ul uk-accordion="multiple: true" id="property-descriptors">
+        
+        <li class="property-descriptor">
+            <a class="uk-accordion-title" href="">
+                <span class="property-required">Attribute Strategy</span>
+                <div class="uk-width-2-3 uk-align-right uk-margin-remove uk-text-truncate uk-text-lighter">Determines which FlowFile attributes should be added to the bundle. If 'Keep All Unique Attributes' is selected, any attribute on any FlowFile that gets bundled will be kept unless its value conflicts with the value from another FlowFile. If 'Keep Only Common Attributes' is selected, only the attributes that exist on all FlowFiles in the bundle, with the same value, will be preserved.</div>
+            </a>
+            <div class="uk-accordion-content uk-padding-small property-descriptor-content">
+                <dl class="uk-description-list">
+                    <dt>Display Name</dt>
+                    <dd>Attribute Strategy</dd>
+                    <dt>Description</dt>
+                    <dd>Determines which FlowFile attributes should be added to the bundle. If 'Keep All Unique Attributes' is selected, any attribute on any FlowFile that gets bundled will be kept unless its value conflicts with the value from another FlowFile. If 'Keep Only Common Attributes' is selected, only the attributes that exist on all FlowFiles in the bundle, with the same value, will be preserved.</dd>
+                    <dt>API Name</dt>
+                    <dd>Attribute Strategy</dd>
+                    
+                    <dt>Default Value</dt>
+                    <dd>Keep Only Common Attributes</dd>
+                    
+                    
+                    <dt>Allowable Values</dt>
+                    <dd>
+                        <ul>
+                            
+                            <li>
+                                Keep Only Common Attributes
+                                <span uk-icon="info" uk-tooltip="Any attribute that is not the same on all FlowFiles in a bin will be dropped. Those that are the same across all FlowFiles will be retained."></span></li>
+                            
+                            <li>
+                                Keep All Unique Attributes
+                                <span uk-icon="info" uk-tooltip="Any attribute that has the same value for all FlowFiles in a bin, or has no value for a FlowFile, will be kept. For example, if a bin consists of 3 FlowFiles and 2 of them have a value of 'hello' for the 'greeting' attribute and the third FlowFile has no 'greeting' attribute then the outbound FlowFile will get a 'greeting' attribute with the value 'hello'."></span></li>
+                            
+                        </ul>
+                    </dd>
+                    
+                    
+                    <dt>Expression Language Scope</dt>
+                    <dd>Not Supported</dd>
+                    <dt>Sensitive</dt>
+                    <dd>false</dd>
+                    <dt>Required</dt>
+                    <dd>true</dd>
+                    
+                </dl>
+            </div>
+        </li>
+        
+        <li class="property-descriptor">
+            <a class="uk-accordion-title" href="">
+                <span>Bin Termination Check</span>
+                <div class="uk-width-2-3 uk-align-right uk-margin-remove uk-text-truncate uk-text-lighter">Specifies an Expression Language Expression that is to be evaluated against each FlowFile. If the result of the expression is 'true', the
+bin that the FlowFile corresponds to will be terminated, even if the bin has not met the minimum number of entries or minimum size.
+Note that if the FlowFile that triggers the termination of the bin is itself larger than the Maximum Bin Size, it will be placed into its
+own bin without triggering the termination of any other bin. When using this property, it is recommended to use Prioritizers in the flow's
+connections to ensure that the ordering is as desired.
+</div>
+            </a>
+            <div class="uk-accordion-content uk-padding-small property-descriptor-content">
+                <dl class="uk-description-list">
+                    <dt>Display Name</dt>
+                    <dd>Bin Termination Check</dd>
+                    <dt>Description</dt>
+                    <dd>Specifies an Expression Language Expression that is to be evaluated against each FlowFile. If the result of the expression is 'true', the
+bin that the FlowFile corresponds to will be terminated, even if the bin has not met the minimum number of entries or minimum size.
+Note that if the FlowFile that triggers the termination of the bin is itself larger than the Maximum Bin Size, it will be placed into its
+own bin without triggering the termination of any other bin. When using this property, it is recommended to use Prioritizers in the flow's
+connections to ensure that the ordering is as desired.
+</dd>
+                    <dt>API Name</dt>
+                    <dd>Bin Termination Check</dd>
+                    
+                    
+                    
+                    <dt>Expression Language Scope</dt>
+                    <dd>Environment variables and FlowFile Attributes</dd>
+                    <dt>Sensitive</dt>
+                    <dd>false</dd>
+                    <dt>Required</dt>
+                    <dd>false</dd>
+                    
+                    <dt>Dependencies</dt>
+                    <dd>
+                        <ul>
+                            
+                            <li>
+                                <span>Merge Strategy</span>
+                                <span class="uk-text-light">is set to any
+                                
+                                  of
+                                
+                                </span>
+                                
+                                [Bin-Packing Algorithm]
+                                
+                            </li>
+                            
+                        </ul>
+                    </dd>
+                    
+                </dl>
+            </div>
+        </li>
+        
+        <li class="property-descriptor">
+            <a class="uk-accordion-title" href="">
+                <span class="property-required">Compression Level</span>
+                <div class="uk-width-2-3 uk-align-right uk-margin-remove uk-text-truncate uk-text-lighter">Specifies the compression level to use when using the Zip Merge Format; if not using the Zip Merge Format, this value is ignored</div>
+            </a>
+            <div class="uk-accordion-content uk-padding-small property-descriptor-content">
+                <dl class="uk-description-list">
+                    <dt>Display Name</dt>
+                    <dd>Compression Level</dd>
+                    <dt>Description</dt>
+                    <dd>Specifies the compression level to use when using the Zip Merge Format; if not using the Zip Merge Format, this value is ignored</dd>
+                    <dt>API Name</dt>
+                    <dd>Compression Level</dd>
+                    
+                    <dt>Default Value</dt>
+                    <dd>1</dd>
+                    
+                    
+                    <dt>Allowable Values</dt>
+                    <dd>
+                        <ul>
+                            
+                            <li>
+                                0
+                                </li>
+                            
+                            <li>
+                                1
+                                </li>
+                            
+                            <li>
+                                2
+                                </li>
+                            
+                            <li>
+                                3
+                                </li>
+                            
+                            <li>
+                                4
+                                </li>
+                            
+                            <li>
+                                5
+                                </li>
+                            
+                            <li>
+                                6
+                                </li>
+                            
+                            <li>
+                                7
+                                </li>
+                            
+                            <li>
+                                8
+                                </li>
+                            
+                            <li>
+                                9
+                                </li>
+                            
+                        </ul>
+                    </dd>
+                    
+                    
+                    <dt>Expression Language Scope</dt>
+                    <dd>Not Supported</dd>
+                    <dt>Sensitive</dt>
+                    <dd>false</dd>
+                    <dt>Required</dt>
+                    <dd>true</dd>
+                    
+                    <dt>Dependencies</dt>
+                    <dd>
+                        <ul>
+                            
+                            <li>
+                                <span>Merge Format</span>
+                                <span class="uk-text-light">is set to any
+                                
+                                  of
+                                
+                                </span>
+                                
+                                [ZIP]
+                                
+                            </li>
+                            
+                        </ul>
+                    </dd>
+                    
+                </dl>
+            </div>
+        </li>
+        
+        <li class="property-descriptor">
+            <a class="uk-accordion-title" href="">
+                <span>Correlation Attribute Name</span>
+                <div class="uk-width-2-3 uk-align-right uk-margin-remove uk-text-truncate uk-text-lighter">If specified, like FlowFiles will be binned together, where 'like FlowFiles' means FlowFiles that have the same value for this Attribute. If not specified, FlowFiles are bundled by the order in which they are pulled from the queue.</div>
+            </a>
+            <div class="uk-accordion-content uk-padding-small property-descriptor-content">
+                <dl class="uk-description-list">
+                    <dt>Display Name</dt>
+                    <dd>Correlation Attribute Name</dd>
+                    <dt>Description</dt>
+                    <dd>If specified, like FlowFiles will be binned together, where 'like FlowFiles' means FlowFiles that have the same value for this Attribute. If not specified, FlowFiles are bundled by the order in which they are pulled from the queue.</dd>
+                    <dt>API Name</dt>
+                    <dd>Correlation Attribute Name</dd>
+                    
+                    
+                    
+                    <dt>Expression Language Scope</dt>
+                    <dd>Environment variables and FlowFile Attributes</dd>
+                    <dt>Sensitive</dt>
+                    <dd>false</dd>
+                    <dt>Required</dt>
+                    <dd>false</dd>
+                    
+                    <dt>Dependencies</dt>
+                    <dd>
+                        <ul>
+                            
+                            <li>
+                                <span>Merge Strategy</span>
+                                <span class="uk-text-light">is set to any
+                                
+                                  of
+                                
+                                </span>
+                                
+                                [Bin-Packing Algorithm]
+                                
+                            </li>
+                            
+                        </ul>
+                    </dd>
+                    
+                </dl>
+            </div>
+        </li>
+        
+        <li class="property-descriptor">
+            <a class="uk-accordion-title" href="">
+                <span class="property-required">Delimiter Strategy</span>
+                <div class="uk-width-2-3 uk-align-right uk-margin-remove uk-text-truncate uk-text-lighter">Determines if Header, Footer, and Demarcator should point to files containing the respective content, or if the values of the properties should be used as the content.</div>
+            </a>
+            <div class="uk-accordion-content uk-padding-small property-descriptor-content">
+                <dl class="uk-description-list">
+                    <dt>Display Name</dt>
+                    <dd>Delimiter Strategy</dd>
+                    <dt>Description</dt>
+                    <dd>Determines if Header, Footer, and Demarcator should point to files containing the respective content, or if the values of the properties should be used as the content.</dd>
+                    <dt>API Name</dt>
+                    <dd>Delimiter Strategy</dd>
+                    
+                    <dt>Default Value</dt>
+                    <dd>Do Not Use Delimiters</dd>
+                    
+                    
+                    <dt>Allowable Values</dt>
+                    <dd>
+                        <ul>
+                            
+                            <li>
+                                Filename
+                                <span uk-icon="info" uk-tooltip="The values of Header, Footer, and Demarcator will be retrieved from the contents of a file"></span></li>
+                            
+                            <li>
+                                Text
+                                <span uk-icon="info" uk-tooltip="The values of Header, Footer, and Demarcator will be specified as property values"></span></li>
+                            
+                            <li>
+                                Do Not Use Delimiters
+                                <span uk-icon="info" uk-tooltip="No Header, Footer, or Demarcator will be used"></span></li>
+                            
+                        </ul>
+                    </dd>
+                    
+                    
+                    <dt>Expression Language Scope</dt>
+                    <dd>Not Supported</dd>
+                    <dt>Sensitive</dt>
+                    <dd>false</dd>
+                    <dt>Required</dt>
+                    <dd>true</dd>
+                    
+                    <dt>Dependencies</dt>
+                    <dd>
+                        <ul>
+                            
+                            <li>
+                                <span>Merge Format</span>
+                                <span class="uk-text-light">is set to any
+                                
+                                  of
+                                
+                                </span>
+                                
+                                [Binary Concatenation]
+                                
+                            </li>
+                            
+                        </ul>
+                    </dd>
+                    
+                </dl>
+            </div>
+        </li>
+        
+        <li class="property-descriptor">
+            <a class="uk-accordion-title" href="">
+                <span>Demarcator</span>
+                <div class="uk-width-2-3 uk-align-right uk-margin-remove uk-text-truncate uk-text-lighter">Filename or text specifying the demarcator to use. If not specified, no demarcator is supplied.</div>
+            </a>
+            <div class="uk-accordion-content uk-padding-small property-descriptor-content">
+                <dl class="uk-description-list">
+                    <dt>Display Name</dt>
+                    <dd>Demarcator</dd>
+                    <dt>Description</dt>
+                    <dd>Filename or text specifying the demarcator to use. If not specified, no demarcator is supplied.</dd>
+                    <dt>API Name</dt>
+                    <dd>Demarcator File</dd>
+                    
+                    
+                    
+                    <dt>Expression Language Scope</dt>
+                    <dd>Environment variables and FlowFile Attributes</dd>
+                    <dt>Sensitive</dt>
+                    <dd>false</dd>
+                    <dt>Required</dt>
+                    <dd>false</dd>
+                    
+                    <dt>Dependencies</dt>
+                    <dd>
+                        <ul>
+                            
+                            <li>
+                                <span>Delimiter Strategy</span>
+                                <span class="uk-text-light">is set to any
+                                
+                                  of
+                                
+                                </span>
+                                
+                                [Filename, Text]
+                                
+                            </li>
+                            
+                            <li>
+                                <span>Merge Format</span>
+                                <span class="uk-text-light">is set to any
+                                
+                                  of
+                                
+                                </span>
+                                
+                                [Binary Concatenation]
+                                
+                            </li>
+                            
+                        </ul>
+                    </dd>
+                    
+                </dl>
+            </div>
+        </li>
+        
+        <li class="property-descriptor">
+            <a class="uk-accordion-title" href="">
+                <span class="property-required">FlowFile Insertion Strategy</span>
+                <div class="uk-width-2-3 uk-align-right uk-margin-remove uk-text-truncate uk-text-lighter">If a given FlowFile terminates the bin based on the &lt;Bin Termination Check&gt; property, specifies where the FlowFile should be included in the bin.</div>
+            </a>
+            <div class="uk-accordion-content uk-padding-small property-descriptor-content">
+                <dl class="uk-description-list">
+                    <dt>Display Name</dt>
+                    <dd>FlowFile Insertion Strategy</dd>
+                    <dt>Description</dt>
+                    <dd>If a given FlowFile terminates the bin based on the &lt;Bin Termination Check&gt; property, specifies where the FlowFile should be included in the bin.</dd>
+                    <dt>API Name</dt>
+                    <dd>FlowFile Insertion Strategy</dd>
+                    
+                    <dt>Default Value</dt>
+                    <dd>Last in Bin</dd>
+                    
+                    
+                    <dt>Allowable Values</dt>
+                    <dd>
+                        <ul>
+                            
+                            <li>
+                                Last in Bin
+                                <span uk-icon="info" uk-tooltip="Insert the FlowFile at the end of the Bin that is terminated"></span></li>
+                            
+                            <li>
+                                First in New Bin
+                                <span uk-icon="info" uk-tooltip="Insert the FlowFile at the beginning of a newly created Bin"></span></li>
+                            
+                            <li>
+                                Isolated
+                                <span uk-icon="info" uk-tooltip="Insert the FlowFile into a new Bin and terminate the Bin immediately with the FlowFile as the only content"></span></li>
+                            
+                        </ul>
+                    </dd>
+                    
+                    
+                    <dt>Expression Language Scope</dt>
+                    <dd>Not Supported</dd>
+                    <dt>Sensitive</dt>
+                    <dd>false</dd>
+                    <dt>Required</dt>
+                    <dd>true</dd>
+                    
+                    <dt>Dependencies</dt>
+                    <dd>
+                        <ul>
+                            
+                            <li>
+                                <span>Bin Termination Check</span>
+                                <span class="uk-text-light">is set to any
+                                
+                                  value specified
+                                
+                                </span>
+                                
+                            </li>
+                            
+                        </ul>
+                    </dd>
+                    
+                </dl>
+            </div>
+        </li>
+        
+        <li class="property-descriptor">
+            <a class="uk-accordion-title" href="">
+                <span>Footer</span>
+                <div class="uk-width-2-3 uk-align-right uk-margin-remove uk-text-truncate uk-text-lighter">Filename or text specifying the footer to use. If not specified, no footer is supplied.</div>
+            </a>
+            <div class="uk-accordion-content uk-padding-small property-descriptor-content">
+                <dl class="uk-description-list">
+                    <dt>Display Name</dt>
+                    <dd>Footer</dd>
+                    <dt>Description</dt>
+                    <dd>Filename or text specifying the footer to use. If not specified, no footer is supplied.</dd>
+                    <dt>API Name</dt>
+                    <dd>Footer File</dd>
+                    
+                    
+                    
+                    <dt>Expression Language Scope</dt>
+                    <dd>Environment variables and FlowFile Attributes</dd>
+                    <dt>Sensitive</dt>
+                    <dd>false</dd>
+                    <dt>Required</dt>
+                    <dd>false</dd>
+                    
+                    <dt>Dependencies</dt>
+                    <dd>
+                        <ul>
+                            
+                            <li>
+                                <span>Delimiter Strategy</span>
+                                <span class="uk-text-light">is set to any
+                                
+                                  of
+                                
+                                </span>
+                                
+                                [Filename, Text]
+                                
+                            </li>
+                            
+                            <li>
+                                <span>Merge Format</span>
+                                <span class="uk-text-light">is set to any
+                                
+                                  of
+                                
+                                </span>
+                                
+                                [Binary Concatenation]
+                                
+                            </li>
+                            
+                        </ul>
+                    </dd>
+                    
+                </dl>
+            </div>
+        </li>
+        
+        <li class="property-descriptor">
+            <a class="uk-accordion-title" href="">
+                <span>Header</span>
+                <div class="uk-width-2-3 uk-align-right uk-margin-remove uk-text-truncate uk-text-lighter">Filename or text specifying the header to use. If not specified, no header is supplied.</div>
+            </a>
+            <div class="uk-accordion-content uk-padding-small property-descriptor-content">
+                <dl class="uk-description-list">
+                    <dt>Display Name</dt>
+                    <dd>Header</dd>
+                    <dt>Description</dt>
+                    <dd>Filename or text specifying the header to use. If not specified, no header is supplied.</dd>
+                    <dt>API Name</dt>
+                    <dd>Header File</dd>
+                    
+                    
+                    
+                    <dt>Expression Language Scope</dt>
+                    <dd>Environment variables and FlowFile Attributes</dd>
+                    <dt>Sensitive</dt>
+                    <dd>false</dd>
+                    <dt>Required</dt>
+                    <dd>false</dd>
+                    
+                    <dt>Dependencies</dt>
+                    <dd>
+                        <ul>
+                            
+                            <li>
+                                <span>Delimiter Strategy</span>
+                                <span class="uk-text-light">is set to any
+                                
+                                  of
+                                
+                                </span>
+                                
+                                [Filename, Text]
+                                
+                            </li>
+                            
+                            <li>
+                                <span>Merge Format</span>
+                                <span class="uk-text-light">is set to any
+                                
+                                  of
+                                
+                                </span>
+                                
+                                [Binary Concatenation]
+                                
+                            </li>
+                            
+                        </ul>
+                    </dd>
+                    
+                </dl>
+            </div>
+        </li>
+        
+        <li class="property-descriptor">
+            <a class="uk-accordion-title" href="">
+                <span class="property-required">Keep Path</span>
+                <div class="uk-width-2-3 uk-align-right uk-margin-remove uk-text-truncate uk-text-lighter">If using the Zip or Tar Merge Format, specifies whether or not the FlowFiles' paths should be included in their entry names.</div>
+            </a>
+            <div class="uk-accordion-content uk-padding-small property-descriptor-content">
+                <dl class="uk-description-list">
+                    <dt>Display Name</dt>
+                    <dd>Keep Path</dd>
+                    <dt>Description</dt>
+                    <dd>If using the Zip or Tar Merge Format, specifies whether or not the FlowFiles' paths should be included in their entry names.</dd>
+                    <dt>API Name</dt>
+                    <dd>Keep Path</dd>
+                    
+                    <dt>Default Value</dt>
+                    <dd>false</dd>
+                    
+                    
+                    <dt>Allowable Values</dt>
+                    <dd>
+                        <ul>
+                            
+                            <li>
+                                true
+                                </li>
+                            
+                            <li>
+                                false
+                                </li>
+                            
+                        </ul>
+                    </dd>
+                    
+                    
+                    <dt>Expression Language Scope</dt>
+                    <dd>Not Supported</dd>
+                    <dt>Sensitive</dt>
+                    <dd>false</dd>
+                    <dt>Required</dt>
+                    <dd>true</dd>
+                    
+                    <dt>Dependencies</dt>
+                    <dd>
+                        <ul>
+                            
+                            <li>
+                                <span>Merge Format</span>
+                                <span class="uk-text-light">is set to any
+                                
+                                  of
+                                
+                                </span>
+                                
+                                [TAR, ZIP]
+                                
+                            </li>
+                            
+                        </ul>
+                    </dd>
+                    
+                </dl>
+            </div>
+        </li>
+        
+        <li class="property-descriptor">
+            <a class="uk-accordion-title" href="">
+                <span>Max Bin Age</span>
+                <div class="uk-width-2-3 uk-align-right uk-margin-remove uk-text-truncate uk-text-lighter">The maximum age of a Bin that will trigger a Bin to be complete. Expected format is &lt;duration&gt; &lt;time unit&gt; where &lt;duration&gt; is a positive integer and time unit is one of seconds, minutes, hours</div>
+            </a>
+            <div class="uk-accordion-content uk-padding-small property-descriptor-content">
+                <dl class="uk-description-list">
+                    <dt>Display Name</dt>
+                    <dd>Max Bin Age</dd>
+                    <dt>Description</dt>
+                    <dd>The maximum age of a Bin that will trigger a Bin to be complete. Expected format is &lt;duration&gt; &lt;time unit&gt; where &lt;duration&gt; is a positive integer and time unit is one of seconds, minutes, hours</dd>
+                    <dt>API Name</dt>
+                    <dd>Max Bin Age</dd>
+                    
+                    
+                    
+                    <dt>Expression Language Scope</dt>
+                    <dd>Not Supported</dd>
+                    <dt>Sensitive</dt>
+                    <dd>false</dd>
+                    <dt>Required</dt>
+                    <dd>false</dd>
+                    
+                </dl>
+            </div>
+        </li>
+        
+        <li class="property-descriptor">
+            <a class="uk-accordion-title" href="">
+                <span>Maximum Group Size</span>
+                <div class="uk-width-2-3 uk-align-right uk-margin-remove uk-text-truncate uk-text-lighter">The maximum size for the bundle. If not specified, there is no maximum.</div>
+            </a>
+            <div class="uk-accordion-content uk-padding-small property-descriptor-content">
+                <dl class="uk-description-list">
+                    <dt>Display Name</dt>
+                    <dd>Maximum Group Size</dd>
+                    <dt>Description</dt>
+                    <dd>The maximum size for the bundle. If not specified, there is no maximum.</dd>
+                    <dt>API Name</dt>
+                    <dd>Maximum Group Size</dd>
+                    
+                    
+                    
+                    <dt>Expression Language Scope</dt>
+                    <dd>Not Supported</dd>
+                    <dt>Sensitive</dt>
+                    <dd>false</dd>
+                    <dt>Required</dt>
+                    <dd>false</dd>
+                    
+                    <dt>Dependencies</dt>
+                    <dd>
+                        <ul>
+                            
+                            <li>
+                                <span>Merge Strategy</span>
+                                <span class="uk-text-light">is set to any
+                                
+                                  of
+                                
+                                </span>
+                                
+                                [Bin-Packing Algorithm]
+                                
+                            </li>
+                            
+                        </ul>
+                    </dd>
+                    
+                </dl>
+            </div>
+        </li>
+        
+        <li class="property-descriptor">
+            <a class="uk-accordion-title" href="">
+                <span class="property-required">Maximum number of Bins</span>
+                <div class="uk-width-2-3 uk-align-right uk-margin-remove uk-text-truncate uk-text-lighter">Specifies the maximum number of bins that can be held in memory at any one time</div>
+            </a>
+            <div class="uk-accordion-content uk-padding-small property-descriptor-content">
+                <dl class="uk-description-list">
+                    <dt>Display Name</dt>
+                    <dd>Maximum number of Bins</dd>
+                    <dt>Description</dt>
+                    <dd>Specifies the maximum number of bins that can be held in memory at any one time</dd>
+                    <dt>API Name</dt>
+                    <dd>Maximum number of Bins</dd>
+                    
+                    <dt>Default Value</dt>
+                    <dd>5</dd>
+                    
+                    
+                    
+                    <dt>Expression Language Scope</dt>
+                    <dd>Not Supported</dd>
+                    <dt>Sensitive</dt>
+                    <dd>false</dd>
+                    <dt>Required</dt>
+                    <dd>true</dd>
+                    
+                </dl>
+            </div>
+        </li>
+        
+        <li class="property-descriptor">
+            <a class="uk-accordion-title" href="">
+                <span class="property-required">Maximum Number of Entries</span>
+                <div class="uk-width-2-3 uk-align-right uk-margin-remove uk-text-truncate uk-text-lighter">The maximum number of files to include in a bundle</div>
+            </a>
+            <div class="uk-accordion-content uk-padding-small property-descriptor-content">
+                <dl class="uk-description-list">
+                    <dt>Display Name</dt>
+                    <dd>Maximum Number of Entries</dd>
+                    <dt>Description</dt>
+                    <dd>The maximum number of files to include in a bundle</dd>
+                    <dt>API Name</dt>
+                    <dd>Maximum Number of Entries</dd>
+                    
+                    <dt>Default Value</dt>
+                    <dd>1000</dd>
+                    
+                    
+                    
+                    <dt>Expression Language Scope</dt>
+                    <dd>Not Supported</dd>
+                    <dt>Sensitive</dt>
+                    <dd>false</dd>
+                    <dt>Required</dt>
+                    <dd>true</dd>
+                    
+                    <dt>Dependencies</dt>
+                    <dd>
+                        <ul>
+                            
+                            <li>
+                                <span>Merge Strategy</span>
+                                <span class="uk-text-light">is set to any
+                                
+                                  of
+                                
+                                </span>
+                                
+                                [Bin-Packing Algorithm]
+                                
+                            </li>
+                            
+                        </ul>
+                    </dd>
+                    
+                </dl>
+            </div>
+        </li>
+        
+        <li class="property-descriptor">
+            <a class="uk-accordion-title" href="">
+                <span class="property-required">Merge Format</span>
+                <div class="uk-width-2-3 uk-align-right uk-margin-remove uk-text-truncate uk-text-lighter">Determines the format that will be used to merge the content.</div>
+            </a>
+            <div class="uk-accordion-content uk-padding-small property-descriptor-content">
+                <dl class="uk-description-list">
+                    <dt>Display Name</dt>
+                    <dd>Merge Format</dd>
+                    <dt>Description</dt>
+                    <dd>Determines the format that will be used to merge the content.</dd>
+                    <dt>API Name</dt>
+                    <dd>Merge Format</dd>
+                    
+                    <dt>Default Value</dt>
+                    <dd>Binary Concatenation</dd>
+                    
+                    
+                    <dt>Allowable Values</dt>
+                    <dd>
+                        <ul>
+                            
+                            <li>
+                                TAR
+                                <span uk-icon="info" uk-tooltip="A bin of FlowFiles will be combined into a single TAR file. The FlowFiles' <path> attribute will be used to create a directory in the TAR file if the <Keep Paths> property is set to true; otherwise, all FlowFiles will be added at the root of the TAR file. If a FlowFile has an attribute named <tar.permissions> that is 3 characters, each between 0-7, that attribute will be used as the TAR entry's 'mode'."></span></li>
+                            
+                            <li>
+                                ZIP
+                                <span uk-icon="info" uk-tooltip="A bin of FlowFiles will be combined into a single ZIP file. The FlowFiles' <path> attribute will be used to create a directory in the ZIP file if the <Keep Paths> property is set to true; otherwise, all FlowFiles will be added at the root of the ZIP file. The <Compression Level> property indicates the ZIP compression to use."></span></li>
+                            
+                            <li>
+                                FlowFile Stream, v3
+                                <span uk-icon="info" uk-tooltip="A bin of FlowFiles will be combined into a single Version 3 FlowFile Stream"></span></li>
+                            
+                            <li>
+                                FlowFile Stream, v2
+                                <span uk-icon="info" uk-tooltip="A bin of FlowFiles will be combined into a single Version 2 FlowFile Stream"></span></li>
+                            
+                            <li>
+                                FlowFile Tar, v1
+                                <span uk-icon="info" uk-tooltip="A bin of FlowFiles will be combined into a single Version 1 FlowFile Package"></span></li>
+                            
+                            <li>
+                                Binary Concatenation
+                                <span uk-icon="info" uk-tooltip="The contents of all FlowFiles will be concatenated together into a single FlowFile"></span></li>
+                            
+                            <li>
+                                Avro
+                                <span uk-icon="info" uk-tooltip="The Avro contents of all FlowFiles will be concatenated together into a single FlowFile"></span></li>
+                            
+                        </ul>
+                    </dd>
+                    
+                    
+                    <dt>Expression Language Scope</dt>
+                    <dd>Not Supported</dd>
+                    <dt>Sensitive</dt>
+                    <dd>false</dd>
+                    <dt>Required</dt>
+                    <dd>true</dd>
+                    
+                </dl>
+            </div>
+        </li>
+        
+        <li class="property-descriptor">
+            <a class="uk-accordion-title" href="">
+                <span class="property-required">Merge Strategy</span>
+                <div class="uk-width-2-3 uk-align-right uk-margin-remove uk-text-truncate uk-text-lighter">Specifies the algorithm used to merge content. The 'Defragment' algorithm combines fragments that are associated by attributes back into a single cohesive FlowFile. The 'Bin-Packing Algorithm' generates a FlowFile populated by arbitrarily chosen FlowFiles</div>
+            </a>
+            <div class="uk-accordion-content uk-padding-small property-descriptor-content">
+                <dl class="uk-description-list">
+                    <dt>Display Name</dt>
+                    <dd>Merge Strategy</dd>
+                    <dt>Description</dt>
+                    <dd>Specifies the algorithm used to merge content. The 'Defragment' algorithm combines fragments that are associated by attributes back into a single cohesive FlowFile. The 'Bin-Packing Algorithm' generates a FlowFile populated by arbitrarily chosen FlowFiles</dd>
+                    <dt>API Name</dt>
+                    <dd>Merge Strategy</dd>
+                    
+                    <dt>Default Value</dt>
+                    <dd>Bin-Packing Algorithm</dd>
+                    
+                    
+                    <dt>Allowable Values</dt>
+                    <dd>
+                        <ul>
+                            
+                            <li>
+                                Bin-Packing Algorithm
+                                <span uk-icon="info" uk-tooltip="Generates 'bins' of FlowFiles and fills each bin as full as possible. FlowFiles are placed into a bin based on their size and optionally their attributes (if the <Correlation Attribute> property is set)"></span></li>
+                            
+                            <li>
+                                Defragment
+                                <span uk-icon="info" uk-tooltip="Combines fragments that are associated by attributes back into a single cohesive FlowFile. If using this strategy, all FlowFiles must have the attributes <fragment.identifier>, <fragment.count>, and <fragment.index>. All FlowFiles with the same value for &quot;fragment.identifier&quot; will be grouped together. All FlowFiles in this group must have the same value for the &quot;fragment.count&quot; attribute. All FlowFiles in this group must have a unique value for the &quot;fragment.index&quot; attribute between 0 and the value of the &quot;fragment.count&quot; attribute."></span></li>
+                            
+                        </ul>
+                    </dd>
+                    
+                    
+                    <dt>Expression Language Scope</dt>
+                    <dd>Not Supported</dd>
+                    <dt>Sensitive</dt>
+                    <dd>false</dd>
+                    <dt>Required</dt>
+                    <dd>true</dd>
+                    
+                </dl>
+            </div>
+        </li>
+        
+        <li class="property-descriptor">
+            <a class="uk-accordion-title" href="">
+                <span class="property-required">Metadata Strategy</span>
+                <div class="uk-width-2-3 uk-align-right uk-margin-remove uk-text-truncate uk-text-lighter">For FlowFiles whose input format supports metadata (Avro, e.g.), this property determines which metadata should be added to the bundle. If 'Use First Metadata' is selected, the metadata keys/values from the first FlowFile to be bundled will be used. If 'Keep Only Common Metadata' is selected, only the metadata that exists on all FlowFiles in the bundle, with the same value, will be preserved. If 'Ignore Metadata' is selected, no metadata is transferred to the outgoing bundled FlowFile. If 'Do Not Merge Uncommon Metadata' is selected, any FlowFile whose metadata values do not match those of the first bundled FlowFile will not be merged.</div>
+            </a>
+            <div class="uk-accordion-content uk-padding-small property-descriptor-content">
+                <dl class="uk-description-list">
+                    <dt>Display Name</dt>
+                    <dd>Metadata Strategy</dd>
+                    <dt>Description</dt>
+                    <dd>For FlowFiles whose input format supports metadata (Avro, e.g.), this property determines which metadata should be added to the bundle. If 'Use First Metadata' is selected, the metadata keys/values from the first FlowFile to be bundled will be used. If 'Keep Only Common Metadata' is selected, only the metadata that exists on all FlowFiles in the bundle, with the same value, will be preserved. If 'Ignore Metadata' is selected, no metadata is transferred to the outgoing bundled FlowFile. If 'Do Not Merge Uncommon Metadata' is selected, any FlowFile whose metadata values do not match those of the first bundled FlowFile will not be merged.</dd>
+                    <dt>API Name</dt>
+                    <dd>mergecontent-metadata-strategy</dd>
+                    
+                    <dt>Default Value</dt>
+                    <dd>Do Not Merge Uncommon Metadata</dd>
+                    
+                    
+                    <dt>Allowable Values</dt>
+                    <dd>
+                        <ul>
+                            
+                            <li>
+                                Use First Metadata
+                                <span uk-icon="info" uk-tooltip="For any input format that supports metadata (Avro, e.g.), the metadata for the first FlowFile in the bin will be set on the output FlowFile."></span></li>
+                            
+                            <li>
+                                Keep Only Common Metadata
+                                <span uk-icon="info" uk-tooltip="For any input format that supports metadata (Avro, e.g.), any FlowFile whose metadata values match those of the first FlowFile, any additional metadata will be dropped but the FlowFile will be merged. Any FlowFile whose metadata values do not match those of the first FlowFile in the bin will not be merged."></span></li>
+                            
+                            <li>
+                                Ignore Metadata
+                                <span uk-icon="info" uk-tooltip="Ignores (does not transfer, compare, etc.) any metadata from a FlowFile whose content supports embedded metadata."></span></li>
+                            
+                            <li>
+                                Do Not Merge Uncommon Metadata
+                                <span uk-icon="info" uk-tooltip="For any input format that supports metadata (Avro, e.g.), any FlowFile whose metadata values do not match those of the first FlowFile in the bin will not be merged."></span></li>
+                            
+                        </ul>
+                    </dd>
+                    
+                    
+                    <dt>Expression Language Scope</dt>
+                    <dd>Not Supported</dd>
+                    <dt>Sensitive</dt>
+                    <dd>false</dd>
+                    <dt>Required</dt>
+                    <dd>true</dd>
+                    
+                    <dt>Dependencies</dt>
+                    <dd>
+                        <ul>
+                            
+                            <li>
+                                <span>Merge Format</span>
+                                <span class="uk-text-light">is set to any
+                                
+                                  of
+                                
+                                </span>
+                                
+                                [Avro]
+                                
+                            </li>
+                            
+                        </ul>
+                    </dd>
+                    
+                </dl>
+            </div>
+        </li>
+        
+        <li class="property-descriptor">
+            <a class="uk-accordion-title" href="">
+                <span class="property-required">Minimum Group Size</span>
+                <div class="uk-width-2-3 uk-align-right uk-margin-remove uk-text-truncate uk-text-lighter">The minimum size for the bundle</div>
+            </a>
+            <div class="uk-accordion-content uk-padding-small property-descriptor-content">
+                <dl class="uk-description-list">
+                    <dt>Display Name</dt>
+                    <dd>Minimum Group Size</dd>
+                    <dt>Description</dt>
+                    <dd>The minimum size for the bundle</dd>
+                    <dt>API Name</dt>
+                    <dd>Minimum Group Size</dd>
+                    
+                    <dt>Default Value</dt>
+                    <dd>0 B</dd>
+                    
+                    
+                    
+                    <dt>Expression Language Scope</dt>
+                    <dd>Not Supported</dd>
+                    <dt>Sensitive</dt>
+                    <dd>false</dd>
+                    <dt>Required</dt>
+                    <dd>true</dd>
+                    
+                    <dt>Dependencies</dt>
+                    <dd>
+                        <ul>
+                            
+                            <li>
+                                <span>Merge Strategy</span>
+                                <span class="uk-text-light">is set to any
+                                
+                                  of
+                                
+                                </span>
+                                
+                                [Bin-Packing Algorithm]
+                                
+                            </li>
+                            
+                        </ul>
+                    </dd>
+                    
+                </dl>
+            </div>
+        </li>
+        
+        <li class="property-descriptor">
+            <a class="uk-accordion-title" href="">
+                <span class="property-required">Minimum Number of Entries</span>
+                <div class="uk-width-2-3 uk-align-right uk-margin-remove uk-text-truncate uk-text-lighter">The minimum number of files to include in a bundle</div>
+            </a>
+            <div class="uk-accordion-content uk-padding-small property-descriptor-content">
+                <dl class="uk-description-list">
+                    <dt>Display Name</dt>
+                    <dd>Minimum Number of Entries</dd>
+                    <dt>Description</dt>
+                    <dd>The minimum number of files to include in a bundle</dd>
+                    <dt>API Name</dt>
+                    <dd>Minimum Number of Entries</dd>
+                    
+                    <dt>Default Value</dt>
+                    <dd>1</dd>
+                    
+                    
+                    
+                    <dt>Expression Language Scope</dt>
+                    <dd>Not Supported</dd>
+                    <dt>Sensitive</dt>
+                    <dd>false</dd>
+                    <dt>Required</dt>
+                    <dd>true</dd>
+                    
+                    <dt>Dependencies</dt>
+                    <dd>
+                        <ul>
+                            
+                            <li>
+                                <span>Merge Strategy</span>
+                                <span class="uk-text-light">is set to any
+                                
+                                  of
+                                
+                                </span>
+                                
+                                [Bin-Packing Algorithm]
+                                
+                            </li>
+                            
+                        </ul>
+                    </dd>
+                    
+                </dl>
+            </div>
+        </li>
+        
+        <li class="property-descriptor">
+            <a class="uk-accordion-title" href="">
+                <span>Tar Modified Time</span>
+                <div class="uk-width-2-3 uk-align-right uk-margin-remove uk-text-truncate uk-text-lighter">If using the Tar Merge Format, specifies if the Tar entry should store the modified timestamp either by expression (e.g. ${file.lastModifiedTime} or static value, both of which must match the ISO8601 format 'yyyy-MM-dd'T'HH:mm:ssZ'.</div>
+            </a>
+            <div class="uk-accordion-content uk-padding-small property-descriptor-content">
+                <dl class="uk-description-list">
+                    <dt>Display Name</dt>
+                    <dd>Tar Modified Time</dd>
+                    <dt>Description</dt>
+                    <dd>If using the Tar Merge Format, specifies if the Tar entry should store the modified timestamp either by expression (e.g. ${file.lastModifiedTime} or static value, both of which must match the ISO8601 format 'yyyy-MM-dd'T'HH:mm:ssZ'.</dd>
+                    <dt>API Name</dt>
+                    <dd>Tar Modified Time</dd>
+                    
+                    <dt>Default Value</dt>
+                    <dd>${file.lastModifiedTime}</dd>
+                    
+                    
+                    
+                    <dt>Expression Language Scope</dt>
+                    <dd>Environment variables and FlowFile Attributes</dd>
+                    <dt>Sensitive</dt>
+                    <dd>false</dd>
+                    <dt>Required</dt>
+                    <dd>false</dd>
+                    
+                    <dt>Dependencies</dt>
+                    <dd>
+                        <ul>
+                            
+                            <li>
+                                <span>Merge Format</span>
+                                <span class="uk-text-light">is set to any
+                                
+                                  of
+                                
+                                </span>
+                                
+                                [TAR]
+                                
+                            </li>
+                            
+                        </ul>
+                    </dd>
+                    
+                </dl>
+            </div>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+
+
+
+<div class="component-section-header uk-margin">System Resource Considerations</div>
+<div>
+    <table class="uk-table uk-table-small uk-table-divider uk-box-shadow-small">
+        <thead>
+        <tr>
+            <th class="uk-width-1-4">Resource</th>
+            <th class="uk-width-3-4">Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        
+        <tr>
+            <td>MEMORY</td>
+            <td class="uk-text-lighter">While content is not stored in memory, the FlowFiles' attributes are. The configuration of MergeContent (maximum bin size, maximum group size, maximum bin age, max number of entries) will influence how much memory is used. If merging together many small FlowFiles, a two-stage approach may be necessary in order to avoid excessive use of memory.</td>
+        </tr>
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<div class="component-section-header uk-margin">Relationships</div>
+<div>
+    <table class="uk-table uk-table-small uk-table-divider uk-box-shadow-small">
+        <thead>
+        <tr>
+            <th class="uk-width-1-4">Name</th>
+            <th class="uk-width-3-4">Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        
+        <tr>
+            <td>failure</td>
+            <td class="uk-text-lighter">If the bundle cannot be created, all FlowFiles that would have been used to created the bundle will be transferred to failure</td>
+        </tr>
+        
+        <tr>
+            <td>merged</td>
+            <td class="uk-text-lighter">The FlowFile containing the merged content</td>
+        </tr>
+        
+        <tr>
+            <td>original</td>
+            <td class="uk-text-lighter">The FlowFiles that were used to create the bundle</td>
+        </tr>
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+<div class="component-section-header uk-margin">Reads Attributes</div>
+<div>
+    <table class="uk-table uk-table-small uk-table-divider uk-box-shadow-small">
+        <thead>
+        <tr>
+            <th class="uk-width-1-4">Name</th>
+            <th class="uk-width-3-4">Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        
+        <tr>
+            <td>fragment.identifier</td>
+            <td class="uk-text-lighter">Applicable only if the &lt;Merge Strategy&gt; property is set to Defragment. All FlowFiles with the same value for this attribute will be bundled together.</td>
+        </tr>
+        
+        <tr>
+            <td>fragment.index</td>
+            <td class="uk-text-lighter">Applicable only if the &lt;Merge Strategy&gt; property is set to Defragment. This attribute indicates the order in which the fragments should be assembled. This attribute must be present on all FlowFiles when using the Defragment Merge Strategy and must be a unique (i.e., unique across all FlowFiles that have the same value for the "fragment.identifier" attribute) integer between 0 and the value of the fragment.count attribute. If two or more FlowFiles have the same value for the "fragment.identifier" attribute and the same value for the "fragment.index" attribute, the first FlowFile processed will be accepted and subsequent FlowFiles will not be accepted into the Bin.</td>
+        </tr>
+        
+        <tr>
+            <td>fragment.count</td>
+            <td class="uk-text-lighter">Applicable only if the &lt;Merge Strategy&gt; property is set to Defragment. This attribute indicates how many FlowFiles should be expected in the given bundle. At least one FlowFile must have this attribute in the bundle. If multiple FlowFiles contain the "fragment.count" attribute in a given bundle, all must have the same value.</td>
+        </tr>
+        
+        <tr>
+            <td>segment.original.filename</td>
+            <td class="uk-text-lighter">Applicable only if the &lt;Merge Strategy&gt; property is set to Defragment. This attribute must be present on all FlowFiles with the same value for the fragment.identifier attribute. All FlowFiles in the same bundle must have the same value for this attribute. The value of this attribute will be used for the filename of the completed merged FlowFile.</td>
+        </tr>
+        
+        <tr>
+            <td>tar.permissions</td>
+            <td class="uk-text-lighter">Applicable only if the &lt;Merge Format&gt; property is set to TAR. The value of this attribute must be 3 characters; each character must be in the range 0 to 7 (inclusive) and indicates the file permissions that should be used for the FlowFile's TAR entry. If this attribute is missing or has an invalid value, the default value of 644 will be used</td>
+        </tr>
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+<div class="component-section-header uk-margin">Writes Attributes</div>
+<div>
+    <table class="uk-table uk-table-small uk-table-divider uk-box-shadow-small">
+        <thead>
+        <tr>
+            <th class="uk-width-1-4">Name</th>
+            <th class="uk-width-3-4">Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        
+        <tr>
+            <td>filename</td>
+            <td class="uk-text-lighter">When more than 1 file is merged, the filename comes from the segment.original.filename attribute. If that attribute does not exist in the source FlowFiles, then the filename is set to the number of nanoseconds matching system time. Then a filename extension may be applied:if Merge Format is TAR, then the filename will be appended with .tar, if Merge Format is ZIP, then the filename will be appended with .zip, if Merge Format is FlowFileStream, then the filename will be appended with .pkg</td>
+        </tr>
+        
+        <tr>
+            <td>merge.count</td>
+            <td class="uk-text-lighter">The number of FlowFiles that were merged into this bundle</td>
+        </tr>
+        
+        <tr>
+            <td>merge.bin.age</td>
+            <td class="uk-text-lighter">The age of the bin, in milliseconds, when it was merged and output. Effectively this is the greatest amount of time that any FlowFile in this bundle remained waiting in this processor before it was output</td>
+        </tr>
+        
+        <tr>
+            <td>merge.uuid</td>
+            <td class="uk-text-lighter">UUID of the merged flow file that will be added to the original flow files attributes.</td>
+        </tr>
+        
+        <tr>
+            <td>merge.reason</td>
+            <td class="uk-text-lighter">This processor allows for several thresholds to be configured for merging FlowFiles. This attribute indicates which of the Thresholds resulted in the FlowFiles being merged. For an explanation of each of the possible values and their meanings, see the Processor's Usage / documentation and see the 'Additional Details' page.</td>
+        </tr>
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+<div class="uk-margin">
+    <div class="component-section-header">Use Cases</div>
+</div>
+<div>
+    <ul uk-accordion="multiple: true" id="use-cases">
+        
+        <li class="description">
+            <a class="uk-accordion-title" href="">
+                <div class="uk-margin-remove uk-text-truncate uk-text-light">Concatenate FlowFiles with textual content together in order to create fewer, larger FlowFiles.</div>
+            </a>
+            <div class="uk-accordion-content uk-padding-small">
+                <dl class="uk-description-list">
+                    <dt>Description</dt>
+                    <dd>Concatenate FlowFiles with textual content together in order to create fewer, larger FlowFiles.</dd>
+                    
+                    
+                    <dt>Keywords</dt>
+                    <dd>concatenate, bundle, aggregate, bin, merge, combine, smash</dd>
+                    
+                    <dt>Configuration</dt>
+                    <dd><pre class="use-case-configuration">"Merge Strategy" = "Bin Packing Algorithm"
+"Merge Format" = "Binary Concatenation"
+"Delimiter Strategy" = "Text"
+"Demarcator" = "\n" (a newline can be inserted by pressing Shift + Enter)
+"Minimum Number of Entries" = "1"
+"Maximum Number of Entries" = "500000000"
+"Minimum Group Size" = the minimum amount of data to write to an output FlowFile. A reasonable value might be "128 MB"
+"Maximum Group Size" = the maximum amount of data to write to an output FlowFile. A reasonable value might be "256 MB"
+"Max Bin Age" = the maximum amount of time to wait for incoming data before timing out and transferring the FlowFile along even though it is smaller than the Max Bin Age. A reasonable value might be "5 mins"
+</pre></dd>
+                </dl>
+            </div>
+        </li>
+        
+        <li class="description">
+            <a class="uk-accordion-title" href="">
+                <div class="uk-margin-remove uk-text-truncate uk-text-light">Concatenate FlowFiles with binary content together in order to create fewer, larger FlowFiles.</div>
+            </a>
+            <div class="uk-accordion-content uk-padding-small">
+                <dl class="uk-description-list">
+                    <dt>Description</dt>
+                    <dd>Concatenate FlowFiles with binary content together in order to create fewer, larger FlowFiles.</dd>
+                    
+                    <dt>Notes</dt>
+                    <dd>Not all binary data can be concatenated together. Whether or not this configuration is valid depends on the type of your data.</dd>
+                    
+                    
+                    <dt>Keywords</dt>
+                    <dd>concatenate, bundle, aggregate, bin, merge, combine, smash</dd>
+                    
+                    <dt>Configuration</dt>
+                    <dd><pre class="use-case-configuration">"Merge Strategy" = "Bin Packing Algorithm"
+"Merge Format" = "Binary Concatenation"
+"Delimiter Strategy" = "Text"
+"Minimum Number of Entries" = "1"
+"Maximum Number of Entries" = "500000000"
+"Minimum Group Size" = the minimum amount of data to write to an output FlowFile. A reasonable value might be "128 MB"
+"Maximum Group Size" = the maximum amount of data to write to an output FlowFile. A reasonable value might be "256 MB"
+"Max Bin Age" = the maximum amount of time to wait for incoming data before timing out and transferring the FlowFile along even though it is smaller than the Max Bin Age. A reasonable value might be "5 mins"
+</pre></dd>
+                </dl>
+            </div>
+        </li>
+        
+        <li class="description">
+            <a class="uk-accordion-title" href="">
+                <div class="uk-margin-remove uk-text-truncate uk-text-light">Reassemble a FlowFile that was previously split apart into smaller FlowFiles by a processor such as SplitText, UnpackContext, SplitRecord, etc.</div>
+            </a>
+            <div class="uk-accordion-content uk-padding-small">
+                <dl class="uk-description-list">
+                    <dt>Description</dt>
+                    <dd>Reassemble a FlowFile that was previously split apart into smaller FlowFiles by a processor such as SplitText, UnpackContext, SplitRecord, etc.</dd>
+                    
+                    
+                    <dt>Keywords</dt>
+                    <dd>reassemble, repack, merge, recombine</dd>
+                    
+                    <dt>Configuration</dt>
+                    <dd><pre class="use-case-configuration">"Merge Strategy" = "Defragment"
+"Merge Format" = the value of Merge Format depends on the desired output format. If the file was previously zipped together and was split apart by UnpackContent,
+    a Merge Format of "ZIP" makes sense. If it was previously a .tar file, a Merge Format of "TAR" makes sense. If the data is textual, "Binary Concatenation" can be
+    used to combine the text into a single document.
+"Delimiter Strategy" = "Text"
+"Max Bin Age" = the maximum amount of time to wait for incoming data before timing out and transferring the fragments to 'failure'. A reasonable value might be "5 mins"
+
+For textual data, "Demarcator" should be set to a newline (\n), set by pressing Shift+Enter in the UI. For binary data, "Demarcator" should be left blank.
+</pre></dd>
+                </dl>
+            </div>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+
+
+<div class="component-section-header uk-margin">See Also</div>
+<ul>
+    
+    <li>
+        <a href="../html/org.apache.nifi.processors.standard.MergeRecord.html">org.apache.nifi.processors.standard.MergeRecord</a>
+    </li>
+    
+    <li>
+        <a href="../html/org.apache.nifi.processors.standard.SegmentContent.html">org.apache.nifi.processors.standard.SegmentContent</a>
+    </li>
+    
+</ul>
+
+        
+      </div>
+    </div>
+  </div>
+</main>
+    <footer>
+  <div class="uk-container">
+    <div class="uk-flex uk-grid uk-grid-large">
+      <div class="uk-width-1-2@m">
+        <p>
+          <a class="uk-link-reset" href="/">
+            <img src="../images/apache-nifi-logo.svg" class="footer-logo" alt="Apache NiFi Logo">
+          </a>
+          <a class="uk-link-reset" href="../html/apache.org.html">
+            <img src="../images/apache-logo.svg" class="footer-logo uk-margin-left" alt="Apache Software Foundation Logo">
+          </a>
+        </p>
+        <p>
+          Copyright © 2025 The Apache Software Foundation under the terms of the
+          <a href="../html/LICENSE-2.0.html">Apache License, Version 2.0</a>
+        </p>
+        <p>
+          Apache NiFi, NiFi, and the NiFi logo are trademarks of
+          <a href="../html/apache.org.html">The Apache Software Foundation</a>
+        </p>
+      </div>
+      <div class="uk-width-1-4@m">
+        <h3><a href="/">Project</a></h3>
+        <ul>
+          <li><a href="../html/NIFI.html">Issues</a></li>
+          <li><a href="../html/nifi.html">Source</a></li>
+          <li><a href="../html/apache-nifi.html">LinkedIn</a></li>
+          <li><a href="../html/zt-11njbtkdx-ZRU8FKYSWoEHRJetidy0zA.html">Slack</a></li>
+          <li><a href="../html/security.html">Security</a></li>
+        </ul>
+      </div>
+      <div class="uk-width-1-4@m">
+        <h3><a href="../html/www.apache.org.html">Apache</a></h3>
+        <ul>
+          <li><a href="../html/licenses.html">License</a></li>
+          <li><a href="../html/privacy-policy-public.html">Privacy</a></li>
+          <li><a href="../html/sponsorship.html">Sponsorship</a></li>
+          <li><a href="../html/thanks.html">Thanks</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="../scripts/uikit.min.js"></script>
+    <script src="../scripts/uikit-icons.min.js"></script>
+  </body>
+</html>
