@@ -1,0 +1,17 @@
+Flow Design System - Apache NiFi
+
+• Documentation • NiFi Version 2 Documentation • NiFi Version 1 Documentation • Guides • Security Reporting • Wiki • Development • Contributing • Issues • Source • Community • Contact • Powered By • Team • Projects • MiNiFi • Registry • Flow Design System • Apache • Events • License • Privacy • Sponsorship • Thanks Apache NiFi Flow Design System
+
+ A subproject of Apache NiFi to provide a consistent user experience across the various web applications within the NiFi ecosystem. 
+
+ Features
+
+ Flow Design System - a subproject of Apache NiFi - is an atomic reusable platform for providing a consistent set of UI/UX components for Apache NiFi, Apache NiFi Registry, Apache NiFi MiNiFi, and any other open source web applications to consume.
+
+ Specific goals for the initial thrust of the Flow Design System effort include:
+
+ • Implementation of the Flow Design System for reuseable UI/UX components • Integration with NiFi Registry UI/UX via npm public registry Future efforts may include capabilities to support additional UI/UX concepts as they are identified by the community.
+
+ Resources
+
+ • Apache Gitbox • GitHub

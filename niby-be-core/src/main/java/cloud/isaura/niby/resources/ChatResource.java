@@ -19,7 +19,8 @@ public class ChatResource {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.TEXT_PLAIN)
     public Multi<String> chat(ChatRequest request) {
-        return basicAgent.chat(request.message);
+        // Use a default session ID for REST API calls (not session-based like WebSocket)
+        return basicAgent.chat("rest-session", request.message);
     }
 
     public static class ChatRequest {

@@ -1,0 +1,108 @@
+PutZendeskTicket - Apache NiFi
+
+• Documentation • NiFi Version 2 Documentation • NiFi Version 1 Documentation • Guides • Security Reporting • Wiki • Development • Contributing • Issues • Source • Community • Contact • Powered By • Team • Projects • MiNiFi • Registry • Flow Design System • Apache • Events • License • Privacy • Sponsorship • Thanks • General • Overview • Getting Started • User Guide • Expression Language Guide • RecordPath Guide • Admin Guide • Toolkit Guide • Walkthroughs • Developer • Developer Guide • Python Developer Guide • Apache NiFi In Depth • REST API • Processors • AttributeRollingWindow • AttributesToCSV • AttributesToJSON • CalculateRecordStats • CaptureChangeMySQL • CompressContent • ConnectWebSocket • ConsumeAMQP • ConsumeAzureEventHub • ConsumeBoxEnterpriseEvents • ConsumeBoxEvents • ConsumeElasticsearch • ConsumeGCPubSub • ConsumeIMAP • ConsumeJMS • ConsumeKafka • ConsumeKinesisStream • ConsumeMQTT • ConsumePOP3 • ConsumeSlack • ConsumeTwitter • ConsumeWindowsEventLog • ControlRate • ConvertCharacterSet • ConvertRecord • CopyAzureBlobStorage_v12 • CopyS3Object • CountText • CreateBoxFileMetadataInstance • CreateBoxMetadataTemplate • CryptographicHashContent • DebugFlow • DecryptContentAge • DecryptContentPGP • DeduplicateRecord • DeleteAzureBlobStorage_v12 • DeleteAzureDataLakeStorage • DeleteBoxFileMetadataInstance • DeleteByQueryElasticsearch • DeleteDynamoDB • DeleteFile • DeleteGCSObject • DeleteGridFS • DeleteMongo • DeleteS3Object • DeleteSFTP • DeleteSQS • DetectDuplicate • DistributeLoad • DuplicateFlowFile • EncodeContent • EncryptContentAge • EncryptContentPGP • EnforceOrder • EvaluateJsonPath • EvaluateXPath • EvaluateXQuery • ExecuteGroovyScript • ExecuteProcess • ExecuteScript • ExecuteSQL • ExecuteSQLRecord • ExecuteStreamCommand • ExtractAvroMetadata • ExtractEmailAttachments • ExtractEmailHeaders • ExtractGrok • ExtractHL7Attributes • ExtractRecordSchema • ExtractStructuredBoxFileMetadata • ExtractText • FetchAzureBlobStorage_v12 • FetchAzureDataLakeStorage • FetchBoxFile • FetchBoxFileInfo • FetchBoxFileMetadataInstance • FetchBoxFileRepresentation • FetchDistributedMapCache • FetchDropbox • FetchFile • FetchFTP • FetchGCSObject • FetchGoogleDrive • FetchGridFS • FetchS3Object • FetchSFTP • FetchSmb • FilterAttribute • FlattenJson • ForkEnrichment • ForkRecord • GenerateFlowFile • GenerateRecord • GenerateTableFetch • GeoEnrichIP • GeoEnrichIPRecord • GeohashRecord • GetAsanaObject • GetAwsPollyJobStatus • GetAwsTextractJobStatus • GetAwsTranscribeJobStatus • GetAwsTranslateJobStatus • GetAzureEventHub • GetAzureQueueStorage_v12 • GetBoxFileCollaborators • GetBoxGroupMembers • GetDynamoDB • GetElasticsearch • GetFile • GetFileResource • GetFTP • GetGcpVisionAnnotateFilesOperationStatus • GetGcpVisionAnnotateImagesOperationStatus • GetHubSpot • GetMongo • GetMongoRecord • GetS3ObjectMetadata • GetS3ObjectTags • GetSFTP • GetShopify • GetSmbFile • GetSNMP • GetSplunk • GetSQS • GetWorkdayReport • GetZendesk • HandleHttpRequest • HandleHttpResponse • IdentifyMimeType • InvokeHTTP • InvokeScriptedProcessor • ISPEnrichIP • JoinEnrichment • JoltTransformJSON • JoltTransformRecord • JSLTTransformJSON • JsonQueryElasticsearch • ListAzureBlobStorage_v12 • ListAzureDataLakeStorage • ListBoxFile • ListBoxFileInfo • ListBoxFileMetadataInstances • ListBoxFileMetadataTemplates • ListDatabaseTables • ListDropbox • ListenFTP • ListenHTTP • ListenOTLP • ListenSlack • ListenSyslog • ListenTCP • ListenTrapSNMP • ListenUDP • ListenUDPRecord • ListenWebSocket • ListFile • ListFTP • ListGCSBucket • ListGoogleDrive • ListS3 • ListSFTP • ListSmb • LogAttribute • LogMessage • LookupAttribute • LookupRecord • MergeContent • MergeRecord • ModifyBytes • ModifyCompression • MonitorActivity • MoveAzureDataLakeStorage • Notify • PackageFlowFile • PaginatedJsonQueryElasticsearch • ParseEvtx • ParseNetflowv5 • ParseSyslog • ParseSyslog5424 • PartitionRecord • PublishAMQP • PublishGCPubSub • PublishJMS • PublishKafka • PublishMQTT • PublishSlack • PutAzureBlobStorage_v12 • PutAzureCosmosDBRecord • PutAzureDataExplorer • PutAzureDataLakeStorage • PutAzureEventHub • PutAzureQueueStorage_v12 • PutBigQuery • PutBoxFile • PutCloudWatchMetric • PutDatabaseRecord • PutDistributedMapCache • PutDropbox • PutDynamoDB • PutDynamoDBRecord • PutElasticsearchJson • PutElasticsearchRecord • PutEmail • PutFile • PutFTP • PutGCSObject • PutGoogleDrive • PutGridFS • PutKinesisFirehose • PutKinesisStream • PutLambda • PutMongo • PutMongoBulkOperations • PutMongoRecord • PutRecord • PutRedisHashRecord • PutS3Object • PutSalesforceObject • PutSFTP • PutSmbFile • PutSNS • PutSplunk • PutSplunkHTTP • PutSQL • PutSQS • PutSyslog • PutTCP • PutUDP • PutWebSocket • PutZendeskTicket • QueryAirtableTable • QueryAzureDataExplorer • QueryDatabaseTable • QueryDatabaseTableRecord • QueryRecord • QuerySalesforceObject • QuerySplunkIndexingStatus • RemoveRecordField • RenameRecordField • ReplaceText • ReplaceTextWithMapping • RetryFlowFile • RouteHL7 • RouteOnAttribute • RouteOnContent • RouteText • RunMongoAggregation • SampleRecord • ScanAttribute • ScanContent • ScriptedFilterRecord • ScriptedPartitionRecord • ScriptedTransformRecord • ScriptedValidateRecord • SearchElasticsearch • SegmentContent • SendTrapSNMP • SetSNMP • SignContentPGP • SplitAvro • SplitContent • SplitExcel • SplitJson • SplitPCAP • SplitRecord • SplitText • SplitXml • StartAwsPollyJob • StartAwsTextractJob • StartAwsTranscribeJob • StartAwsTranslateJob • StartGcpVisionAnnotateFilesOperation • StartGcpVisionAnnotateImagesOperation • TagS3Object • TailFile • TransformXml • UnpackContent • UpdateAttribute • UpdateBoxFileMetadataInstance • UpdateByQueryElasticsearch • UpdateCounter • UpdateDatabaseTable • UpdateRecord • ValidateCsv • ValidateJson • ValidateRecord • ValidateXml • VerifyContentMAC • VerifyContentPGP • Wait • Controller Services • ADLSCredentialsControllerService • ADLSCredentialsControllerServiceLookup • AmazonGlueEncodedSchemaReferenceReader • AmazonGlueSchemaRegistry • AmazonMSKConnectionService • ApicurioSchemaRegistry • AvroReader • AvroRecordSetWriter • AvroSchemaRegistry • AWSCredentialsProviderControllerService • AzureBlobStorageFileResourceService • AzureCosmosDBClientService • AzureDataLakeStorageFileResourceService • AzureEventHubRecordSink • AzureStorageCredentialsControllerService_v12 • AzureStorageCredentialsControllerServiceLookup_v12 • CEFReader • ConfluentEncodedSchemaReferenceReader • ConfluentEncodedSchemaReferenceWriter • ConfluentSchemaRegistry • CSVReader • CSVRecordLookupService • CSVRecordSetWriter • DatabaseRecordLookupService • DatabaseRecordSink • DatabaseTableSchemaRegistry • DBCPConnectionPool • DBCPConnectionPoolLookup • DeveloperBoxClientService • DistributedMapCacheLookupService • ElasticSearchClientServiceImpl • ElasticSearchLookupService • ElasticSearchStringLookupService • EmailRecordSink • EmbeddedHazelcastCacheManager • ExcelReader • ExternalHazelcastCacheManager • FreeFormTextRecordSetWriter • GCPCredentialsControllerService • GCSFileResourceService • GrokReader • HazelcastMapCacheClient • HikariCPConnectionPool • HttpRecordSink • IPLookupService • JettyWebSocketClient • JettyWebSocketServer • JMSConnectionFactoryProvider • JndiJmsConnectionFactoryProvider • JsonConfigBasedBoxClientService • JsonPathReader • JsonRecordSetWriter • JsonTreeReader • JWTBearerOAuth2AccessTokenProvider • Kafka3ConnectionService • KerberosKeytabUserService • KerberosPasswordUserService • KerberosTicketCacheUserService • LoggingRecordSink • MapCacheClientService • MapCacheServer • MongoDBControllerService • MongoDBLookupService • PEMEncodedSSLContextProvider • PropertiesFileLookupService • ProtobufReader • ReaderLookup • RecordSetWriterLookup • RecordSinkServiceLookup • RedisConnectionPoolService • RedisDistributedMapCacheClientService • RestLookupService • S3FileResourceService • ScriptedLookupService • ScriptedReader • ScriptedRecordSetWriter • ScriptedRecordSink • SetCacheClientService • SetCacheServer • SimpleCsvFileLookupService • SimpleDatabaseLookupService • SimpleKeyValueLookupService • SimpleRedisDistributedMapCacheClientService • SimpleScriptedLookupService • SiteToSiteReportingRecordSink • SlackRecordSink • SmbjClientProviderService • StandardAsanaClientProviderService • StandardAzureCredentialsControllerService • StandardDatabaseDialectService • StandardDropboxCredentialService • StandardFileResourceService • StandardHashiCorpVaultClientService • StandardHttpContextMap • StandardJsonSchemaRegistry • StandardKustoIngestService • StandardKustoQueryService • StandardOauth2AccessTokenProvider • StandardPGPPrivateKeyService • StandardPGPPublicKeyService • StandardPrivateKeyService • StandardProxyConfigurationService • StandardRestrictedSSLContextService • StandardS3EncryptionService • StandardSSLContextService • StandardWebClientServiceProvider • Syslog5424Reader • SyslogReader • UDPEventRecordSink • VolatileSchemaCache • WindowsEventLogReader • XMLFileLookupService • XMLReader • XMLRecordSetWriter • YamlTreeReader • ZendeskRecordSink • Reporting Tasks • AzureLogAnalyticsProvenanceReportingTask • AzureLogAnalyticsReportingTask • ControllerStatusReportingTask • MonitorDiskUsage • MonitorMemory • ScriptedReportingTask • SiteToSiteBulletinReportingTask • SiteToSiteMetricsReportingTask • SiteToSiteProvenanceReportingTask • SiteToSiteStatusReportingTask • Parameter Providers • AwsSecretsManagerParameterProvider • AzureKeyVaultSecretsParameterProvider • DatabaseParameterProvider • EnvironmentVariableParameterProvider • GcpSecretManagerParameterProvider • HashiCorpVaultParameterProvider • KubernetesSecretParameterProvider • OnePasswordParameterProvider • Flow Analysis Rules • DisallowComponentType • RequireServerSSLContextService • RestrictBackpressureSettings • RestrictFlowFileExpiration PutZendeskTicket 2.5.0
+
+ Bundle org.apache.nifi | nifi-zendesk-nar Description Create Zendesk tickets using the Zendesk API. Tags zendesk, ticket Input Requirement Supports Sensitive Dynamic Properties false • Additional Details for PutZendeskTicket 2.5.0 PutZendeskTicket
+
+ Description
+
+ The processor uses the Zendesk API to ingest tickets into Zendesk. The processor is capable to send requests directly from the FlowFile content or construct the request objects from the incoming records using a RecordReader.
+
+ Authentication
+
+ Zendesk API uses basic authentication. Either a password or an authentication token has to be provided. In Zendesk API Settings, it’s possible to generate authentication tokens, eliminating the need for users to expose their passwords. This approach also offers the advantage of fast token revocation when required.
+
+ Property values
+
+ There are multiple ways of providing property values to the request object:
+
+ Record Path:
+
+ The property value is going to be evaluated as a record path if the value is provided inside brackets starting with a ‘%’.
+
+ Example:
+
+ The incoming record look like this.
+
+ {
+ "record": {
+ "description": "This is a sample description.",
+ "issue\_type": "Immediate",
+ "issue": {
+ "name": "General error",
+ "type": "Immediate"
+ },
+ "project": {
+ "name": "Maintenance"
+ }
+ }
+}
+ We are going to provide Record Path values for the Comment Body, Subject, Priority and Type processor attributes:
+
+ Comment Body : %{/record/description}
+Subject : %{/record/issue/name}
+Priority : %{/record/issue/type}
+Type : %{/record/project/name}
+ The constructed request object that is going to be sent to the Zendesk API will look like this:
+
+ {
+ "comment": {
+ "body": "This is a sample description."
+ },
+ "subject": "General error",
+ "priority": "Immediate",
+ "type": "Maintenance"
+}
+ Constant:
+
+ The property value is going to be treated as a constant if the provided value doesn’t match with the Record Path format.
+
+ Example:
+
+ We are going to provide constant values for the Comment Body, Subject, Priority and Type processor attributes:
+
+ Comment Body : Sample description
+Subject : Sample subject
+Priority : High
+Type : Sample type
+ The constructed request object that is going to be sent to the Zendesk API will look like this:
+
+ {
+ "comment": {
+ "body": "Sample description"
+ },
+ "subject": "Sample subject",
+ "priority": "High",
+ "type": "Sample type"
+}
+ Additional properties
+
+ The processor offers a set of frequently used Zendesk ticket attributes within its property list. However, users have the flexibility to include any desired number of additional properties using dynamic properties. These dynamic properties utilize their keys as Json Pointer, which denote the paths within the request object. Correspondingly, the values of these dynamic properties align with the predefined property attributes. The possible Zendesk request attributes can be found in the Zendesk API documentation
+
+ Property Key values:
+
+ The dynamic property key must be a valid Json Pointer value which has the following syntax rules:
+
+ • The path starts with /. • Each segment is separated by /. • Each segment can be interpreted as either an array index or an object key. Example:
+
+ We are going to add a new dynamic property to the processor:
+
+ /request/new_object : This is a new property
+/request/new_array/0 : This is a new array element
+ The constructed request object will look like this:
+
+ {
+ "request": {
+ "new_object": "This is a new property",
+ "new_array": [
+ "This is a new array element"
+ ]
+ }
+}
+ Properties • Web Client Service Provider Controller service for HTTP client operations. Display Name Web Client Service Provider Description Controller service for HTTP client operations. API Name web-client-service-provider Service Interface org.apache.nifi.web.client.provider.api.WebClientServiceProvider Service Implementations org.apache.nifi.web.client.provider.service.StandardWebClientServiceProvider Expression Language Scope Not Supported Sensitive false Required true • Authentication Type Type of authentication to Zendesk API. Display Name Authentication Type Description Type of authentication to Zendesk API. API Name zendesk-authentication-type-name Allowable Values • Password • Token Expression Language Scope Not Supported Sensitive false Required true • Authentication Credential Password or authentication token for Zendesk login user. Display Name Authentication Credential Description Password or authentication token for Zendesk login user. API Name zendesk-authentication-value-name Expression Language Scope Environment variables and FlowFile Attributes Sensitive true Required true • Comment Body The content or the path to the comment body in the incoming record. Display Name Comment Body Description The content or the path to the comment body in the incoming record. API Name zendesk-comment-body Expression Language Scope Environment variables and FlowFile Attributes Sensitive false Required true Dependencies • Record Reader is set to any value specified • Priority The content or the path to the priority in the incoming record. Display Name Priority Description The content or the path to the priority in the incoming record. API Name zendesk-priority Expression Language Scope Environment variables and FlowFile Attributes Sensitive false Required false Dependencies • Record Reader is set to any value specified • Record Reader Specifies the Controller Service to use for parsing incoming data and determining the data's schema. Display Name Record Reader Description Specifies the Controller Service to use for parsing incoming data and determining the data's schema. API Name zendesk-record-reader Service Interface org.apache.nifi.serialization.RecordReaderFactory Service Implementations org.apache.nifi.avro.AvroReader org.apache.nifi.cef.CEFReader org.apache.nifi.csv.CSVReader org.apache.nifi.excel.ExcelReader org.apache.nifi.grok.GrokReader org.apache.nifi.json.JsonPathReader org.apache.nifi.json.JsonTreeReader org.apache.nifi.services.protobuf.ProtobufReader org.apache.nifi.lookup.ReaderLookup org.apache.nifi.record.script.ScriptedReader org.apache.nifi.syslog.Syslog5424Reader org.apache.nifi.syslog.SyslogReader org.apache.nifi.windowsevent.WindowsEventLogReader org.apache.nifi.xml.XMLReader org.apache.nifi.yaml.YamlTreeReader Expression Language Scope Not Supported Sensitive false Required false • Subdomain Name Name of the Zendesk subdomain. Display Name Subdomain Name Description Name of the Zendesk subdomain. API Name zendesk-subdomain Expression Language Scope Environment variables and FlowFile Attributes Sensitive false Required true • Subject The content or the path to the subject in the incoming record. Display Name Subject Description The content or the path to the subject in the incoming record. API Name zendesk-subject Expression Language Scope Environment variables and FlowFile Attributes Sensitive false Required false Dependencies • Record Reader is set to any value specified • Type The content or the path to the type in the incoming record. Display Name Type Description The content or the path to the type in the incoming record. API Name zendesk-type Expression Language Scope Environment variables and FlowFile Attributes Sensitive false Required false Dependencies • Record Reader is set to any value specified • User Name Login user to Zendesk subdomain. Display Name User Name Description Login user to Zendesk subdomain. API Name zendesk-user Expression Language Scope Environment variables and FlowFile Attributes Sensitive false Required true Dynamic Properties • The path in the request object to add. The value needs be a valid JsonPointer. Additional property to be added to the Zendesk request object. Name The path in the request object to add. The value needs be a valid JsonPointer. Description Additional property to be added to the Zendesk request object. Value The path in the incoming record to get the value from. Expression Language Scope FLOWFILE_ATTRIBUTES Relationships Name | Description | 
+ failure | A FlowFile is routed to this relationship if the operation failed and retrying the operation will also fail, such as an invalid data or schema. | 
+ success | For FlowFiles created as a result of a successful HTTP request. | 
+ Writes Attributes Name | Description | 
+ record.count | The number of records processed. | 
+ error.code | The error code of from the response. | 
+ error.message | The error message of from the response. |

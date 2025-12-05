@@ -1,5 +1,7 @@
 # niby-ui
 
+**User Interface Module** - Front-end module of the Niby application that provides the web interface for interacting with the backend services and RAG functionality.
+
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
 If you want to learn more about Quarkus, please visit its website: <https://quarkus.io/>.

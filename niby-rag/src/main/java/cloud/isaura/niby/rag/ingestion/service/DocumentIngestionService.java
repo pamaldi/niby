@@ -38,7 +38,7 @@ public class DocumentIngestionService
     @Inject
     EmbeddingModel embeddingModel;
 
-    @ConfigProperty(name = "documents.directory")
+    @ConfigProperty(name = "documents.el.directory")
     String documentsDirectory;
 
     /**
@@ -46,13 +46,18 @@ public class DocumentIngestionService
      */
     public void ingestWithCustomParsers() throws IOException
     {
+        // Resolve path - if relative, resolve from current working directory
         Path path = Path.of(documentsDirectory);
+        if (!path.isAbsolute()) {
+            path = Path.of(System.getProperty("user.dir")).resolve(documentsDirectory);
+        }
 
         try (Stream<Path> paths = Files.walk(path)) {
             List<Document> documents = new ArrayList<>();
 
             paths.filter(Files::isRegularFile)
                     .forEach(file -> {
+                        LOG.info("Processing file: {}", file);
                         Document doc = loadDocumentWithParser(file);
                         if (doc != null) {
                             documents.add(doc);
@@ -73,7 +78,7 @@ public class DocumentIngestionService
                 parser = new TextDocumentParser();
                 return FileSystemDocumentLoader.loadDocument(file, parser);
         } catch (Exception e) {
-            LOG.error( "Failed to load document: %s", file);
+            LOG.error("Failed to load document: {}", file, e);
             return null;
         }
     }
@@ -83,7 +88,7 @@ public class DocumentIngestionService
 
         // Split all documents into segments first
         List<TextSegment> allSegments = splitter.splitAll(documents);
-        LOG.info("Split %d documents into %d segments", documents.size(), allSegments.size());
+        LOG.info("Split {} documents into {} segments", documents.size(), allSegments.size());
 
         // Batch process segments to avoid token limit (each segment ~1500 tokens, limit is 300k tokens)
         // Use conservative batch of 100 segments (~150k tokens) to stay well under limit
@@ -93,7 +98,7 @@ public class DocumentIngestionService
             int endIndex = Math.min(i + segmentBatchSize, allSegments.size());
             List<TextSegment> segmentBatch = allSegments.subList(i, endIndex);
             
-            LOG.info("Embedding segments %d-%d of %d", i + 1, endIndex, allSegments.size());
+            LOG.info("Embedding segments {}-{} of {}", i + 1, endIndex, allSegments.size());
             
             // Generate embeddings for this batch
             List<Embedding> embeddings = embeddingModel.embedAll(segmentBatch).content();
@@ -102,7 +107,7 @@ public class DocumentIngestionService
             embeddingStore.addAll(embeddings, segmentBatch);
         }
         
-        LOG.info("Successfully ingested %d documents (%d segments)", documents.size(), allSegments.size());
+        LOG.info("Successfully ingested {} documents ({} segments)", documents.size(), allSegments.size());
     }
 
     /**
@@ -114,7 +119,7 @@ public class DocumentIngestionService
         // Split documents into segments
         List<TextSegment> segments = splitter.splitAll(documents);
 
-        LOG.info("Split %d documents into %d segments", documents.size(), segments.size());
+        LOG.info("Split {} documents into {} segments", documents.size(), segments.size());
 
         // Generate embeddings
         List<Embedding> embeddings = embeddingModel.embedAll(segments).content();

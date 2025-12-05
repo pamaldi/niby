@@ -39,6 +39,11 @@ nb-configuration.xml
 # Local environment
 .env
 
+# Secrets directory
+secrets/*.txt
+!secrets/.gitkeep
+!secrets/README.md
+
 # Plugin directory
 /.quarkus/cli/plugins/
 # TLS Certificates

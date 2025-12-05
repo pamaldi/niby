@@ -1,0 +1,101 @@
+Welcome to The Apache Software Foundation
+
+Software for the Public Good¶
+
+ ASF’s open source software is used ubiquitously around the world with more than 8,400 committers contributing to more than 320 active projects.
+
+ See All ProjectsContribute
+
+ 
+
+ "The most popular open source software is Apache…"
+
+ "Apache-style licensing may yield more adoption and money."
+
+ "Apache’s 'survival of the fittest' ethos breeds better software"
+
+ ❮ ❯ Latest News¶
+
+ Keep up with the ASF's news and announcements by subscribing to the Apache Announcements List, as well as following the Foundation Blog, and the Voice of Apache podcast.
+
+ Foundation Blog ASF Plus One Newsletter: July 2025
+
+ Continue Reading → Foundation Blog First-Time ASF Contributors Help Foster Long-Term Sustainability of Open Source Projects Through Code Writing 
+
+ Continue Reading → Foundation Blog The Apache Software Foundation Thanks Myrle Krantz for Her Service as VP Infrastructure
+
+ Continue Reading → Reports¶
+
+ Read official ASF reports and statements from the ASF including annual reports, diversity reports, and more.
+
+ Plus One Newsletter¶
+
+ Plus One is the ASF's monthly bulletin to showcase major milestones, news, events, and activities across the ASF project ecosystem. At the bottom of the blog, you can subscribe to get real-time notifications when a new edition is released.
+
+ The Apache Way¶
+
+ Our consensus-driven, open development process was refined over the past 20 years and produced some of the largest and longest-lived Open Source projects that have revolutionized the industry.
+
+ Community Over Code¶
+
+ "Community Over Code - or C/C - is our annual flagship conference offering unparalleled educational, networking, and collaboration opportunities.
+
+ About the Foundation¶
+
+ The ASF is a 501(c)(3) charitable organization run almost exclusively by volunteers who oversee hundreds of projects. Our sponsors enable us to maintain the infrastructure needed to support them.
+
+ GovernanceSee our sponsors
+
+ ASF Projects¶
+
+ The ASF develops, stewards, and incubates hundreds of freely available, enterprise-grade projects that serve as the backbone for the most visible and widely used applications in computing today.
+
+ Contribute¶
+
+ If you wish to contribute to ASF projects, the Community Development site has tools, processes, and advice to help you get started.
+
+ Get Started
+
+ Host a Project¶
+
+ The Apache Incubator provides a path for projects and their communities that want to enter the ASF.
+
+ Learn more
+
+ Featured Projects¶
+
+ • SkyWalking • Cayenne • Beam SkyWalking
+
+ application performance management and monitoring (APM)
+
+ Learn More... Cayenne
+
+ User-friendly Java ORM with Tools
+
+ Learn More... Beam
+
+ Programming model, SDKs, and runners for defining and executing data processing pipelines
+
+ Learn More... Incubating Projects¶
+
+ The Apache Incubator is the primary entry path into The Apache Software Foundation for projects and their communities wishing to become part of the Foundation’s efforts. All code donations from external organisations and existing external projects seeking to join the Apache community enter through the Incubator.
+
+ • Grails • Teaclave • Pony Mail Grails
+
+ A powerful Groovy-based web application framework for the JVM built on top of Spring Boot
+
+ Learn More... Teaclave
+
+ Teaclave is a universal secure computing platform.
+
+ Learn More... Pony Mail
+
+ Pony Mail is a mail-archiving, archive viewing, and interaction service, that can be integrated with many email platforms.
+
+ Learn More... Apache Project List¶
+
+ • Overview • All Projects By Category¶
+
+ • Attic • Big Data • Build Management • Cloud • Content • Databases • FTP • Graphics • HTTP • HTTP-module • Incubating • JavaEE • Libraries • Mail • Mobile • Network-client • Network-server • OSGi • RegExp • Retired • Search • Security • SQL • Testing • Virtual-machine • Web-framework • XML By Name¶
+
+ • HTTP Server • A • AGE • APISIX • Accumulo • ActiveMQ • Airavata • Airflow • Allura • Ambari • Answer • Ant • Aries • Arrow • AsterixDB • Atlas • Attic • Avro • Axis • B • BVal • Beam • Bigtop • BookKeeper • Brooklyn • BuildStream • bRPC • C • CXF • Calcite • Camel • CarbonData • Cassandra • Causeway • Cayenne • Celeborn • Celix • CloudStack • Commons • Community Development • Cordova • CouchDB • Creadur • Curator • cTAKES • D • DB • Daffodil • DataFu • DataFusion • DataSketches • DeltaSpike • Directory • DolphinScheduler • Doris • Drill • Druid • Dubbo • E • ECharts • Empire-db • EventMesh • F • Felix • Fineract • Flagon • Flex • Flink • Fluo • Fory • FreeMarker • G • Geode • Geronimo • Gobblin • Gravitino • Griffin • Groovy • Guacamole • Gump • H • HBase • Hadoop • Helix • Hive • Hop • HttpComponents • Hudi • I • Iceberg • Ignite • Impala • InLong • Incubator • IoTDB • J • JMeter • JSPWiki • Jackrabbit • James • Jena • Johnzon • Juneau • K • Kafka • Karaf • Kibble • Knox • Kudu • Kvrocks • Kylin • Kyuubi • L • Libcloud • Linkis • Logging Services • Logo Development • Lucene • Lucene.Net • M • MADlib • MINA • Mahout • ManifoldCF • Maven • Mesos • MyFaces • Mynewt • N • NetBeans • NiFi • Nutch • NuttX • O • OFBiz • ORC • Olingo • OpenDAL • OpenJPA • OpenMeetings • OpenNLP • OpenOffice • OpenWebBeans • OpenWhisk • Ozone • P • PDFBox • PLC4X • POI • Paimon • Parquet • Pekko • Perl • Petri • Phoenix • Pig • Pinot • Portable Runtime (APR) • Portals • Pulsar • Q • Qpid • R • Ranger • Ratis • RocketMQ • Roller • Royale • Rya • S • SDAP • SINGA • SIS • Samza • Santuario • SeaTunnel • Sedona • Serf • ServiceComb • ServiceMix • ShardingSphere • ShenYu • Shiro • SkyWalking • Sling • Solr • SpamAssassin • Spark • Steve • Storm • StormCrawler • StreamPark • StreamPipes • Struts • Subversion • Superset • Synapse • Syncope • SystemDS • T • TVM • Tapestry • Tcl • Tez • Thrift • Tika • TinkerPop • TomEE • Tomcat • Traffic Control • Traffic Server • TsFile • Turbine • U • UIMA • Uniffle • Unomi • V • VCL • Velocity • W • Web Services • Whimsy • Wicket • X • XML Graphics • Xalan • Xerces • Y • Yetus • YuniKorn • Z • Zeppelin • ZooKeeper

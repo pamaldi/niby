@@ -1,0 +1,114 @@
+ScriptedValidateRecord - Apache NiFi
+
+• Documentation • NiFi Version 2 Documentation • NiFi Version 1 Documentation • Guides • Security Reporting • Wiki • Development • Contributing • Issues • Source • Community • Contact • Powered By • Team • Projects • MiNiFi • Registry • Flow Design System • Apache • Events • License • Privacy • Sponsorship • Thanks • General • Overview • Getting Started • User Guide • Expression Language Guide • RecordPath Guide • Admin Guide • Toolkit Guide • Walkthroughs • Developer • Developer Guide • Python Developer Guide • Apache NiFi In Depth • REST API • Processors • AttributeRollingWindow • AttributesToCSV • AttributesToJSON • CalculateRecordStats • CaptureChangeMySQL • CompressContent • ConnectWebSocket • ConsumeAMQP • ConsumeAzureEventHub • ConsumeBoxEnterpriseEvents • ConsumeBoxEvents • ConsumeElasticsearch • ConsumeGCPubSub • ConsumeIMAP • ConsumeJMS • ConsumeKafka • ConsumeKinesisStream • ConsumeMQTT • ConsumePOP3 • ConsumeSlack • ConsumeTwitter • ConsumeWindowsEventLog • ControlRate • ConvertCharacterSet • ConvertRecord • CopyAzureBlobStorage_v12 • CopyS3Object • CountText • CreateBoxFileMetadataInstance • CreateBoxMetadataTemplate • CryptographicHashContent • DebugFlow • DecryptContentAge • DecryptContentPGP • DeduplicateRecord • DeleteAzureBlobStorage_v12 • DeleteAzureDataLakeStorage • DeleteBoxFileMetadataInstance • DeleteByQueryElasticsearch • DeleteDynamoDB • DeleteFile • DeleteGCSObject • DeleteGridFS • DeleteMongo • DeleteS3Object • DeleteSFTP • DeleteSQS • DetectDuplicate • DistributeLoad • DuplicateFlowFile • EncodeContent • EncryptContentAge • EncryptContentPGP • EnforceOrder • EvaluateJsonPath • EvaluateXPath • EvaluateXQuery • ExecuteGroovyScript • ExecuteProcess • ExecuteScript • ExecuteSQL • ExecuteSQLRecord • ExecuteStreamCommand • ExtractAvroMetadata • ExtractEmailAttachments • ExtractEmailHeaders • ExtractGrok • ExtractHL7Attributes • ExtractRecordSchema • ExtractStructuredBoxFileMetadata • ExtractText • FetchAzureBlobStorage_v12 • FetchAzureDataLakeStorage • FetchBoxFile • FetchBoxFileInfo • FetchBoxFileMetadataInstance • FetchBoxFileRepresentation • FetchDistributedMapCache • FetchDropbox • FetchFile • FetchFTP • FetchGCSObject • FetchGoogleDrive • FetchGridFS • FetchS3Object • FetchSFTP • FetchSmb • FilterAttribute • FlattenJson • ForkEnrichment • ForkRecord • GenerateFlowFile • GenerateRecord • GenerateTableFetch • GeoEnrichIP • GeoEnrichIPRecord • GeohashRecord • GetAsanaObject • GetAwsPollyJobStatus • GetAwsTextractJobStatus • GetAwsTranscribeJobStatus • GetAwsTranslateJobStatus • GetAzureEventHub • GetAzureQueueStorage_v12 • GetBoxFileCollaborators • GetBoxGroupMembers • GetDynamoDB • GetElasticsearch • GetFile • GetFileResource • GetFTP • GetGcpVisionAnnotateFilesOperationStatus • GetGcpVisionAnnotateImagesOperationStatus • GetHubSpot • GetMongo • GetMongoRecord • GetS3ObjectMetadata • GetS3ObjectTags • GetSFTP • GetShopify • GetSmbFile • GetSNMP • GetSplunk • GetSQS • GetWorkdayReport • GetZendesk • HandleHttpRequest • HandleHttpResponse • IdentifyMimeType • InvokeHTTP • InvokeScriptedProcessor • ISPEnrichIP • JoinEnrichment • JoltTransformJSON • JoltTransformRecord • JSLTTransformJSON • JsonQueryElasticsearch • ListAzureBlobStorage_v12 • ListAzureDataLakeStorage • ListBoxFile • ListBoxFileInfo • ListBoxFileMetadataInstances • ListBoxFileMetadataTemplates • ListDatabaseTables • ListDropbox • ListenFTP • ListenHTTP • ListenOTLP • ListenSlack • ListenSyslog • ListenTCP • ListenTrapSNMP • ListenUDP • ListenUDPRecord • ListenWebSocket • ListFile • ListFTP • ListGCSBucket • ListGoogleDrive • ListS3 • ListSFTP • ListSmb • LogAttribute • LogMessage • LookupAttribute • LookupRecord • MergeContent • MergeRecord • ModifyBytes • ModifyCompression • MonitorActivity • MoveAzureDataLakeStorage • Notify • PackageFlowFile • PaginatedJsonQueryElasticsearch • ParseEvtx • ParseNetflowv5 • ParseSyslog • ParseSyslog5424 • PartitionRecord • PublishAMQP • PublishGCPubSub • PublishJMS • PublishKafka • PublishMQTT • PublishSlack • PutAzureBlobStorage_v12 • PutAzureCosmosDBRecord • PutAzureDataExplorer • PutAzureDataLakeStorage • PutAzureEventHub • PutAzureQueueStorage_v12 • PutBigQuery • PutBoxFile • PutCloudWatchMetric • PutDatabaseRecord • PutDistributedMapCache • PutDropbox • PutDynamoDB • PutDynamoDBRecord • PutElasticsearchJson • PutElasticsearchRecord • PutEmail • PutFile • PutFTP • PutGCSObject • PutGoogleDrive • PutGridFS • PutKinesisFirehose • PutKinesisStream • PutLambda • PutMongo • PutMongoBulkOperations • PutMongoRecord • PutRecord • PutRedisHashRecord • PutS3Object • PutSalesforceObject • PutSFTP • PutSmbFile • PutSNS • PutSplunk • PutSplunkHTTP • PutSQL • PutSQS • PutSyslog • PutTCP • PutUDP • PutWebSocket • PutZendeskTicket • QueryAirtableTable • QueryAzureDataExplorer • QueryDatabaseTable • QueryDatabaseTableRecord • QueryRecord • QuerySalesforceObject • QuerySplunkIndexingStatus • RemoveRecordField • RenameRecordField • ReplaceText • ReplaceTextWithMapping • RetryFlowFile • RouteHL7 • RouteOnAttribute • RouteOnContent • RouteText • RunMongoAggregation • SampleRecord • ScanAttribute • ScanContent • ScriptedFilterRecord • ScriptedPartitionRecord • ScriptedTransformRecord • ScriptedValidateRecord • SearchElasticsearch • SegmentContent • SendTrapSNMP • SetSNMP • SignContentPGP • SplitAvro • SplitContent • SplitExcel • SplitJson • SplitPCAP • SplitRecord • SplitText • SplitXml • StartAwsPollyJob • StartAwsTextractJob • StartAwsTranscribeJob • StartAwsTranslateJob • StartGcpVisionAnnotateFilesOperation • StartGcpVisionAnnotateImagesOperation • TagS3Object • TailFile • TransformXml • UnpackContent • UpdateAttribute • UpdateBoxFileMetadataInstance • UpdateByQueryElasticsearch • UpdateCounter • UpdateDatabaseTable • UpdateRecord • ValidateCsv • ValidateJson • ValidateRecord • ValidateXml • VerifyContentMAC • VerifyContentPGP • Wait • Controller Services • ADLSCredentialsControllerService • ADLSCredentialsControllerServiceLookup • AmazonGlueEncodedSchemaReferenceReader • AmazonGlueSchemaRegistry • AmazonMSKConnectionService • ApicurioSchemaRegistry • AvroReader • AvroRecordSetWriter • AvroSchemaRegistry • AWSCredentialsProviderControllerService • AzureBlobStorageFileResourceService • AzureCosmosDBClientService • AzureDataLakeStorageFileResourceService • AzureEventHubRecordSink • AzureStorageCredentialsControllerService_v12 • AzureStorageCredentialsControllerServiceLookup_v12 • CEFReader • ConfluentEncodedSchemaReferenceReader • ConfluentEncodedSchemaReferenceWriter • ConfluentSchemaRegistry • CSVReader • CSVRecordLookupService • CSVRecordSetWriter • DatabaseRecordLookupService • DatabaseRecordSink • DatabaseTableSchemaRegistry • DBCPConnectionPool • DBCPConnectionPoolLookup • DeveloperBoxClientService • DistributedMapCacheLookupService • ElasticSearchClientServiceImpl • ElasticSearchLookupService • ElasticSearchStringLookupService • EmailRecordSink • EmbeddedHazelcastCacheManager • ExcelReader • ExternalHazelcastCacheManager • FreeFormTextRecordSetWriter • GCPCredentialsControllerService • GCSFileResourceService • GrokReader • HazelcastMapCacheClient • HikariCPConnectionPool • HttpRecordSink • IPLookupService • JettyWebSocketClient • JettyWebSocketServer • JMSConnectionFactoryProvider • JndiJmsConnectionFactoryProvider • JsonConfigBasedBoxClientService • JsonPathReader • JsonRecordSetWriter • JsonTreeReader • JWTBearerOAuth2AccessTokenProvider • Kafka3ConnectionService • KerberosKeytabUserService • KerberosPasswordUserService • KerberosTicketCacheUserService • LoggingRecordSink • MapCacheClientService • MapCacheServer • MongoDBControllerService • MongoDBLookupService • PEMEncodedSSLContextProvider • PropertiesFileLookupService • ProtobufReader • ReaderLookup • RecordSetWriterLookup • RecordSinkServiceLookup • RedisConnectionPoolService • RedisDistributedMapCacheClientService • RestLookupService • S3FileResourceService • ScriptedLookupService • ScriptedReader • ScriptedRecordSetWriter • ScriptedRecordSink • SetCacheClientService • SetCacheServer • SimpleCsvFileLookupService • SimpleDatabaseLookupService • SimpleKeyValueLookupService • SimpleRedisDistributedMapCacheClientService • SimpleScriptedLookupService • SiteToSiteReportingRecordSink • SlackRecordSink • SmbjClientProviderService • StandardAsanaClientProviderService • StandardAzureCredentialsControllerService • StandardDatabaseDialectService • StandardDropboxCredentialService • StandardFileResourceService • StandardHashiCorpVaultClientService • StandardHttpContextMap • StandardJsonSchemaRegistry • StandardKustoIngestService • StandardKustoQueryService • StandardOauth2AccessTokenProvider • StandardPGPPrivateKeyService • StandardPGPPublicKeyService • StandardPrivateKeyService • StandardProxyConfigurationService • StandardRestrictedSSLContextService • StandardS3EncryptionService • StandardSSLContextService • StandardWebClientServiceProvider • Syslog5424Reader • SyslogReader • UDPEventRecordSink • VolatileSchemaCache • WindowsEventLogReader • XMLFileLookupService • XMLReader • XMLRecordSetWriter • YamlTreeReader • ZendeskRecordSink • Reporting Tasks • AzureLogAnalyticsProvenanceReportingTask • AzureLogAnalyticsReportingTask • ControllerStatusReportingTask • MonitorDiskUsage • MonitorMemory • ScriptedReportingTask • SiteToSiteBulletinReportingTask • SiteToSiteMetricsReportingTask • SiteToSiteProvenanceReportingTask • SiteToSiteStatusReportingTask • Parameter Providers • AwsSecretsManagerParameterProvider • AzureKeyVaultSecretsParameterProvider • DatabaseParameterProvider • EnvironmentVariableParameterProvider • GcpSecretManagerParameterProvider • HashiCorpVaultParameterProvider • KubernetesSecretParameterProvider • OnePasswordParameterProvider • Flow Analysis Rules • DisallowComponentType • RequireServerSSLContextService • RestrictBackpressureSettings • RestrictFlowFileExpiration ScriptedValidateRecord 2.5.0
+
+ Bundle org.apache.nifi | nifi-scripting-nar Description This processor provides the ability to validate records in FlowFiles using the user-provided script. The script is expected to have a record as incoming argument and return with a boolean value. Based on this result, the processor categorizes the records as "valid" or "invalid" and routes them to the respective relationship in batch. Additionally the original FlowFile will be routed to the "original" relationship or in case of unsuccessful processing, to the "failed" relationship. Tags groovy, record, script, validate Input Requirement REQUIRED Supports Sensitive Dynamic Properties false • Additional Details for ScriptedValidateRecord 2.5.0 ScriptedValidateRecord
+
+ Description
+
+ The ScriptedValidateRecord Processor provides the ability to use a scripting language, such as Groovy or Jyton in order to validate Records in an incoming FlowFile. The provided script will be evaluated against each Record in an incoming FlowFile. Each of those records will then be routed to either the “valid” or “invalid” FlowFile. As a result, each incoming FlowFile may be broken up into two individual FlowFiles (if some records are valid and some are invalid, according to the script), or the incoming FlowFile may have all of its Records kept together in a single FlowFile, routed to either “valid” or “invalid” (if all records are valid or if all records are invalid, according to the script).
+
+ The Processor expects a user defined script in order to determine the validity of the Records. When creating a script, it is important to note that, unlike ExecuteScript, this Processor does not allow the script itself to expose Properties to be configured or define Relationships.
+
+ The provided script is evaluated once for each Record that is encountered in the incoming FlowFile. Each time that the script is invoked, it is expected to return a boolean value, which is used to determine if the given Record is valid or not: For Records the script returns with a true value, the given Record is considered valid and will be included to the outgoing FlowFile which will be routed to the valid Relationship. For false values the given Record will be added to the FlowFile routed to the invalid Relationship. Regardless of the number of incoming Records the outgoing Records will be batched. For one incoming FlowFile there could be no more than one FlowFile routed to the valid and the invalid Relationships. In case of there are no valid or invalid Record presents there will be no transferred FlowFile for the respected Relationship. In addition to this the incoming FlowFile will be transferred to the original Relationship without change. If the script returns an object that is not considered as boolean, the incoming FlowFile will be routed to the failure Relationship instead and no FlowFile will be routed to the valid or invalid Relationships.
+
+ This Processor maintains a Counter: “Records Processed” indicating the number of Records were processed by the Processor.
+
+ Variable Bindings
+
+ While the script provided to this Processor does not need to provide boilerplate code or implement any classes/interfaces, it does need some way to access the Records and other information that it needs in order to perform its task. This is accomplished by using Variable Bindings. Each time that the script is invoked, each of the following variables will be made available to the script:
+
+ Variable Name | Description | Variable Class | 
+ record | The Record that is to be processed. | Record | 
+ recordIndex | The zero-based index of the Record in the FlowFile. | Long (64-bit signed integer) | 
+ log | The Processor’s Logger. Anything that is logged to this logger will be written to the logs as if the Processor itself had logged it. Additionally, a bulletin will be created for any log message written to this logger (though by default, the Processor will hide any bulletins with a level below WARN). | ComponentLog | 
+ attributes | Map of key/value pairs that are the Attributes of the FlowFile. Both the keys and the values of this Map are of type String. This Map is immutable. Any attempt to modify it will result in an UnsupportedOperationException being thrown. | java.util.Map | 
+ Return Value
+
+ Each time the script is invoked, it is expected to return a boolean value. Return values other than boolean, including null value will be handled as unexpected script behaviour and handled accordingly: the processing will be interrupted and the incoming FlowFile will be transferred to the failure relationship without further execution.
+
+ Example Scripts
+
+ Validating based on position
+
+ The following script will consider only the first 2 Records as valid.
+
+ Example Input (CSV):
+
+ company, numberOfTrains Boston & Maine Railroad, 3 Chesapeake & Ohio Railroad, 2 Pennsylvania Railroad, 4 Reading Railroad, 2
+ Example Output (CSV) - valid Relationship:
+
+ company, numberOfTrains Boston & Maine Railroad, 3 Chesapeake & Ohio Railroad, 2
+ Example Output (CSV) - invalid Relationship:
+
+ company, numberOfTrains Pennsylvania Railroad, 4 Reading Railroad, 2
+ Example Script (Groovy):
+
+ return recordIndex < 2 ? true : false
+ Validating based on Record contents
+
+ The following script will filter the Records based on their content. Any Records satisfies the condition will be part of the FlowFile routed to the valid Relationship, others wil lbe routed to the invalid Relationship.
+
+ Example Input (JSON):
+
+ [
+ {
+ "company": "Boston & Maine Railroad",
+ "numberOfTrains": 3
+ },
+ {
+ "company": "Chesapeake & Ohio Railroad",
+ "numberOfTrains": -1
+ },
+ {
+ "company": "Pennsylvania Railroad",
+ "numberOfTrains": 2
+ },
+ {
+ "company": "Reading Railroad",
+ "numberOfTrains": 4
+ }
+]
+ Example Output (CSV) - valid Relationship:
+
+ [
+ {
+ "company": "Boston & Maine Railroad",
+ "numberOfTrains": 3
+ },
+ {
+ "company": "Pennsylvania Railroad",
+ "numberOfTrains": 2
+ },
+ {
+ "company": "Reading Railroad",
+ "numberOfTrains": 4
+ }
+]
+ Example Output (CSV) - invalid Relationship:
+
+ [
+ {
+ "company": "Chesapeake & Ohio Railroad",
+ "numberOfTrains": -1
+ }
+]
+ Example Script (Groovy):
+
+ if (record.getValue("numberOfTrains").toInteger() >= 0) {
+ return true;
+} else {
+ return false;
+}
+ Properties • Module Directory Comma-separated list of paths to files and/or directories which contain modules required by the script. Display Name Module Directory Description Comma-separated list of paths to files and/or directories which contain modules required by the script. API Name Module Directory Expression Language Scope Environment variables defined at JVM level and system properties Sensitive false Required false • Record Reader The Record Reader to use parsing the incoming FlowFile into Records Display Name Record Reader Description The Record Reader to use parsing the incoming FlowFile into Records API Name Record Reader Service Interface org.apache.nifi.serialization.RecordReaderFactory Service Implementations org.apache.nifi.avro.AvroReader org.apache.nifi.cef.CEFReader org.apache.nifi.csv.CSVReader org.apache.nifi.excel.ExcelReader org.apache.nifi.grok.GrokReader org.apache.nifi.json.JsonPathReader org.apache.nifi.json.JsonTreeReader org.apache.nifi.services.protobuf.ProtobufReader org.apache.nifi.lookup.ReaderLookup org.apache.nifi.record.script.ScriptedReader org.apache.nifi.syslog.Syslog5424Reader org.apache.nifi.syslog.SyslogReader org.apache.nifi.windowsevent.WindowsEventLogReader org.apache.nifi.xml.XMLReader org.apache.nifi.yaml.YamlTreeReader Expression Language Scope Not Supported Sensitive false Required true • Record Writer The Record Writer to use for serializing Records after they have been transformed Display Name Record Writer Description The Record Writer to use for serializing Records after they have been transformed API Name Record Writer Service Interface org.apache.nifi.serialization.RecordSetWriterFactory Service Implementations org.apache.nifi.avro.AvroRecordSetWriter org.apache.nifi.csv.CSVRecordSetWriter org.apache.nifi.text.FreeFormTextRecordSetWriter org.apache.nifi.json.JsonRecordSetWriter org.apache.nifi.lookup.RecordSetWriterLookup org.apache.nifi.record.script.ScriptedRecordSetWriter org.apache.nifi.xml.XMLRecordSetWriter Expression Language Scope Not Supported Sensitive false Required true • Script Body Body of script to execute. Only one of Script File or Script Body may be used Display Name Script Body Description Body of script to execute. Only one of Script File or Script Body may be used API Name Script Body Expression Language Scope Not Supported Sensitive false Required false • Script Language The Language to use for the script Display Name Script Language Description The Language to use for the script API Name Script Engine Default Value Groovy Allowable Values • Clojure • Groovy Expression Language Scope Not Supported Sensitive false Required true • Script File Path to script file to execute. Only one of Script File or Script Body may be used Display Name Script File Description Path to script file to execute. Only one of Script File or Script Body may be used API Name Script File Expression Language Scope Environment variables defined at JVM level and system properties Sensitive false Required false Restrictions Required Permission | Explanation | 
+ execute code | Provides operator the ability to execute arbitrary code assuming all permissions that NiFi has. | 
+ Relationships Name | Description | 
+ failure | In case of any issue during processing the incoming flow file, the incoming FlowFile will be routed to this relationship. | 
+ invalid | FlowFile containing the invalid records from the incoming FlowFile will be routed to this relationship. If there are no invalid records, no FlowFile will be routed to this Relationship. | 
+ original | After successful procession, the incoming FlowFile will be transferred to this relationship. This happens regardless the FlowFiles might routed to "valid" and "invalid" relationships. | 
+ valid | FlowFile containing the valid records from the incoming FlowFile will be routed to this relationship. If there are no valid records, no FlowFile will be routed to this Relationship. | 
+ Writes Attributes Name | Description | 
+ mime.type | Sets the mime.type attribute to the MIME Type specified by the Record Writer | 
+ record.count | The number of records within the flow file. | 
+ record.error.message | This attribute provides on failure the error message encountered by the Reader or Writer. | 
+ See Also • org.apache.nifi.processors.script.ScriptedFilterRecord • org.apache.nifi.processors.script.ScriptedPartitionRecord • org.apache.nifi.processors.script.ScriptedTransformRecord

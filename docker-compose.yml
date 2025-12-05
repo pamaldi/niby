@@ -1,0 +1,95 @@
+version: '3.8'
+
+name: niby
+
+# Common environment variables for pgvector configuration
+x-common-pgvector-env: &common-pgvector-env
+  QUARKUS_DATASOURCE_JDBC_URL: jdbc:postgresql://pgvector:5432/postgres
+  QUARKUS_DATASOURCE_USERNAME: postgres
+  QUARKUS_DATASOURCE_PASSWORD: postgres
+  PGVECTOR_DIMENSION: 384
+  PGVECTOR_TABLE: niby.nifi_doc_embeddings
+
+services:
+  pgvector:
+    image: pgvector/pgvector:pg16
+    container_name: niby-pgvector
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgvector-data:/var/lib/postgresql/data
+      - ./niby-rag/db/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - niby-network
+
+  niby-be-core:
+    build:
+      context: ./niby-be-core
+      dockerfile: src/main/docker/Dockerfile.jvm
+    container_name: niby-be-core
+    environment:
+      <<: *common-pgvector-env
+      QUARKUS_HTTP_PORT: 8080
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY}
+      QUARKUS_HTTP_CORS_ORIGINS: http://localhost:8081,http://niby-ui:8081
+    ports:
+      - "8080:8080"
+    networks:
+      - niby-network
+    depends_on:
+      - pgvector
+
+  niby-rag:
+    build:
+      context: ./niby-rag
+      dockerfile: src/main/docker/Dockerfile.jvm
+    container_name: niby-rag
+    environment:
+      <<: *common-pgvector-env
+      QUARKUS_HTTP_PORT: 8082
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY}
+      DOCUMENTS_DIRECTORY: /app/documents
+      PGVECTOR_CREATE_TABLE: true
+      PGVECTOR_DROP_TABLE_FIRST: true
+    ports:
+      - "8082:8082"
+    volumes:
+      - ./niby-rag/nifi-doc:/app/documents:ro
+    networks:
+      - niby-network
+    depends_on:
+      pgvector:
+        condition: service_healthy
+
+  niby-ui:
+    build:
+      context: ./niby-ui
+      dockerfile: src/main/docker/Dockerfile.jvm
+    container_name: niby-ui
+    environment:
+      QUARKUS_HTTP_PORT: 8081
+      NIBY_BACKEND_HOST: niby-be-core
+      NIBY_BACKEND_PORT: 8080
+    ports:
+      - "8081:8081"
+    networks:
+      - niby-network
+    depends_on:
+      - niby-be-core
+
+volumes:
+  pgvector-data:
+    driver: local
+
+networks:
+  niby-network:
+    driver: bridge
