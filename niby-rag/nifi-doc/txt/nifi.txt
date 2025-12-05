@@ -1,0 +1,285 @@
+apache/nifi: Apache NiFi
+
+Skip to content You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} Create list
+
+ Create a list to organize your starred repositories.
+
+ Name . 
+
+ 32 remaining 
+
+ Description . 
+
+ 160 remaining 
+
+ . Create Tip: type : to add emoji to the name or description. 
+
+ nifi Public • Watch Couldn't load subscription status. Retry 
+
+ Uh oh! 
+
+ 
+
+ There was an error while loading. Please reload this page.
+
+ 
+
+ • Fork 2.8k Fork your own copy of apache/nifi Forks could not be loaded 
+
+ Loading Uh oh! 
+
+ 
+
+ There was an error while loading. Please reload this page.
+
+ 
+
+ • Unstar this repository?
+
+ This will remove {{ repoNameWithOwner }} from the {{ listsWithCount }} that it's been added to. 
+
+ Unstar Starred 5.5k Loading Uh oh! 
+
+ 
+
+ There was an error while loading. Please reload this page.
+
+ 
+
+ Star 5.5k Loading Uh oh! 
+
+ 
+
+ There was an error while loading. Please reload this page.
+
+ 
+
+ Fork your own copy of apache/nifi Unstar this repository Star this repository Apache NiFi 
+
+ nifi.apache.org/ License
+
+ Apache-2.0 license Code of conduct
+
+ Code of conduct Security policy
+
+ Security policy 5.5k stars 2.8k forks 189 watching Branches Tags Uh oh! 
+
+ 
+
+ There was an error while loading. Please reload this page.
+
+ 
+
+ Activity Custom properties Public repository Open in github.dev Open in a new github.dev tab Open in codespace apache/nifi
+
+ main Branches Tags Go to file Add file
+
+ Add file Add file
+
+ Add file Code Open more actions menu Folders and files
+
+ Name | Name | Last commit message | Last commit date | 
+ Latest commit
+
+ History
+
+ 10,891 Commits | 
+ .github | .github | | | 
+ .mvn/wrapper | .mvn/wrapper | | | 
+ c2 | c2 | | | 
+ minifi | minifi | | | 
+ nifi-assembly | nifi-assembly | | | 
+ nifi-bom | nifi-bom | | | 
+ nifi-bootstrap | nifi-bootstrap | | | 
+ nifi-code-coverage | nifi-code-coverage | | | 
+ nifi-commons | nifi-commons | | | 
+ nifi-docker | nifi-docker | | | 
+ nifi-docs | nifi-docs | | | 
+ nifi-extension-bom | nifi-extension-bom | | | 
+ nifi-extension-bundles | nifi-extension-bundles | | | 
+ nifi-framework-api | nifi-framework-api | | | 
+ nifi-framework-bundle | nifi-framework-bundle | | | 
+ nifi-frontend | nifi-frontend | | | 
+ nifi-manifest | nifi-manifest | | | 
+ nifi-maven-archetypes | nifi-maven-archetypes | | | 
+ nifi-mock | nifi-mock | | | 
+ nifi-registry | nifi-registry | | | 
+ nifi-server-api | nifi-server-api | | | 
+ nifi-stateless | nifi-stateless | | | 
+ nifi-system-tests | nifi-system-tests | | | 
+ nifi-toolkit | nifi-toolkit | | | 
+ .asf.yaml | .asf.yaml | | | 
+ .gitignore | .gitignore | | | 
+ KEYS | KEYS | | | 
+ LICENSE | LICENSE | | | 
+ NOTICE | NOTICE | | | 
+ README.md | README.md | | | 
+ SECURITY.md | SECURITY.md | | | 
+ checkstyle.xml | checkstyle.xml | | | 
+ codecov.yml | codecov.yml | | | 
+ doap.rdf | doap.rdf | | | 
+ mvnw | mvnw | | | 
+ mvnw.cmd | mvnw.cmd | | | 
+ pmd-ruleset.xml | pmd-ruleset.xml | | | 
+ pom.xml | pom.xml | | | 
+ View all files | 
+ Repository files navigation
+
+ Edit file Apache NiFi
+
+ 
+
+ Status
+
+ 
+
+ Resources
+
+ 
+
+ Contacts
+
+ 
+
+ Community
+
+ 
+
+ Features
+
+ Apache NiFi is an easy to use, powerful, and reliable system to process and distribute data.
+
+ NiFi automates cybersecurity, observability, event streams, and generative AI data pipelines and distribution for thousands of companies worldwide across every industry.
+
+ • Browser User Interface • Seamless experience for design, control, and monitoring • Runtime management and versioned pipelines • Secure by default with HTTPS • Scalable Processing • Configurable prioritization for throughput and latency • Guaranteed delivery with retry and backoff strategies • Horizontal scaling with clustering • Provenance Tracking • Searchable history with configurable attributes • Graph data lineage from source to destination • Metadata and content for each processing decision • Extensible Design • Plugin interface for Processors and Controller Services • Support for Processors in native Python • REST API for orchestration and monitoring • Secure Configuration • Single sign-on with OpenID Connect or SAML 2 • Flexible authorization policies for role-based access • Encrypted communication with TLS and SFTP Requirements
+
+ NiFi supports modern operating systems and requires recent language versions for developing and running the application.
+
+ Platform Requirements
+
+ • Java 21 Optional Dependencies
+
+ • Python 3.10 or higher Projects
+
+ The source repository includes several component projects.
+
+ Please review individual project documentation for additional details.
+
+ • Apache NiFi • Apache NiFi Registry • Apache NiFi MiNiFi Getting Started
+
+ Project guides provide extensive documentation for installing and extending the application.
+
+ • Getting Started • User Guide • Administrator Guide • Developer Guide Developing
+
+ NiFi uses the Maven Wrapper for project development. The Maven Wrapper provides shell scripts that download and cache a selected version of Apache Maven for running build commands.
+
+ Developing on Microsoft Windows requires using mvnw.cmd instead of mvnw to run Maven commands.
+
+ Building
+
+ Run the following command to build project modules using parallel execution:
+
+ ./mvnw install -T1C Run the following command to build project modules using parallel execution with static analysis to confirm compliance with code and licensing requirements:
+
+ ./mvnw install -T1C -P contrib-check Run the following command to build the application binaries without building other optional modules:
+
+ ./mvnw install -T1C -am -pl :nifi-assembly Binaries
+
+ The nifi-assembly module contains the binary distribution.
+
+ ls nifi-assembly/target/nifi-*-bin.zip The nifi-assembly module includes the binary distribution in a directory for local development and testing.
+
+ cd nifi-assembly/target/nifi-*-bin/nifi-*/ Running
+
+ NiFi provides shell scripts for starting and stopping the system.
+
+ Running on Microsoft Windows requires using nifi.cmd instead of nifi.sh for system commands.
+
+ Starting
+
+ Run the following command to start NiFi from the distribution directory:
+
+ ./bin/nifi.sh start Accessing
+
+ The default configuration generates a random username and password on startup. NiFi writes the generated credentials to the application log located in logs/nifi-app.log under the NiFi installation directory.
+
+ The following command can be used to find the generated credentials on operating systems with grep installed:
+
+ grep Generated logs/nifi-app*log NiFi logs the generated credentials as follows:
+
+ Generated Username [USERNAME]
+Generated Password [PASSWORD] The USERNAME will be a random UUID composed of 36 characters. The PASSWORD will be a random string.
+
+ The username and password can be replaced with custom credentials using the following command:
+
+ ./bin/nifi.sh set-single-user-credentials <username> <password> NiFi defaults to running on the localhost address with HTTPS on port 8443 at the following URL:
+
+ https://localhost:8443/nifi
+ Browsers will display a warning message indicating a potential security risk due to the self-signed certificate generated during initialization. Production deployments should provision a certificate from a trusted certificate authority and update the NiFi keystore and truststore configuration.
+
+ License
+
+ Except as otherwise noted this software is licensed under the Apache License, Version 2.0
+
+ Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+
+ https://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+
+ Export Control
+
+ This distribution includes cryptographic software. The country in which you currently reside may have restrictions on the import, possession, use, and/or re-export to another country, of encryption software. BEFORE using any encryption software, please check your country's laws, regulations and policies concerning the import, possession, or use, and re-export of encryption software, to see if this is permitted. See https://www.wassenaar.org for more information.
+
+ The U.S. Government Department of Commerce, Bureau of Industry and Security (BIS), has classified this software as Export Commodity Control Number (ECCN) 5D002.C.1, which includes information security software using or performing cryptographic functions with asymmetric algorithms. The form and manner of this Apache Software Foundation distribution makes it eligible for export under the License Exception ENC Technology Software Unrestricted (TSU) exception (see the BIS Export Administration Regulations, Section 740.13) for both object code and source code.
+
+ The following provides more details on the included cryptographic software:
+
+ Apache NiFi uses the following libraries and frameworks for encrypted communication and storage of sensitive information:
+
+ • Apache MINA SSHD • Bouncy Castle • Jagged • Java Cryptography Architecture • SSHJ About
+
+ Apache NiFi 
+
+ nifi.apache.org/ Topics
+
+ java nifi hacktoberfest Resources
+
+ Readme License
+
+ Apache-2.0 license Code of conduct
+
+ Code of conduct Security policy
+
+ Security policy Uh oh! 
+
+ 
+
+ There was an error while loading. Please reload this page.
+
+ 
+
+ Activity Custom properties Stars
+
+ 5.5k stars Watchers
+
+ 189 watching Forks
+
+ 2.8k forks Report repository Releases
+
+ 210 tags Packages 0
+
+ No packages published 
+ Uh oh! 
+
+ 
+
+ There was an error while loading. Please reload this page.
+
+ 
+
+ Contributors 514
+
+ • • • • • • • • • • • • • • + 500 contributors Languages
+
+ • Java 87.0% • TypeScript 8.1% • HTML 2.0% • JavaScript 1.4% • SCSS 0.7% • Python 0.3% • Other 0.5% You can’t perform that action at this time.

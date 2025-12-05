@@ -1,0 +1,199 @@
+JsonTreeReader - Apache NiFi
+
+• Documentation • NiFi Version 2 Documentation • NiFi Version 1 Documentation • Guides • Security Reporting • Wiki • Development • Contributing • Issues • Source • Community • Contact • Powered By • Team • Projects • MiNiFi • Registry • Flow Design System • Apache • Events • License • Privacy • Sponsorship • Thanks • General • Overview • Getting Started • User Guide • Expression Language Guide • RecordPath Guide • Admin Guide • Toolkit Guide • Walkthroughs • Developer • Developer Guide • Python Developer Guide • Apache NiFi In Depth • REST API • Processors • AttributeRollingWindow • AttributesToCSV • AttributesToJSON • CalculateRecordStats • CaptureChangeMySQL • CompressContent • ConnectWebSocket • ConsumeAMQP • ConsumeAzureEventHub • ConsumeBoxEnterpriseEvents • ConsumeBoxEvents • ConsumeElasticsearch • ConsumeGCPubSub • ConsumeIMAP • ConsumeJMS • ConsumeKafka • ConsumeKinesisStream • ConsumeMQTT • ConsumePOP3 • ConsumeSlack • ConsumeTwitter • ConsumeWindowsEventLog • ControlRate • ConvertCharacterSet • ConvertRecord • CopyAzureBlobStorage_v12 • CopyS3Object • CountText • CreateBoxFileMetadataInstance • CreateBoxMetadataTemplate • CryptographicHashContent • DebugFlow • DecryptContentAge • DecryptContentPGP • DeduplicateRecord • DeleteAzureBlobStorage_v12 • DeleteAzureDataLakeStorage • DeleteBoxFileMetadataInstance • DeleteByQueryElasticsearch • DeleteDynamoDB • DeleteFile • DeleteGCSObject • DeleteGridFS • DeleteMongo • DeleteS3Object • DeleteSFTP • DeleteSQS • DetectDuplicate • DistributeLoad • DuplicateFlowFile • EncodeContent • EncryptContentAge • EncryptContentPGP • EnforceOrder • EvaluateJsonPath • EvaluateXPath • EvaluateXQuery • ExecuteGroovyScript • ExecuteProcess • ExecuteScript • ExecuteSQL • ExecuteSQLRecord • ExecuteStreamCommand • ExtractAvroMetadata • ExtractEmailAttachments • ExtractEmailHeaders • ExtractGrok • ExtractHL7Attributes • ExtractRecordSchema • ExtractStructuredBoxFileMetadata • ExtractText • FetchAzureBlobStorage_v12 • FetchAzureDataLakeStorage • FetchBoxFile • FetchBoxFileInfo • FetchBoxFileMetadataInstance • FetchBoxFileRepresentation • FetchDistributedMapCache • FetchDropbox • FetchFile • FetchFTP • FetchGCSObject • FetchGoogleDrive • FetchGridFS • FetchS3Object • FetchSFTP • FetchSmb • FilterAttribute • FlattenJson • ForkEnrichment • ForkRecord • GenerateFlowFile • GenerateRecord • GenerateTableFetch • GeoEnrichIP • GeoEnrichIPRecord • GeohashRecord • GetAsanaObject • GetAwsPollyJobStatus • GetAwsTextractJobStatus • GetAwsTranscribeJobStatus • GetAwsTranslateJobStatus • GetAzureEventHub • GetAzureQueueStorage_v12 • GetBoxFileCollaborators • GetBoxGroupMembers • GetDynamoDB • GetElasticsearch • GetFile • GetFileResource • GetFTP • GetGcpVisionAnnotateFilesOperationStatus • GetGcpVisionAnnotateImagesOperationStatus • GetHubSpot • GetMongo • GetMongoRecord • GetS3ObjectMetadata • GetS3ObjectTags • GetSFTP • GetShopify • GetSmbFile • GetSNMP • GetSplunk • GetSQS • GetWorkdayReport • GetZendesk • HandleHttpRequest • HandleHttpResponse • IdentifyMimeType • InvokeHTTP • InvokeScriptedProcessor • ISPEnrichIP • JoinEnrichment • JoltTransformJSON • JoltTransformRecord • JSLTTransformJSON • JsonQueryElasticsearch • ListAzureBlobStorage_v12 • ListAzureDataLakeStorage • ListBoxFile • ListBoxFileInfo • ListBoxFileMetadataInstances • ListBoxFileMetadataTemplates • ListDatabaseTables • ListDropbox • ListenFTP • ListenHTTP • ListenOTLP • ListenSlack • ListenSyslog • ListenTCP • ListenTrapSNMP • ListenUDP • ListenUDPRecord • ListenWebSocket • ListFile • ListFTP • ListGCSBucket • ListGoogleDrive • ListS3 • ListSFTP • ListSmb • LogAttribute • LogMessage • LookupAttribute • LookupRecord • MergeContent • MergeRecord • ModifyBytes • ModifyCompression • MonitorActivity • MoveAzureDataLakeStorage • Notify • PackageFlowFile • PaginatedJsonQueryElasticsearch • ParseEvtx • ParseNetflowv5 • ParseSyslog • ParseSyslog5424 • PartitionRecord • PublishAMQP • PublishGCPubSub • PublishJMS • PublishKafka • PublishMQTT • PublishSlack • PutAzureBlobStorage_v12 • PutAzureCosmosDBRecord • PutAzureDataExplorer • PutAzureDataLakeStorage • PutAzureEventHub • PutAzureQueueStorage_v12 • PutBigQuery • PutBoxFile • PutCloudWatchMetric • PutDatabaseRecord • PutDistributedMapCache • PutDropbox • PutDynamoDB • PutDynamoDBRecord • PutElasticsearchJson • PutElasticsearchRecord • PutEmail • PutFile • PutFTP • PutGCSObject • PutGoogleDrive • PutGridFS • PutKinesisFirehose • PutKinesisStream • PutLambda • PutMongo • PutMongoBulkOperations • PutMongoRecord • PutRecord • PutRedisHashRecord • PutS3Object • PutSalesforceObject • PutSFTP • PutSmbFile • PutSNS • PutSplunk • PutSplunkHTTP • PutSQL • PutSQS • PutSyslog • PutTCP • PutUDP • PutWebSocket • PutZendeskTicket • QueryAirtableTable • QueryAzureDataExplorer • QueryDatabaseTable • QueryDatabaseTableRecord • QueryRecord • QuerySalesforceObject • QuerySplunkIndexingStatus • RemoveRecordField • RenameRecordField • ReplaceText • ReplaceTextWithMapping • RetryFlowFile • RouteHL7 • RouteOnAttribute • RouteOnContent • RouteText • RunMongoAggregation • SampleRecord • ScanAttribute • ScanContent • ScriptedFilterRecord • ScriptedPartitionRecord • ScriptedTransformRecord • ScriptedValidateRecord • SearchElasticsearch • SegmentContent • SendTrapSNMP • SetSNMP • SignContentPGP • SplitAvro • SplitContent • SplitExcel • SplitJson • SplitPCAP • SplitRecord • SplitText • SplitXml • StartAwsPollyJob • StartAwsTextractJob • StartAwsTranscribeJob • StartAwsTranslateJob • StartGcpVisionAnnotateFilesOperation • StartGcpVisionAnnotateImagesOperation • TagS3Object • TailFile • TransformXml • UnpackContent • UpdateAttribute • UpdateBoxFileMetadataInstance • UpdateByQueryElasticsearch • UpdateCounter • UpdateDatabaseTable • UpdateRecord • ValidateCsv • ValidateJson • ValidateRecord • ValidateXml • VerifyContentMAC • VerifyContentPGP • Wait • Controller Services • ADLSCredentialsControllerService • ADLSCredentialsControllerServiceLookup • AmazonGlueEncodedSchemaReferenceReader • AmazonGlueSchemaRegistry • AmazonMSKConnectionService • ApicurioSchemaRegistry • AvroReader • AvroRecordSetWriter • AvroSchemaRegistry • AWSCredentialsProviderControllerService • AzureBlobStorageFileResourceService • AzureCosmosDBClientService • AzureDataLakeStorageFileResourceService • AzureEventHubRecordSink • AzureStorageCredentialsControllerService_v12 • AzureStorageCredentialsControllerServiceLookup_v12 • CEFReader • ConfluentEncodedSchemaReferenceReader • ConfluentEncodedSchemaReferenceWriter • ConfluentSchemaRegistry • CSVReader • CSVRecordLookupService • CSVRecordSetWriter • DatabaseRecordLookupService • DatabaseRecordSink • DatabaseTableSchemaRegistry • DBCPConnectionPool • DBCPConnectionPoolLookup • DeveloperBoxClientService • DistributedMapCacheLookupService • ElasticSearchClientServiceImpl • ElasticSearchLookupService • ElasticSearchStringLookupService • EmailRecordSink • EmbeddedHazelcastCacheManager • ExcelReader • ExternalHazelcastCacheManager • FreeFormTextRecordSetWriter • GCPCredentialsControllerService • GCSFileResourceService • GrokReader • HazelcastMapCacheClient • HikariCPConnectionPool • HttpRecordSink • IPLookupService • JettyWebSocketClient • JettyWebSocketServer • JMSConnectionFactoryProvider • JndiJmsConnectionFactoryProvider • JsonConfigBasedBoxClientService • JsonPathReader • JsonRecordSetWriter • JsonTreeReader • JWTBearerOAuth2AccessTokenProvider • Kafka3ConnectionService • KerberosKeytabUserService • KerberosPasswordUserService • KerberosTicketCacheUserService • LoggingRecordSink • MapCacheClientService • MapCacheServer • MongoDBControllerService • MongoDBLookupService • PEMEncodedSSLContextProvider • PropertiesFileLookupService • ProtobufReader • ReaderLookup • RecordSetWriterLookup • RecordSinkServiceLookup • RedisConnectionPoolService • RedisDistributedMapCacheClientService • RestLookupService • S3FileResourceService • ScriptedLookupService • ScriptedReader • ScriptedRecordSetWriter • ScriptedRecordSink • SetCacheClientService • SetCacheServer • SimpleCsvFileLookupService • SimpleDatabaseLookupService • SimpleKeyValueLookupService • SimpleRedisDistributedMapCacheClientService • SimpleScriptedLookupService • SiteToSiteReportingRecordSink • SlackRecordSink • SmbjClientProviderService • StandardAsanaClientProviderService • StandardAzureCredentialsControllerService • StandardDatabaseDialectService • StandardDropboxCredentialService • StandardFileResourceService • StandardHashiCorpVaultClientService • StandardHttpContextMap • StandardJsonSchemaRegistry • StandardKustoIngestService • StandardKustoQueryService • StandardOauth2AccessTokenProvider • StandardPGPPrivateKeyService • StandardPGPPublicKeyService • StandardPrivateKeyService • StandardProxyConfigurationService • StandardRestrictedSSLContextService • StandardS3EncryptionService • StandardSSLContextService • StandardWebClientServiceProvider • Syslog5424Reader • SyslogReader • UDPEventRecordSink • VolatileSchemaCache • WindowsEventLogReader • XMLFileLookupService • XMLReader • XMLRecordSetWriter • YamlTreeReader • ZendeskRecordSink • Reporting Tasks • AzureLogAnalyticsProvenanceReportingTask • AzureLogAnalyticsReportingTask • ControllerStatusReportingTask • MonitorDiskUsage • MonitorMemory • ScriptedReportingTask • SiteToSiteBulletinReportingTask • SiteToSiteMetricsReportingTask • SiteToSiteProvenanceReportingTask • SiteToSiteStatusReportingTask • Parameter Providers • AwsSecretsManagerParameterProvider • AzureKeyVaultSecretsParameterProvider • DatabaseParameterProvider • EnvironmentVariableParameterProvider • GcpSecretManagerParameterProvider • HashiCorpVaultParameterProvider • KubernetesSecretParameterProvider • OnePasswordParameterProvider • Flow Analysis Rules • DisallowComponentType • RequireServerSSLContextService • RestrictBackpressureSettings • RestrictFlowFileExpiration JsonTreeReader 2.5.0
+
+ Bundle org.apache.nifi | nifi-record-serialization-services-nar Description Parses JSON into individual Record objects. While the reader expects each record to be well-formed JSON, the content of a FlowFile may consist of many records, each as a well-formed JSON array or JSON object with optional whitespace between them, such as the common 'JSON-per-line' format. If an array is encountered, each element in that array will be treated as a separate record. If the schema that is configured contains a field that is not present in the JSON, a null value will be used. If the JSON contains a field that is not present in the schema, that field will be skipped. See the Usage of the Controller Service for more information and examples. Tags json, parser, reader, record, tree Input Requirement Supports Sensitive Dynamic Properties false • Additional Details for JsonTreeReader 2.5.0 JsonTreeReader
+
+ The JsonTreeReader Controller Service reads a JSON Object and creates a Record object either for the entire JSON Object tree or a subpart (see “Starting Field Strategies” section). The Controller Service must be configured with a Schema that describes the structure of the JSON data. If any field exists in the JSON that is not in the schema, that field will be skipped. If the schema contains a field for which no JSON field exists, a null value will be used in the Record (or the default value defined in the schema, if applicable).
+
+ If the root element of the JSON is a JSON Array, each JSON Object within that array will be treated as its own separate Record. If the root element is a JSON Object, the JSON will all be treated as a single Record.
+
+ Schemas and Type Coercion
+
+ When a record is parsed from incoming data, it is separated into fields. Each of these fields is then looked up against the configured schema (by field name) in order to determine what the type of the data should be. If the field is not present in the schema, that field is omitted from the Record. If the field is found in the schema, the data type of the received data is compared against the data type specified in the schema. If the types match, the value of that field is used as-is. If the schema indicates that the field should be of a different type, then the Controller Service will attempt to coerce the data into the type specified by the schema. If the field cannot be coerced into the specified type, an Exception will be thrown.
+
+ The following rules apply when attempting to coerce a field value from one data type to another:
+
+ • Any data type can be coerced into a String type. • Any numeric data type (Byte, Short, Int, Long, Float, Double) can be coerced into any other numeric data type. • Any numeric value can be coerced into a Date, Time, or Timestamp type, by assuming that the Long value is the number of milliseconds since epoch (Midnight GMT, January 1, 1970). • A String value can be coerced into a Date, Time, or Timestamp type, if its format matches the configured “Date Format,” “Time Format,” or “Timestamp Format.” • A String value can be coerced into a numeric value if the value is of the appropriate type. For example, the String value 8 can be coerced into any numeric type. However, the String value 8.2 can be coerced into a Double or Float type but not an Integer. • A String value of “true” or “false” (regardless of case) can be coerced into a Boolean value. • A String value that is not empty can be coerced into a Char type. If the String contains more than 1 character, the first character is used and the rest of the characters are ignored. • Any “date/time” type (Date, Time, Timestamp) can be coerced into any other “date/time” type. • Any “date/time” type can be coerced into a Long type, representing the number of milliseconds since epoch (Midnight GMT, January 1, 1970). • Any “date/time” type can be coerced into a String. The format of the String is whatever DateFormat is configured for the corresponding property (Date Format, Time Format, Timestamp Format property). If no value is specified, then the value will be converted into a String representation of the number of milliseconds since epoch (Midnight GMT, January 1, 1970). If none of the above rules apply when attempting to coerce a value from one data type to another, the coercion will fail and an Exception will be thrown.
+
+ Schema Inference
+
+ While NiFi’s Record API does require that each Record have a schema, it is often convenient to infer the schema based on the values in the data, rather than having to manually create a schema. This is accomplished by selecting a value of " Infer Schema" for the “Schema Access Strategy” property. When using this strategy, the Reader will determine the schema by first parsing all data in the FlowFile, keeping track of all fields that it has encountered and the type of each field. Once all data has been parsed, a schema is formed that encompasses all fields that have been encountered.
+
+ A common concern when inferring schemas is how to handle the condition of two values that have different types. For example, consider a FlowFile with the following two records:
+
+ [
+ {
+ "name": "John",
+ "age": 8,
+ "values": "N/A"
+ },
+ {
+ "name": "Jane",
+ "age": "Ten",
+ "values": [
+ 8,
+ "Ten"
+ ]
+ }
+]
+ It is clear that the “name” field will be inferred as a STRING type. However, how should we handle the “age” field? Should the field be an CHOICE between INT and STRING? Should we prefer LONG over INT? Should we just use a STRING? Should the field be considered nullable?
+
+ To help understand how this Record Reader infers schemas, we have the following list of rules that are followed in the inference logic:
+
+ • All fields are inferred to be nullable. • When two values are encountered for the same field in two different records (or two values are encountered for an ARRAY type), the inference engine prefers to use a “wider” data type over using a CHOICE data type. A data type “A” is said to be wider than data type “B” if and only if data type “A” encompasses all values of “B” in addition to other values. For example, the LONG type is wider than the INT type but not wider than the BOOLEAN type (and BOOLEAN is also not wider than LONG). INT is wider than SHORT. The STRING type is considered wider than all other types except MAP, RECORD, ARRAY, and CHOICE. • If two values are encountered for the same field in two different records (or two values are encountered for an ARRAY type), but neither value is of a type that is wider than the other, then a CHOICE type is used. In the example above, the “values” field will be inferred as a CHOICE between a STRING or an ARRRAY. • If the “Time Format,” “Timestamp Format,” or “Date Format” properties are configured, any value that would otherwise be considered a STRING type is first checked against the configured formats to see if it matches any of them. If the value matches the Timestamp Format, the value is considered a Timestamp field. If it matches the Date Format, it is considered a Date field. If it matches the Time Format, it is considered a Time field. In the unlikely event that the value matches more than one of the configured formats, they will be matched in the order: Timestamp, Date, Time. I.e., if a value matched both the Timestamp Format and the Date Format, the type that is inferred will be Timestamp. Because parsing dates and times can be expensive, it is advisable not to configure these formats if dates, times, and timestamps are not expected, or if processing the data as a STRING is acceptable. For use cases when this is important, though, the inference engine is intelligent enough to optimize the parsing by first checking several very cheap conditions. For example, the string’s length is examined to see if it is too long or too short to match the pattern. This results in far more efficient processing than would result if attempting to parse each string value as a timestamp. • The MAP type is never inferred. Instead, the RECORD type is used. • If a field exists but all values are null, then the field is inferred to be of type STRING. Caching of Inferred Schemas
+
+ This Record Reader requires that if a schema is to be inferred, that all records be read in order to ensure that the schema that gets inferred is applicable for all records in the FlowFile. However, this can become expensive, especially if the data undergoes many different transformations. To alleviate the cost of inferring schemas, the Record Reader can be configured with a “Schema Inference Cache” by populating the property with that name. This is a Controller Service that can be shared by Record Readers and Record Writers.
+
+ Whenever a Record Writer is used to write data, if it is configured with a “Schema Cache,” it will also add the schema to the Schema Cache. This will result in an identifier for that schema being added as an attribute to the FlowFile.
+
+ Whenever a Record Reader is used to read data, if it is configured with a “Schema Inference Cache”, it will first look for a “schema.cache.identifier” attribute on the FlowFile. If the attribute exists, it will use the value of that attribute to lookup the schema in the schema cache. If it is able to find a schema in the cache with that identifier, then it will use that schema instead of reading, parsing, and analyzing the data to infer the schema. If the attribute is not available on the FlowFile, or if the attribute is available but the cache does not have a schema with that identifier, then the Record Reader will proceed to infer the schema as described above.
+
+ The end result is that users are able to chain together many different Processors to operate on Record-oriented data. Typically, only the first such Processor in the chain will incur the “penalty” of inferring the schema. For all other Processors in the chain, the Record Reader is able to simply lookup the schema in the Schema Cache by identifier. This allows the Record Reader to infer a schema accurately, since it is inferred based on all data in the FlowFile, and still allows this to happen efficiently since the schema will typically only be inferred once, regardless of how many Processors handle the data.
+
+ Starting Field Strategies
+
+ When using JsonTreeReader, two different starting field strategies can be selected. With the default Root Node strategy, the JsonTreeReader begins processing from the root element of the JSON and creates a Record object for the entire JSON Object tree, while the Nested Field strategy defines a nested field from which to begin processing.
+
+ Using the Nested Field strategy, a schema corresponding to the nested JSON part should be specified. In case of schema inference, the JsonTreeReader will automatically infer a schema from nested records.
+
+ Root Node Strategy
+
+ Consider the following JSON is read with the default Root Node strategy:
+
+ [
+ {
+ "id": 17,
+ "name": "John",
+ "child": {
+ "id": "1"
+ },
+ "dob": "10-29-1982",
+ "siblings": [
+ {
+ "name": "Jeremy",
+ "id": 4
+ },
+ {
+ "name": "Julia",
+ "id": 8
+ }
+ ]
+ },
+ {
+ "id": 98,
+ "name": "Jane",
+ "child": {
+ "id": 2
+ },
+ "dob": "08-30-1984",
+ "gender": "F",
+ "siblingIds": [],
+ "siblings": []
+ }
+]
+ Also, consider that the schema that is configured for this JSON is as follows (assuming that the AvroSchemaRegistry Controller Service is chosen to denote the Schema):
+
+ {
+ "namespace": "nifi",
+ "name": "person",
+ "type": "record",
+ "fields": [
+ {
+ "name": "id",
+ "type": "int"
+ },
+ {
+ "name": "name",
+ "type": "string"
+ },
+ {
+ "name": "gender",
+ "type": "string"
+ },
+ {
+ "name": "dob",
+ "type": {
+ "type": "int",
+ "logicalType": "date"
+ }
+ },
+ {
+ "name": "siblings",
+ "type": {
+ "type": "array",
+ "items": {
+ "type": "record",
+ "fields": [
+ {
+ "name": "name",
+ "type": "string"
+ }
+ ]
+ }
+ }
+ }
+ ]
+}
+ Let us also assume that this Controller Service is configured with the “Date Format” property set to “MM-dd-yyyy”, as this matches the date format used for our JSON data. This will result in the JSON creating two separate records, because the root element is a JSON array with two elements.
+
+ The first Record will consist of the following values:
+
+ Field Name | Field Value | 
+ id | 17 | 
+ name | John | 
+ gender | null | 
+ dob | 11-30-1983 | 
+ siblings | see below | 
+ Siblings
+
+ array with two elements, each of which is itself a Record:
+
+ Field Name | Field Value | 
+ name | Jeremy | 
+ and:
+
+ Field Name | Field Value | 
+ name | Julia | 
+ The second Record will consist of the following values:
+
+ Field Name | Field Value | 
+ id | 98 | 
+ name | Jane | 
+ gender | F | 
+ dob | 08-30-1984 | 
+ siblings | empty array | 
+ Nested Field Strategy
+
+ Using the Nested Field strategy, consider the same JSON where the specified Starting Field Name is “siblings”. The schema that is configured for this JSON is as follows:
+
+ {
+ "namespace": "nifi",
+ "name": "siblings",
+ "type": "record",
+ "fields": [
+ {
+ "name": "name",
+ "type": "string"
+ },
+ {
+ "name": "id",
+ "type": "int"
+ }
+ ]
+}
+ The first Record will consist of the following values:
+
+ Field Name | Field Value | 
+ name | Jeremy | 
+ id | 4 | 
+ The second Record will consist of the following values:
+
+ Field Name | Field Value | 
+ name | Julia | 
+ id | 8 | 
+ Schema Application Strategies
+
+ When using JsonTreeReader with “Nested Field Strategy” and the “Schema Access Strategy” is not “Infer Schema”, it can be configured for the entire original JSON (“Whole document” strategy) or for the nested field section (“Selected part” strategy).
+
+ Properties • Allow Comments Whether to allow comments when parsing the JSON document Display Name Allow Comments Description Whether to allow comments when parsing the JSON document API Name Allow Comments Default Value false Allowable Values • true • false Expression Language Scope Not Supported Sensitive false Required true • Date Format Specifies the format to use when reading/writing Date fields. If not specified, Date fields will be assumed to be number of milliseconds since epoch (Midnight, Jan 1, 1970 GMT). If specified, the value must match the Java java.time.format.DateTimeFormatter format (for example, MM/dd/yyyy for a two-digit month, followed by a two-digit day, followed by a four-digit year, all separated by '/' characters, as in 01/01/2017). Display Name Date Format Description Specifies the format to use when reading/writing Date fields. If not specified, Date fields will be assumed to be number of milliseconds since epoch (Midnight, Jan 1, 1970 GMT). If specified, the value must match the Java java.time.format.DateTimeFormatter format (for example, MM/dd/yyyy for a two-digit month, followed by a two-digit day, followed by a four-digit year, all separated by '/' characters, as in 01/01/2017). API Name Date Format Expression Language Scope Not Supported Sensitive false Required false • Max String Length The maximum allowed length of a string value when parsing the JSON document Display Name Max String Length Description The maximum allowed length of a string value when parsing the JSON document API Name Max String Length Default Value 20 MB Expression Language Scope Not Supported Sensitive false Required true • Schema Access Strategy Specifies how to obtain the schema that is to be used for interpreting the data. Display Name Schema Access Strategy Description Specifies how to obtain the schema that is to be used for interpreting the data. API Name schema-access-strategy Default Value infer-schema Allowable Values • Infer Schema • Use 'Schema Name' Property • Use 'Schema Text' Property • Schema Reference Reader Expression Language Scope Not Supported Sensitive false Required true • Schema Application Strategy Specifies whether the schema is defined for the whole JSON or for the selected part starting from "Starting Field Name". Display Name Schema Application Strategy Description Specifies whether the schema is defined for the whole JSON or for the selected part starting from "Starting Field Name". API Name schema-application-strategy Default Value SELECTED_PART Allowable Values • Whole JSON • Selected Part Expression Language Scope Not Supported Sensitive false Required true Dependencies • Schema Access Strategy is set to any of [schema-name, schema-reference-reader, schema-text-property] • Starting Field Strategy is set to any of [NESTED_FIELD] • Schema Branch Specifies the name of the branch to use when looking up the schema in the Schema Registry property. If the chosen Schema Registry does not support branching, this value will be ignored. Display Name Schema Branch Description Specifies the name of the branch to use when looking up the schema in the Schema Registry property. If the chosen Schema Registry does not support branching, this value will be ignored. API Name schema-branch Expression Language Scope Environment variables and FlowFile Attributes Sensitive false Required false Dependencies • Schema Access Strategy is set to any of [schema-name] • Schema Inference Cache Specifies a Schema Cache to use when inferring the schema. If not populated, the schema will be inferred each time. However, if a cache is specified, the cache will first be consulted and if the applicable schema can be found, it will be used instead of inferring the schema. Display Name Schema Inference Cache Description Specifies a Schema Cache to use when inferring the schema. If not populated, the schema will be inferred each time. However, if a cache is specified, the cache will first be consulted and if the applicable schema can be found, it will be used instead of inferring the schema. API Name schema-inference-cache Service Interface org.apache.nifi.serialization.RecordSchemaCacheService Service Implementations org.apache.nifi.schema.inference.VolatileSchemaCache Expression Language Scope Not Supported Sensitive false Required false Dependencies • Schema Access Strategy is set to any of [infer-schema] • Schema Name Specifies the name of the schema to lookup in the Schema Registry property Display Name Schema Name Description Specifies the name of the schema to lookup in the Schema Registry property API Name schema-name Default Value ${schema.name} Expression Language Scope Environment variables and FlowFile Attributes Sensitive false Required false Dependencies • Schema Access Strategy is set to any of [schema-name] • Schema Reference Reader Service implementation responsible for reading FlowFile attributes or content to determine the Schema Reference Identifier Display Name Schema Reference Reader Description Service implementation responsible for reading FlowFile attributes or content to determine the Schema Reference Identifier API Name schema-reference-reader Service Interface org.apache.nifi.schemaregistry.services.SchemaReferenceReader Service Implementations org.apache.nifi.aws.schemaregistry.AmazonGlueEncodedSchemaReferenceReader org.apache.nifi.confluent.schemaregistry.ConfluentEncodedSchemaReferenceReader Expression Language Scope Not Supported Sensitive false Required true Dependencies • Schema Access Strategy is set to any of [schema-reference-reader] • Schema Registry Specifies the Controller Service to use for the Schema Registry Display Name Schema Registry Description Specifies the Controller Service to use for the Schema Registry API Name schema-registry Service Interface org.apache.nifi.schemaregistry.services.SchemaRegistry Service Implementations org.apache.nifi.aws.schemaregistry.AmazonGlueSchemaRegistry org.apache.nifi.apicurio.schemaregistry.ApicurioSchemaRegistry org.apache.nifi.schemaregistry.services.AvroSchemaRegistry org.apache.nifi.confluent.schemaregistry.ConfluentSchemaRegistry org.apache.nifi.db.schemaregistry.DatabaseTableSchemaRegistry Expression Language Scope Not Supported Sensitive false Required false Dependencies • Schema Access Strategy is set to any of [schema-name, schema-reference-reader] • Schema Text The text of an Avro-formatted Schema Display Name Schema Text Description The text of an Avro-formatted Schema API Name schema-text Default Value ${avro.schema} Expression Language Scope Environment variables and FlowFile Attributes Sensitive false Required false Dependencies • Schema Access Strategy is set to any of [schema-text-property] • Schema Version Specifies the version of the schema to lookup in the Schema Registry. If not specified then the latest version of the schema will be retrieved. Display Name Schema Version Description Specifies the version of the schema to lookup in the Schema Registry. If not specified then the latest version of the schema will be retrieved. API Name schema-version Expression Language Scope Environment variables and FlowFile Attributes Sensitive false Required false Dependencies • Schema Access Strategy is set to any of [schema-name] • Starting Field Name Skips forward to the given nested JSON field (array or object) to begin processing. Display Name Starting Field Name Description Skips forward to the given nested JSON field (array or object) to begin processing. API Name starting-field-name Expression Language Scope Not Supported Sensitive false Required false Dependencies • Starting Field Strategy is set to any of [NESTED_FIELD] • Starting Field Strategy Start processing from the root node or from a specified nested node. Display Name Starting Field Strategy Description Start processing from the root node or from a specified nested node. API Name starting-field-strategy Default Value ROOT_NODE Allowable Values • Root Node • Nested Field Expression Language Scope Not Supported Sensitive false Required true • Time Format Specifies the format to use when reading/writing Time fields. If not specified, Time fields will be assumed to be number of milliseconds since epoch (Midnight, Jan 1, 1970 GMT). If specified, the value must match the Java java.time.format.DateTimeFormatter format (for example, HH:mm:ss for a two-digit hour in 24-hour format, followed by a two-digit minute, followed by a two-digit second, all separated by ':' characters, as in 18:04:15). Display Name Time Format Description Specifies the format to use when reading/writing Time fields. If not specified, Time fields will be assumed to be number of milliseconds since epoch (Midnight, Jan 1, 1970 GMT). If specified, the value must match the Java java.time.format.DateTimeFormatter format (for example, HH:mm:ss for a two-digit hour in 24-hour format, followed by a two-digit minute, followed by a two-digit second, all separated by ':' characters, as in 18:04:15). API Name Time Format Expression Language Scope Not Supported Sensitive false Required false • Timestamp Format Specifies the format to use when reading/writing Timestamp fields. If not specified, Timestamp fields will be assumed to be number of milliseconds since epoch (Midnight, Jan 1, 1970 GMT). If specified, the value must match the Java java.time.format.DateTimeFormatter format (for example, MM/dd/yyyy HH:mm:ss for a two-digit month, followed by a two-digit day, followed by a four-digit year, all separated by '/' characters; and then followed by a two-digit hour in 24-hour format, followed by a two-digit minute, followed by a two-digit second, all separated by ':' characters, as in 01/01/2017 18:04:15). Display Name Timestamp Format Description Specifies the format to use when reading/writing Timestamp fields. If not specified, Timestamp fields will be assumed to be number of milliseconds since epoch (Midnight, Jan 1, 1970 GMT). If specified, the value must match the Java java.time.format.DateTimeFormatter format (for example, MM/dd/yyyy HH:mm:ss for a two-digit month, followed by a two-digit day, followed by a four-digit year, all separated by '/' characters; and then followed by a two-digit hour in 24-hour format, followed by a two-digit minute, followed by a two-digit second, all separated by ':' characters, as in 01/01/2017 18:04:15). API Name Timestamp Format Expression Language Scope Not Supported Sensitive false Required false See Also • org.apache.nifi.json.JsonPathReader

@@ -40,33 +40,35 @@ public class NibyWebSocket {
     }
 
     @OnTextMessage
-    public Multi<String> onTextMessage(String message) {
+    public Multi<String> onTextMessage(String message, WebSocketConnection connection) {
         log.info("Received message from WebSocket");
         log.info("Raw message content: {}", message);
+
+        String sessionId = connection.id();
 
         try {
             ChatMessage chatMessage = objectMapper.readValue(message, ChatMessage.class);
             String mode = chatMessage.getMode();
             String text = chatMessage.getMessage();
             log.info("Parsed message: '{}', mode: '{}'", text, mode);
-            return routeToAgent(text, mode);
+            return routeToAgent(sessionId, text, mode);
         } catch (Exception e) {
             log.warn("Failed to parse JSON, treating as plain text: {}", e.getMessage());
-            return routeToAgent(message, "basic");
+            return routeToAgent(sessionId, message, "basic");
         }
     }
 
-    private Multi<String> routeToAgent(String message, String mode) {
+    private Multi<String> routeToAgent(String sessionId, String message, String mode) {
         String normalizedMode = (mode == null ? "basic" : mode.toLowerCase(Locale.ROOT));
         Multi<String> response;
         switch (normalizedMode) {
             case "plan":
                 log.info("Routing to PlanAgent");
-                response = planAgent.chat(message);
+                response = planAgent.chat(sessionId, message);
                 break;
             case "act":
                 log.info("Routing to ActAgent");
-                response = actAgent.chat(message);
+                response = actAgent.chat(sessionId, message);
                 break;
             case "basic":
             default:
@@ -75,7 +77,7 @@ public class NibyWebSocket {
                 } else {
                     log.info("Routing to BasicAgent");
                 }
-                response = basicAgent.chat(message);
+                response = basicAgent.chat(sessionId, message);
                 break;
         }
 

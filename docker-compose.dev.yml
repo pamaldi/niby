@@ -1,0 +1,23 @@
+version: '3.8'
+
+# Development override - uses environment variables instead of secrets
+# Usage: docker-compose -f docker-compose.yml -f docker-compose.dev.yml up
+
+services:
+  pgvector:
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+    secrets: []
+
+  niby-be-core:
+    environment:
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY}
+    secrets: []
+    command: []
+
+  niby-rag:
+    environment:
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY}
+      QUARKUS_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+    secrets: []
+    command: []

@@ -1,5 +1,7 @@
 # niby-rag
 
+**RAG (Retrieval-Augmented Generation) Module** - Provides document ingestion, embedding generation, and vector search capabilities using LangChain4j and PGVector. This module handles the processing and storage of documentation for semantic search and AI-powered retrieval.
+
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
 If you want to learn more about Quarkus, please visit its website: <https://quarkus.io/>.

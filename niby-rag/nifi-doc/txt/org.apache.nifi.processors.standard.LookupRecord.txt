@@ -1,0 +1,127 @@
+LookupRecord - Apache NiFi
+
+• Documentation • NiFi Version 2 Documentation • NiFi Version 1 Documentation • Guides • Security Reporting • Wiki • Development • Contributing • Issues • Source • Community • Contact • Powered By • Team • Projects • MiNiFi • Registry • Flow Design System • Apache • Events • License • Privacy • Sponsorship • Thanks • General • Overview • Getting Started • User Guide • Expression Language Guide • RecordPath Guide • Admin Guide • Toolkit Guide • Walkthroughs • Developer • Developer Guide • Python Developer Guide • Apache NiFi In Depth • REST API • Processors • AttributeRollingWindow • AttributesToCSV • AttributesToJSON • CalculateRecordStats • CaptureChangeMySQL • CompressContent • ConnectWebSocket • ConsumeAMQP • ConsumeAzureEventHub • ConsumeBoxEnterpriseEvents • ConsumeBoxEvents • ConsumeElasticsearch • ConsumeGCPubSub • ConsumeIMAP • ConsumeJMS • ConsumeKafka • ConsumeKinesisStream • ConsumeMQTT • ConsumePOP3 • ConsumeSlack • ConsumeTwitter • ConsumeWindowsEventLog • ControlRate • ConvertCharacterSet • ConvertRecord • CopyAzureBlobStorage_v12 • CopyS3Object • CountText • CreateBoxFileMetadataInstance • CreateBoxMetadataTemplate • CryptographicHashContent • DebugFlow • DecryptContentAge • DecryptContentPGP • DeduplicateRecord • DeleteAzureBlobStorage_v12 • DeleteAzureDataLakeStorage • DeleteBoxFileMetadataInstance • DeleteByQueryElasticsearch • DeleteDynamoDB • DeleteFile • DeleteGCSObject • DeleteGridFS • DeleteMongo • DeleteS3Object • DeleteSFTP • DeleteSQS • DetectDuplicate • DistributeLoad • DuplicateFlowFile • EncodeContent • EncryptContentAge • EncryptContentPGP • EnforceOrder • EvaluateJsonPath • EvaluateXPath • EvaluateXQuery • ExecuteGroovyScript • ExecuteProcess • ExecuteScript • ExecuteSQL • ExecuteSQLRecord • ExecuteStreamCommand • ExtractAvroMetadata • ExtractEmailAttachments • ExtractEmailHeaders • ExtractGrok • ExtractHL7Attributes • ExtractRecordSchema • ExtractStructuredBoxFileMetadata • ExtractText • FetchAzureBlobStorage_v12 • FetchAzureDataLakeStorage • FetchBoxFile • FetchBoxFileInfo • FetchBoxFileMetadataInstance • FetchBoxFileRepresentation • FetchDistributedMapCache • FetchDropbox • FetchFile • FetchFTP • FetchGCSObject • FetchGoogleDrive • FetchGridFS • FetchS3Object • FetchSFTP • FetchSmb • FilterAttribute • FlattenJson • ForkEnrichment • ForkRecord • GenerateFlowFile • GenerateRecord • GenerateTableFetch • GeoEnrichIP • GeoEnrichIPRecord • GeohashRecord • GetAsanaObject • GetAwsPollyJobStatus • GetAwsTextractJobStatus • GetAwsTranscribeJobStatus • GetAwsTranslateJobStatus • GetAzureEventHub • GetAzureQueueStorage_v12 • GetBoxFileCollaborators • GetBoxGroupMembers • GetDynamoDB • GetElasticsearch • GetFile • GetFileResource • GetFTP • GetGcpVisionAnnotateFilesOperationStatus • GetGcpVisionAnnotateImagesOperationStatus • GetHubSpot • GetMongo • GetMongoRecord • GetS3ObjectMetadata • GetS3ObjectTags • GetSFTP • GetShopify • GetSmbFile • GetSNMP • GetSplunk • GetSQS • GetWorkdayReport • GetZendesk • HandleHttpRequest • HandleHttpResponse • IdentifyMimeType • InvokeHTTP • InvokeScriptedProcessor • ISPEnrichIP • JoinEnrichment • JoltTransformJSON • JoltTransformRecord • JSLTTransformJSON • JsonQueryElasticsearch • ListAzureBlobStorage_v12 • ListAzureDataLakeStorage • ListBoxFile • ListBoxFileInfo • ListBoxFileMetadataInstances • ListBoxFileMetadataTemplates • ListDatabaseTables • ListDropbox • ListenFTP • ListenHTTP • ListenOTLP • ListenSlack • ListenSyslog • ListenTCP • ListenTrapSNMP • ListenUDP • ListenUDPRecord • ListenWebSocket • ListFile • ListFTP • ListGCSBucket • ListGoogleDrive • ListS3 • ListSFTP • ListSmb • LogAttribute • LogMessage • LookupAttribute • LookupRecord • MergeContent • MergeRecord • ModifyBytes • ModifyCompression • MonitorActivity • MoveAzureDataLakeStorage • Notify • PackageFlowFile • PaginatedJsonQueryElasticsearch • ParseEvtx • ParseNetflowv5 • ParseSyslog • ParseSyslog5424 • PartitionRecord • PublishAMQP • PublishGCPubSub • PublishJMS • PublishKafka • PublishMQTT • PublishSlack • PutAzureBlobStorage_v12 • PutAzureCosmosDBRecord • PutAzureDataExplorer • PutAzureDataLakeStorage • PutAzureEventHub • PutAzureQueueStorage_v12 • PutBigQuery • PutBoxFile • PutCloudWatchMetric • PutDatabaseRecord • PutDistributedMapCache • PutDropbox • PutDynamoDB • PutDynamoDBRecord • PutElasticsearchJson • PutElasticsearchRecord • PutEmail • PutFile • PutFTP • PutGCSObject • PutGoogleDrive • PutGridFS • PutKinesisFirehose • PutKinesisStream • PutLambda • PutMongo • PutMongoBulkOperations • PutMongoRecord • PutRecord • PutRedisHashRecord • PutS3Object • PutSalesforceObject • PutSFTP • PutSmbFile • PutSNS • PutSplunk • PutSplunkHTTP • PutSQL • PutSQS • PutSyslog • PutTCP • PutUDP • PutWebSocket • PutZendeskTicket • QueryAirtableTable • QueryAzureDataExplorer • QueryDatabaseTable • QueryDatabaseTableRecord • QueryRecord • QuerySalesforceObject • QuerySplunkIndexingStatus • RemoveRecordField • RenameRecordField • ReplaceText • ReplaceTextWithMapping • RetryFlowFile • RouteHL7 • RouteOnAttribute • RouteOnContent • RouteText • RunMongoAggregation • SampleRecord • ScanAttribute • ScanContent • ScriptedFilterRecord • ScriptedPartitionRecord • ScriptedTransformRecord • ScriptedValidateRecord • SearchElasticsearch • SegmentContent • SendTrapSNMP • SetSNMP • SignContentPGP • SplitAvro • SplitContent • SplitExcel • SplitJson • SplitPCAP • SplitRecord • SplitText • SplitXml • StartAwsPollyJob • StartAwsTextractJob • StartAwsTranscribeJob • StartAwsTranslateJob • StartGcpVisionAnnotateFilesOperation • StartGcpVisionAnnotateImagesOperation • TagS3Object • TailFile • TransformXml • UnpackContent • UpdateAttribute • UpdateBoxFileMetadataInstance • UpdateByQueryElasticsearch • UpdateCounter • UpdateDatabaseTable • UpdateRecord • ValidateCsv • ValidateJson • ValidateRecord • ValidateXml • VerifyContentMAC • VerifyContentPGP • Wait • Controller Services • ADLSCredentialsControllerService • ADLSCredentialsControllerServiceLookup • AmazonGlueEncodedSchemaReferenceReader • AmazonGlueSchemaRegistry • AmazonMSKConnectionService • ApicurioSchemaRegistry • AvroReader • AvroRecordSetWriter • AvroSchemaRegistry • AWSCredentialsProviderControllerService • AzureBlobStorageFileResourceService • AzureCosmosDBClientService • AzureDataLakeStorageFileResourceService • AzureEventHubRecordSink • AzureStorageCredentialsControllerService_v12 • AzureStorageCredentialsControllerServiceLookup_v12 • CEFReader • ConfluentEncodedSchemaReferenceReader • ConfluentEncodedSchemaReferenceWriter • ConfluentSchemaRegistry • CSVReader • CSVRecordLookupService • CSVRecordSetWriter • DatabaseRecordLookupService • DatabaseRecordSink • DatabaseTableSchemaRegistry • DBCPConnectionPool • DBCPConnectionPoolLookup • DeveloperBoxClientService • DistributedMapCacheLookupService • ElasticSearchClientServiceImpl • ElasticSearchLookupService • ElasticSearchStringLookupService • EmailRecordSink • EmbeddedHazelcastCacheManager • ExcelReader • ExternalHazelcastCacheManager • FreeFormTextRecordSetWriter • GCPCredentialsControllerService • GCSFileResourceService • GrokReader • HazelcastMapCacheClient • HikariCPConnectionPool • HttpRecordSink • IPLookupService • JettyWebSocketClient • JettyWebSocketServer • JMSConnectionFactoryProvider • JndiJmsConnectionFactoryProvider • JsonConfigBasedBoxClientService • JsonPathReader • JsonRecordSetWriter • JsonTreeReader • JWTBearerOAuth2AccessTokenProvider • Kafka3ConnectionService • KerberosKeytabUserService • KerberosPasswordUserService • KerberosTicketCacheUserService • LoggingRecordSink • MapCacheClientService • MapCacheServer • MongoDBControllerService • MongoDBLookupService • PEMEncodedSSLContextProvider • PropertiesFileLookupService • ProtobufReader • ReaderLookup • RecordSetWriterLookup • RecordSinkServiceLookup • RedisConnectionPoolService • RedisDistributedMapCacheClientService • RestLookupService • S3FileResourceService • ScriptedLookupService • ScriptedReader • ScriptedRecordSetWriter • ScriptedRecordSink • SetCacheClientService • SetCacheServer • SimpleCsvFileLookupService • SimpleDatabaseLookupService • SimpleKeyValueLookupService • SimpleRedisDistributedMapCacheClientService • SimpleScriptedLookupService • SiteToSiteReportingRecordSink • SlackRecordSink • SmbjClientProviderService • StandardAsanaClientProviderService • StandardAzureCredentialsControllerService • StandardDatabaseDialectService • StandardDropboxCredentialService • StandardFileResourceService • StandardHashiCorpVaultClientService • StandardHttpContextMap • StandardJsonSchemaRegistry • StandardKustoIngestService • StandardKustoQueryService • StandardOauth2AccessTokenProvider • StandardPGPPrivateKeyService • StandardPGPPublicKeyService • StandardPrivateKeyService • StandardProxyConfigurationService • StandardRestrictedSSLContextService • StandardS3EncryptionService • StandardSSLContextService • StandardWebClientServiceProvider • Syslog5424Reader • SyslogReader • UDPEventRecordSink • VolatileSchemaCache • WindowsEventLogReader • XMLFileLookupService • XMLReader • XMLRecordSetWriter • YamlTreeReader • ZendeskRecordSink • Reporting Tasks • AzureLogAnalyticsProvenanceReportingTask • AzureLogAnalyticsReportingTask • ControllerStatusReportingTask • MonitorDiskUsage • MonitorMemory • ScriptedReportingTask • SiteToSiteBulletinReportingTask • SiteToSiteMetricsReportingTask • SiteToSiteProvenanceReportingTask • SiteToSiteStatusReportingTask • Parameter Providers • AwsSecretsManagerParameterProvider • AzureKeyVaultSecretsParameterProvider • DatabaseParameterProvider • EnvironmentVariableParameterProvider • GcpSecretManagerParameterProvider • HashiCorpVaultParameterProvider • KubernetesSecretParameterProvider • OnePasswordParameterProvider • Flow Analysis Rules • DisallowComponentType • RequireServerSSLContextService • RestrictBackpressureSettings • RestrictFlowFileExpiration LookupRecord 2.5.0
+
+ Bundle org.apache.nifi | nifi-standard-nar Description Extracts one or more fields from a Record and looks up a value for those fields in a LookupService. If a result is returned by the LookupService, that result is optionally added to the Record. In this case, the processor functions as an Enrichment processor. Regardless, the Record is then routed to either the 'matched' relationship or 'unmatched' relationship (if the 'Routing Strategy' property is configured to do so), indicating whether or not a result was returned by the LookupService, allowing the processor to also function as a Routing processor. The "coordinates" to use for looking up a value in the Lookup Service are defined by adding a user-defined property. Each property that is added will have an entry added to a Map, where the name of the property becomes the Map Key and the value returned by the RecordPath becomes the value for that key. If multiple values are returned by the RecordPath, then the Record will be routed to the 'unmatched' relationship (or 'success', depending on the 'Routing Strategy' property's configuration). If one or more fields match the Result RecordPath, all fields that match will be updated. If there is no match in the configured LookupService, then no fields will be updated. I.e., it will not overwrite an existing value in the Record with a null value. Please note, however, that if the results returned by the LookupService are not accounted for in your schema (specifically, the schema that is configured for your Record Writer) then the fields will not be written out to the FlowFile. Tags avro, convert, csv, database, db, enrichment, filter, json, logs, lookup, record, route Input Requirement REQUIRED Supports Sensitive Dynamic Properties false • Additional Details for LookupRecord 2.5.0 LookupRecord
+
+ LookupRecord makes use of the NiFi RecordPath Domain-Specific Language (DSL) to allow the user to indicate which field(s), depending on the Record Update Strategy, in the Record should be updated. The Record will be updated using the value returned by the provided Lookup Service.
+
+ Record Update Strategy - Use Property
+
+ In this case, the user should add, to the Processor’s configuration, as much User-defined Properties as required by the Lookup Service to form the lookup coordinates. The name of the properties should match the names expected by the Lookup Service.
+
+ The field evaluated using the path configured in the “Result RecordPath” property will be the field updated with the value returned by the Lookup Service.
+
+ Let’s assume a Simple Key Value Lookup Service containing the following key/value pairs:
+
+ FR => France CA => Canada
+
+ Let’s assume the following JSON with three records as input:
+
+ [
+ {
+ "country": null,
+ "code": "FR"
+ },
+ {
+ "country": null,
+ "code": "CA"
+ },
+ {
+ "country": null,
+ "code": "JP"
+ }
+]
+ The processor is configured with “Use Property” as “Record Update Strategy”, the “Result RecordPath” is configured with “/country” and a user-defined property is added with the name “key” (as required by this Lookup Service) and the value “/code”.
+
+ When triggered, the processor will look for the value associated to the “/code” path and will use the value as the “key” of the Lookup Service. The value returned by the Lookup Service will be used to update the value corresponding to " /country". With the above examples, it will produce:
+
+ [
+ {
+ "country": "France",
+ "code": "FR"
+ },
+ {
+ "country": "Canada",
+ "code": "CA"
+ },
+ {
+ "country": null,
+ "code": "JP"
+ }
+]
+ Record Update Strategy - Replace Existing Values
+
+ With this strategy, the “Result RecordPath” property will be ignored and the configured Lookup Service must be a single simple key lookup service. For each user-defined property, the value contained in the field corresponding to the record path will be used as the key in the Lookup Service and will be replaced by the value returned by the Lookup Service. It is possible to configure multiple dynamic properties to update multiple fields in one execution. This strategy only supports simple types replacements (strings, integers, etc).
+
+ Since this strategy allows in-place replacement, it is possible to use Record Paths for fields contained in arrays.
+
+ Let’s assume a Simple Key Value Lookup Service containing the following key/value pairs:
+
+ FR => France CA => Canada fr => French en => English
+
+ Let’s assume the following JSON with two records as input:
+
+ [
+ {
+ "locales": [
+ {
+ "region": "FR",
+ "language": "fr"
+ },
+ {
+ "region": "US",
+ "language": "en"
+ }
+ ]
+ },
+ {
+ "locales": [
+ {
+ "region": "CA",
+ "language": "fr"
+ },
+ {
+ "region": "JP",
+ "language": "ja"
+ }
+ ]
+ }
+]
+ The processor is configured with “Replace Existing Values” as “Record Update Strategy”, two user-defined properties are added: “region” => “/locales[*]/region” and “language => “/locales[*]/language”..
+
+ When triggered, the processor will loop over the user-defined properties. First, it’ll search for the fields corresponding to “/locales[*]/region”, for each value from the record, the value will be used as the key with the Lookup Service and the value will be replaced by the result returned by the Lookup Service. Example: the first region is “FR” and this key is associated to the value “France” in the Lookup Service, so the value “FR” is replaced by " France” in the record. With the above examples, it will produce:
+
+ [
+ {
+ "locales": [
+ {
+ "region": "France",
+ "language": "French"
+ },
+ {
+ "region": "US",
+ "language": "English"
+ }
+ ]
+ },
+ {
+ "locales": [
+ {
+ "region": "Canada",
+ "language": "French"
+ },
+ {
+ "region": "JP",
+ "language": "ja"
+ }
+ ]
+ }
+]
+ Properties • Lookup Service The Lookup Service to use in order to lookup a value in each Record Display Name Lookup Service Description The Lookup Service to use in order to lookup a value in each Record API Name lookup-service Service Interface org.apache.nifi.lookup.LookupService Service Implementations org.apache.nifi.lookup.CSVRecordLookupService org.apache.nifi.lookup.db.DatabaseRecordLookupService org.apache.nifi.lookup.DistributedMapCacheLookupService org.apache.nifi.elasticsearch.ElasticSearchLookupService org.apache.nifi.elasticsearch.ElasticSearchStringLookupService org.apache.nifi.lookup.maxmind.IPLookupService org.apache.nifi.mongodb.MongoDBLookupService org.apache.nifi.lookup.PropertiesFileLookupService org.apache.nifi.lookup.RestLookupService org.apache.nifi.lookup.script.ScriptedLookupService org.apache.nifi.lookup.SimpleCsvFileLookupService org.apache.nifi.lookup.db.SimpleDatabaseLookupService org.apache.nifi.lookup.SimpleKeyValueLookupService org.apache.nifi.lookup.script.SimpleScriptedLookupService org.apache.nifi.lookup.XMLFileLookupService Expression Language Scope Not Supported Sensitive false Required true • Cache Size Specifies how many lookup values/records should be cached.Setting this property to zero means no caching will be done and the table will be queried for each lookup value in each record. If the lookup table changes often or the most recent data must be retrieved, do not use the cache. Display Name Cache Size Description Specifies how many lookup values/records should be cached.Setting this property to zero means no caching will be done and the table will be queried for each lookup value in each record. If the lookup table changes often or the most recent data must be retrieved, do not use the cache. API Name record-path-lookup-miss-result-cache-size Default Value 0 Expression Language Scope Environment variables defined at JVM level and system properties Sensitive false Required true • Record Reader Specifies the Controller Service to use for reading incoming data Display Name Record Reader Description Specifies the Controller Service to use for reading incoming data API Name record-reader Service Interface org.apache.nifi.serialization.RecordReaderFactory Service Implementations org.apache.nifi.avro.AvroReader org.apache.nifi.cef.CEFReader org.apache.nifi.csv.CSVReader org.apache.nifi.excel.ExcelReader org.apache.nifi.grok.GrokReader org.apache.nifi.json.JsonPathReader org.apache.nifi.json.JsonTreeReader org.apache.nifi.services.protobuf.ProtobufReader org.apache.nifi.lookup.ReaderLookup org.apache.nifi.record.script.ScriptedReader org.apache.nifi.syslog.Syslog5424Reader org.apache.nifi.syslog.SyslogReader org.apache.nifi.windowsevent.WindowsEventLogReader org.apache.nifi.xml.XMLReader org.apache.nifi.yaml.YamlTreeReader Expression Language Scope Not Supported Sensitive false Required true • Record Update Strategy This property defines the strategy to use when updating the record with the value returned by the Lookup Service. Display Name Record Update Strategy Description This property defines the strategy to use when updating the record with the value returned by the Lookup Service. API Name record-update-strategy Default Value use-property Allowable Values • Replace Existing Values • Use "Result RecordPath" Property Expression Language Scope Not Supported Sensitive false Required true • Record Writer Specifies the Controller Service to use for writing out the records Display Name Record Writer Description Specifies the Controller Service to use for writing out the records API Name record-writer Service Interface org.apache.nifi.serialization.RecordSetWriterFactory Service Implementations org.apache.nifi.avro.AvroRecordSetWriter org.apache.nifi.csv.CSVRecordSetWriter org.apache.nifi.text.FreeFormTextRecordSetWriter org.apache.nifi.json.JsonRecordSetWriter org.apache.nifi.lookup.RecordSetWriterLookup org.apache.nifi.record.script.ScriptedRecordSetWriter org.apache.nifi.xml.XMLRecordSetWriter Expression Language Scope Not Supported Sensitive false Required true • Record Result Contents When a result is obtained that contains a Record, this property determines whether the Record itself is inserted at the configured path or if the contents of the Record (i.e., the sub-fields) will be inserted at the configured path. Display Name Record Result Contents Description When a result is obtained that contains a Record, this property determines whether the Record itself is inserted at the configured path or if the contents of the Record (i.e., the sub-fields) will be inserted at the configured path. API Name result-contents Default Value insert-entire-record Allowable Values • Insert Entire Record • Insert Record Fields Expression Language Scope Not Supported Sensitive false Required true • Result RecordPath A RecordPath that points to the field whose value should be updated with whatever value is returned from the Lookup Service. If not specified, the value that is returned from the Lookup Service will be ignored, except for determining whether the FlowFile should be routed to the 'matched' or 'unmatched' Relationship. Display Name Result RecordPath Description A RecordPath that points to the field whose value should be updated with whatever value is returned from the Lookup Service. If not specified, the value that is returned from the Lookup Service will be ignored, except for determining whether the FlowFile should be routed to the 'matched' or 'unmatched' Relationship. API Name result-record-path Expression Language Scope Environment variables and FlowFile Attributes Sensitive false Required false Dependencies • Record Update Strategy is set to any of [use-property] • Root Record Path A RecordPath that points to a child Record within each of the top-level Records in the FlowFile. If specified, the additional RecordPath properties will be evaluated against this child Record instead of the top-level Record. This allows for performing enrichment against multiple child Records within a single top-level Record. Display Name Root Record Path Description A RecordPath that points to a child Record within each of the top-level Records in the FlowFile. If specified, the additional RecordPath properties will be evaluated against this child Record instead of the top-level Record. This allows for performing enrichment against multiple child Records within a single top-level Record. API Name Root Record Path Expression Language Scope Environment variables and FlowFile Attributes Sensitive false Required false • Routing Strategy Specifies how to route records after a Lookup has completed Display Name Routing Strategy Description Specifies how to route records after a Lookup has completed API Name routing-strategy Default Value route-to-success Allowable Values • Route to 'success' • Route to 'matched' or 'unmatched' Expression Language Scope Not Supported Sensitive false Required true Dynamic Properties • Value To Lookup A RecordPath that points to the field whose value will be looked up in the configured Lookup Service Name Value To Lookup Description A RecordPath that points to the field whose value will be looked up in the configured Lookup Service Value Valid Record Path Expression Language Scope FLOWFILE_ATTRIBUTES Relationships Name | Description | 
+ failure | If a FlowFile cannot be enriched, the unchanged FlowFile will be routed to this relationship | 
+ success | All records will be sent to this Relationship if configured to do so, unless a failure occurs | 
+ Writes Attributes Name | Description | 
+ mime.type | Sets the mime.type attribute to the MIME Type specified by the Record Writer | 
+ record.count | The number of records in the FlowFile | 
+ See Also • org.apache.nifi.lookup.SimpleKeyValueLookupService • org.apache.nifi.lookup.db.DatabaseRecordLookupService • org.apache.nifi.lookup.maxmind.IPLookupService • org.apache.nifi.processors.standard.ConvertRecord • org.apache.nifi.processors.standard.SplitRecord

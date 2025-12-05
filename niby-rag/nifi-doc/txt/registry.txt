@@ -1,0 +1,23 @@
+Registry - Apache NiFi
+
+• Documentation • NiFi Version 2 Documentation • NiFi Version 1 Documentation • Guides • Security Reporting • Wiki • Development • Contributing • Issues • Source • Community • Contact • Powered By • Team • Projects • MiNiFi • Registry • Flow Design System • Apache • Events • License • Privacy • Sponsorship • Thanks A subproject of Apache NiFi to store and manage shared resources.
+
+ Features
+
+ Registry - a subproject of Apache NiFi - is a complementary application that provides a central location for storage and management of shared resources across one or more instances of NiFi or MiNiFi.
+
+ Apache NiFi Registry provides the following features:
+
+ • Implementation of a Flow Registry for storing and managing versioned flows • Integration with NiFi to allow storing, retrieving, and upgrading versioned flows from a Flow Registry • Administration of the Registry for defining users, groups, and policies Documentation
+
+ • Apache NiFi Registry Documentation • Apache NiFi Registry Wiki Videos
+
+ • Getting Started with Apache NiFi Registry Getting Started with Apache NiFi Registry
+
+ × • Setting Up a Secure Apache NiFi Registry Setting Up a Secure Apache NiFi Registry
+
+ × • Setting Up a Secure NiFi to Integrate with a Secure NiFi Registry Setting Up a Secure NiFi to Integrate with a Secure NiFi Registry
+
+ × • Storing Versioned Flows in a Git Repository Storing Versioned Flows in a Git Repository
+
+ ×

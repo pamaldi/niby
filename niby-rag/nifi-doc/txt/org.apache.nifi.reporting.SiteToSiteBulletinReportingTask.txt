@@ -1,0 +1,125 @@
+SiteToSiteBulletinReportingTask - Apache NiFi
+
+• Documentation • NiFi Version 2 Documentation • NiFi Version 1 Documentation • Guides • Security Reporting • Wiki • Development • Contributing • Issues • Source • Community • Contact • Powered By • Team • Projects • MiNiFi • Registry • Flow Design System • Apache • Events • License • Privacy • Sponsorship • Thanks • General • Overview • Getting Started • User Guide • Expression Language Guide • RecordPath Guide • Admin Guide • Toolkit Guide • Walkthroughs • Developer • Developer Guide • Python Developer Guide • Apache NiFi In Depth • REST API • Processors • AttributeRollingWindow • AttributesToCSV • AttributesToJSON • CalculateRecordStats • CaptureChangeMySQL • CompressContent • ConnectWebSocket • ConsumeAMQP • ConsumeAzureEventHub • ConsumeBoxEnterpriseEvents • ConsumeBoxEvents • ConsumeElasticsearch • ConsumeGCPubSub • ConsumeIMAP • ConsumeJMS • ConsumeKafka • ConsumeKinesisStream • ConsumeMQTT • ConsumePOP3 • ConsumeSlack • ConsumeTwitter • ConsumeWindowsEventLog • ControlRate • ConvertCharacterSet • ConvertRecord • CopyAzureBlobStorage_v12 • CopyS3Object • CountText • CreateBoxFileMetadataInstance • CreateBoxMetadataTemplate • CryptographicHashContent • DebugFlow • DecryptContentAge • DecryptContentPGP • DeduplicateRecord • DeleteAzureBlobStorage_v12 • DeleteAzureDataLakeStorage • DeleteBoxFileMetadataInstance • DeleteByQueryElasticsearch • DeleteDynamoDB • DeleteFile • DeleteGCSObject • DeleteGridFS • DeleteMongo • DeleteS3Object • DeleteSFTP • DeleteSQS • DetectDuplicate • DistributeLoad • DuplicateFlowFile • EncodeContent • EncryptContentAge • EncryptContentPGP • EnforceOrder • EvaluateJsonPath • EvaluateXPath • EvaluateXQuery • ExecuteGroovyScript • ExecuteProcess • ExecuteScript • ExecuteSQL • ExecuteSQLRecord • ExecuteStreamCommand • ExtractAvroMetadata • ExtractEmailAttachments • ExtractEmailHeaders • ExtractGrok • ExtractHL7Attributes • ExtractRecordSchema • ExtractStructuredBoxFileMetadata • ExtractText • FetchAzureBlobStorage_v12 • FetchAzureDataLakeStorage • FetchBoxFile • FetchBoxFileInfo • FetchBoxFileMetadataInstance • FetchBoxFileRepresentation • FetchDistributedMapCache • FetchDropbox • FetchFile • FetchFTP • FetchGCSObject • FetchGoogleDrive • FetchGridFS • FetchS3Object • FetchSFTP • FetchSmb • FilterAttribute • FlattenJson • ForkEnrichment • ForkRecord • GenerateFlowFile • GenerateRecord • GenerateTableFetch • GeoEnrichIP • GeoEnrichIPRecord • GeohashRecord • GetAsanaObject • GetAwsPollyJobStatus • GetAwsTextractJobStatus • GetAwsTranscribeJobStatus • GetAwsTranslateJobStatus • GetAzureEventHub • GetAzureQueueStorage_v12 • GetBoxFileCollaborators • GetBoxGroupMembers • GetDynamoDB • GetElasticsearch • GetFile • GetFileResource • GetFTP • GetGcpVisionAnnotateFilesOperationStatus • GetGcpVisionAnnotateImagesOperationStatus • GetHubSpot • GetMongo • GetMongoRecord • GetS3ObjectMetadata • GetS3ObjectTags • GetSFTP • GetShopify • GetSmbFile • GetSNMP • GetSplunk • GetSQS • GetWorkdayReport • GetZendesk • HandleHttpRequest • HandleHttpResponse • IdentifyMimeType • InvokeHTTP • InvokeScriptedProcessor • ISPEnrichIP • JoinEnrichment • JoltTransformJSON • JoltTransformRecord • JSLTTransformJSON • JsonQueryElasticsearch • ListAzureBlobStorage_v12 • ListAzureDataLakeStorage • ListBoxFile • ListBoxFileInfo • ListBoxFileMetadataInstances • ListBoxFileMetadataTemplates • ListDatabaseTables • ListDropbox • ListenFTP • ListenHTTP • ListenOTLP • ListenSlack • ListenSyslog • ListenTCP • ListenTrapSNMP • ListenUDP • ListenUDPRecord • ListenWebSocket • ListFile • ListFTP • ListGCSBucket • ListGoogleDrive • ListS3 • ListSFTP • ListSmb • LogAttribute • LogMessage • LookupAttribute • LookupRecord • MergeContent • MergeRecord • ModifyBytes • ModifyCompression • MonitorActivity • MoveAzureDataLakeStorage • Notify • PackageFlowFile • PaginatedJsonQueryElasticsearch • ParseEvtx • ParseNetflowv5 • ParseSyslog • ParseSyslog5424 • PartitionRecord • PublishAMQP • PublishGCPubSub • PublishJMS • PublishKafka • PublishMQTT • PublishSlack • PutAzureBlobStorage_v12 • PutAzureCosmosDBRecord • PutAzureDataExplorer • PutAzureDataLakeStorage • PutAzureEventHub • PutAzureQueueStorage_v12 • PutBigQuery • PutBoxFile • PutCloudWatchMetric • PutDatabaseRecord • PutDistributedMapCache • PutDropbox • PutDynamoDB • PutDynamoDBRecord • PutElasticsearchJson • PutElasticsearchRecord • PutEmail • PutFile • PutFTP • PutGCSObject • PutGoogleDrive • PutGridFS • PutKinesisFirehose • PutKinesisStream • PutLambda • PutMongo • PutMongoBulkOperations • PutMongoRecord • PutRecord • PutRedisHashRecord • PutS3Object • PutSalesforceObject • PutSFTP • PutSmbFile • PutSNS • PutSplunk • PutSplunkHTTP • PutSQL • PutSQS • PutSyslog • PutTCP • PutUDP • PutWebSocket • PutZendeskTicket • QueryAirtableTable • QueryAzureDataExplorer • QueryDatabaseTable • QueryDatabaseTableRecord • QueryRecord • QuerySalesforceObject • QuerySplunkIndexingStatus • RemoveRecordField • RenameRecordField • ReplaceText • ReplaceTextWithMapping • RetryFlowFile • RouteHL7 • RouteOnAttribute • RouteOnContent • RouteText • RunMongoAggregation • SampleRecord • ScanAttribute • ScanContent • ScriptedFilterRecord • ScriptedPartitionRecord • ScriptedTransformRecord • ScriptedValidateRecord • SearchElasticsearch • SegmentContent • SendTrapSNMP • SetSNMP • SignContentPGP • SplitAvro • SplitContent • SplitExcel • SplitJson • SplitPCAP • SplitRecord • SplitText • SplitXml • StartAwsPollyJob • StartAwsTextractJob • StartAwsTranscribeJob • StartAwsTranslateJob • StartGcpVisionAnnotateFilesOperation • StartGcpVisionAnnotateImagesOperation • TagS3Object • TailFile • TransformXml • UnpackContent • UpdateAttribute • UpdateBoxFileMetadataInstance • UpdateByQueryElasticsearch • UpdateCounter • UpdateDatabaseTable • UpdateRecord • ValidateCsv • ValidateJson • ValidateRecord • ValidateXml • VerifyContentMAC • VerifyContentPGP • Wait • Controller Services • ADLSCredentialsControllerService • ADLSCredentialsControllerServiceLookup • AmazonGlueEncodedSchemaReferenceReader • AmazonGlueSchemaRegistry • AmazonMSKConnectionService • ApicurioSchemaRegistry • AvroReader • AvroRecordSetWriter • AvroSchemaRegistry • AWSCredentialsProviderControllerService • AzureBlobStorageFileResourceService • AzureCosmosDBClientService • AzureDataLakeStorageFileResourceService • AzureEventHubRecordSink • AzureStorageCredentialsControllerService_v12 • AzureStorageCredentialsControllerServiceLookup_v12 • CEFReader • ConfluentEncodedSchemaReferenceReader • ConfluentEncodedSchemaReferenceWriter • ConfluentSchemaRegistry • CSVReader • CSVRecordLookupService • CSVRecordSetWriter • DatabaseRecordLookupService • DatabaseRecordSink • DatabaseTableSchemaRegistry • DBCPConnectionPool • DBCPConnectionPoolLookup • DeveloperBoxClientService • DistributedMapCacheLookupService • ElasticSearchClientServiceImpl • ElasticSearchLookupService • ElasticSearchStringLookupService • EmailRecordSink • EmbeddedHazelcastCacheManager • ExcelReader • ExternalHazelcastCacheManager • FreeFormTextRecordSetWriter • GCPCredentialsControllerService • GCSFileResourceService • GrokReader • HazelcastMapCacheClient • HikariCPConnectionPool • HttpRecordSink • IPLookupService • JettyWebSocketClient • JettyWebSocketServer • JMSConnectionFactoryProvider • JndiJmsConnectionFactoryProvider • JsonConfigBasedBoxClientService • JsonPathReader • JsonRecordSetWriter • JsonTreeReader • JWTBearerOAuth2AccessTokenProvider • Kafka3ConnectionService • KerberosKeytabUserService • KerberosPasswordUserService • KerberosTicketCacheUserService • LoggingRecordSink • MapCacheClientService • MapCacheServer • MongoDBControllerService • MongoDBLookupService • PEMEncodedSSLContextProvider • PropertiesFileLookupService • ProtobufReader • ReaderLookup • RecordSetWriterLookup • RecordSinkServiceLookup • RedisConnectionPoolService • RedisDistributedMapCacheClientService • RestLookupService • S3FileResourceService • ScriptedLookupService • ScriptedReader • ScriptedRecordSetWriter • ScriptedRecordSink • SetCacheClientService • SetCacheServer • SimpleCsvFileLookupService • SimpleDatabaseLookupService • SimpleKeyValueLookupService • SimpleRedisDistributedMapCacheClientService • SimpleScriptedLookupService • SiteToSiteReportingRecordSink • SlackRecordSink • SmbjClientProviderService • StandardAsanaClientProviderService • StandardAzureCredentialsControllerService • StandardDatabaseDialectService • StandardDropboxCredentialService • StandardFileResourceService • StandardHashiCorpVaultClientService • StandardHttpContextMap • StandardJsonSchemaRegistry • StandardKustoIngestService • StandardKustoQueryService • StandardOauth2AccessTokenProvider • StandardPGPPrivateKeyService • StandardPGPPublicKeyService • StandardPrivateKeyService • StandardProxyConfigurationService • StandardRestrictedSSLContextService • StandardS3EncryptionService • StandardSSLContextService • StandardWebClientServiceProvider • Syslog5424Reader • SyslogReader • UDPEventRecordSink • VolatileSchemaCache • WindowsEventLogReader • XMLFileLookupService • XMLReader • XMLRecordSetWriter • YamlTreeReader • ZendeskRecordSink • Reporting Tasks • AzureLogAnalyticsProvenanceReportingTask • AzureLogAnalyticsReportingTask • ControllerStatusReportingTask • MonitorDiskUsage • MonitorMemory • ScriptedReportingTask • SiteToSiteBulletinReportingTask • SiteToSiteMetricsReportingTask • SiteToSiteProvenanceReportingTask • SiteToSiteStatusReportingTask • Parameter Providers • AwsSecretsManagerParameterProvider • AzureKeyVaultSecretsParameterProvider • DatabaseParameterProvider • EnvironmentVariableParameterProvider • GcpSecretManagerParameterProvider • HashiCorpVaultParameterProvider • KubernetesSecretParameterProvider • OnePasswordParameterProvider • Flow Analysis Rules • DisallowComponentType • RequireServerSSLContextService • RestrictBackpressureSettings • RestrictFlowFileExpiration SiteToSiteBulletinReportingTask 2.5.0
+
+ Bundle org.apache.nifi | nifi-site-to-site-reporting-nar Description Publishes Bulletin events using the Site To Site protocol. Note: only up to 5 bulletins are stored per component and up to 10 bulletins at controller level for a duration of up to 5 minutes. If this reporting task is not scheduled frequently enough some bulletins may not be sent. Tags bulletin, site, site to site Input Requirement Supports Sensitive Dynamic Properties false • Additional Details for SiteToSiteBulletinReportingTask 2.5.0 SiteToSiteBulletinReportingTask
+
+ The Site-to-Site Bulletin Reporting Task allows the user to publish Bulletin events using the Site To Site protocol. Note: only up to 5 bulletins are stored per component and up to 10 bulletins at controller level for a duration of up to 5 minutes. If this reporting task is not scheduled frequently enough some bulletins may not be sent.
+
+ Record writer
+
+ The user can define a Record Writer and directly specify the output format and data with the assumption that the input schema is the following:
+
+ {
+ "type": "record",
+ "name": "bulletins",
+ "namespace": "bulletins",
+ "fields": [
+ {
+ "name": "objectId",
+ "type": "string"
+ },
+ {
+ "name": "platform",
+ "type": "string"
+ },
+ {
+ "name": "bulletinId",
+ "type": "long"
+ },
+ {
+ "name": "bulletinCategory",
+ "type": [
+ "string",
+ "null"
+ ]
+ },
+ {
+ "name": "bulletinGroupId",
+ "type": [
+ "string",
+ "null"
+ ]
+ },
+ {
+ "name": "bulletinGroupName",
+ "type": [
+ "string",
+ "null"
+ ]
+ },
+ {
+ "name": "bulletinGroupPath",
+ "type": [
+ "string",
+ "null"
+ ]
+ },
+ {
+ "name": "bulletinLevel",
+ "type": [
+ "string",
+ "null"
+ ]
+ },
+ {
+ "name": "bulletinMessage",
+ "type": [
+ "string",
+ "null"
+ ]
+ },
+ {
+ "name": "bulletinNodeAddress",
+ "type": [
+ "string",
+ "null"
+ ]
+ },
+ {
+ "name": "bulletinNodeId",
+ "type": [
+ "string",
+ "null"
+ ]
+ },
+ {
+ "name": "bulletinSourceId",
+ "type": [
+ "string",
+ "null"
+ ]
+ },
+ {
+ "name": "bulletinSourceName",
+ "type": [
+ "string",
+ "null"
+ ]
+ },
+ {
+ "name": "bulletinSourceType",
+ "type": [
+ "string",
+ "null"
+ ]
+ },
+ {
+ "name": "bulletinTimestamp",
+ "type": [
+ "string",
+ "null"
+ ],
+ "doc": "Format: yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+ },
+ {
+ "name": "bulletinFlowFileUuid",
+ "type": [
+ "string",
+ "null"
+ ]
+ }
+ ]
+}
+ Properties • Communications Timeout Specifies how long to wait to a response from the destination before deciding that an error has occurred and canceling the transaction Display Name Communications Timeout Description Specifies how long to wait to a response from the destination before deciding that an error has occurred and canceling the transaction API Name Communications Timeout Default Value 30 secs Expression Language Scope Not Supported Sensitive false Required true • Compress Events Indicates whether or not to compress the data being sent. Display Name Compress Events Description Indicates whether or not to compress the data being sent. API Name Compress Events Default Value true Allowable Values • true • false Expression Language Scope Not Supported Sensitive false Required true • Destination URL The URL of the destination NiFi instance or, if clustered, a comma-separated list of address in the format of http(s)://host:port/nifi. This destination URL will only be used to initiate the Site-to-Site connection. The data sent by this reporting task will be load-balanced on all the nodes of the destination (if clustered). Display Name Destination URL Description The URL of the destination NiFi instance or, if clustered, a comma-separated list of address in the format of http(s)://host:port/nifi. This destination URL will only be used to initiate the Site-to-Site connection. The data sent by this reporting task will be load-balanced on all the nodes of the destination (if clustered). API Name Destination URL Expression Language Scope Environment variables defined at JVM level and system properties Sensitive false Required true • Include Null Values Indicate if null values should be included in records. Default will be false Display Name Include Null Values Description Indicate if null values should be included in records. Default will be false API Name include-null-values Default Value false Allowable Values • true • false Expression Language Scope Not Supported Sensitive false Required true • Input Port Name The name of the Input Port to deliver data to. Display Name Input Port Name Description The name of the Input Port to deliver data to. API Name Input Port Name Expression Language Scope Environment variables defined at JVM level and system properties Sensitive false Required true • Instance URL The URL of this instance to use in the Content URI of each event. Display Name Instance URL Description The URL of this instance to use in the Content URI of each event. API Name Instance URL Default Value http://${hostname(true)}:8080/nifi Expression Language Scope Environment variables defined at JVM level and system properties Sensitive false Required true • Platform The value to use for the platform field in each event. Display Name Platform Description The value to use for the platform field in each event. API Name Platform Default Value nifi Expression Language Scope Environment variables defined at JVM level and system properties Sensitive false Required true • Proxy Configuration Service Specifies the Proxy Configuration Controller Service to proxy network requests. Display Name Proxy Configuration Service Description Specifies the Proxy Configuration Controller Service to proxy network requests. API Name proxy-configuration-service Service Interface org.apache.nifi.proxy.ProxyConfigurationService Service Implementations org.apache.nifi.proxy.StandardProxyConfigurationService Expression Language Scope Not Supported Sensitive false Required false Dependencies • Transport Protocol is set to any of [HTTP] • Record Writer Specifies the Controller Service to use for writing out the records. Display Name Record Writer Description Specifies the Controller Service to use for writing out the records. API Name record-writer Service Interface org.apache.nifi.serialization.RecordSetWriterFactory Service Implementations org.apache.nifi.avro.AvroRecordSetWriter org.apache.nifi.csv.CSVRecordSetWriter org.apache.nifi.text.FreeFormTextRecordSetWriter org.apache.nifi.json.JsonRecordSetWriter org.apache.nifi.lookup.RecordSetWriterLookup org.apache.nifi.record.script.ScriptedRecordSetWriter org.apache.nifi.xml.XMLRecordSetWriter Expression Language Scope Not Supported Sensitive false Required false • Transport Protocol Specifies which transport protocol to use for Site-to-Site communication. Display Name Transport Protocol Description Specifies which transport protocol to use for Site-to-Site communication. API Name s2s-transport-protocol Default Value RAW Allowable Values • RAW • HTTP Expression Language Scope Not Supported Sensitive false Required true • SSL Context Service The SSL Context Service to use when communicating with the destination. If not specified, communications will not be secure. Display Name SSL Context Service Description The SSL Context Service to use when communicating with the destination. If not specified, communications will not be secure. API Name SSL Context Service Service Interface org.apache.nifi.ssl.SSLContextProvider Service Implementations org.apache.nifi.ssl.PEMEncodedSSLContextProvider org.apache.nifi.ssl.StandardRestrictedSSLContextService org.apache.nifi.ssl.StandardSSLContextService Expression Language Scope Not Supported Sensitive false Required false Restrictions Required Permission | Explanation | 
+ export nifi details | Provides operator the ability to send sensitive details contained in bulletin events to any external system. |

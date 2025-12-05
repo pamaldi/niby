@@ -1,0 +1,29 @@
+Contact - Apache NiFi
+
+• Documentation • NiFi Version 2 Documentation • NiFi Version 1 Documentation • Guides • Security Reporting • Wiki • Development • Contributing • Issues • Source • Community • Contact • Powered By • Team • Projects • MiNiFi • Registry • Flow Design System • Apache • Events • License • Privacy • Sponsorship • Thanks Apache NiFi Contact Information
+
+ See the Apache Software Foundation Mailing List Tips for recommendations on how to interact with the community.
+
+ Slack
+
+ • Apache NiFi on Slack • New users can join the workspace using the invitation link Users Mailing List
+
+ List for getting help, asking questions, and reporting problems.
+
+ • Subscribe • Unsubscribe • Send • Archives Developers Mailing List
+
+ List for committers and contributors to discuss features, bugs, ideas, and releases.
+
+ • Subscribe • Unsubscribe • Send • Archives Commits Mailing List
+
+ List for receiving automated notification of source code changes.
+
+ • Subscribe • Unsubscribe • Archives Issues Mailing List
+
+ List for receiving automated notification of issues or comments from Jira or GitHub.
+
+ • Subscribe • Unsubscribe • Archives Security Mailing List
+
+ Private list for reporting potential security issues. See Apache NiFi Security Reporting for more details.
+
+ • Send

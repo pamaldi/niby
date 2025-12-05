@@ -1,0 +1,73 @@
+Download - Apache NiFi
+
+• Documentation • NiFi Version 2 Documentation • NiFi Version 1 Documentation • Guides • Security Reporting • Wiki • Development • Contributing • Issues • Source • Community • Contact • Powered By • Team • Projects • MiNiFi • Registry • Flow Design System • Apache • Events • License • Privacy • Sponsorship • Thanks Download
+
+ Previous releases are available in release archives. Archive downloads are subject to rate limiting.
+
+ OpenPGP Project Keys can be used for download verification.
+
+ • NiFi • MiNiFi • Registry • FDS • Apache NiFi
+
+ NiFi 2.5.0 Release Notes
+
+ • Released: 2025-07-22 • Migration Guidance Sources
+
+ Source 2.5.0 OpenPGP SHA-512 Binaries
+
+ 
+
+ NiFi Standard 2.5.0 OpenPGP SHA-512 NiFi Stateless 2.5.0 OpenPGP SHA-512 NiFi Toolkit 2.5.0 OpenPGP SHA-512 
+
+ NiFi 1.28.1 Release Notes
+
+ Apache NiFi 1.28 is the last minor release of the version 1 series. The project management committee may consider critical bug fixes for essential framework features on an exceptional basis. Critical bug fixes do not include upgrading project dependencies. Multiple fundamental dependencies in NiFi 1 cannot be upgraded. These dependencies include Jetty 9.4, Spring Framework 5.3, and AngularJS 1.8. The Apache NiFi Team strongly encourages users to upgrade to NiFi 2.
+
+ • End of Support: 2024-12-08 Source 1.28.1 OpenPGP SHA-512 NiFi Standard 1.28.1 OpenPGP SHA-512 • Apache NiFi MiNiFi
+
+ MiNiFi Java 2.5.0 Release Notes
+
+ • Released: 2025-07-22 Sources
+
+ Source 2.5.0 OpenPGP SHA-512 Binaries
+
+ 
+
+ MiNiFi 2.5.0 OpenPGP SHA-512 MiNiFi Toolkit 2.5.0 OpenPGP SHA-512 
+
+ MiNiFi C++ 0.99.1 Release Notes
+
+ • Released: 2025-02-05 Sources
+
+ C++ Source 0.99.1 OpenPGP SHA-512 Binaries
+
+ 
+
+ MiNiFi C++ Linux x86_64 0.99.1 OpenPGP SHA-512 MiNiFi C++ Linux arm64 0.99.1 OpenPGP SHA-512 MiNiFi C++ Windows x86_64 0.99.1 OpenPGP SHA-512 
+
+ MiNiFi C++ 0.99.0 Release Notes
+
+ • Released: 2024-05-17 Sources
+
+ Source 0.99.0 OpenPGP SHA-512 Binaries
+
+ 
+
+ MiNiFi C++ Linux binaries 0.99.0 OpenPGP SHA-512 MiNiFi C++ Windows installer 0.99.0 OpenPGP SHA-512 
+
+ • Apache NiFi Registry
+
+ Registry 2.5.0 Release Notes
+
+ • Released: 2025-07-22 Sources
+
+ Source 2.5.0 OpenPGP SHA-512 Binaries
+
+ NiFi Registry 2.5.0 OpenPGP SHA-512 Registry 1.28.1 Release Notes
+
+ • End of Support: 2024-12-08 NiFi Registry 1.28.1 OpenPGP SHA-512 • Apache NiFi Flow Design System
+
+ FDS 0.3.0 Release Notes
+
+ Source 0.3.0 OpenPGP SHA-512 FDS 0.2.0 Release Notes
+
+ Source 0.2.0 OpenPGP SHA-512

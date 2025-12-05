@@ -15,6 +15,7 @@
         <module>niby-ui</module>
         <module>niby-parent</module>
         <module>niby-rag</module>
+        <module>niby-shared</module>
     </modules>
 
     <build>
