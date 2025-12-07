@@ -1,0 +1,119 @@
+Our Sponsors | Apache Software Foundation
+
+Our Sponsors¶
+
+ The Apache Software Foundation could not exist without the continued generous support from the community. We would like to take this opportunity to thank our sponsors. If you are interested in sponsoring the ASF, please read our sponsorship page.
+
+ Foundation Sponsors¶
+
+ Platinum Sponsors:¶
+
+ • Apple
+
+ • Amazon Web Services
+
+ • Meta
+
+ • GEICO
+
+ • Google
+
+ • Huawei
+
+ • Microsoft
+
+ • Pineapple Fund
+
+ • Snowflake
+
+ • VISA
+
+ • Yahoo!
+
+ Gold Sponsors:¶
+
+ • Aiven
+
+ • Anonymous
+
+ • Baidu
+
+ • Bloomberg
+
+ • ByteDance
+
+ • Cloudera
+
+ • Confluent
+
+ • IBM
+
+ • Union Investment
+
+ • Workday
+
+ Silver Sponsors:¶
+
+ • American Express
+
+ • Capital One
+
+ • Indeed
+
+ • LY Corporation
+
+ • Red Hat, Inc.
+
+ Bronze Sponsors:¶
+
+ • Canva Engineering • CarGurus • Curity • GridGain • Grist Labs • Libriciel • RX-M • RenaissanceRe • Sentry Targeted Sponsors¶
+
+ ASF Targeted Sponsors provide the Foundation with contributions for specific activities or programs, such as donating cloud services, funding a project hackathon, providing legal services, offering a community member benefit, underwriting expenses for our flagship event, or something entirely new. It's the Apache way of recognizing the sponsors that we rely on every day outside of and often in addition to funding our general operations.
+
+ Targeted Platinum Sponsors:¶
+
+ • Amazon Web Services
+
+ • CloudBees
+
+ • DLA Piper
+
+ • Gradle
+
+ • JFrog
+
+ • Microsoft
+
+ • Yahoo!
+
+ • Sonatype
+
+ • JetBrains
+
+ • Fastly
+
+ • GitHub
+
+ Targeted Gold Sponsors:¶
+
+ • Atlassian
+
+ • Datadog
+
+ • Docker
+
+ • PhoenixNAP
+
+ • DinoSource
+
+ Targeted Silver Sponsors:¶
+
+ • NetApp Instaclustr
+
+ • SourceForge
+
+ • Xiaomi
+
+ Targeted Bronze Sponsors:¶
+
+ • Bloomberg • Education Networks of America • Google • Hopsie • No-IP • PagerDuty • Peregrine Computer Consultants Corporation • Sonic.net • SURFnet • Virtru Sorry, your browser settings do not support JavaScript!

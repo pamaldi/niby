@@ -1,0 +1,23 @@
+MiNiFi - Apache NiFi
+
+• Documentation • NiFi Version 2 Documentation • NiFi Version 1 Documentation • Guides • Security Reporting • Wiki • Development • Contributing • Issues • Source • Community • Contact • Powered By • Team • Projects • MiNiFi • Registry • Flow Design System • Apache • Events • License • Privacy • Sponsorship • Thanks Features
+
+ MiNiFi - a subproject of Apache NiFi - is a complementary data collection approach that supplements the core tenets of NiFi in dataflow management, focusing on the collection of data at the source of its creation.
+
+ Apache NiFi MiNiFi provides the following features:
+
+ • Small size and low resource consumption • Central management of agents • Generation of data provenance with full chain of custody of information • Integration with NiFi for follow-on dataflow management MiNiFi functions in the role of an agent acting immediately at, or directly adjacent to, source sensors, systems, or servers.
+
+ Form Factors
+
+ MiNiFi is available as either a native binary for Linux/Windows/macOS or as platform-independent Java distribution.
+
+ The native version is a reimplementation of NiFi core concepts in C++, supporting a subset of standard processors while limiting the impact on system resources.
+
+ The Java version supports most standard NiFi components, enabling flexible flow deployments without the runtime user interface that standard NiFi provides.
+
+ MiNiFi C++ Resources
+
+ • Source • Issues • Installation • Configuration • Processors • Examples MiNiFi Java Resources
+
+ • Source • Issues • Quick Start Guide • Administrator’s Guide • Wiki

@@ -1,0 +1,771 @@
+<html lang="it-IT">
+<head>
+                            <title>Contributor Guide - Apache NiFi - Apache Software Foundation</title>
+    
+        
+
+                        
+    
+                        
+    
+
+                
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=EDGE,chrome=IE7">
+<meta charset="UTF-8">
+<meta id="confluence-context-path" name="confluence-context-path" content="/confluence">
+<meta id="confluence-base-url" name="confluence-base-url" content="https://cwiki.apache.org/confluence">
+
+    <meta id="atlassian-token" name="atlassian-token" content="96f6045d1a25b3334d5bf0d2a29993803253aa40">
+
+
+<meta id="confluence-space-key" name="confluence-space-key" content="NIFI">
+<script type="text/javascript">
+        var contextPath = '/confluence';
+</script>
+
+    
+
+    <meta name="confluence-request-time" content="1753475789127">
+        
+    
+        
+            <meta name="ajs-use-keyboard-shortcuts" content="true">
+            <meta name="ajs-com.comalatech.checklists-stats-friendApps" content="sr-rep"><meta name="ajs-com.comalatech.checklists-stats-comalatechToken" content="crFRfJqLKI0iXV4jmMZQ6dy0c0g7AYBbqvRPE16ikd1DmpVaJYJGxzYnLNreT9x+xXQfmuv/uJbu/oM0fmN8IitNjXPVh8H9eYF5sYMEWoOYz+DuPkQx4/gD+nZZfSouQRl7J4DPHbyLd5g6UPEnQcUz/16ckQtc3+QiYDHvHuuv0l4WTxIFmiYyH8ha/IIT0IBMJYF2Ljm+VzRdXfF+Wxi5R43ebumCC1atFqHqMtYEP58rjievxp0v50sbgdlhVeluuSYnc21b4+7gGDYcKBRTvA3aHrQFbswOTXK41XzAfQUFVSref9gzn4iYEzZ77yUpIiO3WqDetjR0PWvk0g=="><meta name="ajs-com.comalatech.checklists-stats-pluginLicenseType" content="PAID"><meta name="ajs-com.comalatech.checklists-stats-licenseType" content="OPEN_SOURCE"><meta name="ajs-com.comalatech.checklists-stats-checklistExcerptMacroTotal" content="0"><meta name="ajs-com.comalatech.checklists-stats-timestamp" content="1753408800032"><meta name="ajs-com.comalatech.checklists-stats-checklistAttributeMacroTotal" content="0"><meta name="ajs-com.comalatech.checklists-dev-mode" content="false"><meta name="ajs-com.comalatech.checklists-trace" content="false"><meta name="ajs-com.comalatech.checklists-stats-checklistLogMacroTotal" content="0"><meta name="ajs-com.comalatech.checklists-stats-checklistWikiinputMacroTotal" content="0"><meta name="ajs-com.comalatech.checklists-stats-checklistLabelMacroTotal" content="0"><meta name="ajs-com.comalatech.checklists-stats-licenseSize" content="10000"><meta name="ajs-com.comalatech.checklists-stats-checklistWikiMacroTotal" content="0"><meta name="ajs-com.comalatech.checklists-stats-instanceId" content="782e50b8e4252e986d61834beb7b94ab"><meta name="ajs-com.comalatech.checklists-stats-checklistMetadataMacroTotal" content="0"><meta name="ajs-com.comalatech.checklists-stats-checklistPagelinkMacroTotal" content="0"><meta name="ajs-com.comalatech.checklists-stats-checklistSelectMacroTotal" content="0"><meta name="ajs-com.comalatech.checklists-stats-checklistMacroTotal" content="1"><meta name="ajs-com.comalatech.checklists-stats-totalSpaces" content="449"><meta name="ajs-com.comalatech.checklists-stats-app" content="chks"><meta name="ajs-com.comalatech.checklists-stats-checklistInputMacroTotal" content="0"><meta name="ajs-com.comalatech.checklists-stats-checklistIncludeMacroTotal" content="0"><meta name="ajs-com.comalatech.checklists-stats-hostVersion" content="7.19.30"><meta name="ajs-com.comalatech.checklists-stats-totalVersions" content="1114255"><meta name="ajs-com.comalatech.checklists-stats-totalPages" content="254250"><meta name="ajs-com.comalatech.checklists-stats-version" content="2.6.13"><meta name="ajs-com.comalatech.checklists-stats-pluginLicenseSize" content="0">
+            <meta name="ajs-is-confluence-admin" content="false">
+            <meta name="ajs-connection-timeout" content="10000">
+            <script type="text/x-template" title="gliffy-webpanel-footer">
+        <div class="gliffy-webpanel-footer"><span>This Confluence installation runs a Free Gliffy License - Evaluate the <a href="http://www.gliffy.com/products/confluence-plugin/">Gliffy Confluence Plugin</a> for your Wiki!</span></div>
+</script>
+
+
+            <style>.ia-fixed-sidebar, .ia-splitter-left {width: 285px;}.theme-default .ia-splitter #main {margin-left: 285px;}.ia-fixed-sidebar {visibility: hidden;}</style>
+            <meta name="ajs-discovered-plugin-features" content="$discoveredList">
+            <meta name="ajs-keyboardshortcut-hash" content="6487f38d63da19f03cb56e4f1ea1c48b">
+            
+    
+    
+            <meta name="ajs-page-title" content="Contributor Guide">
+            <meta name="ajs-latest-published-page-title" content="Contributor Guide">
+            <meta name="ajs-space-name" content="Apache NiFi">
+            <meta name="ajs-page-id" content="57904904">
+            <meta name="ajs-latest-page-id" content="57904904">
+            <meta name="ajs-content-type" content="page">
+            <meta name="ajs-parent-page-title" content="For Developers">
+            <meta name="ajs-parent-page-id" content="57904840">
+            <meta name="ajs-space-key" content="NIFI">
+            <meta name="ajs-max-number-editors" content="12">
+            <meta name="ajs-macro-placeholder-timeout" content="5000">
+            <meta name="ajs-http-connection-timeout" content="30000">
+            <meta name="ajs-http-socket-timeout" content="10000">
+            <meta name="ajs-jira-metadata-count" content="0">
+            <meta name="ajs-from-page-title" content="">
+            <meta name="ajs-can-remove-page" content="false">
+            <meta name="ajs-can-remove-page-hierarchy" content="false">
+            <meta name="ajs-browse-page-tree-mode" content="view">
+            <meta name="ajs-shared-drafts" content="true">
+            <meta name="ajs-context-path" content="/confluence">
+            <meta name="ajs-base-url" content="https://cwiki.apache.org/confluence">
+            <meta name="ajs-version-number" content="7.19.30">
+            <meta name="ajs-build-number" content="8804">
+            <meta name="ajs-remote-user" content="">
+            <meta name="ajs-remote-user-key" content="">
+            <meta name="ajs-remote-user-has-licensed-access" content="false">
+            <meta name="ajs-remote-user-has-browse-users-permission" content="false">
+            <meta name="ajs-current-user-fullname" content="">
+            <meta name="ajs-current-user-avatar-url" content="">
+            <meta name="ajs-current-user-avatar-uri-reference" content="/confluence/images/icons/profilepics/anonymous.svg">
+            <meta name="ajs-static-resource-url-prefix" content="/confluence/s/-e27bm1/8804/z1btw/_">
+            <meta name="ajs-global-settings-attachment-max-size" content="20971520">
+            <meta name="ajs-global-settings-quick-search-enabled" content="true">
+            <meta name="ajs-user-locale" content="it_IT">
+            <meta name="ajs-user-timezone-offset" content="0">
+            <meta name="ajs-enabled-dark-features" content="site-wide.shared-drafts,site-wide.synchrony,migration-assistant.enable.assess-l1-cloud-tooling.feature,clc.quick.create,confluence.view.edit.transition,cql.search.screen,confluence-inline-comments-resolved,frontend.editor.v4,http.session.registrar,nps.survey.inline.dialog,confluence.efi.onboarding.new.templates,frontend.editor.v4.compatibility,atlassian.cdn.static.assets,pdf-preview,previews.sharing,previews.versions,file-annotations,confluence.efi.onboarding.rich.space.content,collaborative-audit-log,confluence.reindex.improvements,previews.conversion-service,editor.ajax.save,read.only.mode,graphql,previews.trigger-all-file-types,attachment.extracted.text.extractor,lucene.caching.filter,confluence.table.resizable,notification.batch,previews.sharing.pushstate,confluence-inline-comments-rich-editor,tc.tacca.dacca,site-wide.synchrony.opt-in,atlassian.webresource.twophase.js.i18n.disabled,confluence.denormalisedpermissions,file-annotations.likes,gatekeeper-ui-v2,v2.content.name.searcher,mobile.supported.version,confluence.editor.tinymce.tables,pulp,confluence-inline-comments,confluence-inline-comments-dangling-comment,quick-reload-inline-comments-flags,confluence.retention.rules">
+            <meta name="ajs-atl-token" content="96f6045d1a25b3334d5bf0d2a29993803253aa40">
+            <meta name="ajs-confluence-flavour" content="VANILLA">
+            <meta name="ajs-user-date-pattern" content="d-MMM-yyyy">
+            <meta name="ajs-access-mode" content="READ_WRITE">
+            <meta name="ajs-render-mode" content="READ_WRITE">
+            <meta name="ajs-date.format" content="MMM dd, yyyy">
+    
+    <link rel="shortcut icon" href="/confluence/s/-e27bm1/8804/z1btw/1/_/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/confluence/s/-e27bm1/8804/z1btw/1/_/favicon.ico">
+
+<link rel="search" type="application/opensearchdescription+xml" href="/confluence/opensearch/osd.action" title="Apache Software Foundation">
+    
+                    
+            <meta name="ajs-create-issue-metadata-show-discovery" content="false">
+            
+
+    <script>
+window.WRM=window.WRM||{};window.WRM._unparsedData=window.WRM._unparsedData||{};window.WRM._unparsedErrors=window.WRM._unparsedErrors||{};
+WRM._unparsedData["com.atlassian.applinks.applinks-plugin:applinks-common-exported.entity-types"]="{\u0022singular\u0022:{\u0022refapp.charlie\u0022:\u0022Charlie\u0022,\u0022fecru.project\u0022:\u0022Progetto Crucible\u0022,\u0022fecru.repository\u0022:\u0022Repository FishEye\u0022,\u0022stash.project\u0022:\u0022Progetto Stash\u0022,\u0022generic.entity\u0022:\u0022Progetto generico\u0022,\u0022confluence.space\u0022:\u0022Spazio Confluence\u0022,\u0022bamboo.project\u0022:\u0022Progetto Bamboo\u0022,\u0022jira.project\u0022:\u0022Progetto Jira\u0022},\u0022plural\u0022:{\u0022refapp.charlie\u0022:\u0022Charlie\u0022,\u0022fecru.project\u0022:\u0022Progetti Crucible\u0022,\u0022fecru.repository\u0022:\u0022Repository FishEye\u0022,\u0022stash.project\u0022:\u0022Progetti Stash\u0022,\u0022generic.entity\u0022:\u0022Progetti generici\u0022,\u0022confluence.space\u0022:\u0022Spazi Confluence\u0022,\u0022bamboo.project\u0022:\u0022Progetti Bamboo\u0022,\u0022jira.project\u0022:\u0022Progetti Jira\u0022}}";
+WRM._unparsedData["com.atlassian.analytics.analytics-client:programmatic-analytics-init.programmatic-analytics-data-provider"]="false";
+WRM._unparsedData["com.atlassian.confluence.plugins.confluence-license-banner:confluence-license-banner-resources.license-details"]="{\u0022daysBeforeLicenseExpiry\u0022:0,\u0022daysBeforeMaintenanceExpiry\u0022:0,\u0022showLicenseExpiryBanner\u0022:false,\u0022showMaintenanceExpiryBanner\u0022:false,\u0022renewUrl\u0022:null,\u0022salesUrl\u0022:null}";
+WRM._unparsedData["com.atlassian.plugins.atlassian-plugins-webresource-plugin:context-path.context-path"]="\u0022/confluence\u0022";
+WRM._unparsedData["com.atlassian.analytics.analytics-client:policy-update-init.policy-update-data-provider"]="false";
+WRM._unparsedData["com.atlassian.applinks.applinks-plugin:applinks-common-exported.authentication-types"]="{\u0022com.atlassian.applinks.api.auth.types.BasicAuthenticationProvider\u0022:\u0022Accesso di base\u0022,\u0022com.atlassian.applinks.api.auth.types.TrustedAppsAuthenticationProvider\u0022:\u0022Applicazioni affidabili\u0022,\u0022com.atlassian.applinks.api.auth.types.CorsAuthenticationProvider\u0022:\u0022CORS\u0022,\u0022com.atlassian.applinks.api.auth.types.OAuthAuthenticationProvider\u0022:\u0022OAuth\u0022,\u0022com.atlassian.applinks.api.auth.types.TwoLeggedOAuthAuthenticationProvider\u0022:\u0022OAuth\u0022,\u0022com.atlassian.applinks.api.auth.types.TwoLeggedOAuthWithImpersonationAuthenticationProvider\u0022:\u0022OAuth\u0022}";
+WRM._unparsedData["com.atlassian.confluence.plugins.confluence-search-ui-plugin:confluence-search-ui-plugin-resources.i18n-data"]="{\u0022search.ui.recent.link.text\u0022:\u0022Visualizza altri contenuti visitati di recente\u0022,\u0022search.ui.search.results.empty\u0022:\u0022Non \u00e8 stato trovato nulla che corrisponda a \u201c{0}\u201d.\u0022,\u0022search.ui.filter.clear.selected\u0022:\u0022Cancella le voci selezionate\u0022,\u0022search.ui.content.name.search.items.panel.load.all.top.items.button.text\u0022:\u0022Mostra pi\u00f9 risultati per le app...\u0022,\u0022search.ui.filter.contributor.button.text\u0022:\u0022Collaboratore\u0022,\u0022search.ui.filter.space.current.label\u0022:\u0022ATTUALE\u0022,\u0022search.ui.clear.input.button.text\u0022:\u0022Cancella testo\u0022,\u0022search.ui.search.results.clear.button\u0022:\u0022cancella i filtri.\u0022,\u0022help.search.ui.link.title\u0022:\u0022Suggerimenti di ricerca\u0022,\u0022search.ui.container.close.text\u0022:\u0022Chiudi\u0022,\u0022search.ui.filter.date.month.text\u0022:\u0022Ultimo mese\u0022,\u0022search.ui.infinite.scroll.button.text\u0022:\u0022Pi\u00f9 risultati\u0022,\u0022search.ui.filter.date.button.text\u0022:\u0022Data\u0022,\u0022search.ui.filter.date.week.text\u0022:\u0022Ultima settimana\u0022,\u0022search.ui.result.subtitle.calendar\u0022:\u0022Team calendar\u0022,\u0022search.ui.filter.date.heading\u0022:\u0022Ultima modifica entro\u0022,\u0022search.ui.filter.space.input.label\u0022:\u0022Trova spazi...\u0022,\u0022search.ui.generic.error\u0022:\u0022Si \u00e8 verificato un errore. Aggiorna la pagina o contatta il tuo amministratore se il problema persiste.\u0022,\u0022search.ui.recent.spaces\u0022:\u0022Spazi recenti\u0022,\u0022search.ui.result.subtitle.space\u0022:\u0022Spazio\u0022,\u0022search.ui.filter.space.category.input.label\u0022:\u0022Trova categorie spazi...\u0022,\u0022search.ui.filter.space.archive.label\u0022:\u0022Ricerca negli spazi archiviati\u0022,\u0022search.ui.filter.label\u0022:\u0022filtro\u0022,\u0022search.ui.filter.date.all.text\u0022:\u0022In qualsiasi momento\u0022,\u0022search.ui.filter.date.hour.text\u0022:\u0022Ultimo giorno\u0022,\u0022search.ui.filters.heading\u0022:\u0022Filtra per\u0022,\u0022search.ui.filter.label.input.label\u0022:\u0022Trova etichette...\u0022,\u0022search.ui.recent.items.anonymous\u0022:\u0022Comincia l\u2019esplorazione. I tuoi risultati di ricerca compariranno qui.\u0022,\u0022search.ui.input.label\u0022:\u0022Cerca\u0022,\u0022search.ui.input.aria.label\u0022:\u0022Cerca: mentre digiti, i risultati vengono visualizzati in basso.\u0022,\u0022search.ui.search.result\u0022:\u0022{0,choice,1#{0} risultato di ricerca|1\u003c{0} risultati di ricerca}\u0022,\u0022search.ui.filter.label.button.text\u0022:\u0022Etichetta\u0022,\u0022search.ui.container.clear.ariaLabel\u0022:\u0022Cancella\u0022,\u0022search.ui.input.alert\u0022:\u0022Premi invio per cominciare la ricerca\u0022,\u0022search.ui.filter.no.result.text\u0022:\u0022Impossibile trovare risultati che corrispondano alla tua ricerca\u0022,\u0022search.ui.result.subtitle.user\u0022:\u0022Profilo utente\u0022,\u0022search.ui.filter.contributor.input.label\u0022:\u0022Trova persone...\u0022,\u0022search.ui.filter.content.type.button.text\u0022:\u0022Tipo\u0022,\u0022search.ui.filter.date.year.text\u0022:\u0022Ultimo anno\u0022,\u0022search.ui.advanced.search.link.text\u0022:\u0022Ricerca avanzata\u0022,\u0022search.ui.filter.space.button.text\u0022:\u0022Spazio\u0022,\u0022search.ui.search.results.clear.line2\u0022:\u0022Prova un termine di ricerca diverso o\u0022,\u0022search.ui.filter.space.category.button.text\u0022:\u0022Categoria spazio\u0022,\u0022search.ui.search.results.clear.line1\u0022:\u0022Impossibile trovare risultati che corrispondano alla tua ricerca.\u0022,\u0022search.ui.content.name.search.items.panel.load.all.top.items.admin.button.text\u0022:\u0022Mostra pi\u00f9 risultati per impostazioni e app\u0022,\u0022search.ui.recent.pages\u0022:\u0022Visitate di recente\u0022,\u0022search.ui.search.result.anonymous\u0022:\u0022{0,choice,1#{0} risultato di ricerca|1\u003c{0} risultati di ricerca}. Hai un account? {1}Accedi{2} per ampliare la ricerca.\u0022,\u0022search.ui.recent.items.empty\u0022:\u0022Comincia l\u2019esplorazione. Le pagine e gli spazi che hai visitato di recente compariranno qui.\u0022,\u0022search.ui.filter.space.init.heading\u0022:\u0022spazi recenti\u0022}";
+WRM._unparsedData["com.atlassian.applinks.applinks-plugin:applinks-common-exported.applinks-types"]="{\u0022crowd\u0022:\u0022Crowd\u0022,\u0022confluence\u0022:\u0022Confluence\u0022,\u0022fecru\u0022:\u0022Fisheye / Crucible\u0022,\u0022stash\u0022:\u0022Stash\u0022,\u0022jira\u0022:\u0022Jira\u0022,\u0022refapp\u0022:\u0022Applicazione di riferimento\u0022,\u0022bamboo\u0022:\u0022Bamboo\u0022,\u0022generic\u0022:\u0022Applicazione generica\u0022}";
+WRM._unparsedData["com.atlassian.confluence.plugins.synchrony-interop:synchrony-status-banner-loader.synchrony-status"]="false";
+WRM._unparsedData["com.atlassian.applinks.applinks-plugin:applinks-common-exported.applinks-help-paths"]="{\u0022entries\u0022:{\u0022applinks.docs.root\u0022:\u0022https://confluence.atlassian.com/display/APPLINKS-082/\u0022,\u0022applinks.docs.diagnostics.troubleshoot.sslunmatched\u0022:\u0022SSL+and+application+link+troubleshooting+guide\u0022,\u0022applinks.docs.diagnostics.troubleshoot.oauthsignatureinvalid\u0022:\u0022OAuth+troubleshooting+guide\u0022,\u0022applinks.docs.diagnostics.troubleshoot.oauthtimestamprefused\u0022:\u0022OAuth+troubleshooting+guide\u0022,\u0022applinks.docs.delete.entity.link\u0022:\u0022Create+links+between+projects\u0022,\u0022applinks.docs.adding.application.link\u0022:\u0022Link+Atlassian+applications+to+work+together\u0022,\u0022applinks.docs.administration.guide\u0022:\u0022Application+Links+Documentation\u0022,\u0022applinks.docs.oauth.security\u0022:\u0022OAuth+security+for+application+links\u0022,\u0022applinks.docs.troubleshoot.application.links\u0022:\u0022Troubleshoot+application+links\u0022,\u0022applinks.docs.diagnostics.troubleshoot.unknownerror\u0022:\u0022Network+and+connectivity+troubleshooting+guide\u0022,\u0022applinks.docs.configuring.auth.trusted.apps\u0022:\u0022Configuring+Trusted+Applications+authentication+for+an+application+link\u0022,\u0022applinks.docs.diagnostics.troubleshoot.authlevelunsupported\u0022:\u0022OAuth+troubleshooting+guide\u0022,\u0022applinks.docs.diagnostics.troubleshoot.ssluntrusted\u0022:\u0022SSL+and+application+link+troubleshooting+guide\u0022,\u0022applinks.docs.diagnostics.troubleshoot.unknownhost\u0022:\u0022Network+and+connectivity+troubleshooting+guide\u0022,\u0022applinks.docs.delete.application.link\u0022:\u0022Link+Atlassian+applications+to+work+together\u0022,\u0022applinks.docs.adding.project.link\u0022:\u0022Configuring+Project+links+across+Applications\u0022,\u0022applinks.docs.link.applications\u0022:\u0022Link+Atlassian+applications+to+work+together\u0022,\u0022applinks.docs.diagnostics.troubleshoot.oauthproblem\u0022:\u0022OAuth+troubleshooting+guide\u0022,\u0022applinks.docs.diagnostics.troubleshoot.migration\u0022:\u0022Update+application+links+to+use+OAuth\u0022,\u0022applinks.docs.relocate.application.link\u0022:\u0022Link+Atlassian+applications+to+work+together\u0022,\u0022applinks.docs.administering.entity.links\u0022:\u0022Create+links+between+projects\u0022,\u0022applinks.docs.upgrade.application.link\u0022:\u0022OAuth+security+for+application+links\u0022,\u0022applinks.docs.diagnostics.troubleshoot.connectionrefused\u0022:\u0022Network+and+connectivity+troubleshooting+guide\u0022,\u0022applinks.docs.configuring.auth.oauth\u0022:\u0022OAuth+security+for+application+links\u0022,\u0022applinks.docs.insufficient.remote.permission\u0022:\u0022OAuth+security+for+application+links\u0022,\u0022applinks.docs.configuring.application.link.auth\u0022:\u0022OAuth+security+for+application+links\u0022,\u0022applinks.docs.diagnostics\u0022:\u0022Application+links+diagnostics\u0022,\u0022applinks.docs.configured.authentication.types\u0022:\u0022OAuth+security+for+application+links\u0022,\u0022applinks.docs.adding.entity.link\u0022:\u0022Create+links+between+projects\u0022,\u0022applinks.docs.diagnostics.troubleshoot.unexpectedresponse\u0022:\u0022Network+and+connectivity+troubleshooting+guide\u0022,\u0022applinks.docs.configuring.auth.basic\u0022:\u0022Configuring+Basic+HTTP+Authentication+for+an+Application+Link\u0022,\u0022applinks.docs.diagnostics.troubleshoot.authlevelmismatch\u0022:\u0022OAuth+troubleshooting+guide\u0022}}";
+WRM._unparsedData["com.atlassian.confluence.plugins.confluence-feature-discovery-plugin:confluence-feature-discovery-plugin-resources.test-mode"]="false";
+if(window.WRM._dataArrived)window.WRM._dataArrived();</script>
+<link rel="stylesheet" href="../styles/batch.css" data-wrm-key="_super,-com.atlassian.plugins.atlassian-plugins-webresource-rest:data-collector-perf-observer" data-wrm-batch-type="context" media="all">
+<link rel="stylesheet" href="../styles/batch.css" data-wrm-key="atl.confluence.plugins.pagetree-desktop,main,viewcontent,atl.general,page,atl.comments,-_super" data-wrm-batch-type="context" media="all">
+<link rel="stylesheet" href="../styles/com.stiltsoft.confluence.handy.macros:handy-header-url-resources.css" data-wrm-key="com.stiltsoft.confluence.handy.macros:handy-header-url-resources" data-wrm-batch-type="resource" media="all">
+<script data-wrm-key="com.atlassian.plugins.atlassian-plugins-webresource-rest:data-collector-perf-observer" data-wrm-batch-type="resource" data-initially-rendered="">
+!function(){"use strict";if("PerformanceObserver"in window){const e=[];window.__observedResources=e;const r=e=>"script"===e?"script":"css";new PerformanceObserver((n=>{n.getEntries().filter((({initiatorType:e,name:r})=>{const n="script"===e||((e,r)=>"link"===e&&"css"===new URL(r).pathname.split(".").pop())(e,r),i=new URL(location.href).origin===new URL(r).origin;return n&&i})).forEach((({name:n,transferSize:i,encodedBodySize:s,initiatorType:o})=>{e.push([i,s,n,r(o)])}))})).observe({type:"resource"})}}();
+
+</script>
+<script src="../scripts/batch.js" data-wrm-key="_super,-com.atlassian.plugins.atlassian-plugins-webresource-rest:data-collector-perf-observer" data-wrm-batch-type="context" data-initially-rendered=""></script>
+<script src="../scripts/batch.js" data-wrm-key="atl.confluence.plugins.pagetree-desktop,main,viewcontent,atl.general,page,atl.comments,-_super" data-wrm-batch-type="context" data-initially-rendered=""></script>
+<script src="../scripts/com.stiltsoft.confluence.handy.macros:handy-header-url-resources.js" data-wrm-key="com.stiltsoft.confluence.handy.macros:handy-header-url-resources" data-wrm-batch-type="resource" data-initially-rendered=""></script>
+<script src="../scripts/com.comalatech.checklists:analyticsResources.js" data-wrm-key="com.comalatech.checklists:analyticsResources" data-wrm-batch-type="resource" data-initially-rendered=""></script>
+<script type="module">WRM.requireLazily(["wr!com.atlassian.plugins.atlassian-plugins-webresource-rest:data-collector-async"])</script>
+    
+
+        
+    
+
+        
+        <meta name="ajs-site-title" content="Apache Software Foundation">
+            
+    
+
+    
+                <link rel="canonical" href="https://cwiki.apache.org/confluence/display/NIFI/Contributor+Guide">
+        <link rel="shortlink" href="https://cwiki.apache.org/confluence/x/CI9zAw">
+    <meta name="wikilink" content="[NIFI:Contributor Guide]">
+    <meta name="page-version" content="53">
+    <meta name="ajs-page-version" content="53">
+
+</head>
+
+    
+<body id="com-atlassian-confluence" class="theme-default aui-layout aui-theme-default">
+
+        
+            <div id="stp-licenseStatus-banner"></div>
+    <div id="page">
+<div id="full-height-container">
+    <div id="header-precursor">
+        <div class="cell">
+            
+                            </div>
+    </div>
+        
+
+
+
+
+
+<header id="header" role="banner">
+            <a class="aui-skip-link" href="../html/login.action.html">Accedi</a>
+            <a class="aui-skip-link" href="#nav-sidebar">Passa alla barra laterale</a>
+        <a class="aui-skip-link" href="#main">Passa al contenuto principale</a>
+    <nav class="aui-header aui-dropdown2-trigger-group" aria-label="Sito"><div class="aui-header-inner"><div class="aui-header-before"><button class="aui-dropdown2-trigger app-switcher-trigger aui-dropdown2-trigger-arrowless" aria-controls="app-switcher" aria-haspopup="true" role="button" data-aui-trigger="" href="#app-switcher"><span class="aui-icon aui-icon-small aui-iconfont-appswitcher">Applicazioni collegate</span></button><div id="app-switcher" class="aui-dropdown2 aui-style-default" role="menu" hidden data-is-user-admin="false" data-is-switcher="true"><div class="app-switcher-loading">Caricamento in corso...</div></div></div><div class="aui-header-primary"><span id="logo" class="aui-header-logo aui-header-logo-confluence"><a href="../html/confluence.html" aria-label="Vai alla home page"><span class="aui-header-logo-device">Apache Software Foundation</span></a></span><ul class="aui-nav">
+                            <li>
+            
+        
+        
+<a id="space-directory-link" href="../html/view.action.html" class="aui-nav-imagelink" title="Spazi">
+            <span>Spazi</span>
+    </a>
+        </li>
+                                <li class="aui-buttons">
+            </li>
+</ul>
+</div><div class="aui-header-secondary"><ul class="aui-nav">
+                        <li>
+        <div id="search-ui" class="aui-quicksearch dont-default-focus header-quicksearch"><button id="quick-search-query-button" aria-label="Cerca" aria-haspopup="dialog" aria-controls="search_drawer"></button><input id="quick-search-query" aria-label="Cerca" placeholder="Cerca" type="text" aria-haspopup="dialog" aria-controls="search_drawer"><div id="quick-search-alert" role="alert">Premi invio per cominciare la ricerca</div><aui-spinner size="small"></aui-spinner></div>
+    </li>
+        <li>
+            
+        <a id="help-menu-link" class="aui-nav-link aui-dropdown2-trigger aui-dropdown2-trigger-arrowless" href="#" aria-haspopup="true" aria-owns="help-menu-link-content" title="Aiuto">
+        <span class="aui-icon aui-icon-small aui-iconfont-question-filled">Aiuto</span>
+    </a>
+    <nav id="help-menu-link-content" class="aui-dropdown2 aui-style-default">
+                    <div class="aui-dropdown2-section">
+                                <ul id="help-menu-link-leading" class="aui-list-truncate section-leading first">
+                                            <li>
+        
+            
+<a id="confluence-help-link" href="../html/docs-719.html" title="Visita la documentazione di Confluence" target="_blank">
+        Guida online
+</a>
+</li>
+                                            <li>
+    
+            
+<a id="keyboard-shortcuts-link" href="../html/confluence.html" title="Visualizza i tasti di scelta rapida disponibili">
+        Scorciatoie da tastiera
+</a>
+</li>
+                                            <li>
+    
+            
+<a id="feed-builder-link" href="../html/configurerssfeed.action.html" title="Crea il tuo feed RSS personalizzato.">
+        Generatore dei feed
+</a>
+</li>
+                                            <li>
+    
+            
+<a id="whats-new-menu-link" href="../html/help.whats.new.iframe.link.html" title="">
+        Ultime novità
+</a>
+</li>
+                                            <li>
+    
+            
+<a id="whats-new-menu-link" href="../html/Confluence+7.19+Release+Notes.html" title="">
+        Ultime novità
+</a>
+</li>
+                                            <li>
+    
+            
+<a id="gadget-directory-link" href="../html/confluence.html" class="user-item administration-link" title="Sfoglia i gadget forniti da Confluence">
+        Gadget disponibili
+</a>
+</li>
+                                            <li>
+    
+            
+<a id="confluence-about-link" href="../html/aboutconfluencepage.action.html" title="Ottieni maggiori informazioni su Confluence">
+        Informazioni su Confluence
+</a>
+</li>
+                                    </ul>
+            </div>
+            </nav>
+    
+    </li>
+        <li>
+                
+    
+    </li>
+        <li>
+            
+    </li>
+        <li>
+                                            </li><li>
+        
+            
+<a id="login-link" href="../html/login.action.html" class="user-item login-link" title="">
+        Accedi
+</a>
+</li>
+                        
+    
+    </ul>
+</div></div><!-- .aui-header-inner--></nav><!-- .aui-header -->
+    <br class="clear">
+</header>
+    
+
+    
+    	<div class="ia-splitter">
+    		<div class="ia-splitter-left">
+    			<div class="ia-fixed-sidebar" role="complementary" aria-label="barra" laterale="">
+                                            
+                            <div class="acs-side-bar ia-scrollable-section"><div class="acs-side-bar-space-info tipsy-enabled" data-configure-tooltip="Modifica i dettagli dello spazio"><div class="avatar"><div class="space-logo" data-key="NIFI" data-name="Apache NiFi" data-entity-type="confluence.space"><div class="avatar-img-container"><div class="avatar-img-wrapper"><a href="../html/Apache+NiFi.html" title="Apache NiFi"><img class="avatar-img" src="/confluence/download/attachments/57903571/NIFI" alt="Apache NiFi"></a></div></div></div></div><div class="space-information-container"><div class="name"><a href="../html/Apache+NiFi.html" title="Apache NiFi">Apache NiFi</a></div><div class="flyout-handle icon aui-icon aui-icon-small aui-iconfont-edit"></div></div></div><div class="acs-side-bar-content"><div class="acs-nav-wrapper"><div class="acs-nav" data-has-create-permission="false" data-quick-links-state="null" data-page-tree-state="null" data-nav-type="pages"><div class="acs-nav-sections"><div class="main-links-section"><ul class="acs-nav-list"><li class="acs-nav-item wiki current-item" aria-current="true" data-collector-key="spacebar-pages"><a class="acs-nav-item-link tipsy-enabled" href="../html/pages.action.html" data-collapsed-tooltip="Pagine"><span class="icon"></span><span class="acs-nav-item-label">Pagine</span></a></li><li class="acs-nav-item blog" data-collector-key="spacebar-blogs"><a class="acs-nav-item-link tipsy-enabled" href="../html/viewrecentblogposts.action.html" data-collapsed-tooltip="Blog"><span class="icon"></span><span class="acs-nav-item-label">Blog</span></a></li></ul></div><div class="quick-links-wrapper"><h2 class="ia-quick-links-header-title">Scorciatoie spazio</h2><div class="quick-links-section tipsy-enabled"><ul class="acs-nav-list"><li class="acs-nav-item pinned_page blueprint requirements"><a class="acs-nav-item-link tipsy-enabled" href="../html/Product+requirements.html" data-collapsed-tooltip="null"><span class="icon"></span><span class="acs-nav-item-label">Product requirements</span></a></li><li class="acs-nav-item pinned_page blueprint kb-how-to-article"><a class="acs-nav-item-link tipsy-enabled" href="../html/How-to+articles.html" data-collapsed-tooltip="null"><span class="icon"></span><span class="acs-nav-item-label">How-to articles</span></a></li></ul></div></div></div></div></div><div class="ia-secondary-container tipsy-enabled" data-tree-type="pages"><div class="ia-secondary-header"><h5 class="ia-secondary-header-title pages"><span class="label">Pagine figlie</span></h5></div><div class="ia-secondary-parent-content"><ul class="parent ia-secondary-header-title wiki"><li class="parent-item"><a class="parent-item-link" href="../html/For+Developers.html" title="For Developers"><span class="icon"></span><span class="label">For Developers</span></a></li></ul></div><div class="ia-secondary-current-content"><ul class="ia-secondary-currentPage-title wiki current-item"><li><span class="icon"></span><span class="label">Contributor Guide</span></li></ul></div><div class="ia-secondary-content"><div class="contextual-nav-child-pages"></div></div></div></div><div class="hidden"><a href="../html/pages.action.html" id="space-pages-link"></a><script type="text/x-template" title="logo-config-content"><h2>Dettagli spazio</h2><div class="personal-space-logo-hint">La tua foto del profilo è utilizzata come logo per il tuo spazio personale. <a href='/confluence/users/profile/editmyprofilepicture.action' target='_blank'>Cambia la foto del tuo profilo</a>.</div></script></div></div><div class="space-tools-section"><div id="space-tools-menu-additional-items" class="hidden"><div data-label="Scorri pagine" data-class="" data-href="/confluence/pages/reorderpages.action?key=NIFI">Scorri pagine</div></div><button id="space-tools-menu-trigger" class="aui-dropdown2-trigger aui-button aui-button-subtle tipsy-enabled aui-dropdown2-trigger-arrowless" aria-controls="space-tools-menu" aria-haspopup="true" role="button" data-aui-trigger=""><span class="aui-icon aui-icon-small aui-iconfont-configure">Configura</span><span class="aui-button-label">Strumenti dello spazio</span><span class="aui-icon"></span></button><div id="space-tools-menu" class="aui-dropdown2 aui-style-default space-tools-dropdown" role="menu" hidden data-aui-alignment="top left"></div><a href="#" role="button" class="expand-collapse-trigger aui-icon aui-icon-small aui-iconfont-chevron-double-left" aria-expanded="true"></a></div>
+                    
+                        			</div>
+    		</div>
+        <!-- \#header -->
+
+            
+    
+        <main role="main" id="main" class="aui-page-panel">
+                        <div id="main-header">
+                        
+    <div id="navigation" class="content-navigation view" role="region" aria-label="Strumenti della pagina">
+                    <ul class="ajs-menu-bar">
+                                            
+        <li class="normal ajs-menu-item">
+        <a id="action-menu-link" class="action aui-dropdown2-trigger-arrowless aui-button aui-button-subtle ajs-menu-title aui-dropdown2-trigger" href="#" aria-haspopup="true" aria-label="Altre opzioni" aria-owns="action-menu" data-container="#navigation">
+            <span>
+                                    <span class="aui-icon aui-icon-small aui-iconfont-more" aria-label="Altre opzioni"></span>
+                                
+            </span>
+        </a>         <div id="action-menu" class="aui-dropdown2 aui-style-default" aria-hidden="true">
+                            <div class="aui-dropdown2-section">
+                    <ul id="action-menu-primary" class="section-primary first">
+                                                    <li>
+
+    
+        
+    
+                                                        
+    
+    
+            <a id="view-attachments-link" href="../html/viewpageattachments.action.html" rel="nofollow" class="action-view-attachments" accessKey="t" title="Visualizza allegati">
+                        <span>
+                                A(<u>l</u>)legati (5)
+            </span>        </a>
+    </li>
+                                                <li>
+
+    
+        
+    
+                                                        
+    
+    
+            <a id="action-view-history-link" href="../html/viewpreviousversions.action.html" rel="nofollow" class="action-view-history" title="">
+                        <span>
+                                Cronologia pagina
+            </span>        </a>
+    </li>
+                                        </ul>
+                </div>
+                            <div class="aui-dropdown2-section">
+                    <ul id="action-menu-secondary" class="section-secondary">
+                                                    <li>
+
+    
+        
+    
+                                                        
+    
+    
+            <a id="view-resolved-comments" href="../html/confluence.html" rel="nofollow" title="">
+                        <span>
+                                Commenti risolti
+            </span>        </a>
+    </li>
+                                                <li>
+
+    
+        
+    
+                                                        
+    
+    
+            <a id="view-page-info-link" href="../html/viewinfo.action.html" rel="nofollow" class="action-view-info" title="">
+                        <span>
+                                Informazioni sulla Pagina
+            </span>        </a>
+    </li>
+                                                <li>
+
+    
+        
+    
+                                                        
+    
+    
+            <a id="view-in-hierarchy-link" href="../html/reorderpages.action.html" rel="nofollow" title="">
+                        <span>
+                                Visualizza in gerarchia
+            </span>        </a>
+    </li>
+                                                <li>
+
+    
+        
+    
+                                                        
+    
+    
+            <a id="action-view-source-link" href="../html/viewpagesrc.action.html" rel="nofollow" class="action-view-source popup-link" title="">
+                        <span>
+                                Vedi sorgente
+            </span>        </a>
+    </li>
+                                                <li>
+
+    
+        
+    
+                                                        
+    
+    
+            <a id="action-export-pdf-link" href="../html/pdfpageexport.action.html" rel="nofollow" title="">
+                        <span>
+                                Esporta in PDF
+            </span>        </a>
+    </li>
+                                                <li>
+
+    
+        
+    
+                                                        
+    
+    
+            <a id="action-export-word-link" href="../html/exportword.html" rel="nofollow" class="action-export-word" title="">
+                        <span>
+                                Esporta in Word
+            </span>        </a>
+    </li>
+                                        </ul>
+                </div>
+                            <div class="aui-dropdown2-section">
+                    <ul id="action-menu-modify" class="section-modify">
+                                                    <li>
+
+    
+        
+    
+                                                        
+    
+    
+            <a id="treecopy-action" href="../html/preparing-copying.action.html" rel="nofollow" title="">
+                        <span>
+                                Copy Page Tree
+            </span>        </a>
+    </li>
+                                        </ul>
+                </div>
+                    </div>
+    </li>
+            </ul>
+    </div>
+
+            
+            <div id="title-heading" class="pagetitle with-breadcrumbs">
+                
+                                    <div id="breadcrumb-section">
+                        
+    
+    
+    <nav aria-label="Breadcrumb">
+        <ol id="breadcrumbs">
+                                                            
+                                
+            <li class="first">
+                                
+                                    <span><a href="../html/pages.action.html">Dashboard</a></span>
+                                                                                                                    
+                                
+            </li><li>
+                                
+                                    <span><a href="../html/Apache+NiFi.html">Apache NiFi</a></span>
+                                                                                                                    
+                                
+            </li><li>
+                                
+                                    <span><a href="../html/For+Developers.html">For Developers</a></span>
+                                                                                                    </li></ol>
+    </nav>
+
+
+                    </div>
+                
+                
+                
+            <div id="page-metadata-banner"><ul class="banner"><li id="system-content-items" class="noprint"><a href="" title="Senza restrizioni" id="content-metadata-page-restrictions-hidden" class="hidden"></a><a href="../html/viewpageattachments.action.html" title="5 attachments" id="content-metadata-attachments" class="aui-icon aui-icon-small aui-iconfont-attachment"></a></li><li class="page-metadata-item noprinthas-button" id="content-metadata-jira-wrapper"><a href="" title="" id="content-metadata-jira" class="aui-button aui-button-subtle content-metadata-jira tipsy-disabled hidden"><span>Collegamenti JIRA</span></a></li></ul></div>
+        
+
+                <h1 id="title-text" class="with-breadcrumbs">
+                                                <a href="../html/Contributor+Guide.html">Contributor Guide</a>
+                                    </h1>
+            </div>
+        </div><!-- \#main-header -->
+        
+        
+
+        <div id="sidebar-container">
+                                                </div><!-- \#sidebar-container -->
+
+        
+    
+
+        
+
+
+
+
+            
+    
+
+                                
+    
+
+    
+    
+        
+    
+    
+                    
+    
+
+    
+
+    
+            
+        
+
+    
+    
+
+    
+            
+        
+
+
+
+    
+<div id="content" class="page view">
+    
+
+
+<div id="action-messages">
+                        </div>
+
+
+
+            <script type="text/x-template" title="searchResultsGrid">
+    <table class="aui">
+        <thead>
+            <tr class="header">
+                <th class="search-result-title">Titolo della pagina</th>
+                <th class="search-result-space">Spazio</th>
+                <th class="search-result-date">Aggiornato</th>
+            </tr>
+        </thead>
+    </table>
+</script>
+<script type="text/x-template" title="searchResultsGridCount">
+    <p class="search-result-count">{0}</p>
+</script>
+<script type="text/x-template" title="searchResultsGridRow">
+    <tr class="search-result">
+        <td class="search-result-title"><a href="{1}" class="content-type-{2}"><span>{0}</span></a></td>
+        <td class="search-result-space"><a class="space" href="/confluence/display/{4}/" title="{3}">{3}</a></td>
+        <td class="search-result-date"><span class="date" title="{6}">{5}</span></td>
+    </tr>
+</script>
+        
+    
+            
+
+        
+                            
+    
+
+                    
+
+        
+        <div class="page-metadata">
+    <ul>
+        <li class="page-metadata-modification-info">
+            
+        
+    
+    
+        
+    
+        
+            
+            Creato da <span class="author">     <a href="../html/~aldrin
+.html" aria-label="creato da Aldrin Piri" class="url fn">Aldrin Piri</a></span>, ultima modifica di <span class="editor">     <a href="../html/~pvillard
+.html" aria-label="modificato da Pierre Villard" class="url fn">Pierre Villard</a></span> il <a class="last-modified" aria-label="modificato il giorno giu 05, 2024, seleziona per mostrare le modifiche" title="Mostra le modifiche" href="../html/diffpagesbyversion.action.html">giu 05, 2024</a>
+            </li>
+    </ul>
+</div>
+        
+                                            
+        <div id="main-content" class="wiki-content">
+                           
+        <p></p><div class="toc-macro client-side-toc-macro conf-macro output-block" data-hasbody="false" data-headerelements="H1,H2,H3,H4,H5,H6,H7" data-macro-name="toc" data-numberedoutline="true"> </div><p></p><p><span style="font-size: 1.8em;line-height: 1.25;"><br></span></p><h1 id="ContributorGuide-HowtocontributetoApacheNiFi"><span style="font-size: 1.8em;line-height: 1.25;">How to contribute to Apache NiFi</span></h1><p>We are always excited to have contributions from the community - especially from new contributors!<br>We are interested in accepting contributions of code, as well as documentation and even artwork that&#160;can be applied as icons or styling to the application.</p><h1 id="ContributorGuide-Technologies">Technologies</h1><p>The back end of Apache NiFi is written in Java. The web tier makes use of JAX-RS, and JavaScript is extensively&#160;used to provide a user interface. We depend on several third-party JavaScript libraries, including D3 and JQuery among others. We make use of Apache Maven for our builds and Git for our version control system.</p><p>Documentation is created in <a class="external-link" href="../html/asciidoctor.org.html" rel="nofollow">AsciiDoc</a>.</p><h2 id="ContributorGuide-SupportedVersions">Supported Versions</h2><p>NiFi automated builds run on the latest updated versions of the following Java Long Term Support releases:</p><ul><li>Java 21</li></ul><h2 id="ContributorGuide-MinimumRequiredVersions">Minimum Required Versions</h2><p>For each supported version of Java, NiFi requires the follow minimum update version:</p><ul><li>Java 21</li></ul><p>NiFi automated builds run on the latest updated version of Apache Maven and require the following minimum version, which can be executed using the Maven Wrapper scripts included in the repository:</p><ul><li>Apache Maven 3.9.2</li></ul><h1 id="ContributorGuide-RunningNiFiinDebugmode">Running NiFi in Debug mode</h1><p>While <a class="external-link" href="../html/nifi-mock.html" rel="nofollow">NiFi Mock library</a> can greatly simplify your development and testing efforts, some times it is still necessary to be able to set breakpoints and debug your code within the running instance of NiFi. To do that NiFi needs to be started in Debug mode within your IDE. Please follow the instructions provided in the <a class="external-link" href="../html/nifi-ide-integration.html" rel="nofollow">NiFi IDE Integration module</a>.&#160;</p><h1 id="ContributorGuide-WheretoStart?">Where to Start?</h1><h2 id="ContributorGuide-FindingIssuesandExtendingtheProject">Finding Issues and Extending the Project</h2><p><a class="external-link" href="../html/NIFI.html" rel="nofollow">NiFi's JIRA page</a>&#160;can be used to find tickets that need effort. The first step to getting involved is to <a class="external-link" href="../html/Signup!default.jspa.html" rel="nofollow">create an account on Jira</a>, then&#160;<a class="external-link" href="../html/mailing_lists.html" rel="nofollow">sign up for the Developer Mailing List</a> and send an email to&#160;<a class="external-link" href="../html/mailto:dev@nifi.apache.org.html" rel="nofollow">dev@nifi.apache.org</a>&#160;requesting "Jira contributor access" and noting your Jira username. This will allow you to assign Jira tickets to yourself to indicate active development efforts.&#160;&#160;</p><p>Any tickets that are tagged as "beginner",&#160;or extension tickets (creating a new processor for interacting with a different system) are good places to start. Processors should be self-contained and not rely on other&#160;outside components (except for Controller Services), so they make for excellent starting points for new NiFi developers to&#160;get started. This exposes the developer to the NiFi API and is the most extensible part of the dataflow system. The <a class="external-link" href="../html/developer-guide.html" rel="nofollow">NiFi Developer Guide</a>&#160;provides details on how to get started with the NiFi API as well as best practices and common approaches to component design.</p><p>We have additionally created filters that show various types of issues available to be worked: &#160;</p><ul><li><a class="external-link" href="../html/issues.html" rel="nofollow">NiFi Unassigned Issues</a></li><li><a class="external-link" href="../html/issues.html" rel="nofollow">NiFi Unassigned Issues Tagged Beginner</a></li></ul><h2 id="ContributorGuide-DocumentationContributions">Documentation Contributions</h2><h3 id="ContributorGuide-System-leveldocumentation">System-level documentation</h3><p>System-level and overview documentation such as:</p><ul><li>Administration Guide,</li><li>Developer's Guide,</li><li>User's Guide,</li><li>Overview,</li><li>etc.</li></ul><p>Are located in <code>'&lt;code checkout location&gt;/nifi-docs/src/main/asciidoc'</code> and can be changed by making changes to the ASCIIdoc files and following the code contribution process described in "<a href="#ContributorGuide-providingCodeOrDocumentationContribution">Providing code or documentation contributions</a>" section of this document.</p><p>Tools available to facilitate documentation generation are available at <a class="external-link" href="../html/editing-asciidoc-with-live-preview.html" rel="nofollow">Editing AsciiDoc with Live Preview</a>.</p><h3 id="ContributorGuide-Component-leveldocumentation">Component-level documentation</h3><p>Component level documentation can be contributed to by making direct modifications to the source code of the relevant component. Generally the documentation of components is performed by adding the relevant details to the following annotations</p><div class="code panel pdl conf-macro output-block" data-hasbody="true" data-macro-name="code" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Default" data-theme="Default">@CapabilityDescription( "The overall description of the component would go here..." )</pre>
+</div></div><p>and the description field of annotations such as:</p><div class="code panel pdl conf-macro output-block" data-hasbody="true" data-macro-name="code" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Default" data-theme="Default">@DynamicProperty( description = "The description of the dynamic property would go here...")</pre>
+</div></div><p><br></p><p>and the description method of Component Properties and Relationships</p><div class="code panel pdl conf-macro output-block" data-hasbody="true" data-macro-name="code" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Default" data-theme="Default">PropertyDescriptor.Builder()
+        .name("Property Name")
+        .description("The description of the Property would go here...")
+&#160;
+Relationship.Builder()
+        .name("name-of-the-relationship")
+        .description("The description of the relationship would go here... ")
+        .build();</pre>
+</div></div><p><br></p><p>When the documentation of a processor is particularly complex (e.g, may include very long descriptions or images), a contributor may choose to use NiFi's capability to automatically link additional documentation to a processor.</p><p>In this case the contributor may extend documentation by performing changes to <code>'additionalDetails.html'</code>. As described in the Developer's Guide, this file should exist within a directory whose name is the fully-qualified name of the Processor, and this directory’s parent should be named docs and exist in the <code>'resources'</code>&#160;directory of a particular processor bundle.</p><p><br></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" alt="Example of additionalDetails.htm" height="400" src="../images/image2017-5-14%2011%3A33%3A55.png" data-image-src="/confluence/download/attachments/57904904/image2017-5-14%2011%3A33%3A55.png?version=1&modificationDate=1494725627000&api=v2" data-unresolved-comment-count="0" data-linked-resource-id="70255162" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2017-5-14 11:33:55.png" data-base-url="https://cwiki.apache.org/confluence" data-linked-resource-content-type="image/png" data-linked-resource-container-id="57904904" data-linked-resource-container-version="53" title="Example of additionalDetails.htm"></span></p><p><br></p><p>As with other contributions, component level documentation should follow the process described in "<a href="#ContributorGuide-providingCodeOrDocumentationContribution">Providing code or documentation contributions</a>" section of this document.</p><h1 id="ContributorGuide-Createaticketfornewbugsorfeatures">Create a ticket for new bugs or features</h1><p>Run into a bug or think there is something that would benefit the project? &#160;Regardless if you have the time to provide the fix or implementation, we encourage any such items to be filed as an issue at the <a class="external-link" href="../html/NIFI.html" rel="nofollow">Apache NiFi JIRA</a>.</p><p><br></p><h1 id="ContributorGuide-providingCodeOrDocumentationContributionProvidingcodeordocumentationcontributions"><span class="confluence-anchor-link conf-macro output-inline" data-hasbody="false" data-macro-name="anchor" id="ContributorGuide-providingCodeOrDocumentationContribution"> </span>Providing code or documentation contributions</h1><p>The source is hosted at&#160;<span class="nolink"><a class="external-link" href="../html/nifi.git.html" rel="nofollow">https://git-wip-us.apache.org/repos/asf/nifi.git</a></span></p><p>Like all Apache projects, a mirror of the git repository is also located on GitHub at <a class="external-link" href="../html/nifi.html" rel="nofollow">https://github.com/apache/nifi</a> which provides ease in <a class="external-link" href="../html/fork-a-repo.html" rel="nofollow">forking</a>&#160;and generating <a class="external-link" href="../html/using-pull-requests.html" rel="nofollow">pull requests (PRs)</a>.</p><h2 id="ContributorGuide-Configureyourgitclient">Configure your git client</h2><h3 id="ContributorGuide-Ensureyourgitusernameandemailareconfigured"><span style="font-size: 16.0px;font-weight: bold;line-height: 1.5;">Ensure your git user name and email are configured</span></h3><p><span style="font-size: 16.0px;font-weight: bold;line-height: 1.5;">&#160;</span>The following lines ensure your commits are appropriately annotated with your information</p><pre>git config --global&#160;<a class="external-link" href="../html/user.name.html" rel="nofollow">user.name</a>&#160;"User Name"</pre><pre>git config --global user.email <a class="external-link" href="../html/mailto:user.name@email.org.html" rel="nofollow">user.name@email.org</a></pre><div class="issue-data-block activity-comment twixi-block expanded"><div class="twixi-wrap verbose actionContainer"><p class="action-body flooded"><br></p><h3 id="ContributorGuide-WindowsSpecificconfiguration">Windows Specific configuration</h3><p><span style="line-height: 1.5;">The following options provide handling of long file paths that can be troublesome as well as not using Windows style line returns.</span></p><pre>git config --global core.longpaths true<br>git config --global core.autocrlf false</pre><p><br></p></div></div><h2 id="ContributorGuide-Cloneacopyoftherepository">Clone a copy of the repository</h2><h3 id="ContributorGuide-FromtheApacheHostedRepository">From the Apache Hosted Repository</h3><p><code>git clone <span class="nolink"><a class="external-link" href="../html/nifi.git.html" rel="nofollow">https://git-wip-us.apache.org/repos/asf/nifi.git</a></span></code></p><h3 id="ContributorGuide-FromtheGitHubMirror">From the GitHub Mirror</h3><p><code>git clone <a class="external-link" href="../html/nifi.git.html" rel="nofollow">https://github.com/apache/nifi.git</a><br></code></p><h3 id="ContributorGuide-FromyourGitHubFork">From your GitHub Fork</h3><p><code>git clone <a class="external-link" href="../html/mailto:git@github.com.html" rel="nofollow">git@github.com</a>:&lt;account name&gt;/nifi.git</code></p><h4 id="ContributorGuide-Retrievalofupstreamchanges">Retrieval of upstream changes</h4><p>Additionally, it is beneficial to add a git remote for the mirror to allow the retrieval of upstream changes</p><p><code>git remote add upstream <a class="external-link" href="../html/nifi.git.html" rel="nofollow">https://github.com/apache/nifi.git</a></code></p><p><br></p><h2 id="ContributorGuide-Checkoutthe'main'or'1.x.0'branch">Checkout the 'main' or '1.x.0' branch</h2><p><code>git checkout -b main&#160;origin/main</code>&#160;will create a local, tracking branch named <code>main</code>.</p><p><code>git checkout -b 0.x origin/1.x.0</code>&#160;will create a local, tracking branch named 1<code>.x.0</code>.</p><p>The main&#160;branch currently represents the next major release line (1.x.0).&#160;</p><h3 id="ContributorGuide-TheNiFicommunityusesamodifiedGitflowdevelopmentmodel.Asummary:">The NiFi community uses a modified Gitflow development model. &#160;A summary:</h3><ul><li>Use of a central repository</li><li>Branch per feature similar to the <a class="external-link" href="../html/feature-branch-workflow.html" rel="nofollow">Feature Branch Workflow</a></li><li>Work is done locally and then pushed to the central repo</li><li>'main' branch contains the official release history. &#160;Code changes (not code formatting, administrative updates) require Review-Then-Commit (RTC) by another committer to get incorporated.</li></ul><p><span style="line-height: 1.4285715;">For a more in-depth guide, visit </span><a class="external-link" href="../html/gitflow-workflow.html" rel="nofollow" style="line-height: 1.4285715;">Gitflow Workflow</a><span style="line-height: 1.4285715;">&#160;by Atlassian as well as the </span><a class="external-link" href="../html/a-successful-git-branching-model.html" rel="nofollow" style="line-height: 1.4285715;">original presentation of the development model</a><span style="line-height: 1.4285715;">&#160;by Vincent Driessen.</span></p><h2 id="ContributorGuide-Performyourcodechanges">Perform your code changes</h2><h3 id="ContributorGuide-Createafeaturebranch">Create a feature branch</h3><p>Typically, there is a 1-to-1 mapping of a branch to a backing ticket as specified in JIRA.</p><p>Create a local branch that relates the associated JIRA issue with the branch. &#160;<span style="background-color: transparent;line-height: 1.4285715;">Such an example would be:</span></p><p><code>git checkout -b nifi-359 main</code></p><p>This provides instant traceability to the supporting issue and provides a means of linking discussion.</p><h2 id="ContributorGuide-Testyourchanges">Test your changes</h2><p>For code changes, ensure that the full suite of tests is executed via <code>mvn -Pcontrib-check clean install</code> at the root nifi folder.&#160; Please write or update unit tests to verify your changes.</p><p>For documentation related changes, ensure that format looks appropriate for the output in which it is rendered.</p><h2 id="ContributorGuide-UpdateLicensingDocumentation">Update Licensing Documentation</h2><p>Did your change introduce new dependencies? &#160;Are these dependencies&#160;licensed in a way that is compatible for inclusion under ASF 2.0? &#160;Did you change or remove any existing dependency? Did you update the&#160;LICENSE and NOTICE files?</p><p>Each new source or configuration file added must have the ASF 2.0 license at the beginning of the file. It should be easy enough to copy one from another location.</p><p>There are a few places where licensing matters when you're making software changes. There are global LICENSE and NOTICE files in the nifi-assembly&#160;<a class="external-link" href="../html/nifi-assembly.html" rel="nofollow">module</a> which rolls up the contents of each NIFI nar LICENSE and NOTICE. The general guidelines for maintaining these are as follows:</p><ul><li>If you've added dependencies, you need to ensure that the dependencies are licensed in a way that is compatible for inclusion under ASF 2.0. These are generally defined <a class="external-link" href="../html/resolved.html" rel="nofollow">here</a>.</li></ul><ul><li>If you've changed a dependency at all (e.g. add, remove, change version), you must verify that the LICENSE and NOTICE from that dependency are contained the nar you're changing (if applicable) and in nifi-assembly. Be mindful to check if the dependency you're adding already exists in the LICENSE and NOTICE files you're editing. If it does, Consider the following guidelines:<br><br><ul><li style="list-style-type: none;background-image: none;"><ul><li>LICENSE: If the dependency version already exists here and the licenses are identical, you may simply add the additional version (e.g. "<span style="color: rgb(33,33,33);">The binary distribution of this product bundles 'Google Protocol&#160;</span><span style="color: rgb(33,33,33);">Buffers Java 2.5.0 and 3.3.1"). If the licenses are different, list them separately.</span></li><li><span style="color: rgb(33,33,33);">NOTICE: If the dependency version already exists here and the notices are the same, there's no change needed. If the notices are different you need to determine how different they are. If one is a superset of the other, you may simply replace the subset with the superset. If they're vastly different from each other, you need to list them separately.</span></li></ul></li></ul></li></ul><p><span style="color: rgb(33,33,33);">Other general guidelines as they relate to licensing in NIFI:</span></p><ul><li><span style="color: rgb(33,33,33);"><span style="color: rgb(33,33,33);">Whether some binary dependencies NOTICE calls out a transitive&#160;</span><span style="color: rgb(33,33,33);">binary dependency it might or might not have is not relevant. What is&#160;</span><span style="color: rgb(33,33,33);">relevant is which transitive dependencies, no matter how many levels&#160;</span><span style="color: rgb(33,33,33);">deep it comes in, we pull into our nars or convenience binaries. They&#160;</span><span style="color: rgb(33,33,33);">must all be accounted for properly if we're including them. See the <a class="external-link" href="../html/licensing-guide.html" rel="nofollow">Apache Licensing Guide</a> for more information on this.</span></span></li><li><span style="color: rgb(33,33,33);"><span style="color: rgb(33,33,33);"><span style="color: rgb(33,33,33);">All binary dependencies bundled in a given nar must be documented in its LICENSE and NOTICE. On top of that, the nifi-assembly should cover those dependencies as well.</span></span></span></li><li><span style="color: rgb(33,33,33);">All source dependencies taken as-in or modified must be documented in the nifi-assembly LICENSE and NOTICE.</span></li></ul><h2 id="ContributorGuide-Commityourchanges">Commit your changes</h2><h3 id="ContributorGuide-Listthecurrentfilesthathavechanges">List the current files that have changes</h3><pre>$ git status<br>On branch nifi-359<br>Changes not staged for commit:<br> (use "git add &lt;file&gt;..." to update what will be committed)<br> (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)</pre><pre>modified: nifi-docs/src/main/asciidoc/contributor-guide.adoc</pre><pre>no changes added to commit (use "git add" and/or "git commit -a")</pre><h3 id="ContributorGuide-Stagethefile(s)tobecommittedwithgitadd">Stage the file(s) to be committed with <code>git add</code></h3><pre>$ git add nifi-docs/src/main/asciidoc/contributor-guide.adoc</pre><pre>$ git status<br>On branch nifi-359<br>Changes to be committed:<br> (use "git reset HEAD &lt;file&gt;..." to unstage)</pre><pre>modified: nifi-docs/src/main/asciidoc/contributor-guide.adoc</pre><p>In the case of multiple files, it is also possible to stage all tracked files through <code>git add</code> .</p><h3 id="ContributorGuide-Performthecommit">Perform the commit</h3><p>In the interest of providing traceability, it is helpful to lead off your commit with the associated JIRA issue number (case-sensitive, NIFI in uppercase) and a summary of the change this commit is providing. Such an example is:</p><p><code>$ git commit -m "NIFI-359 Adding a guide for procedure and best practices in contributing to the project."</code></p><p>The issue being listed first provides easy access to the supporting ticket and ensures it is not truncated from the varied means in which commits will be viewed.</p><h2 id="ContributorGuide-Keepingyourfeaturebranchcurrent">Keeping your feature branch current&#160;</h2><p>If you are working on a branch over an extended period of time, it helps to keep your code current with the <code>main&#160;</code>branch to ensure your changes are applied as anticipated and to facilitate the merging process.</p><p>This is best accomplished through the&#160;<code><a class="external-link" href="../html/git-rebase.html" rel="nofollow">git rebase</a></code>&#160;functionality. &#160;There are many ways in which&#160;<code>git rebase</code>&#160;can be utilized in this context of&#160;<a class="external-link" href="../html/Git-Branching-Rebasing.html" rel="nofollow">branching and rebasing</a>. &#160;Typically, the command to do so is performed from your feature branch. &#160;Continuing on with the sample of NIFI-359, we will show one way of accomplishing this task.</p><h3 id="ContributorGuide-Updateyourlocalcopyofmain">Update your local copy of&#160;<code>main</code></h3><pre>$ git checkout main<br>Switched to branch 'main'</pre><pre>$&#160;git fetch upstream</pre><pre>remote: Counting objects: 52, done.<br>remote: Compressing objects: 100% (11/11), done.<br>remote: Total 16 (delta 7), reused 0 (delta 0)<br>Unpacking objects: 100% (16/16), done.<br>From <a class="external-link" href="../html/nifi.html" rel="nofollow">https://git-wip-us.apache.org/repos/asf/nifi</a><br> a49a03d..8d745c2 main -&gt; upstream/main</pre><pre>$ git merge upstream/main<br>Updating a49a03d..8d745c2<br>Fast-forward<br> nifi-nar-bundles/nifi-framework-bundle/nifi-framework/nifi-framework-cluster-protocol/src/main/java/org/apache/nifi/cluster/protocol/StandardDataFlow.java | 27 ++++++++++-----------------<br> 1 file changed, 10 insertions(+), 17 deletions(-)</pre><h3 id="ContributorGuide-Performthegitrebasefromyourbranch">Perform the&#160;<code>git rebase</code>&#160;from your branch</h3><pre>$ git checkout nifi-359<br>Switched to branch 'nifi-359'</pre><pre>$ git rebase main<br>First, rewinding head to replay your work on top of it...<br>Applying: NIFI-359: Removing the output to System.out and providing some simple checks to ensure extraction of attributes is consistent with the sample file used in the test.</pre><h2 id="ContributorGuide-Supplyingacontribution">Supplying a contribution</h2><p>There are currently two paths from which we review and accept contributions, ASF JIRA and GitHub Pull Requests (PRs), r<span style="background-color: transparent;line-height: 1.4285715;">egardless of whether your contribution is source code or documentation (<strong>note that submitting your contribution through a pull request via GitHub is the preferred option as it makes the reviews much easier</strong>).</span></p><h3 id="ContributorGuide-SupplyingacontributionthroughpatchandJIRAissue">Supplying a contribution through patch and JIRA issue</h3><p><span style="background-color: transparent;line-height: 1.4285715;">Assuming you are still on the branch you want to make a patch from (NIFI-359) and that you've just committed the change and it is a single commit then you can run the following to generate a patch file</span></p><p><code><span style="background-color: transparent;line-height: 1.4285715;">`git format-patch nifi-359~1 -o &lt;/desired/path/for/patch&gt;/nifi-359.patch`</span></code></p><p><span style="background-color: transparent;line-height: 1.4285715;">Now you can go to JIRA for ticket NIFI-359 and select 'more -&gt; attach files' and upload the patch file. &#160;Then select 'Submit Patch'.</span></p><p><em><span style="background-color: transparent;line-height: 1.4285715;">TODO: Once auto-build verification comes into play this guidance will likely change.</span></em></p><h3 id="ContributorGuide-Supplyingacontributionthroughapullrequest(PR)viaGitHub">Supplying a contribution through a pull request (PR) via GitHub</h3><h4 id="ContributorGuide-Pushchangestoyourpersonal,GitHubrepositoryremote">Push changes to your personal, GitHub repository remote</h4><p>Typically, this remote is listed as <code>origin</code>. To confirm, perform a <code>git remote -v</code> from&#160;within your cloned repository directory.</p><pre>$ git remote -v<br>origin git@github.<a class="external-link" href="../html/comapiri.html" rel="nofollow">com:apiri/nifi.git</a> (push)<br>origin git@github.<a class="external-link" href="../html/comapiri.html" rel="nofollow">com:apiri/nifi.git</a> (fetch)<br>upstream <a class="external-link" href="../html/nifi.git.html" rel="nofollow">https://git-wip-us.apache.org/repos/asf/nifi.git</a> (fetch)</pre><p><br></p><p>Once the appropriate remote (remote name) is determined, it is possible to push the branch with your changes to GitHub through:</p><pre>$ git push &lt;remote name&gt; &lt;branch name&gt;</pre><p>As an example, based on the context of this guide, this would take the form of:</p><pre>$ git push origin nifi-359</pre><p><br></p><p>This will update your fork of NiFi and can be verified from your GitHub personal project page:</p><p><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" draggable="false" src="../images/github-fork-view.png" data-image-src="/confluence/download/attachments/57904904/github-fork-view.png?version=1&modificationDate=1433261233000&api=v2" data-unresolved-comment-count="0" data-linked-resource-id="58294681" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="github-fork-view.png" data-base-url="https://cwiki.apache.org/confluence" data-linked-resource-content-type="image/png" data-linked-resource-container-id="57904904" data-linked-resource-container-version="53" alt=""></span></p><h4 id="ContributorGuide-OpeningaPullRequest(PR)totheNiFiproject">Opening a Pull Request (PR) to the NiFi project</h4><p>From your personal fork, a Pull Request can be opened simply by selecting the Pull Request link highlighted below.</p><p><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" draggable="false" src="../images/github-fork-view-pr-callout.png" data-image-src="/confluence/download/attachments/57904904/github-fork-view-pr-callout.png?version=1&modificationDate=1433261406000&api=v2" data-unresolved-comment-count="0" data-linked-resource-id="58294682" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="github-fork-view-pr-callout.png" data-base-url="https://cwiki.apache.org/confluence" data-linked-resource-content-type="image/png" data-linked-resource-container-id="57904904" data-linked-resource-container-version="53" alt=""></span></p><p><br></p><p>This will allow specification of the your branch which has the changes, and will open a PR for review by the committers of the project.</p><p><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" draggable="false" src="../images/open-pull-request.png" data-image-src="/confluence/download/attachments/57904904/open-pull-request.png?version=1&modificationDate=1433261487000&api=v2" data-unresolved-comment-count="0" data-linked-resource-id="58294683" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="open-pull-request.png" data-base-url="https://cwiki.apache.org/confluence" data-linked-resource-content-type="image/png" data-linked-resource-container-id="57904904" data-linked-resource-container-version="53" alt=""></span></p><p>While we request that the PR begin with a single, squashed commit as the&#160;<em>initial commit</em>, if you continue to modify the code, please continue to make commits against the same branch. GitHub handles this process well and by pushing to the same remote branch you opened the PR from, your commits will show automatically. This way reviewers can track changes in accordance with their feedback cleanly. Please avoid using&#160;<code>squash</code>&#160; or&#160;<code>--force</code>&#160;when making these changes, as it will overwrite the remote branch and reduce the capability to track these changes. See additional note about <strong>Rebasing and Squashing while under review</strong>&#160;below for more information.&#160;&#160;</p><h1 id="ContributorGuide-CodeReviewProcess">Code Review Process</h1><p><span style="font-size: 14.0px;line-height: 1.4285715;">Apache NIFI has a </span><a class="external-link" href="../html/glossary.html.html" rel="nofollow" style="font-size: 14.0px;line-height: 1.4285715;">Review-Then-Commit (RTC)</a><span style="font-size: 14.0px;line-height: 1.4285715;"> philosophy for handling all contributions. &#160;Reviewers first ensure that the code applies and builds appropriately to the build, passes the code standards as established by the Maven profile "contrib-check." &#160;From here, code is evaluated to ensure best practices within the NiFi framework are applied and, where applicable, that the user experience of interfacing with the contribution is consistent and any changes are backwards compatible. &#160;This process may be iterative but works toward a final product that is then merged into the codebase.</span><span style="line-height: 1.4285715;">&#160;</span></p><p>While only committers can actively promote contributions into the repository, feedback on issues, regardless of committer status, is appreciated and valued in the review process.</p><p>If you are interested in facilitating the review process, a listing of all code contributions with a patch are available via a JIRA filter,&#160;<a class="external-link" href="../html/issues.html" rel="nofollow">NIFI Patch Available</a>.</p><p>A view of the filter is shown below:</p><p>
+
+
+
+
+
+</p><div class="refresh-module-id jira-table conf-macro output-block" data-client-id="TABLE_5aa69414-a9e9-3523-82ec-879b028fb15b_57904904_anonymous_ZmlsdGVyPTEyMzMxODc0_dHlwZWtleXN1bW1hcnlhc3NpZ25lZXJlcG9ydGVycHJpb3JpdHlzdGF0dXNyZXNvbHV0aW9uY3JlYXRlZHVwZGF0ZWRkdWU=" data-hasbody="false" data-jira-key="issue-table-TABLE_5aa69414-a9e9-3523-82ec-879b028fb15b_57904904_anonymous_ZmlsdGVyPTEyMzMxODc0_dHlwZWtleXN1bW1hcnlhc3NpZ25lZXJlcG9ydGVycHJpb3JpdHlzdGF0dXNyZXNvbHV0aW9uY3JlYXRlZHVwZGF0ZWRkdWU=" data-macro-name="jira" id="refresh-module--609717407">
+<p>
+            </p><div id="refresh--609717407" class="refresh-macro">
+        </div>
+    
+        
+    
+        
+    <div id="jira-issues--609717407" style="width: 100%;  overflow: auto;" class="jira-issues">
+        <table class="aui">
+            <tbody>
+                <tr> </tr>                 <tr>
+                                                                        <th style="text-align: left;" class="jira-macro-table-underline-pdfexport">T
+                            </th>
+                                                                                                <th style="text-align: left;" class="jira-macro-table-underline-pdfexport">Chiave
+                            </th>
+                                                                                                <th style="text-align: left;" class="jira-macro-table-underline-pdfexport">Riepilogo
+                            </th>
+                                                                                                <th style="text-align: left;" class="jira-macro-table-underline-pdfexport">Assegnatario
+                            </th>
+                                                                                                <th style="text-align: left;" class="jira-macro-table-underline-pdfexport">Segnalante
+                            </th>
+                                                                                                <th style="text-align: left;" class="jira-macro-table-underline-pdfexport">P
+                            </th>
+                                                                                                <th style="text-align: left;" class="jira-macro-table-underline-pdfexport">Stato
+                            </th>
+                                                                                                <th style="text-align: left;" class="jira-macro-table-underline-pdfexport">Risoluzione
+                            </th>
+                                                                                                <th style="text-align: left;" class="jira-macro-table-underline-pdfexport">Creato
+                            </th>
+                                                                                                <th style="text-align: left;" class="jira-macro-table-underline-pdfexport">Aggiornato
+                            </th>
+                                                                                                <th style="text-align: left;" class="jira-macro-table-underline-pdfexport">Scadenza
+                            </th>
+                                                            </tr>
+                                            </tbody>
+        </table>
+    </div>
+            <div class="refresh-issues-bottom">
+                                        <span class="refresh-action-group">
+                        <div id="refresh-issues-loading--609717407" class="button-spinner refresh-issues-loading">
+                            <span class="aui-icon aui-icon-wait">Loading...</span>
+                        </div>
+                        <a id="refresh-issues-button--609717407" class="icon icon-refresh refresh-action refresh-issues-button" rel="nofollow"> </a>
+                        <a id="refresh-issues-link--609717407" class="refresh-action refresh-issues-link" rel="nofollow">Aggiorna</a>
+                        <span id="error-message--609717407" class="error-message hidden"> </span>
+                        <input type="hidden" class="refresh-wiki" id="refresh-wiki--609717407" data-wikimarkup="<ac:structured-macro ac:name=&quot;jira&quot; ac:schema-version=&quot;1&quot; ac:macro-id=&quot;c0bb3fd1-e13a-478e-998d-bde9a0fabb96&quot;><ac:parameter ac:name=&quot;server&quot;>ASF JIRA</ac:parameter><ac:parameter ac:name=&quot;jqlQuery&quot;>filter=12331874</ac:parameter><ac:parameter ac:name=&quot;serverId&quot;>5aa69414-a9e9-3523-82ec-879b028fb15b</ac:parameter><ac:parameter ac:name=&quot;: = | RAW | = :&quot;>server=ASF JIRA|jqlQuery=filter=12331874|serverId=5aa69414-a9e9-3523-82ec-879b028fb15b</ac:parameter><ac:parameter ac:name=&quot;: = | TOKEN_TYPE | = :&quot;>BLOCK</ac:parameter></ac:structured-macro>" data-pageid="57904904">
+                    </span>
+                    </div>
+        <p> </p>
+
+            <div class="jim-sortable-dark-layout"> </div>
+    
+</div>
+<p></p><h1 id="ContributorGuide-Additionalnotesoncodecontributions">Additional notes on code contributions</h1><h3 id="ContributorGuide-RebasingandSquashingwhileunderreview">Rebasing and Squashing while under review</h3><p>Although you may be asked to rebase or squash your contribution as part of the review process, don't feel the need to do so speculatively. The committer working on merging the contribution may prefer to do these types of operations as part of the merge process, and the history of your patch or pull request may aid in the review process.</p><h3 id="ContributorGuide-Stepstomerge/closepullrequestswithtwomainbranches">Steps to merge/close pull requests with two main branches</h3><p>As NiFi now has a 1.x (<code>main</code>) and 1.x.y (<code>support</code>) branches, pull requests (PR) may be applied to both, but typically will only be targetted at <code>main</code>. Here is a step-by-step guide for committers to ensure this occurs for all PRs.</p><p><br></p><ol><li>Check out the latest <code>main</code></li></ol><ol><li style="list-style-type: none;background-image: none;"><ol><li><code>$ git checkout main</code></li><li><span style="font-family: monospace;line-height: 1.42857;">$ git pull upstream main</span></li></ol></li><li><span style="line-height: 1.42857;">Check out the PR (example #327). This will be in </span><code style="line-height: 1.42857;">detached-HEAD</code><span style="line-height: 1.42857;">&#160;state. (Note: You may need to edit the </span><code style="line-height: 1.42857;">.git/config</code><span style="line-height: 1.42857;">&#160;file to add the </span><code style="line-height: 1.42857;">fetch</code><span style="line-height: 1.42857;"> lines </span><a href="#ContributorGuide-fetch-config">below</a><span style="line-height: 1.42857;">)</span></li></ol><ol><li style="list-style-type: none;background-image: none;"><ol><li><code><span style="line-height: 1.42857;">$ git checkout github/pr/327</span></code></li></ol></li><li>Create a branch for the PR</li></ol><ol><li style="list-style-type: none;background-image: none;"><ol><li><span style="font-family: monospace;line-height: 1.42857;">$ git checkout -b pr327</span></li></ol></li><li><span style="line-height: 1.42857;">Apply the changes and sign off. This could be through a </span><code style="line-height: 1.42857;">commit --amend</code><span style="line-height: 1.42857;">, </span><code style="line-height: 1.42857;">rebase</code><span style="line-height: 1.42857;">, etc.</span></li></ol><ol><li style="list-style-type: none;background-image: none;"><ol><li><code>$ git commit --amend -s</code></li><li><span style="line-height: 1.42857;">Edit the commit file to contain "This closes #327. "</span></li><li><code><span style="line-height: 1.42857;">$ git log</span></code></li><li><span style="line-height: 1.42857;">Copy commit id of last commit</span></li></ol></li><li><span style="line-height: 1.42857;">Switch back to the <code>main</code> branch</span></li></ol><ol><li style="list-style-type: none;background-image: none;"><ol><li><code>$ git checkout main</code></li></ol></li><li><span style="line-height: 1.42857;">Merge the changes. You can use </span><code style="line-height: 1.42857;">cherry-pick</code><span style="line-height: 1.42857;">, </span><code style="line-height: 1.42857;">merge</code><span style="line-height: 1.42857;">, etc.</span></li></ol><ol><li style="list-style-type: none;background-image: none;"><ol><li><code>$ git cherry-pick &lt;commit id&gt;</code></li></ol></li><li><em><span style="line-height: 1.42857;">(Optional) Ensure the commit was applied successfully</span></em></li></ol><ol><li style="list-style-type: none;background-image: none;"><ol><li><code>$ git log</code></li></ol></li><li><span style="line-height: 1.42857;">Push to the Apache repository (<code>main</code> branch)</span></li></ol><ol><li style="list-style-type: none;background-image: none;"><ol><li><code>$ git push apache main</code></li></ol></li><li><em><span style="line-height: 1.42857;">(Optional) Switch to the support branch - the following steps are only required if the change is specifically being targetted for a patch release of an existing build (e.g. a bug fix to create 1.15.3 from the 1.15.2 build)</span></em></li></ol><ol><li style="list-style-type: none;background-image: none;"><ol><li><code>$ git checkout -t support/1.x.y</code></li></ol></li><li><em><span style="line-height: 1.42857;">(Optional) Check the status of the branch</span></em></li></ol><ol><li style="list-style-type: none;background-image: none;"><ol><li><code>$ git log</code></li></ol></li><li><em><span style="line-height: 1.42857;">(Optional) Apply the changes from the PR branch</span></em></li></ol><ol><li style="list-style-type: none;background-image: none;"><ol><li><code>$ git cherry-pick &lt;commit id&gt;</code></li></ol></li><li><em><span style="line-height: 1.42857;">(Optional) Push to the Apache repository (support branch)</span></em></li></ol><ol><li style="list-style-type: none;background-image: none;"><ol><li><code>$ git push apache support/nifi-1.x.y</code></li></ol></li></ol><h4 id="ContributorGuide-fetch-configFetchConfig"><span class="confluence-anchor-link conf-macro output-inline" data-hasbody="false" data-macro-name="anchor" id="ContributorGuide-fetch-config"> </span>Fetch Config</h4><p>To ensure you are able to pull the PR directly, add the following lines to your <code>.git/config</code> file.</p><p><code>[remote "github"]</code><br><code> url = <a class="external-link" href="../html/mailto:git@github.com.html" rel="nofollow">git@github.com</a>:apache/nifi.git</code><br><code> fetch = +refs/heads/*:refs/remotes/github/*</code><br><code> fetch = +refs/pull/*/head:refs/remotes/github/pr/*</code></p><h3 id="ContributorGuide-CodeStyle">Code Style</h3><p>The <a class="external-link" href="../html/maven-checkstyle-plugin.html" rel="nofollow">maven-checkstyle-plugin</a> enforces minimum code style requirements.</p><p>The <a class="external-link" href="../html/checkstyle.xml.html" rel="nofollow">checkstyle.xml</a> configuration in the project root directory contains the current set of style rules.</p><h4 id="ContributorGuide-IntelliJIDEAUsers"><em>IntelliJ IDEA Users</em></h4><ol><li class="p1"><span style="line-height: 1.42857;">Download <a class="external-link" href="../html/1065.html" rel="nofollow">Checkstyle-IDEA plugin</a></span></li><li class="p1"><span style="line-height: 1.42857;">Install plugin by loading the downloaded zip from:<span>&#160;<code>Preferences</code></span>&#160;-&gt; <code>Plugins</code>&#160;-&gt;&#160;<code>Install plugin from disk...</code></span></li><li class="p1"><span style="line-height: 1.42857;">After restarting IntelliJ, configure Checkstyle plugin to use NiFi Checkstyle configuration file from: <code>Preferences</code>&#160;-&gt; <code>Other Settings</code>&#160;-&gt;&#160;<code>Checkstyle</code></span></li><li class="p1">Add <code><a class="external-link" href="../html/checkstyle.xml.html" rel="nofollow">checkstyle.xml</a></code> in Configuration File and activate the configuration</li></ol><h4 id="ContributorGuide-EclipseUsers"><em>Eclipse Users</em></h4><p>The <a class="external-link" href="../html/eclipse-cs.sourceforge.net.html" rel="nofollow">Eclipse Checkstyle Plugin</a> can be configured with the project <a class="external-link" href="../html/checkstyle.xml.html" rel="nofollow">checkstyle.xml</a> to evaluate conformance with project coding standards.</p><h1 id="ContributorGuide-Contactus!">Contact us!</h1><div><p>The developer mailing list (<a class="external-link" href="../html/mailto:dev@nifi.apache.org.html" rel="nofollow">dev@nifi.apache.org</a>) is monitored pretty closely, and we tend to respond quickly. &#160;If you have a question, don't hesitate to shoot us an e-mail - we're here to help! Unfortunately, though, e-mails&#160;can get lost in the shuffle, so if you do send an e-mail and don't get a response within a day or two, it's our fault - don't&#160;worry about bothering us. Just ping the mailing list again.</p></div>
+
+                
+        
+    
+        </div>
+
+                        
+    
+
+
+
+<div id="labels-section" class="pageSection group">
+    <div class="labels-section-content content-column" entityid="57904904" entitytype="page">
+	<div class="labels-content">
+		
+    <ul class="label-list label-list-right">
+                    
+        <li class="aui-label" data-label-id="2654210"><a class="aui-label-split-main" href="../html/guide.html" rel="tag">guide</a></li><li class="aui-label" data-label-id="58228773"><a class="aui-label-split-main" href="../html/contribute.html" rel="tag">contribute</a></li><li class="aui-label" data-label-id="58228774"><a class="aui-label-split-main" href="../html/contribution.html" rel="tag">contribution</a></li><li class="aui-label" data-label-id="58228775"><a class="aui-label-split-main" href="../html/contributor.html" rel="tag">contributor</a></li><li class="aui-label" data-label-id="58228776"><a class="aui-label-split-main" href="../html/nifi.html" rel="tag">nifi</a></li>
+            </ul>
+
+    </div>
+</div>
+</div>
+        
+		
+            
+
+
+
+
+            
+        
+
+
+
+
+
+
+
+
+                        
+    
+<div id="comments-section" class="pageSection group">
+        
+    
+
+
+
+</div>
+        
+
+
+                
+    
+            
+</div>
+
+    
+
+    
+
+
+
+
+    
+    
+
+    
+    
+    
+
+
+    
+<div id="space-tools-web-items" class="hidden">
+                <div data-label="Panoramica" data-href="/confluence/spaces/viewspacesummary.action?key=NIFI">Panoramica</div>
+            <div data-label="Strumenti di contenuto" data-href="/confluence/pages/reorderpages.action?key=NIFI">Strumenti di contenuto</div>
+            <div data-label="App" data-href="/confluence/spaces/snippeterrors.action?key=NIFI">App</div>
+    </div>
+        
+
+
+
+            </main><!-- \#main -->
+            
+    
+    
+        
+            
+            
+
+<div id="footer" role="contentinfo">
+    <section class="footer-body">
+
+                                                            <p class="license license-opensource">
+                    Con il supporto di una <b>licenza Atlassian Confluence Open Source Project</b> gratuita concessa a Apache Software Foundation. <a href="../html/opensource-community-additional-license-offer.html">Valuta Confluence oggi</a>.<br>
+                </p>
+                    
+        
+
+        <ul id="poweredby">
+            <li class="noprint">Con tecnologia <a href="../html/confluence.html" class="hover-footer-link" rel="nofollow">Atlassian Confluence</a> <span id="footer-build-information">7.19.30</span></li>
+            <li class="print-only">Stampato da Atlassian Confluence 7.19.30</li>
+            <li class="noprint"><a href="../html/confluence-server.html" class="hover-footer-link" rel="nofollow">Segnala un bug</a></li>
+            <li class="noprint"><a href="../html/company.html" class="hover-footer-link" rel="nofollow">Novità da Atlassian</a></li>
+        </ul>
+
+        
+
+        <div id="footer-logo"><a href="../html/www.atlassian.com.html" rel="nofollow">Atlassian</a></div>
+
+                    
+        
+    </section>
+</div>
+
+    
+</div>
+
+</div><!-- \#full-height-container -->
+</div><!-- \#page -->
+
+    <span style="display:none;" id="confluence-server-performance">{"serverDuration": 121, "requestCorrelationId": "37cb1288ae3676e8"}</span>
+</body>
+</html>

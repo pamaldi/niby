@@ -40,31 +40,36 @@ public class NibyWebSocket {
     }
 
     @OnTextMessage
-    public Multi<String> onTextMessage(String message) {
+    public Multi<String> onTextMessage(String message, WebSocketConnection connection) {
         log.info("Received message from WebSocket");
         log.info("Raw message content: {}", message);
+
+        String sessionId = connection.id();
 
         try {
             ChatMessage chatMessage = objectMapper.readValue(message, ChatMessage.class);
             String mode = chatMessage.getMode();
             String text = chatMessage.getMessage();
             log.info("Parsed message: '{}', mode: '{}'", text, mode);
-            return routeToAgent(text, mode);
+            return routeToAgent(sessionId, text, mode);
         } catch (Exception e) {
             log.warn("Failed to parse JSON, treating as plain text: {}", e.getMessage());
-            return routeToAgent(message, "basic");
+            return routeToAgent(sessionId, message, "basic");
         }
     }
 
-    private Multi<String> routeToAgent(String message, String mode) {
+    private Multi<String> routeToAgent(String sessionId, String message, String mode) {
         String normalizedMode = (mode == null ? "basic" : mode.toLowerCase(Locale.ROOT));
+        Multi<String> response;
         switch (normalizedMode) {
             case "plan":
                 log.info("Routing to PlanAgent");
-                return planAgent.chat(message);
+                response = planAgent.chat(sessionId, message);
+                break;
             case "act":
                 log.info("Routing to ActAgent");
-                return actAgent.chat(message);
+                response = actAgent.chat(sessionId, message);
+                break;
             case "basic":
             default:
                 if (!"basic".equals(normalizedMode)) {
@@ -72,8 +77,15 @@ public class NibyWebSocket {
                 } else {
                     log.info("Routing to BasicAgent");
                 }
-                return basicAgent.chat(message);
+                response = basicAgent.chat(sessionId, message);
+                break;
         }
+
+        // Add logging to debug streaming
+        return response
+                .onItem().invoke(item -> log.info("Streaming chunk: {}", item))
+                .onFailure().invoke(error -> log.error("Stream error: {}", error.getMessage(), error))
+                .onCompletion().invoke(() -> log.info("Stream completed"));
     }
 
     @OnError

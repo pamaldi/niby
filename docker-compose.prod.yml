@@ -1,0 +1,33 @@
+version: '3.8'
+
+# Production override - uses Docker secrets for sensitive data
+# Usage: docker-compose -f docker-compose.yml -f docker-compose.prod.yml up
+
+services:
+  pgvector:
+    environment:
+      POSTGRES_PASSWORD_FILE: /run/secrets/db_password
+    secrets:
+      - db_password
+
+  niby-be-core:
+    secrets:
+      - anthropic_api_key
+    command: >
+      sh -c "export ANTHROPIC_API_KEY=$$(cat /run/secrets/anthropic_api_key) &&
+             /opt/jboss/container/java/run/run-java.sh"
+
+  niby-rag:
+    secrets:
+      - anthropic_api_key
+      - db_password
+    command: >
+      sh -c "export ANTHROPIC_API_KEY=$$(cat /run/secrets/anthropic_api_key) &&
+             export QUARKUS_DATASOURCE_PASSWORD=$$(cat /run/secrets/db_password) &&
+             /opt/jboss/container/java/run/run-java.sh"
+
+secrets:
+  anthropic_api_key:
+    file: ./secrets/anthropic_api_key.txt
+  db_password:
+    file: ./secrets/db_password.txt

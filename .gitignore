@@ -39,6 +39,11 @@ nb-configuration.xml
 # Local environment
 .env
 
+# Secrets directory
+secrets/*.txt
+!secrets/.gitkeep
+!secrets/README.md
+
 # Plugin directory
 /.quarkus/cli/plugins/
 # TLS Certificates
@@ -46,3 +51,5 @@ nb-configuration.xml
 /nifi-doc/components-1753475787835/
 /private.MD
 /research/
+/niby-ui/logs/
+/niby-be-core/

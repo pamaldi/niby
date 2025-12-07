@@ -1,0 +1,294 @@
+UpdateRecord - Apache NiFi
+
+• Documentation • NiFi Version 2 Documentation • NiFi Version 1 Documentation • Guides • Security Reporting • Wiki • Development • Contributing • Issues • Source • Community • Contact • Powered By • Team • Projects • MiNiFi • Registry • Flow Design System • Apache • Events • License • Privacy • Sponsorship • Thanks • General • Overview • Getting Started • User Guide • Expression Language Guide • RecordPath Guide • Admin Guide • Toolkit Guide • Walkthroughs • Developer • Developer Guide • Python Developer Guide • Apache NiFi In Depth • REST API • Processors • AttributeRollingWindow • AttributesToCSV • AttributesToJSON • CalculateRecordStats • CaptureChangeMySQL • CompressContent • ConnectWebSocket • ConsumeAMQP • ConsumeAzureEventHub • ConsumeBoxEnterpriseEvents • ConsumeBoxEvents • ConsumeElasticsearch • ConsumeGCPubSub • ConsumeIMAP • ConsumeJMS • ConsumeKafka • ConsumeKinesisStream • ConsumeMQTT • ConsumePOP3 • ConsumeSlack • ConsumeTwitter • ConsumeWindowsEventLog • ControlRate • ConvertCharacterSet • ConvertRecord • CopyAzureBlobStorage_v12 • CopyS3Object • CountText • CreateBoxFileMetadataInstance • CreateBoxMetadataTemplate • CryptographicHashContent • DebugFlow • DecryptContentAge • DecryptContentPGP • DeduplicateRecord • DeleteAzureBlobStorage_v12 • DeleteAzureDataLakeStorage • DeleteBoxFileMetadataInstance • DeleteByQueryElasticsearch • DeleteDynamoDB • DeleteFile • DeleteGCSObject • DeleteGridFS • DeleteMongo • DeleteS3Object • DeleteSFTP • DeleteSQS • DetectDuplicate • DistributeLoad • DuplicateFlowFile • EncodeContent • EncryptContentAge • EncryptContentPGP • EnforceOrder • EvaluateJsonPath • EvaluateXPath • EvaluateXQuery • ExecuteGroovyScript • ExecuteProcess • ExecuteScript • ExecuteSQL • ExecuteSQLRecord • ExecuteStreamCommand • ExtractAvroMetadata • ExtractEmailAttachments • ExtractEmailHeaders • ExtractGrok • ExtractHL7Attributes • ExtractRecordSchema • ExtractStructuredBoxFileMetadata • ExtractText • FetchAzureBlobStorage_v12 • FetchAzureDataLakeStorage • FetchBoxFile • FetchBoxFileInfo • FetchBoxFileMetadataInstance • FetchBoxFileRepresentation • FetchDistributedMapCache • FetchDropbox • FetchFile • FetchFTP • FetchGCSObject • FetchGoogleDrive • FetchGridFS • FetchS3Object • FetchSFTP • FetchSmb • FilterAttribute • FlattenJson • ForkEnrichment • ForkRecord • GenerateFlowFile • GenerateRecord • GenerateTableFetch • GeoEnrichIP • GeoEnrichIPRecord • GeohashRecord • GetAsanaObject • GetAwsPollyJobStatus • GetAwsTextractJobStatus • GetAwsTranscribeJobStatus • GetAwsTranslateJobStatus • GetAzureEventHub • GetAzureQueueStorage_v12 • GetBoxFileCollaborators • GetBoxGroupMembers • GetDynamoDB • GetElasticsearch • GetFile • GetFileResource • GetFTP • GetGcpVisionAnnotateFilesOperationStatus • GetGcpVisionAnnotateImagesOperationStatus • GetHubSpot • GetMongo • GetMongoRecord • GetS3ObjectMetadata • GetS3ObjectTags • GetSFTP • GetShopify • GetSmbFile • GetSNMP • GetSplunk • GetSQS • GetWorkdayReport • GetZendesk • HandleHttpRequest • HandleHttpResponse • IdentifyMimeType • InvokeHTTP • InvokeScriptedProcessor • ISPEnrichIP • JoinEnrichment • JoltTransformJSON • JoltTransformRecord • JSLTTransformJSON • JsonQueryElasticsearch • ListAzureBlobStorage_v12 • ListAzureDataLakeStorage • ListBoxFile • ListBoxFileInfo • ListBoxFileMetadataInstances • ListBoxFileMetadataTemplates • ListDatabaseTables • ListDropbox • ListenFTP • ListenHTTP • ListenOTLP • ListenSlack • ListenSyslog • ListenTCP • ListenTrapSNMP • ListenUDP • ListenUDPRecord • ListenWebSocket • ListFile • ListFTP • ListGCSBucket • ListGoogleDrive • ListS3 • ListSFTP • ListSmb • LogAttribute • LogMessage • LookupAttribute • LookupRecord • MergeContent • MergeRecord • ModifyBytes • ModifyCompression • MonitorActivity • MoveAzureDataLakeStorage • Notify • PackageFlowFile • PaginatedJsonQueryElasticsearch • ParseEvtx • ParseNetflowv5 • ParseSyslog • ParseSyslog5424 • PartitionRecord • PublishAMQP • PublishGCPubSub • PublishJMS • PublishKafka • PublishMQTT • PublishSlack • PutAzureBlobStorage_v12 • PutAzureCosmosDBRecord • PutAzureDataExplorer • PutAzureDataLakeStorage • PutAzureEventHub • PutAzureQueueStorage_v12 • PutBigQuery • PutBoxFile • PutCloudWatchMetric • PutDatabaseRecord • PutDistributedMapCache • PutDropbox • PutDynamoDB • PutDynamoDBRecord • PutElasticsearchJson • PutElasticsearchRecord • PutEmail • PutFile • PutFTP • PutGCSObject • PutGoogleDrive • PutGridFS • PutKinesisFirehose • PutKinesisStream • PutLambda • PutMongo • PutMongoBulkOperations • PutMongoRecord • PutRecord • PutRedisHashRecord • PutS3Object • PutSalesforceObject • PutSFTP • PutSmbFile • PutSNS • PutSplunk • PutSplunkHTTP • PutSQL • PutSQS • PutSyslog • PutTCP • PutUDP • PutWebSocket • PutZendeskTicket • QueryAirtableTable • QueryAzureDataExplorer • QueryDatabaseTable • QueryDatabaseTableRecord • QueryRecord • QuerySalesforceObject • QuerySplunkIndexingStatus • RemoveRecordField • RenameRecordField • ReplaceText • ReplaceTextWithMapping • RetryFlowFile • RouteHL7 • RouteOnAttribute • RouteOnContent • RouteText • RunMongoAggregation • SampleRecord • ScanAttribute • ScanContent • ScriptedFilterRecord • ScriptedPartitionRecord • ScriptedTransformRecord • ScriptedValidateRecord • SearchElasticsearch • SegmentContent • SendTrapSNMP • SetSNMP • SignContentPGP • SplitAvro • SplitContent • SplitExcel • SplitJson • SplitPCAP • SplitRecord • SplitText • SplitXml • StartAwsPollyJob • StartAwsTextractJob • StartAwsTranscribeJob • StartAwsTranslateJob • StartGcpVisionAnnotateFilesOperation • StartGcpVisionAnnotateImagesOperation • TagS3Object • TailFile • TransformXml • UnpackContent • UpdateAttribute • UpdateBoxFileMetadataInstance • UpdateByQueryElasticsearch • UpdateCounter • UpdateDatabaseTable • UpdateRecord • ValidateCsv • ValidateJson • ValidateRecord • ValidateXml • VerifyContentMAC • VerifyContentPGP • Wait • Controller Services • ADLSCredentialsControllerService • ADLSCredentialsControllerServiceLookup • AmazonGlueEncodedSchemaReferenceReader • AmazonGlueSchemaRegistry • AmazonMSKConnectionService • ApicurioSchemaRegistry • AvroReader • AvroRecordSetWriter • AvroSchemaRegistry • AWSCredentialsProviderControllerService • AzureBlobStorageFileResourceService • AzureCosmosDBClientService • AzureDataLakeStorageFileResourceService • AzureEventHubRecordSink • AzureStorageCredentialsControllerService_v12 • AzureStorageCredentialsControllerServiceLookup_v12 • CEFReader • ConfluentEncodedSchemaReferenceReader • ConfluentEncodedSchemaReferenceWriter • ConfluentSchemaRegistry • CSVReader • CSVRecordLookupService • CSVRecordSetWriter • DatabaseRecordLookupService • DatabaseRecordSink • DatabaseTableSchemaRegistry • DBCPConnectionPool • DBCPConnectionPoolLookup • DeveloperBoxClientService • DistributedMapCacheLookupService • ElasticSearchClientServiceImpl • ElasticSearchLookupService • ElasticSearchStringLookupService • EmailRecordSink • EmbeddedHazelcastCacheManager • ExcelReader • ExternalHazelcastCacheManager • FreeFormTextRecordSetWriter • GCPCredentialsControllerService • GCSFileResourceService • GrokReader • HazelcastMapCacheClient • HikariCPConnectionPool • HttpRecordSink • IPLookupService • JettyWebSocketClient • JettyWebSocketServer • JMSConnectionFactoryProvider • JndiJmsConnectionFactoryProvider • JsonConfigBasedBoxClientService • JsonPathReader • JsonRecordSetWriter • JsonTreeReader • JWTBearerOAuth2AccessTokenProvider • Kafka3ConnectionService • KerberosKeytabUserService • KerberosPasswordUserService • KerberosTicketCacheUserService • LoggingRecordSink • MapCacheClientService • MapCacheServer • MongoDBControllerService • MongoDBLookupService • PEMEncodedSSLContextProvider • PropertiesFileLookupService • ProtobufReader • ReaderLookup • RecordSetWriterLookup • RecordSinkServiceLookup • RedisConnectionPoolService • RedisDistributedMapCacheClientService • RestLookupService • S3FileResourceService • ScriptedLookupService • ScriptedReader • ScriptedRecordSetWriter • ScriptedRecordSink • SetCacheClientService • SetCacheServer • SimpleCsvFileLookupService • SimpleDatabaseLookupService • SimpleKeyValueLookupService • SimpleRedisDistributedMapCacheClientService • SimpleScriptedLookupService • SiteToSiteReportingRecordSink • SlackRecordSink • SmbjClientProviderService • StandardAsanaClientProviderService • StandardAzureCredentialsControllerService • StandardDatabaseDialectService • StandardDropboxCredentialService • StandardFileResourceService • StandardHashiCorpVaultClientService • StandardHttpContextMap • StandardJsonSchemaRegistry • StandardKustoIngestService • StandardKustoQueryService • StandardOauth2AccessTokenProvider • StandardPGPPrivateKeyService • StandardPGPPublicKeyService • StandardPrivateKeyService • StandardProxyConfigurationService • StandardRestrictedSSLContextService • StandardS3EncryptionService • StandardSSLContextService • StandardWebClientServiceProvider • Syslog5424Reader • SyslogReader • UDPEventRecordSink • VolatileSchemaCache • WindowsEventLogReader • XMLFileLookupService • XMLReader • XMLRecordSetWriter • YamlTreeReader • ZendeskRecordSink • Reporting Tasks • AzureLogAnalyticsProvenanceReportingTask • AzureLogAnalyticsReportingTask • ControllerStatusReportingTask • MonitorDiskUsage • MonitorMemory • ScriptedReportingTask • SiteToSiteBulletinReportingTask • SiteToSiteMetricsReportingTask • SiteToSiteProvenanceReportingTask • SiteToSiteStatusReportingTask • Parameter Providers • AwsSecretsManagerParameterProvider • AzureKeyVaultSecretsParameterProvider • DatabaseParameterProvider • EnvironmentVariableParameterProvider • GcpSecretManagerParameterProvider • HashiCorpVaultParameterProvider • KubernetesSecretParameterProvider • OnePasswordParameterProvider • Flow Analysis Rules • DisallowComponentType • RequireServerSSLContextService • RestrictBackpressureSettings • RestrictFlowFileExpiration UpdateRecord 2.5.0
+
+ Bundle org.apache.nifi | nifi-standard-nar Description Updates the contents of a FlowFile that contains Record-oriented data (i.e., data that can be read via a RecordReader and written by a RecordWriter). This Processor requires that at least one user-defined Property be added. The name of the Property should indicate a RecordPath that determines the field that should be updated. The value of the Property is either a replacement value (optionally making use of the Expression Language) or is itself a RecordPath that extracts a value from the Record. Whether the Property value is determined to be a RecordPath or a literal value depends on the configuration of the <Replacement Value Strategy> Property. Tags avro, csv, freeform, generic, json, log, logs, record, schema, text, update Input Requirement REQUIRED Supports Sensitive Dynamic Properties false • Additional Details for UpdateRecord 2.5.0 UpdateRecord
+
+ UpdateRecord makes use of the NiFi RecordPath Domain-Specific Language (DSL) to allow the user to indicate which field(s) in the Record should be updated. Users do this by adding a User-defined Property to the Processor’s configuration. The name of the User-defined Property must be the RecordPath text that should be evaluated against each Record. The value of the Property specifies what value should go into that selected Record field.
+
+ When specifying the replacement value (the value of the User-defined Property), the user is able to specify a literal value such as the number 10; an Expression Language Expression to reference FlowFile attributes, such as${filename}; or another RecordPath path from which to retrieve the desired value from the Record itself. Whether the value entered should be interpreted as a literal or a RecordPath path is determined by the value of the Property.
+
+ If a RecordPath is given and does not match any field in an input Record, that Property will be skipped and all other Properties will still be evaluated. If the RecordPath matches exactly one field, that field will be updated with the corresponding value. If multiple fields match the RecordPath, then all fields that match will be updated. If the replacement value is itself a RecordPath that does not match, then a null value will be set for the field. For instances where this is not the desired behavior, RecordPath predicates can be used to filter the fields that match so that no fields will be selected. See RecordPath Predicates for more information.
+
+ Below, we lay out some examples in order to provide clarity about the Processor’s behavior. For all the examples below, consider the example to operate on the following set of 2 (JSON) records:
+
+ [
+ {
+ "id": 17,
+ "name": "John",
+ "child": {
+ "id": "1"
+ },
+ "siblingIds": [
+ 4,
+ 8
+ ],
+ "siblings": [
+ {
+ "name": "Jeremy",
+ "id": 4
+ },
+ {
+ "name": "Julia",
+ "id": 8
+ }
+ ]
+ },
+ {
+ "id": 98,
+ "name": "Jane",
+ "child": {
+ "id": 2
+ },
+ "gender": "F",
+ "siblingIds": [],
+ "siblings": []
+ }
+]
+ For brevity, we will omit the corresponding schema and configuration of the RecordReader and RecordWriter. Otherwise, consider the following set of Properties are configured for the Processor and their associated outputs.
+
+ Example 1 - Replace with Literal
+
+ Here, we will replace the name of each Record with the name ‘Jeremy’ and set the gender to ‘M’:
+
+ Property Name | Property Value | 
+ Replacement Value Strategy | Literal Value | 
+ /name | Jeremy | 
+ /gender | M | 
+ This will yield the following output:
+
+ [
+ {
+ "id": 17,
+ "name": "Jeremy",
+ "child": {
+ "id": "1"
+ },
+ "gender": "M",
+ "siblingIds": [
+ 4,
+ 8
+ ],
+ "siblings": [
+ {
+ "name": "Jeremy",
+ "id": 4
+ },
+ {
+ "name": "Julia",
+ "id": 8
+ }
+ ]
+ },
+ {
+ "id": 98,
+ "name": "Jeremy",
+ "child": {
+ "id": 2
+ },
+ "gender": "M",
+ "siblingIds": [],
+ "siblings": []
+ }
+]
+ Note that even though the first record did not have a “gender” field in the input, one will be added after the “child” field, as that’s where the field is located in the schema.
+
+ Example 2 - Replace with RecordPath
+
+ This example will replace the value in one field of the Record with the value from another field. For this example, consider the following set of Properties:
+
+ Property Name | Property Value | 
+ Replacement Value Strategy | Record Path Value | 
+ /name | /siblings[0]/name | 
+ This will yield the following output:
+
+ [
+ {
+ "id": 17,
+ "name": "Jeremy",
+ "child": {
+ "id": "1"
+ },
+ "siblingIds": [
+ 4,
+ 8
+ ],
+ "siblings": [
+ {
+ "name": "Jeremy",
+ "id": 4
+ },
+ {
+ "name": "Julia",
+ "id": 8
+ }
+ ]
+ },
+ {
+ "id": 98,
+ "name": null,
+ "child": {
+ "id": 2
+ },
+ "gender": "F",
+ "siblingIds": [],
+ "siblings": []
+ }
+]
+ Example 3 - Replace with Relative RecordPath
+
+ In the above example, we replaced the value of field based on another RecordPath. That RecordPath was an “absolute RecordPath,” meaning that it starts with a “slash” character (/) and therefore it specifies the path from the “root” or “outermost” element. However, sometimes we want to reference a field in such a way that we defined the RecordPath relative to the field being updated. This example does just that. For each of the siblings given in the “siblings"array, we will replace the sibling’s name with their id’s. To do so, we will configure the processor with the following properties:
+
+ Property Name | Property Value | 
+ Replacement Value Strategy | Record Path Value | 
+ /siblings[*]/name | ../id | 
+ Note that the RecordPath that was given for the value starts with .., which is a reference to the parent. We do this because the field that we are going to update is the “name” field of the sibling. To get to the associated “id” field, we need to go to the “name” field’s parent and then to its “id” child field. The above example results in the following output:
+
+ [
+ {
+ "id": 17,
+ "name": "Jeremy",
+ "child": {
+ "id": "1"
+ },
+ "siblingIds": [
+ 4,
+ 8
+ ],
+ "siblings": [
+ {
+ "name": "Jeremy",
+ "id": 4
+ },
+ {
+ "name": "Julia",
+ "id": 8
+ }
+ ]
+ },
+ {
+ "id": 98,
+ "name": null,
+ "child": {
+ "id": 2
+ },
+ "gender": "F",
+ "siblingIds": [],
+ "siblings": []
+ }
+]
+ Example 4 - Replace Multiple Values
+
+ This example will replace the value of all fields that have the name “id”, regardless of where in the Record hierarchy the field is found. The value that it uses references the Expression Language, so for this example, let’s assume that the incoming FlowFile has an attribute named “replacement.id” that has a value of “91”:
+
+ Property Name | Property Value | 
+ Replacement Value Strategy | Literal Value | 
+ //id | ${replacement.id} | 
+ This will yield the following output:
+
+ [
+ {
+ "id": 91,
+ "name": "John",
+ "child": {
+ "id": "91"
+ },
+ "siblingIds": [
+ 4,
+ 8
+ ],
+ "siblings": [
+ {
+ "name": "Jeremy",
+ "id": 91
+ },
+ {
+ "name": "Julia",
+ "id": 91
+ }
+ ]
+ },
+ {
+ "id": 91,
+ "name": "Jane",
+ "child": {
+ "id": 91
+ },
+ "gender": "F",
+ "siblingIds": [],
+ "siblings": []
+ }
+]
+ It is also worth noting that in this example, some of the “id” fields were of type STRING, while others were of type INT. This is okay because the RecordReaders and RecordWriters should handle these simple type coercions for us.
+
+ Example 5 - Use Expression Language to Modify Value
+
+ This example will capitalize the value of all ’name’ fields, regardless of where in the Record hierarchy the field is found. This is done by referencing the ‘field.value’ variable in the Expression Language. We can also access the field.name variable and the field.type variable.
+
+ Property Name | Property Value | 
+ Replacement Value Strategy | Literal Value | 
+ //name | ${field.value:toUpper()} | 
+ This will yield the following output:
+
+ [
+ {
+ "id": 17,
+ "name": "JOHN",
+ "child": {
+ "id": "1"
+ },
+ "siblingIds": [
+ 4,
+ 8
+ ],
+ "siblings": [
+ {
+ "name": "JEREMY",
+ "id": 4
+ },
+ {
+ "name": "JULIA",
+ "id": 8
+ }
+ ]
+ },
+ {
+ "id": 98,
+ "name": "JANE",
+ "child": {
+ "id": 2
+ },
+ "gender": "F",
+ "siblingIds": [],
+ "siblings": []
+ }
+]
+ Properties • Record Reader Specifies the Controller Service to use for reading incoming data Display Name Record Reader Description Specifies the Controller Service to use for reading incoming data API Name Record Reader Service Interface org.apache.nifi.serialization.RecordReaderFactory Service Implementations org.apache.nifi.avro.AvroReader org.apache.nifi.cef.CEFReader org.apache.nifi.csv.CSVReader org.apache.nifi.excel.ExcelReader org.apache.nifi.grok.GrokReader org.apache.nifi.json.JsonPathReader org.apache.nifi.json.JsonTreeReader org.apache.nifi.services.protobuf.ProtobufReader org.apache.nifi.lookup.ReaderLookup org.apache.nifi.record.script.ScriptedReader org.apache.nifi.syslog.Syslog5424Reader org.apache.nifi.syslog.SyslogReader org.apache.nifi.windowsevent.WindowsEventLogReader org.apache.nifi.xml.XMLReader org.apache.nifi.yaml.YamlTreeReader Expression Language Scope Not Supported Sensitive false Required true • Record Writer Specifies the Controller Service to use for writing out the records Display Name Record Writer Description Specifies the Controller Service to use for writing out the records API Name Record Writer Service Interface org.apache.nifi.serialization.RecordSetWriterFactory Service Implementations org.apache.nifi.avro.AvroRecordSetWriter org.apache.nifi.csv.CSVRecordSetWriter org.apache.nifi.text.FreeFormTextRecordSetWriter org.apache.nifi.json.JsonRecordSetWriter org.apache.nifi.lookup.RecordSetWriterLookup org.apache.nifi.record.script.ScriptedRecordSetWriter org.apache.nifi.xml.XMLRecordSetWriter Expression Language Scope Not Supported Sensitive false Required true • Replacement Value Strategy Specifies how to interpret the configured replacement values Display Name Replacement Value Strategy Description Specifies how to interpret the configured replacement values API Name Replacement Value Strategy Default Value literal-value Allowable Values • Literal Value • Record Path Value Expression Language Scope Not Supported Sensitive false Required true Dynamic Properties • A RecordPath. Allows users to specify values to use to replace fields in the record that match the RecordPath. Name A RecordPath. Description Allows users to specify values to use to replace fields in the record that match the RecordPath. Value The value to use to replace fields in the record that match the RecordPath Expression Language Scope FLOWFILE_ATTRIBUTES Relationships Name | Description | 
+ failure | If a FlowFile cannot be transformed from the configured input format to the configured output format, the unchanged FlowFile will be routed to this relationship | 
+ success | FlowFiles that are successfully transformed will be routed to this relationship | 
+ Writes Attributes Name | Description | 
+ record.index | This attribute provides the current row index and is only available inside the literal value expression. | 
+ record.error.message | This attribute provides on failure the error message encountered by the Reader or Writer. | 
+ Use Cases • Combine multiple fields into a single field. Description Combine multiple fields into a single field. Keywords combine, concatenate, recordpath Configuration "Replacement Value Strategy" = "Record Path Value"
+
+A single additional property is added to the Processor. The name of the property is a RecordPath identifying the field to place the result in.
+The value of the property uses the concat Record Path function to concatenate multiple values together, potentially using other string literal values.
+For example, to combine the `title`, `firstName` and `lastName` fields into a single field named `fullName`, we add a property with the name `/fullName` and a value of `concat(/title, ' ', /firstName, ' ', /lastName)`
+ • Change the value of a record field to an explicit value. Description Change the value of a record field to an explicit value. Keywords change, update, replace, transform Configuration "Replacement Value Strategy" = "Literal Value"
+
+ A single additional property is added to the Processor. The name of the property is a RecordPath identifying the field to place the result in.
+ The value of the property is the explicit value to set the field to. For example, we can set any field with a name of `txId`, regardless of its level in the data's hierarchy, to `1111-1111` by adding a property with a name of `//txId` and a value of `1111-1111`
+ • Copy the value of one record field to another record field. Description Copy the value of one record field to another record field. Keywords change, update, copy, recordpath, hierarchy, transform Configuration "Replacement Value Strategy" = "Record Path Value"
+
+ A single additional property is added to the Processor. The name of the property is a RecordPath identifying the field to update.
+ The value of the property is a RecordPath identifying the field to copy the value from.
+ For example, we can copy the value of `/identifiers/all/imei` to the `identifier` field at the root level, by adding a property named `/identifier` with a value of `/identifiers/all/imei`.
+ • Enrich data by injecting the value of an attribute into each Record. Description Enrich data by injecting the value of an attribute into each Record. Keywords enrich, attribute, change, update, replace, insert, transform Configuration "Replacement Value Strategy" = "Literal Value"
+
+A single additional property is added to the Processor. The name of the property is a RecordPath identifying the field to place the result in.
+The value of the property is an Expression Language expression that references the attribute of interest. We can, for example, insert a new field name `filename` into each record by adding a property named `/filename` with a value of `${filename}`
+ • Change the format of a record field's value. Description Change the format of a record field's value. Notes Use the RenameRecordField Processor in order to change a field's name. Keywords change, update, replace, insert, transform, format, date/time, timezone, expression language Configuration "Replacement Value Strategy" = "Literal Value"
+
+A single additional property is added to the Processor. The name of the property is a RecordPath identifying the field to update.
+The value is an Expression Language expression that references the `field.value` variable. For example, to change the date/time format of a field named `txDate` from `year-month-day` format to `month/day/year` format, we add a property named `/txDate` with a value of `${field.value:toDate('yyyy-MM-dd'):format('MM/dd/yyyy')}`. We could also change the timezone of a timestamp field (and insert the timezone for clarity) by using a value of `${field.value:toDate('yyyy-MM-dd HH:mm:ss', 'UTC-0400'):format('yyyy-MM-dd HH:mm:ss Z', 'UTC')}`.
+ See Also • org.apache.nifi.processors.standard.ConvertRecord
